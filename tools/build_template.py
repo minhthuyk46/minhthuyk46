@@ -5,7 +5,9 @@ from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
 from openpyxl.worksheet.datavalidation import DataValidation
 from openpyxl.utils import get_column_letter as L
 
-OUT = 'templates/JFT_Irodori_He_thong_tao_de.xlsx'
+import sys
+LEAN = '--lean' in sys.argv  # bỏ công thức từng dòng (dùng ARRAYFORMULA trên Google Sheets)
+OUT = 'templates/JFT_Irodori_He_thong_tao_de' + ('_lean' if LEAN else '') + '.xlsx'
 NAVY, WHITE = '1F3A5F', 'FFFFFF'
 FILL = {'common': 'DCE6F1', 'type': 'FDE9D9', 'auto': 'E2EFDA', 'ai': 'FFF2CC'}
 thin = Side(style='thin', color='BFBFBF')
@@ -41,7 +43,7 @@ def sheet(name, cols, rows=(), widths=None, groups=None, note=None, color='1F3A5
         c.fill = PatternFill('solid', fgColor=NAVY if not g else FILL[g])
         c.alignment = Alignment(wrap_text=True, vertical='center', horizontal='center')
         c.border = Border(top=thin, bottom=thin, left=thin, right=thin)
-        if tip:
+        if tip and not LEAN:
             from openpyxl.comments import Comment
             c.comment = Comment(tip, 'JFT')
         ws.column_dimensions[L(j)].width = (widths or {}).get(h, max(12, min(40, len(h) * 2 + 4)))
@@ -119,7 +121,7 @@ ws, h = sheet('01_KE_HOACH', plan_cols, groups=g, color='2E75B6',
               note='Mỗi dòng = 1 đề thi thử. Số câu mỗi dạng lấy theo cấu trúc đề JFT chính thức (đối chiếu đề mẫu Japan Foundation).')
 ws.cell(h + 1, 1, 'TT-2026-01'); ws.cell(h + 1, 2, 'Thi thử giữa khoá (VÍ DỤ)'); ws.cell(h + 1, 5, '入門')
 ws.cell(h + 1, 6, 1); ws.cell(h + 1, 7, 9)
-for r in range(h + 1, 201):
+for r in ([] if LEAN else range(h + 1, 201)):
     ws.cell(r, 8 + len(TYPES), f'=IF(A{r}="","",SUM({L(8)}{r}:{L(7 + len(TYPES))}{r}))')
 dropdown(ws, 5, REF('A', 3), h + 1, 200)
 dropdown(ws, 8 + len(TYPES) + 3, 'Lên kế hoạch|Đang soạn|Đang duyệt|Đã xuất LMS|Đã thi', h + 1, 200)
@@ -156,7 +158,7 @@ TAIL = [('Ghi chú cho AI', 'Yêu cầu thêm, VD: tránh chủ đề đồ ăn'
 SPEC = {
  '語の意味': ([('Từ đích', 'Lấy từ 10_NGUON_TU_VUNG'), ('Nghĩa tiếng Việt', '')],
             [('Kiểu đáp án', 'Chữ / Hình 4 ô'), ('Ngữ cảnh câu hỏi', 'Câu chứa ___ hoặc mô tả hình'), ('Từ nhiễu gợi ý', 'ngăn cách ;')],
-            ['語の意味', '会社', 'かいしゃ', 'công ty', 'Hình 4 ô', 'わたしの ___ は 大きいです。', '学校;病院;銀行']),
+            ['語の意味', '会社', 'công ty', 'Hình 4 ô', 'わたしの ___ は 大きいです。', '学校;病院;銀行']),
  '語の使い方': ([('Từ đích', ''), ('Câu ngữ cảnh (có ___)', 'Câu chứa chỗ trống')],
              [('Collocation đúng', 'VD: 電話を かける'), ('Lỗi dùng từ muốn bẫy', 'VD: nhầm 着る/はく')],
              ['語の使い方', 'かける', '友だちに 電話を ___。', '電話を かける', 'する;とる;いう']),
@@ -207,7 +209,7 @@ for code, sec, typ in TYPES:
         ws.cell(r, j, v)
     n = len(cols)
     ws.cell(r, n - 5, 'VÍ DỤ — xoá dòng này khi dùng thật'); ws.cell(r, n - 4, 'ChatGPT'); ws.cell(r, n - 2, 'Nháp')
-    for rr in range(h + 1, 301):
+    for rr in ([] if LEAN else range(h + 1, 301)):
         ws.cell(rr, n - 1, f"=IF(A{rr}=\"\",\"\",COUNTIF('30_NGAN_HANG'!$B:$B,A{rr}))")
         ws.cell(rr, n, f"=IF(A{rr}=\"\",\"\",COUNTIFS('30_NGAN_HANG'!$B:$B,A{rr},'30_NGAN_HANG'!$Y:$Y,\"Approved\"))")
     dropdown(ws, 3, REF('A', 3), h + 1, 300)
@@ -258,7 +260,7 @@ ws, h = sheet('30_NGAN_HANG', bank_cols, groups=g, color='7030A0',
 dropdown(ws, 25, REF('F', 6), h + 1, 5000)
 dropdown(ws, 24, 'Ngoài phạm vi|2 đáp án đúng|Sai tiếng Nhật|Nhiễu yếu|Lộ đáp án|Hình/Audio lỗi|Khác', h + 1, 5000)
 dropdown(ws, 13, '1|2|3|4', h + 1, 5000)
-for r in range(h + 1, 2001):
+for r in ([] if LEAN else range(h + 1, 2001)):
     ws.cell(r, 26, f"=IF(A{r}=\"\",\"\",COUNTIF('40_RAP_DE'!$C:$C,A{r}))")
     ws.cell(r, 27, f'=IF(A{r}="","","JFT|"&C{r}&"|"&D{r}&"|"&E{r}&"L"&F{r})')
 
@@ -266,7 +268,7 @@ for r in range(h + 1, 2001):
 ws, h = sheet('40_RAP_DE', [('Mã đề', ''), ('STT', ''), ('Mã câu', ''), ('Dạng bài', 'Tự động'),
                             ('Trạng thái câu', 'Tự động — phải là Approved'), ('Ghi chú', '')],
               groups=['common', 'common', 'common', 'auto', 'auto', 'common'], color='7030A0')
-for r in range(h + 1, 1001):
+for r in ([] if LEAN else range(h + 1, 1001)):
     ws.cell(r, 4, f"=IF(C{r}=\"\",\"\",IFERROR(INDEX('30_NGAN_HANG'!$D:$D,MATCH(C{r},'30_NGAN_HANG'!$A:$A,0)),\"Không tìm thấy\"))")
     ws.cell(r, 5, f"=IF(C{r}=\"\",\"\",IFERROR(INDEX('30_NGAN_HANG'!$Y:$Y,MATCH(C{r},'30_NGAN_HANG'!$A:$A,0)),\"\"))")
 
@@ -300,7 +302,7 @@ hd = ['Quyển', 'Bài'] + [t[2] for t in TYPES] + ['Tổng']
 for j, t in enumerate(hd, 1):
     c = ws.cell(r1 + 1, j, t); c.font = Font(bold=True, color=WHITE); c.fill = PatternFill('solid', fgColor=NAVY)
 r = r1 + 2
-for b in BOOKS:
+for b in ([] if LEAN else BOOKS):
     for les in range(1, 19):
         ws.cell(r, 1, b); ws.cell(r, 2, les)
         for k, (_, _, typ) in enumerate(TYPES, 3):
