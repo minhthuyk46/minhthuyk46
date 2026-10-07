@@ -33,7 +33,7 @@ function onOpen() {
     .addItem('2. Tạo audio cho câu Nghe hiểu', 'generateAudio')
     .addItem('3. Tạo hình minh hoạ (SVG)', 'generateImages')
     .addSeparator()
-    .addItem('4. Ráp đề → Google Form', 'buildExamForm')
+    .addItem('4. Xuất file import LMS (.xlsx)', 'exportLmsXlsx')
     .addToUi();
 }
 
@@ -61,7 +61,7 @@ function setupSheets() {
     ['TTS_VOICE_F', 'ja-JP-Neural2-B', 'Giọng nữ (có thể đổi ja-JP-Chirp3-HD-Aoede)'],
     ['TTS_VOICE_M', 'ja-JP-Neural2-C', 'Giọng nam (có thể đổi ja-JP-Chirp3-HD-Charon)'],
     ['TTS_RATE', 0.95, 'Tốc độ đọc (JFT thực tế ~0.9–1.0)'],
-    ['EXAM_TITLE', 'JFT-Basic 模擬試験', 'Tiêu đề Form'],
+    ['EXAM_TITLE', 'JFT_Thi_thu', 'Tiền tố tên file import LMS'],
   ]);
 
   make(SHEETS.SYLLABUS, ['Book', 'Lesson', 'Topic', 'Can-do', 'Vocab', 'Kanji', 'Grammar'], []);
@@ -72,7 +72,7 @@ function setupSheets() {
   bp.getRange(2, 1, BLUEPRINT_DEFAULT.length, 1).insertCheckboxes();
 
   make(SHEETS.BANK, BANK_HEADERS, []);
-  make(SHEETS.LOG, ['Thời gian', 'Tên đề', 'Form (edit)', 'Form (thi)', 'Số câu', 'Danh sách ID'], []);
+  make(SHEETS.LOG, ['Thời gian', 'Tên đề', 'File import LMS', 'Ghi chú', 'Số câu', 'Danh sách ID'], []);
   SpreadsheetApp.getUi().alert('✅ Đã tạo cấu trúc. Hãy nhập SYLLABUS_IRODORI trước khi sinh câu hỏi.');
 }
 
@@ -262,54 +262,78 @@ function generateImages() {
     file.setSharing(DriveApp.Access.ANYONE_WITH_LINK, DriveApp.Permission.VIEW);
     setCell_(SHEETS.BANK, q._row, 'ImageURL', file.getUrl());
   });
-  SpreadsheetApp.getUi().alert(`✅ Đã vẽ ${todo.length} hình (SVG). Chạy tools/svg2png để có PNG gắn vào Form.`);
+  SpreadsheetApp.getUi().alert(`✅ Đã vẽ ${todo.length} hình (SVG). Chạy tools/svg2png để có PNG cho LMS.`);
 }
 
-/* ============================== 4. RÁP ĐỀ → GOOGLE FORM ============================== */
+/* ============================== 4. XUẤT FILE IMPORT LMS ============================== */
 
-function buildExamForm() {
+// Đúng mẫu "MULTIPLE CHOICE (Advanced)" của Mankai LMS — không đổi tên sheet/cột.
+const LMS_SHEET = 'MULTIPLE CHOICE (Advanced)';
+const LMS_HEADERS = ['Audio Url', 'Content', 'Correct Answer', 'Explanation', 'Image Url',
+  'Option 1', 'Option 2', 'Option 3', 'Option 4', 'STT', 'Tag'];
+
+function exportLmsXlsx() {
   const cfg = config_();
-  const blueprint = sheetObjects_(SHEETS.BLUEPRINT);
   const approved = sheetObjects_(SHEETS.BANK).filter(q => q.Status === 'Approved');
   const picked = [];
-  blueprint.forEach(b => {
+  sheetObjects_(SHEETS.BLUEPRINT).forEach(b => {
     const pool = approved.filter(q => q.Type === b.Type).sort(() => Math.random() - 0.5);
     picked.push(...pool.slice(0, Number(b['Số câu/đề']) || 0));
   });
   if (!picked.length) throw new Error('Chưa có câu Approved trong QUESTION_BANK.');
 
-  const title = `${cfg.EXAM_TITLE} ${Utilities.formatDate(new Date(), 'Asia/Ho_Chi_Minh', 'yyyy-MM-dd HH:mm')}`;
-  const form = FormApp.create(title).setIsQuiz(true).setShuffleQuestions(false);
-  DriveApp.getFileById(form.getId()).moveTo(folder_('exams'));
+  const rows = picked.map((q, i) => [
+    directAudioUrl_(q.AudioURL),
+    q.Stem,
+    'ABCD'.indexOf(String(q.Answer).trim().toUpperCase()) + 1,   // LMS dùng số 1–4
+    q.Explanation_VI,
+    directImageUrl_(q),
+    q.OptionA, q.OptionB, q.OptionC, q.OptionD,
+    i + 1,
+    ['JFT', q.Section, q.Type, `${q.Book}L${q.Lesson}`].join('|'),
+  ]);
+  const bad = rows.filter(r => r[2] < 1);
+  if (bad.length) throw new Error('Có câu sai định dạng Answer (phải là A/B/C/D): STT ' + bad.map(r => r[9]).join(','));
 
-  let section = '';
-  picked.forEach((q, i) => {
-    if (q.Section !== section) {
-      form.addPageBreakItem().setTitle(q.Section);
-      section = q.Section;
-    }
-    const png = pngFor_(q);
-    if (png) form.addImageItem().setImage(png).setTitle(`問題 ${i + 1}`);
+  const title = `${cfg.EXAM_TITLE} ${Utilities.formatDate(new Date(), 'Asia/Ho_Chi_Minh', 'yyyyMMdd-HHmm')}`;
+  const tmp = SpreadsheetApp.create(title);
+  const sh = tmp.getSheets()[0].setName(LMS_SHEET);
+  sh.getRange(1, 1, 1, LMS_HEADERS.length).setValues([LMS_HEADERS]);
+  sh.getRange(2, 1, rows.length, LMS_HEADERS.length).setValues(rows);
+  SpreadsheetApp.flush();
 
-    const item = form.addMultipleChoiceItem();
-    const opts = ['A', 'B', 'C', 'D'];
-    let help = q.AudioURL ? `🔊 音声: ${q.AudioURL}` : '';
-    item.setTitle(`${i + 1}. ${q.Stem}`)
-      .setHelpText(help)
-      .setChoices(opts.map(k => item.createChoice(`${k}. ${q['Option' + k]}`, k === q.Answer)))
-      .setPoints(1)
-      .setFeedbackForIncorrect(FormApp.createFeedback().setText(q.Explanation_VI).build());
-  });
+  const xlsx = UrlFetchApp.fetch(
+    `https://docs.google.com/spreadsheets/d/${tmp.getId()}/export?format=xlsx`,
+    { headers: { Authorization: 'Bearer ' + ScriptApp.getOAuthToken() } }).getBlob().setName(title + '.xlsx');
+  const file = folder_('exams').createFile(xlsx);
+  DriveApp.getFileById(tmp.getId()).setTrashed(true);
 
   SpreadsheetApp.getActive().getSheetByName(SHEETS.LOG).appendRow([
-    new Date(), title, form.getEditUrl(), form.getPublishedUrl(), picked.length, picked.map(q => q.ID).join(','),
+    new Date(), title, file.getUrl(), '', picked.length, picked.map(q => q.ID).join(','),
   ]);
-  SpreadsheetApp.getUi().alert('✅ Đã tạo đề: ' + form.getEditUrl());
+  SpreadsheetApp.getUi().alert('✅ File import LMS: ' + file.getUrl());
 }
 
-/* Ưu tiên file PNG cùng tên ID trong thư mục images (do tools/svg2png tạo). */
-function pngFor_(q) {
-  if (!q.ImageURL) return null;
+function driveId_(url) {
+  const m = String(url || '').match(/[-\w]{25,}/);
+  return m ? m[0] : '';
+}
+
+/* Link trực tiếp để LMS phát/hiển thị được (link /view của Drive là trang HTML, không phải file). */
+function directAudioUrl_(url) {
+  const id = driveId_(url);
+  return id ? 'https://drive.google.com/uc?export=download&id=' + id : '';
+}
+
+/* Ưu tiên PNG cùng tên ID trong thư mục images (do tools/svg2png tạo), không có thì dùng SVG. */
+function directImageUrl_(q) {
+  if (!q.ImageURL) return '';
   const it = folder_('images').getFilesByName(q.ID + '.png');
-  return it.hasNext() ? it.next().getBlob() : null;
+  let id = driveId_(q.ImageURL);
+  if (it.hasNext()) {
+    const png = it.next();
+    png.setSharing(DriveApp.Access.ANYONE_WITH_LINK, DriveApp.Permission.VIEW);
+    id = png.getId();
+  }
+  return 'https://lh3.googleusercontent.com/d/' + id;
 }
