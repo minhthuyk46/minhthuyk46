@@ -3,6 +3,7 @@
  * Gắn vào Google Sheet "JFT Irodori – Hệ thống luyện thi (theo tiêu chuẩn 11 dạng)".
  *
  * Menu 🎌 JFT:
+ *   0. Tạo phiếu từ kế hoạch  07_KE_HOACH (Duyệt kế hoạch) × ô đã tick ở 04 → 10_YEU_CAU (Sẵn sàng sinh)
  *   1. Sinh câu từ phiếu      10_YEU_CAU (Sẵn sàng sinh) → ChatGPT / Claude → 20_NGAN_HANG (Draft)
  *   2. Tự kiểm tra câu Draft   luật cứng → Đang QC VN / Trả về
  *   3. Chuyển trạng thái QC    đọc cột QC VN / QC JP → Đang QC JP / Approved / Trả về / Loại
@@ -22,9 +23,19 @@ const SH = {
   RAP: '31_RAP_DE',
   QD: '90_QUYET_DINH',
   LOG: '06_NHAT_KY',
+  KH: '07_KE_HOACH',
+  MA_TRAN: '04_MA_TRAN_PHU',
 };
 
+/** Ô cài đặt trên 07_KE_HOACH */
+const KH_CELL = { MAX_CAU: 'D2', TU_DONG: 'F2' };
+const KH_HEADER_ROW = 4;
+
+/** 04_MA_TRAN_PHU: bảng "Bật ra đề?" – header dòng 60, dữ liệu 61–114, cột A Cấp, B Bài, D..N 11 dạng */
+const TICK = { HEADER_ROW: 60, FIRST: 61, LAST: 114, FIRST_COL: 4, N_COL: 11 };
+
 const DEFAULTS = {
+  AI_PROVIDER: 'openai',
   OPENAI_MODEL: 'gpt-4.1',
   CLAUDE_MODEL: 'claude-sonnet-5-5',
   TTS_VOICE_F: 'ja-JP-Neural2-B',
@@ -41,12 +52,16 @@ const LMS_HEADERS = ['Audio Url', 'Content', 'Correct Answer', 'Explanation', 'I
 
 function onOpen() {
   SpreadsheetApp.getUi().createMenu('🎌 JFT')
+    .addItem('0. Tạo phiếu từ kế hoạch', 'taoPhieuTuKeHoach')
     .addItem('1. Sinh câu từ phiếu', 'sinhCauTuPhieu')
     .addItem('2. Tự kiểm tra câu Draft', 'tuKiemTra')
     .addItem('3. Chuyển trạng thái QC', 'chuyenTrangThaiQC')
     .addSeparator()
     .addItem('4. Tạo audio', 'taoAudio')
     .addItem('5. Xuất file LMS', 'xuatLMS')
+    .addSeparator()
+    .addItem('⏱ Bật chạy tự động mỗi giờ (sinh + tự kiểm tra)', 'batTuDong')
+    .addItem('⏹ Tắt chạy tự động', 'tatTuDong')
     .addToUi();
 }
 
@@ -78,6 +93,13 @@ function log_(thaoTac, doiTuong, ketQua, chiTiet) {
     new Date(), Session.getActiveUser().getEmail() || '(ẩn)', thaoTac, doiTuong, ketQua, chiTiet || '']);
 }
 
+/** Dòng cuối có dữ liệu ở cột c (bỏ qua cột công thức ArrayFormula chạy tới cuối sheet). */
+function lastRowIn_(sh, c) {
+  const v = sh.getRange(1, c, sh.getMaxRows(), 1).getValues();
+  for (let i = v.length - 1; i >= 0; i--) if (v[i][0] !== '') return i + 1;
+  return 1;
+}
+
 function toast_(msg) { SpreadsheetApp.getActive().toast(msg, 'JFT', 8); }
 
 function nextId_(t, c, prefix) {
@@ -102,10 +124,12 @@ function sinhCauTuPhieu() {
   const newQ = nextId_(bank, col_(bank, 'Mã câu'), 'JQ');
   const newG = nextId_(bank, col_(bank, 'Mã nhóm'), 'G');
   const started = Date.now();
-  let done = 0;
+  const maxCau = Number(SpreadsheetApp.getActive().getSheetByName(SH.KH).getRange(KH_CELL.MAX_CAU).getValue()) || 30;
+  let done = 0, soCau = 0;
 
   for (const { r, i } of jobs) {
     if (Date.now() - started > 4.5 * 60 * 1000) break;          // chừa thời gian trước giới hạn 6 phút
+    if (soCau >= maxCau) break;                                  // chặn chi phí: tối đa câu / lần chạy (07_KE_HOACH!D2)
     const maYC = r[yc.head['Mã YC']];
     try {
       const spec = dang.rows.find(d => String(d[0]) === String(r[yc.head['Dạng']]));
@@ -119,7 +143,8 @@ function sinhCauTuPhieu() {
           if (rows[k + 1]) rows[k + 1][col_(bank, 'Mã nhóm')] = g;
         }
       }
-      if (rows.length) bank.sh.getRange(bank.sh.getLastRow() + 1, 1, rows.length, rows[0].length).setValues(rows);
+      if (rows.length) bank.sh.getRange(lastRowIn_(bank.sh, 1) + 1, 1, rows.length, rows[0].length).setValues(rows);
+      soCau += rows.length;
       yc.sh.getRange(i + 2, cTT + 1).setValue('Đã sinh');
       log_('1. Sinh câu', maYC, 'OK', rows.length + ' câu, ' + prop_('AI_PROVIDER'));
       done++;
@@ -127,7 +152,7 @@ function sinhCauTuPhieu() {
       log_('1. Sinh câu', maYC, 'LỖI', e.message);
     }
   }
-  toast_('Đã xử lý ' + done + '/' + jobs.length + ' phiếu. Xem 06_NHAT_KY. Chạy tiếp khâu 2.');
+  toast_('Đã xử lý ' + done + '/' + jobs.length + ' phiếu (' + soCau + ' câu). Xem 06_NHAT_KY. Chạy tiếp khâu 2.');
 }
 
 /** spec = 1 dòng 03_DANG_BAI (đọc theo vị trí: F số lựa chọn, G số câu/đơn vị, Q yêu cầu VI, R tiêu chí, T quy định). */
@@ -170,6 +195,7 @@ function buildPrompt_(yc, r, dang, spec) {
     'Ghi chú: ' + g('Ghi chú cho AI / người soạn'),
     'Chủ đề bài: ' + (chuDe[2] || '') + ' | Bối cảnh: ' + (chuDe[3] || '') + ' | Can-do: ' + (chuDe[4] || '') + ' ' + (chuDe[5] || ''),
     nl ? 'Ngữ liệu bổ sung đã duyệt (chọn từ đây):\n' + nl : '',
+    srcItems_(loai, cap, bai),
     '',
     'Sinh đúng ' + soCau + ' câu' + (GROUP_TYPES.includes(loai) ? ' (mỗi 2 câu liên tiếp dùng chung 1 audio/bài đọc; câu đầu của nhóm chứa toàn văn trong noi_dung hoặc script_audio)' : '') + '.',
     'Mỗi item có các khoá: muc_tieu, yeu_cau_jp, yeu_cau_vi, tinh_huong_jp, tinh_huong_vi, noi_dung, cau_hoi,',
@@ -451,4 +477,115 @@ function xuatLMS() {
 
 function stripTag_(s) {
   return String(s || '').split('\n').filter(l => !/^\s*\[.*\]\s*$/.test(l)).join('\n').trim();
+}
+
+// ───────────────────────── Dữ liệu nguồn cho prompt ─────────────────────────
+
+const CAP_JP = { 'A1': '入門', 'A2-1': '初級1', 'A2-2': '初級2' };
+const baiSo_ = v => Number(String(v).replace(/\D/g, '')) || 0;
+
+/** Trích mục nguồn của đúng cấp/bài (và từ đã học trước đó để làm nhiễu) đưa vào prompt. */
+function srcItems_(loai, cap, bai) {
+  const ss = SpreadsheetApp.getActive();
+  const rows = name => { const s = ss.getSheetByName(name); return s ? s.getDataRange().getValues().slice(1) : []; };
+  const n = Number(bai), jp = CAP_JP[cap];
+  let cur = [], prev = [];
+  if (loai === '1-1') {
+    const v = rows('SRC_1-1').filter(x => x[0] === cap);
+    cur = v.filter(x => baiSo_(x[2]) === n).map(x => x[3] + '（' + x[4] + '）: ' + x[7] + ' – tranh: ' + x[8]);
+    prev = v.filter(x => baiSo_(x[2]) < n).map(x => x[3]);
+  } else if (loai === '1-2') {
+    const v = rows('SRC_1-2').filter(x => x[3] === jp);
+    cur = v.filter(x => baiSo_(x[4]) === n).map(x => x[1] + '（' + x[2] + '）: ' + x[5] + ' ' + x[6]);
+    prev = v.filter(x => baiSo_(x[4]) < n).map(x => x[1]);
+  } else if (loai === '1-3' || loai === '1-4') {
+    const v = rows('SRC_' + loai).filter(x => x[7] === jp);
+    cur = v.filter(x => baiSo_(x[8]) === n).map(x => x[2] + ' → ' + x[4] + '（' + x[5] + '）');
+    prev = v.filter(x => baiSo_(x[8]) < n).map(x => x[4] + '（' + x[5] + '）');
+  } else if (loai === '2-1') {
+    cur = rows('SRC_2-1').filter(x => x[0] === cap && baiSo_(x[1]) === n && x[4] !== 'Không pick-up')
+      .map(x => x[3] + ' [' + x[4] + '] – ' + x[6] + (x[4] === 'Pick-up' ? '' : ' (CÓ ĐIỀU KIỆN: ' + x[7] + ')'));
+  } else if (loai === '2-2') {
+    cur = rows('SRC_2-2').filter(x => x[1] === cap && baiSo_(x[2]) === n)
+      .map(x => x[3] + ' | ' + x[4] + ' | A: ' + x[5] + ' | B: ' + x[6]);
+  } else if (loai === '4-1' || loai === '4-2') {
+    cur = rows('SRC_4').filter(x => x[0] === cap && baiSo_(x[1]) === n)
+      .map(x => x[2] + ' | Nguồn sách: ' + x[3] + ' | ' + x[4] + ' | ' + x[5] + ' | Gợi ý: ' + x[7]);
+  }
+  const out = [];
+  if (cur.length) out.push('MỤC NGUỒN CỦA BÀI (chỉ ra câu từ các mục này):\n- ' + cur.join('\n- '));
+  if (prev.length) out.push('Từ đã học ở các bài trước (được dùng làm phương án nhiễu):\n' + prev.slice(-150).join('、'));
+  return out.join('\n');
+}
+
+// ───────────────────────── 0. Tạo phiếu từ kế hoạch ─────────────────────────
+
+function taoPhieuTuKeHoach() {
+  const ss = SpreadsheetApp.getActive();
+  const kh = ss.getSheetByName(SH.KH);
+  const plans = kh.getRange(KH_HEADER_ROW + 1, 1, kh.getLastRow() - KH_HEADER_ROW, 13).getValues();
+  const mt = ss.getSheetByName(SH.MA_TRAN);
+  const head = mt.getRange(TICK.HEADER_ROW, TICK.FIRST_COL, 1, TICK.N_COL).getValues()[0].map(String);
+  const grid = mt.getRange(TICK.FIRST, 1, TICK.LAST - TICK.FIRST + 1, TICK.FIRST_COL - 1 + TICK.N_COL).getValues();
+  const dang = table_(SH.DANG);
+  const yc = table_(SH.YC);
+  const H = yc.head;
+  const cDot = col_(yc, 'Mã đợt');
+  const exist = new Set(yc.rows.map(r => [r[cDot], r[H['Cấp']], baiSo_(r[H['Bài']]), String(r[H['Dạng']])].join('|')));
+  const newYC = nextId_(yc, H['Mã YC'], 'YC');
+  let start = lastRowIn_(yc.sh, 1) + 1, tong = 0;
+
+  plans.forEach((p, k) => {
+    const [ma, , cap, tu, den, locDang, pool, soCau, , deadline, nguoi, ghiChu, tt] = p;
+    if (tt !== 'Duyệt kế hoạch' || !ma || !cap) return;
+    const filter = String(locDang).replace(/\s/g, '').split(',').filter(Boolean);
+    const out = [], dots = [];
+    grid.forEach(g => {
+      if (g[0] !== cap || baiSo_(g[1]) < tu || baiSo_(g[1]) > den) return;
+      head.forEach((loai, j) => {
+        if (g[TICK.FIRST_COL - 1 + j] !== true) return;
+        if (filter.length && !filter.includes(loai)) return;
+        if (exist.has([ma, cap, baiSo_(g[1]), loai].join('|'))) return;
+        const spec = dang.rows.find(d => String(d[0]) === loai) || [];
+        const donVi = GROUP_TYPES.includes(loai) ? Math.ceil(soCau / 2) : soCau;
+        out.push([newYC(), "'" + loai, pool || 'Luyện tập', '', cap, baiSo_(g[1]),
+          spec[3] || '', (spec[7] || '') + (LISTEN_TYPES.concat(['4-1', '4-2']).includes(loai) ? ' + 15_NGU_LIEU_BO_SUNG (đã duyệt)' : ''),
+          spec[16] || '', donVi, ghiChu || '', nguoi || '', 'ChatGPT (Apps Script)', deadline || '', 'Sẵn sàng sinh']);
+        dots.push([ma]);
+      });
+    });
+    if (out.length) {
+      yc.sh.getRange(start, 1, out.length, out[0].length).setValues(out);
+      yc.sh.getRange(start, cDot + 1, dots.length, 1).setValues(dots);
+      start += out.length;
+      tong += out.length;
+    }
+    kh.getRange(KH_HEADER_ROW + 1 + k, 13).setValue('Đã tạo phiếu');
+    log_('0. Tạo phiếu', ma, 'OK', out.length + ' phiếu');
+  });
+  toast_('Đã tạo ' + tong + ' phiếu "Sẵn sàng sinh". Chạy tiếp Menu 1 hoặc bật chạy tự động.');
+}
+
+// ───────────────────────── Chạy tự động ─────────────────────────
+
+function batTuDong() {
+  tatTuDong(true);
+  ScriptApp.newTrigger('chayTuDong').timeBased().everyHours(1).create();
+  SpreadsheetApp.getActive().getSheetByName(SH.KH).getRange(KH_CELL.TU_DONG).setValue('Bật');
+  log_('⏱ Tự động', 'trigger', 'Bật', 'mỗi giờ: sinh câu + tự kiểm tra');
+  toast_('Đã bật: mỗi giờ tự sinh tối đa ' + SpreadsheetApp.getActive().getSheetByName(SH.KH).getRange(KH_CELL.MAX_CAU).getValue() + ' câu rồi tự kiểm tra.');
+}
+
+function tatTuDong(silent) {
+  ScriptApp.getProjectTriggers().filter(t => t.getHandlerFunction() === 'chayTuDong').forEach(t => ScriptApp.deleteTrigger(t));
+  if (silent === true) return;
+  SpreadsheetApp.getActive().getSheetByName(SH.KH).getRange(KH_CELL.TU_DONG).setValue('Tắt');
+  log_('⏱ Tự động', 'trigger', 'Tắt', '');
+  toast_('Đã tắt chạy tự động.');
+}
+
+/** Trigger mỗi giờ: hết phiếu "Sẵn sàng sinh" thì chỉ tự kiểm tra, không gọi AI. */
+function chayTuDong() {
+  sinhCauTuPhieu();
+  tuKiemTra();
 }

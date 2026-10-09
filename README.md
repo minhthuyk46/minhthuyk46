@@ -7,8 +7,8 @@ Quản lý trên **Google Sheet**, chạy tự động bằng **Apps Script** + 
 
 | Khâu | Đầu vào → Đầu ra | Công cụ | Ai |
 |---|---|---|---|
-| 1. Lập phiếu | ô đã tick ở `04` → phiếu "Sẵn sàng sinh" ở `10_YEU_CAU` | Sheet / Claude Code | PTCM |
-| 2. Sinh câu | phiếu → câu **Draft** ở `20_NGAN_HANG` | Menu 🎌 JFT › 1 (ChatGPT/Claude) | Bot |
+| 0–1. Kế hoạch → phiếu | lập đợt ở `07_KE_HOACH` (Duyệt kế hoạch) → Menu › 0 tự tạo phiếu "Sẵn sàng sinh" cho mọi ô đã tick | Sheet + Apps Script | PTCM |
+| 2. Sinh câu | phiếu → câu **Draft** (prompt kèm mục nguồn của bài + từ đã học làm nhiễu; tối đa N câu/lần ở `07!D2`) | Menu › 1 hoặc ⏱ tự động mỗi giờ (ChatGPT mặc định) | Bot |
 | 3. Tự kiểm tra | Draft → **Đang QC VN** / **Trả về** | Menu › 2 (luật cứng) | Bot |
 | 4. QC VN | cột QC VN = Đạt/Sửa/Loại → Menu › 3 | Sheet | GV Việt |
 | 5. QC JP | cột QC JP = Đạt/Sửa/Loại → Menu › 3 → **Approved** | Sheet | GV Nhật |
