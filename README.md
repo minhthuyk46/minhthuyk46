@@ -10,9 +10,9 @@ Quản lý trên **Google Sheet**, **Apps Script** điều phối, **ChatGPT Plu
 | 1. Kế hoạch → phiếu | đợt ở `07_KE_HOACH` (Duyệt kế hoạch) → Menu 0 → phiếu **Chờ tạo** | Apps Script | PTCM |
 | 2. Soạn brief | Chờ tạo → **Chờ sản xuất** (prompt `08_PROMPT` + mục nguồn bài + ngữ liệu `15` + kho hình `09` + câu đã có + khuôn JSON) | Apps Script (5 phút/lần) | Bot |
 | 3. Viết câu | đọc ô Brief → dán JSON vào ô Kết quả | ChatGPT Plus/Pro (Agent 6:00 hoặc copy tay) | ChatGPT |
-| 4. Nhận + kiểm tra | JSON hỏng → cột Lỗi; câu đúng → `20_NGAN_HANG` **Chờ QC VN**; thiếu → lượt sau | Apps Script (ngay khi dán) | Bot |
-| 5–6. QC VN / QC JP | Đạt / Cần sửa (+ nhận xét) / Loại → **Đạt** | Sheet | GV Việt, GV Nhật |
-| 7. Vòng sửa | Cần sửa → Brief sửa → ChatGPT dán Kết quả sửa → Chờ QC VN (v+1) | Apps Script + ChatGPT | Bot |
+| 4. Nhận + kiểm tra | JSON hỏng → cột Lỗi; câu đúng → `20_NGAN_HANG` **Chờ duyệt** + tự vào tab `11_DUYET`; thiếu → lượt sau | Apps Script (ngay khi dán) | Bot |
+| 5. Duyệt (1 người) | tab `11_DUYET`: cột DUYỆT = Đạt / Cần sửa (+ nhận xét) / Loại | Sheet | Người duyệt duy nhất |
+| 7. Vòng sửa | Cần sửa → Brief sửa → ChatGPT dán Kết quả sửa → Chờ duyệt (v+1) | Apps Script + ChatGPT | Bot |
 | 8. Hình + audio | hình Irodori `H001.png` / tranh ChatGPT vẽ `JQ-xxxx.png` → folder kho_hinh → tự gắn; audio Gemini TTS miễn phí | ChatGPT · Gemini | TG + Bot |
 | 9. Xuất LMS | mã đề / bài luyện `A1-05` / mã phiếu → `.xlsx` "MULTIPLE CHOICE (Advanced)" | Apps Script | Vận hành LMS |
 
@@ -33,7 +33,7 @@ Chạy thử toàn vòng bằng mô phỏng: `node tools/sim/run.cjs` (13 bướ
 - **QD-12**: luyện bài N chỉ dùng tình huống bài N, từ vựng/ngữ pháp bài 1→N.
 - **QD-01**: nhóm 1 và 2-1 yêu cầu song ngữ (VI trước, JP sau); còn lại chỉ VI.
 - **QD-04/06**: nghe 1 lần; tình huống + câu hỏi VI hiện trên đề; 3 tranh đánh số 1/2/3.
-- Câu do AI viết luôn vào **Chờ QC VN** — chỉ câu **Đạt** (qua QC VN + QC JP) mới được xuất.
+- Câu do AI viết luôn vào **Chờ duyệt** (tab `11_DUYET`, 1 người duyệt) — chỉ câu **Đạt** mới được xuất.
 
 ## Giới hạn
 - Apps Script tối đa 6 phút/lần chạy → script tự dừng ở ~4,5–5 phút; bấm lại menu để chạy tiếp.

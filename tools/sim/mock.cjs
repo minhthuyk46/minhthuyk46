@@ -17,6 +17,7 @@ class Sheet {
   getMaxRows() { return this.maxRows; }
   getMaxColumns() { return this.maxCols; }
   insertColumnsAfter(c, n) { this.maxCols += n; }
+  setFrozenRows() { return this; }
   getDataRange() { return new Range(this, 1, 1, Math.max(1, this.getLastRow()), Math.max(1, this.getLastColumn())); }
   appendRow(v) { const r = this.getLastRow() + 1; v.forEach((x, i) => { this.cell(r, i + 1)[i] = x; }); }
 }

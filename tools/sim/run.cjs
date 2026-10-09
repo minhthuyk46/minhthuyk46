@@ -75,7 +75,7 @@ const q11 = (word, opts, da, extra) => Object.assign({ dang: '1-1', nguon: 'SRC_
 env.edit('10_YEU_CAU', 2, cKQ, '“' + 'ok' + '”' + JSON.stringify({ cau_hoi: [q11('お茶', ['コーヒー', 'お茶', '水'], 2), q11('x', ['a', 'a', 'b'], 5)] }));
 let bank = T('20_NGAN_HANG');
 assert.strictEqual(bank.rows.length, 1);
-assert.strictEqual(cell('20_NGAN_HANG', 0, 'Trạng thái'), 'Chờ QC VN');
+assert.strictEqual(cell('20_NGAN_HANG', 0, 'Trạng thái'), 'Chờ duyệt');
 assert(cell('20_NGAN_HANG', 0, 'URL hình').includes('uc?export=view'), 'câu dùng H001 có link hình');
 assert(cell('10_YEU_CAU', 0, 'Lỗi').includes('lựa chọn trùng') && cell('10_YEU_CAU', 0, 'Lỗi').includes('đáp án ngoài'));
 assert.strictEqual(cell('10_YEU_CAU', 0, 'Trạng thái'), 'Chờ tạo');
@@ -102,32 +102,33 @@ assert(g1 && g1 === g2 && g1.startsWith('G-'));
 assert.strictEqual(cell('10_YEU_CAU', 1, 'Trạng thái'), 'Chờ duyệt');
 ok('3-3: 2 câu nhận cùng mã nhóm ' + g1 + ' (câu 2 dùng chung script), phiếu "Chờ duyệt"');
 
-// 8. QC: VN Đạt → Chờ QC JP; JP Cần sửa + nhận xét → Cần sửa + brief sửa
-const cVN = colNum('20_NGAN_HANG', 'QC VN'), cJP = colNum('20_NGAN_HANG', 'QC JP'), cNXJ = colNum('20_NGAN_HANG', 'Nhận xét JP');
-env.edit('20_NGAN_HANG', 2, cVN, 'Đạt');
-assert.strictEqual(cell('20_NGAN_HANG', 0, 'Trạng thái'), 'Chờ QC JP');
-ss.getSheetByName('20_NGAN_HANG').getRange(2, cNXJ).setValue('Nhiễu コーヒー quá dễ loại');
-env.edit('20_NGAN_HANG', 2, cJP, 'Cần sửa');
+// 8. Duyệt 1 người ở 11_DUYET: câu mới tự vào hàng chờ; chọn Đạt → Đạt; Cần sửa + nhận xét → brief sửa
+const D = () => ss.getSheetByName('11_DUYET');
+const dRow = ma => D().getDataRange().getValues().findIndex(r => r[0] === ma) + 1;
+assert(dRow('JQ-0001') > 1 && dRow('JQ-0004') > 1, 'câu mới tự vào 11_DUYET');
+assert.strictEqual(cell('20_NGAN_HANG', 0, 'Trạng thái'), 'Chờ duyệt');
+D().getRange(dRow('JQ-0001'), 8).setValue('Nhiễu コーヒー quá dễ loại');
+env.edit('11_DUYET', dRow('JQ-0001'), 7, 'Cần sửa');
 assert.strictEqual(cell('20_NGAN_HANG', 0, 'Trạng thái'), 'Cần sửa');
 const bs = cell('20_NGAN_HANG', 0, 'Brief sửa');
 assert(bs.includes('PROMPT SỬA') && bs.includes('Nhiễu コーヒー quá dễ loại') && bs.includes('"noi_dung"'));
-ok('QC: VN Đạt → Chờ QC JP; JP Cần sửa + nhận xét → tự soạn "Brief sửa" (kèm câu hiện tại + nhận xét)');
+ok('Duyệt 1 người (tab 11_DUYET): câu mới tự vào hàng chờ; chọn "Cần sửa" + nhận xét → tự soạn "Brief sửa"');
 
-// 9. Dán bản sửa → về Chờ QC VN, v2, xoá QC cũ
+// 9. Dán bản sửa → về Chờ duyệt, v2, ô duyệt được xoá để duyệt lại
 env.edit('20_NGAN_HANG', 2, colNum('20_NGAN_HANG', 'Kết quả sửa'), JSON.stringify({ cau_hoi: [q11('お茶', ['こうちゃ', 'お茶', 'みず'], 2)] }));
-assert.strictEqual(cell('20_NGAN_HANG', 0, 'Trạng thái'), 'Chờ QC VN');
+assert.strictEqual(cell('20_NGAN_HANG', 0, 'Trạng thái'), 'Chờ duyệt');
 assert.strictEqual(cell('20_NGAN_HANG', 0, 'Phiên bản'), 'v2');
 assert.strictEqual(cell('20_NGAN_HANG', 0, 'Lựa chọn 1'), 'こうちゃ');
-assert.strictEqual(cell('20_NGAN_HANG', 0, 'QC JP'), '');
-ok('Bản sửa: ghi đè nội dung, phiên bản v2, xoá QC cũ, về "Chờ QC VN"');
+assert.strictEqual(D().getRange(dRow('JQ-0001'), 7).getValue(), '');
+ok('Bản sửa: ghi đè nội dung, v2, về "Chờ duyệt", ô DUYỆT xoá trống để duyệt lại');
 
-// 10. Duyệt hết → Đạt; phiếu 1-1 Hoàn thành
-[2, 3, 4, 5].forEach(r => { env.edit('20_NGAN_HANG', r, cVN, 'Đạt'); env.edit('20_NGAN_HANG', r, cJP, 'Đạt'); });
+// 10. Duyệt hết → Đạt; phiếu Hoàn thành
+['JQ-0001', 'JQ-0002', 'JQ-0003', 'JQ-0004'].forEach(m => env.edit('11_DUYET', dRow(m), 7, 'Đạt'));
 A.chayTuDong();
 assert(T('20_NGAN_HANG').rows.every(r => r[36] === 'Đạt'));
 assert.strictEqual(cell('10_YEU_CAU', 0, 'Trạng thái'), 'Hoàn thành');
 assert.strictEqual(cell('10_YEU_CAU', 1, 'Trạng thái'), 'Hoàn thành');
-ok('Duyệt 2 bước → 4 câu "Đạt"; 2 phiếu → "Hoàn thành"');
+ok('Chọn "Đạt" ở 11_DUYET → 4 câu "Đạt"; 2 phiếu → "Hoàn thành"');
 
 // 11. Tranh ChatGPT vẽ: thả file JQ-0002.png vào kho_hinh → tự gắn
 env.__mkFile('JQ-0002.png', 'kho_hinh', {});

@@ -16,7 +16,7 @@
 
 const SH = {
   DANG: '03_DANG_BAI', MA_TRAN: '04_MA_TRAN_PHU', LOG: '06_NHAT_KY', KH: '07_KE_HOACH',
-  PROMPT: '08_PROMPT', KHO: '09_KHO_HINH', YC: '10_YEU_CAU', CHU_DE: '14_CHU_DE_THEO_BAI',
+  DUYET: '11_DUYET', PROMPT: '08_PROMPT', KHO: '09_KHO_HINH', YC: '10_YEU_CAU', CHU_DE: '14_CHU_DE_THEO_BAI',
   NGU_LIEU: '15_NGU_LIEU_BO_SUNG', BANK: '20_NGAN_HANG', RAP: '31_RAP_DE', DM: '99_DANH_MUC',
 };
 
@@ -26,7 +26,7 @@ const DEFAULTS = {
 };
 
 const YC_ST = { CHO_TAO: 'Chờ tạo', CHO_SX: 'Chờ sản xuất', CHO_DUYET: 'Chờ duyệt', XONG: 'Hoàn thành', LOI: 'Lỗi' };
-const Q_ST = { VN: 'Chờ QC VN', JP: 'Chờ QC JP', DAT: 'Đạt', SUA: 'Cần sửa', LOAI: 'Loại' };
+const Q_ST = { CHO: 'Chờ duyệt', DAT: 'Đạt', SUA: 'Cần sửa', LOAI: 'Loại' };   // 1 người duyệt duy nhất (tab 11_DUYET)
 const QC_VAL = ['Đạt', 'Cần sửa', 'Loại'];
 
 /** Cột thêm vào cuối các tab cũ (caiDat tự tạo nếu thiếu). */
@@ -208,7 +208,7 @@ function chayTuDong() {
     const yc = table_(SH.YC), bank = table_(SH.BANK);
     yc.rows.forEach((r, i) => { if (!het() && String(r[col_(yc, 'Kết quả ChatGPT')]).trim()) nhanKetQua_(yc, i, bank); });
     bank.rows.forEach((r, i) => { if (!het() && String(r[col_(bank, 'Kết quả sửa')]).trim()) nhanSua_(bank, i); });
-    dongBoQC_(bank);
+    dongBoDuyet_(bank);
     const ctx = ctx_();
     yc.rows.forEach((r, i) => { if (!het() && r[yc.head['Trạng thái']] === YC_ST.CHO_TAO) soanBrief_(yc, i, bank, ctx); });
     bank.rows.forEach((r, i) => {
@@ -224,7 +224,7 @@ function chayTuDong() {
 function xuLyKhiSua(e) {
   if (!e || !e.range) return;
   const name = e.range.getSheet().getName(), r = e.range.getRow();
-  if (r < 2 || (name !== SH.YC && name !== SH.BANK)) return;
+  if (r < 2 || ![SH.YC, SH.BANK, SH.DUYET].includes(name)) return;
   const lock = LockService.getScriptLock();
   if (!lock.tryLock(20000)) return;
   try {
@@ -235,11 +235,12 @@ function xuLyKhiSua(e) {
       return;
     }
     const bank = table_(SH.BANK);
+    if (name === SH.DUYET) {                                       // người duyệt chọn Đạt / Cần sửa / Loại
+      if (c === DUYET_COL.KQ) { const ctx = ctx_(); dongBoDuyet_(bank).forEach(i => soanBriefSua_(bank, i, ctx)); capNhatYC_(table_(SH.YC), bank); }
+      return;
+    }
     if (c === col_(bank, 'Kết quả sửa')) nhanSua_(bank, r - 2);
-    else if (c === col_(bank, 'QC VN') || c === col_(bank, 'QC JP')) {
-      dongBoQC_(bank, r - 2);
-      if (bank.rows[r - 2][col_(bank, 'Trạng thái')] === Q_ST.SUA) soanBriefSua_(bank, r - 2, ctx_());
-    } else if (c === col_(bank, 'Mã asset hình')) ganHinhCau_(bank, r - 2, khoHinh_());
+    else if (c === col_(bank, 'Mã asset hình')) ganHinhCau_(bank, r - 2, khoHinh_());
   } finally {
     lock.releaseLock();
   }
@@ -433,6 +434,7 @@ function nhanKetQua_(yc, i, bank) {
     const row = bankRowFromItem_(bank, it, r, yc, newQ(), group ? gid : '', ctx);
     writeBankRow_(bank, rowNum++, row);
     bank.rows.push(row);
+    choDuyet_(row[col_(bank, 'Mã câu')]);
   });
 
   setCell_(yc, i, 'Kết quả ChatGPT (dán JSON)', '');
@@ -458,7 +460,7 @@ function bankRowFromItem_(bank, it, ycRow, yc, maCau, gid, ctx) {
   set('Nguồn', it.nguon || ycRow[yc.head['Nguồn (file / sheet / hàng)']]);
   set('Người soạn', 'ChatGPT');
   set('Loại nguồn', /NL-\d+/.test(String(it.nguon)) ? 'Bổ sung theo chủ đề' : 'Nguồn sách');
-  set('Trạng thái', Q_ST.VN);
+  set('Trạng thái', Q_ST.CHO);
   set('Phiên bản', 'v1');
   return row;
 }
@@ -494,16 +496,34 @@ function promptVe_(loai, it, P) {
 
 // ───────────────────────── QC & vòng sửa ─────────────────────────
 
-/** Đọc cột QC VN / QC JP → chuyển trạng thái câu. idx = 1 dòng hoặc tất cả. */
-function dongBoQC_(bank, idx) {
-  const cTT = col_(bank, 'Trạng thái'), cVN = col_(bank, 'QC VN'), cJP = col_(bank, 'QC JP');
-  (idx === undefined ? bank.rows.map((_, i) => i) : [idx]).forEach(i => {
-    const r = bank.rows[i];
-    let next = null;
-    if (r[cTT] === Q_ST.VN && QC_VAL.includes(r[cVN])) next = { 'Đạt': Q_ST.JP, 'Cần sửa': Q_ST.SUA, 'Loại': Q_ST.LOAI }[r[cVN]];
-    else if (r[cTT] === Q_ST.JP && QC_VAL.includes(r[cJP])) next = { 'Đạt': Q_ST.DAT, 'Cần sửa': Q_ST.SUA, 'Loại': Q_ST.LOAI }[r[cJP]];
-    if (next) setCell_(bank, i, 'Trạng thái', next);
+/** Tab 11_DUYET: A Mã câu · B–F công thức hiển thị · G DUYỆT (Đạt/Cần sửa/Loại) · H Nhận xét. */
+const DUYET_COL = { MA: 0, KQ: 6, NX: 7 };
+
+/** Đưa câu vào hàng chờ duyệt (thêm dòng mới hoặc xoá kết quả duyệt cũ). */
+function choDuyet_(ma) {
+  const sh = sheet_(SH.DUYET);
+  const v = sh.getRange(1, 1, Math.max(sh.getLastRow(), 1), 1).getValues().map(r => r[0]);
+  const k = v.indexOf(ma);
+  if (k >= 1) sh.getRange(k + 1, DUYET_COL.KQ + 1, 1, 2).setValues([['', '']]);
+  else sh.getRange(lastRowIn_(sh, 1) + 1, 1).setValue(ma);
+}
+
+/** Đọc 11_DUYET → chuyển trạng thái câu "Chờ duyệt". Trả về index các câu vừa sang "Cần sửa". */
+function dongBoDuyet_(bank) {
+  const d = sheet_(SH.DUYET).getDataRange().getValues().slice(1);
+  const kq = {};
+  d.forEach(r => { if (r[DUYET_COL.MA] && QC_VAL.includes(r[DUYET_COL.KQ])) kq[r[DUYET_COL.MA]] = r; });
+  const sua = [];
+  bank.rows.forEach((r, i) => {
+    const x = kq[r[col_(bank, 'Mã câu')]];
+    if (!x || r[col_(bank, 'Trạng thái')] !== Q_ST.CHO) return;
+    const next = { 'Đạt': Q_ST.DAT, 'Cần sửa': Q_ST.SUA, 'Loại': Q_ST.LOAI }[x[DUYET_COL.KQ]];
+    setCell_(bank, i, 'QC VN', x[DUYET_COL.KQ]);
+    setCell_(bank, i, 'Nhận xét VN', x[DUYET_COL.NX]);
+    setCell_(bank, i, 'Trạng thái', next);
+    if (next === Q_ST.SUA) sua.push(i);
   });
+  return sua;
 }
 
 function itemFromRow_(bank, r) {
@@ -525,8 +545,7 @@ function soanBriefSua_(bank, i, ctx) {
     '=== SỬA CÂU ' + r[col_(bank, 'Mã câu')] + ' · ' + r[col_(bank, 'Cấp')] + ' bài ' + r[col_(bank, 'Bài')] + ' · Dạng ' + loai + ' ===',
     'GIỚI HẠN (QD-12): chỉ dùng từ vựng, ngữ pháp từ bài 1 đến bài ' + r[col_(bank, 'Bài')] + ' của ' + r[col_(bank, 'Cấp')] + '.',
     'Tiêu chí duyệt: ' + (spec[17] || ''),
-    'NHẬN XÉT GV VIỆT: ' + (r[col_(bank, 'Nhận xét VN')] || '—'),
-    'NHẬN XÉT GV NHẬT: ' + (r[col_(bank, 'Nhận xét JP')] || '—'),
+    'NHẬN XÉT NGƯỜI DUYỆT: ' + (r[col_(bank, 'Nhận xét VN')] || '—'),
     '', 'CÂU HIỆN TẠI (JSON):', JSON.stringify(itemFromRow_(bank, r), null, 1),
     '', '=== TRẢ VỀ: 1 khối JSON {"cau_hoi":[ {1 câu đã sửa, cùng khoá như trên} ]}, không viết gì thêm ===',
   ].join('\n');
@@ -552,13 +571,14 @@ function nhanSua_(bank, i) {
   const row = r.slice();
   const set = (p, v) => { row[col_(bank, p)] = v === undefined || v === null ? '' : v; };
   fillContent_(set, it, loai, ctx);
-  set('Kết quả sửa', ''); set('Brief sửa', ''); set('QC VN', ''); set('QC JP', ''); set('Loại lỗi', '');
+  set('Kết quả sửa', ''); set('Brief sửa', ''); set('QC VN', ''); set('Loại lỗi', '');
   set('URL audio', '');                                            // script có thể đã đổi → tạo lại audio
-  set('Trạng thái', Q_ST.VN);
+  set('Trạng thái', Q_ST.CHO);
   set('Phiên bản', 'v' + (Number(String(r[col_(bank, 'Phiên bản')]).replace(/\D/g, '')) + 1 || 2));
   writeBankRow_(bank, i + 2, row);
   bank.rows[i] = row;
-  log_('Nhận sửa', ma, 'OK', 'về ' + Q_ST.VN);
+  choDuyet_(ma);
+  log_('Nhận sửa', ma, 'OK', 'về ' + Q_ST.CHO);
 }
 
 /** Phiếu "Chờ duyệt" → "Hoàn thành" khi mọi câu đã Đạt/Loại và đủ số câu Đạt. */
@@ -647,7 +667,7 @@ function taoAudio() {
   for (let i = 0; i < bank.rows.length; i++) {
     if (Date.now() - t0 > TIME_LIMIT_MS) break;
     const r = bank.rows[i];
-    if (![Q_ST.JP, Q_ST.DAT].includes(r[C('Trạng thái')]) || r[C('URL audio')]) continue;
+    if (![Q_ST.CHO, Q_ST.DAT].includes(r[C('Trạng thái')]) || r[C('URL audio')]) continue;
     if (!LISTEN_TYPES.includes(String(r[C('Dạng')]))) continue;
     const g = r[C('Mã nhóm')];
     if (g && done[g]) { setCell_(bank, i, 'URL audio', done[g]); continue; }
@@ -833,11 +853,21 @@ function caiDat() {
   const yc = table_(SH.YC), bank = table_(SH.BANK);
   yc.sh.getRange(2, yc.head['Trạng thái'] + 1, yc.sh.getMaxRows() - 1, 1).setDataValidation(dv(Object.values(YC_ST)));
   bank.sh.getRange(2, col_(bank, 'Trạng thái') + 1, bank.sh.getMaxRows() - 1, 1).setDataValidation(dv(Object.values(Q_ST)));
-  bank.sh.getRange(2, col_(bank, 'QC VN') + 1, bank.sh.getMaxRows() - 1, 1).setDataValidation(dv(QC_VAL));
-  bank.sh.getRange(2, col_(bank, 'QC JP') + 1, bank.sh.getMaxRows() - 1, 1).setDataValidation(dv(QC_VAL));
+  if (!ss.getSheetByName(SH.DUYET)) {
+    const d = ss.insertSheet(SH.DUYET, 0);
+    d.getRange(1, 1, 1, 8).setValues([['Mã câu', 'Đề · Dạng · Bài', 'Câu hỏi (như học viên thấy)', 'Đáp án', 'Giải thích', 'Script audio / Tranh cần vẽ', 'DUYỆT', 'Nhận xét (bắt buộc khi Cần sửa)']]).setFontWeight('bold');
+    const L = "LET(r,MATCH(m,'20_NGAN_HANG'!A:A,0),g,LAMBDA(c,INDEX('20_NGAN_HANG'!A:AR,r,c)),";
+    d.getRange('B2').setFormula('=MAP(A2:A1000,LAMBDA(m,IF(m="",,' + L + 'g(3)&" · "&g(4)&" · "&g(6)&" bài "&g(7)))))');
+    d.getRange('C2').setFormula('=MAP(A2:A1000,LAMBDA(m,IF(m="",,' + L + 'TEXTJOIN(CHAR(10),TRUE,g(11),g(10),IF(g(13)="","","▶ "&g(13)),IF(OR(g(14)="[Tranh]",g(14)="[Audio]"),"",REGEXREPLACE(g(14)&"","^\\[.*\\]\\n","")),g(15),"① "&g(17),"② "&g(18),"③ "&g(19),IF(g(20)="","","④ "&g(20)))))))');
+    d.getRange('D2').setFormula('=MAP(A2:A1000,LAMBDA(m,IF(m="",,' + L + 'g(21)&" → "&g(16+g(21))))))');
+    d.getRange('E2').setFormula('=MAP(A2:A1000,LAMBDA(m,IF(m="",,' + L + 'g(24)))))');
+    d.getRange('F2').setFormula('=MAP(A2:A1000,LAMBDA(m,IF(m="",,' + L + 'TEXTJOIN(CHAR(10),TRUE,g(28),IF(g(25)="","","🖼 "&g(25)))))))');
+    d.getRange(2, 7, 999, 1).setDataValidation(dv(QC_VAL));
+    d.setFrozenRows(1);
+  }
 
   // Chuyển trạng thái cũ (v2) sang bộ trạng thái mới
-  const mapQ = { 'Draft': Q_ST.VN, 'Đang QC VN': Q_ST.VN, 'Đang QC JP': Q_ST.JP, 'Approved': Q_ST.DAT, 'Trả về': Q_ST.SUA };
+  const mapQ = { 'Draft': Q_ST.CHO, 'Đang QC VN': Q_ST.CHO, 'Đang QC JP': Q_ST.CHO, 'Chờ QC VN': Q_ST.CHO, 'Chờ QC JP': Q_ST.CHO, 'Approved': Q_ST.DAT, 'Trả về': Q_ST.SUA };
   const mapYC = { 'Nháp': YC_ST.CHO_TAO, 'Sẵn sàng sinh': YC_ST.CHO_TAO, 'Đã sinh': YC_ST.CHO_DUYET, 'Huỷ': YC_ST.LOI };
   bank.rows.forEach((r, i) => { const v = mapQ[r[col_(bank, 'Trạng thái')]]; if (v) setCell_(bank, i, 'Trạng thái', v); });
   yc.rows.forEach((r, i) => { const v = mapYC[r[yc.head['Trạng thái']]]; if (v) setCell_(yc, i, 'Trạng thái', v); });
