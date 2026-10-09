@@ -139,7 +139,7 @@ const KHUON_JSON = [
   '  "cau_hoi": "…",',
   '  "lua_chon": ["…", "…", "…"],',
   '  "dap_an": 1,',
-  '  "ly_do_nhieu": "…",',
+  '  "ly_do_nhieu": "…; dạng nghe: 3 dòng \\"① mô tả tranh 1\\n② …\\n③ …\\" (ghi rõ tranh nào là nhiễu từ chi tiết nào)",',
   '  "can_cu": "…",',
   '  "giai_thich_vi": "…",',
   '  "ma_hinh": "H012 hoặc \\"\\" (chỉ mã có trong KHO HÌNH bên trên)",',
@@ -858,10 +858,10 @@ function caiDat() {
     d.getRange(1, 1, 1, 8).setValues([['Mã câu', 'Đề · Dạng · Bài', 'Câu hỏi (như học viên thấy)', 'Đáp án', 'Giải thích', 'Script audio / Tranh cần vẽ', 'DUYỆT', 'Nhận xét (bắt buộc khi Cần sửa)']]).setFontWeight('bold');
     const L = "LET(r,MATCH(m,'20_NGAN_HANG'!A:A,0),g,LAMBDA(c,INDEX('20_NGAN_HANG'!A:AR,r,c)),";
     d.getRange('B2').setFormula('=MAP(A2:A1000,LAMBDA(m,IF(m="",,' + L + 'g(3)&" · "&g(4)&" · "&g(6)&" bài "&g(7)))))');
-    d.getRange('C2').setFormula('=MAP(A2:A1000,LAMBDA(m,IF(m="",,' + L + 'TEXTJOIN(CHAR(10),TRUE,g(11),g(10),IF(g(13)="","","▶ "&g(13)),IF(OR(g(14)="[Tranh]",g(14)="[Audio]"),"",REGEXREPLACE(g(14)&"","^\\[.*\\]\\n","")),g(15),"① "&g(17),"② "&g(18),"③ "&g(19),IF(g(20)="","","④ "&g(20)))))))');
-    d.getRange('D2').setFormula('=MAP(A2:A1000,LAMBDA(m,IF(m="",,' + L + 'g(21)&" → "&g(16+g(21))))))');
+    d.getRange('C2').setFormula('=MAP(A2:A1000,LAMBDA(m,IF(m="",,' + L + 'nghe,LEFT(g(4),2)="3-",nd,IF(AND(g(14)="",g(2)<>""),"〔dùng chung với câu (1)〕"&CHAR(10)&INDEX(\'20_NGAN_HANG\'!N:N,MATCH(g(2),\'20_NGAN_HANG\'!B:B,0)),g(14)&""),TEXTJOIN(CHAR(10),TRUE,g(11),g(10),IF(g(13)="","","▶ "&g(13)),IF(OR(nd="[Tranh]",nd="[Audio]",nghe),"",REGEXREPLACE(nd,"\\[[^\\]]*\\]\\n?","")),g(15),IF(nghe,"TRANH LỰA CHỌN:"&CHAR(10)&g(22),TEXTJOIN(CHAR(10),TRUE,"① "&g(17),"② "&g(18),"③ "&g(19),IF(g(20)="","","④ "&g(20))))))))))');
+    d.getRange('D2').setFormula('=MAP(A2:A1000,LAMBDA(m,IF(m="",,' + L + 'IF(LEFT(g(4),2)="3-",INDEX(SPLIT(g(22),CHAR(10)),1,g(21)),g(21)&" → "&g(16+g(21)))))))');
     d.getRange('E2').setFormula('=MAP(A2:A1000,LAMBDA(m,IF(m="",,' + L + 'g(24)))))');
-    d.getRange('F2').setFormula('=MAP(A2:A1000,LAMBDA(m,IF(m="",,' + L + 'TEXTJOIN(CHAR(10),TRUE,g(28),IF(g(25)="","","🖼 "&g(25)))))))');
+    d.getRange('F2').setFormula('=MAP(A2:A1000,LAMBDA(m,IF(m="",,' + L + 's,IF(AND(g(28)="",g(2)<>"",LEFT(g(4),2)="3-"),"〔dùng chung audio câu (1)〕"&CHAR(10)&INDEX(\'20_NGAN_HANG\'!AB:AB,MATCH(g(2),\'20_NGAN_HANG\'!B:B,0)),g(28)),TEXTJOIN(CHAR(10)&"—"&CHAR(10),TRUE,s,IF(g(25)="","","🖼 "&g(25)))))))');
     d.getRange(2, 7, 999, 1).setDataValidation(dv(QC_VAL));
     d.setFrozenRows(1);
   }
