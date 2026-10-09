@@ -390,9 +390,10 @@ function validate_(loai, it, spec, allowedNguon, kho) {
       if (/^\s*N\s*[:：]/m.test(sc)) e.push('QD-13: không dùng người dẫn N');
       const nguoi = new Set(luot.map(l => l.trim()[0]));
       if (loai === '3-1' && (nguoi.size !== 2 || luot.length < 8)) e.push('3-1 cần 2 người, ≥ 8 lượt (QD-13)');
-      if (loai === '3-2' && (nguoi.size !== 2 || luot.length < 8)) e.push('3-2 cần khách–nhân viên, ≥ 8 lượt (QD-13)');
+      if (loai === '3-2' && (nguoi.size !== 2 || luot.length < 6)) e.push('3-2 cần khách–nhân viên, ≥ 6 lượt (QD-13)');
       if (loai === '3-3' && nguoi.size !== 1) e.push('3-3 là độc thoại 1 người (QD-13)');
       if (loai === '3-3' && (sc.match(/[。！？]/g) || []).length < 6) e.push('3-3 cần ≥ 6 câu (QD-13)');
+      if (loai === '3-3' && !/以上/.test(sc) && !/くりかえします|繰り返します/.test(sc)) e.push('3-3 cần câu kết "…以上です" (hoặc "くりかえします" nếu là thông báo) – QD-13');
     }
   }
   if (IMG_TYPES.includes(loai) && !it.ma_hinh && !it.brief_hinh && !it._nhomSau) e.push('thiếu ma_hinh hoặc brief_hinh');

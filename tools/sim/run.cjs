@@ -94,7 +94,7 @@ ok('Lượt 2: brief "1 câu" + câu đã có; câu không có hình sách → t
 
 // 7. Nhóm 3-3: thiếu nguon hợp lệ → bỏ; đúng → 2 câu cùng mã nhóm
 const q33 = (k, extra) => Object.assign({ dang: '3-3', nguon: 'NL-0064', yeu_cau_vi: 'Nghe…', tinh_huong_vi: 'Ở căng tin…', cau_hoi: '(' + k + ') …?', lua_chon: ['1', '2', '3'], dap_an: k, giai_thich_vi: '…', brief_hinh: '3 khung…' }, extra || {});
-env.edit('10_YEU_CAU', 3, cKQ, JSON.stringify({ cau_hoi: [q33(1, { script_audio: 'F：しょくどうから おしらせです。きょうの ひるごはんは さかなです。にくは ありません。のみものは おちゃです。コーヒーは ありません。12時から 1時までです。どうぞ きて ください。' }), q33(2)] }));
+env.edit('10_YEU_CAU', 3, cKQ, JSON.stringify({ cau_hoi: [q33(1, { script_audio: 'F：しょくどうから おしらせです。きょうの ひるごはんは さかなです。にくは ありません。のみものは おちゃです。コーヒーは ありません。12時から 1時までです。どうぞ きて ください。おしらせは 以上です。' }), q33(2)] }));
 bank = T('20_NGAN_HANG');
 assert.strictEqual(bank.rows.length, 4);
 const g1 = cell('20_NGAN_HANG', 2, 'Mã nhóm'), g2 = cell('20_NGAN_HANG', 3, 'Mã nhóm');

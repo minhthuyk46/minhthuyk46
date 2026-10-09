@@ -57,10 +57,10 @@ L = {
    v='① Chạy ra ngoài (nhiễu: "外に 出ないで")\n② Chui xuống gầm bàn, che đầu\n③ Đi thang máy (nhiễu: "エレベーターは 使わないで")',
    gt='"まず 机の 下に 入って、頭を 守って ください".',
    y=SP+'một người phụ trách nam mặc áo công ty, đứng nói. '+P3+'kiểu biểu tượng xám (pictogram) như biển báo: (1) người chạy ra cửa; (2) người chui dưới gầm bàn, tay che đầu; (3) người đứng trong thang máy.',
-   s='M：みなさん、きょうは 地震の ときの 訓練を します。よく 聞いて ください。地震が 起きたら、まず 机の 下に 入って、頭を 守って ください。ゆれて いる あいだは、外に 出ないで ください。ゆれが 止まったら、エレベーターは 使わないで、かいだんで 1階まで おりて ください。そのあと、会社の 前の 公園に 集まって ください。駐車場には 行かないで ください。'),
+   s='M：では、これから 地震の ときに どう するかに ついて お話しします。地震が 起きたら、まず 机の 下に 入って、頭を 守って ください。ゆれて いる あいだは、外に 出ないで ください。ゆれが 止まったら、エレベーターは 使わないで、かいだんで 1階まで おりて ください。そのあと、会社の 前の 公園に 集まって ください。駐車場で ほかの 人を 待ったり しないで、できるだけ 早く 公園に 行って ください。わたしからの 説明は 以上です。'),
  'JQ-0060': dict(th='Bạn sẽ nghe người phụ trách ở công ty giải thích việc cần làm khi có động đất trong buổi diễn tập.\n(1) Khi có động đất, đầu tiên phải làm gì?\n(2) Sau đó tập trung ở đâu?', ch='(2) Sau đó tập trung ở đâu?', da=3,
-   v='① Sảnh tầng 1 trong toà nhà (nhiễu: "1階まで おりて")\n② Bãi đỗ xe (nhiễu: "駐車場には 行かないで")\n③ Công viên trước công ty',
-   gt='"会社の 前の 公園に 集まって ください"; không đến bãi đỗ xe.',
+   v='① Sảnh tầng 1 trong toà nhà (nhiễu: "1階まで おりて")\n② Bãi đỗ xe (nhiễu: "駐車場で ほかの 人を 待ったり しないで")\n③ Công viên trước công ty',
+   gt='"会社の 前の 公園に 集まって ください"; không chờ ở bãi đỗ xe.',
    y=P3+'kiểu biểu tượng xám/màu nhạt: (1) sảnh tầng 1 trong toà nhà; (2) bãi đỗ xe có ô tô; (3) công viên có cây và cầu trượt, phía sau là toà nhà công ty.',
    s=''),
 }
