@@ -1,31 +1,31 @@
-# JFT-Basic Exam Generator — phạm vi いろどり (v2)
+# JFT-Basic Exam Generator — phạm vi いろどり (v3)
 
 Hệ thống tạo câu luyện thi JFT-Basic (đầu ra A2) theo 11 dạng bài, phạm vi いろどり A1 · A2-1 · A2-2 (54 bài).
-Quản lý trên **Google Sheet**, chạy tự động bằng **Apps Script** + **ChatGPT / Claude API**, việc khó làm bằng **Claude Code**.
+Quản lý trên **Google Sheet**, **Apps Script** điều phối, **ChatGPT Plus/Pro** soạn câu và vẽ tranh, **Gemini TTS** (miễn phí) đọc audio, **Claude** viết code và rà chất lượng. Không gọi API trả phí.
 
-## Luồng 9 khâu
+## Luồng (v3 – theo flow "Google Sheet + Apps Script + ChatGPT + Claude", không API trả phí)
 
 | Khâu | Đầu vào → Đầu ra | Công cụ | Ai |
 |---|---|---|---|
-| 0–1. Kế hoạch → phiếu | lập đợt ở `07_KE_HOACH` (Duyệt kế hoạch) → Menu › 0 tự tạo phiếu "Sẵn sàng sinh" cho mọi ô đã tick | Sheet + Apps Script | PTCM |
-| 2. Sinh câu | phiếu → câu **Draft** (prompt kèm mục nguồn của bài + từ đã học làm nhiễu; tối đa N câu/lần ở `07!D2`) | Menu › 1 hoặc ⏱ tự động mỗi giờ (ChatGPT mặc định) | Bot |
-| 3. Tự kiểm tra | Draft → **Đang QC VN** / **Trả về** | Menu › 2 (luật cứng) | Bot |
-| 4. QC VN | cột QC VN = Đạt/Sửa/Loại → Menu › 3 | Sheet | GV Việt |
-| 5. QC JP | cột QC JP = Đạt/Sửa/Loại → Menu › 3 → **Approved** | Sheet | GV Nhật |
-| 6. Sửa trả về | Trả về → Draft | Sheet / Claude Code | Người soạn |
-| 7. Audio + tranh | Script → Google TTS → `URL audio`; Brief → SVG/PNG → `URL hình` | Menu › 4 / Claude Code | Bot + TG |
-| 8. Ráp đề | Mã đề + mã câu ở `31_RAP_DE` | Sheet | PTCM |
-| 9. Xuất LMS | mã đề (DT-01) hoặc bài luyện (A1-05) → `.xlsx` "MULTIPLE CHOICE (Advanced)" | Menu › 5 | Vận hành LMS |
+| 1. Kế hoạch → phiếu | đợt ở `07_KE_HOACH` (Duyệt kế hoạch) → Menu 0 → phiếu **Chờ tạo** | Apps Script | PTCM |
+| 2. Soạn brief | Chờ tạo → **Chờ sản xuất** (prompt `08_PROMPT` + mục nguồn bài + ngữ liệu `15` + kho hình `09` + câu đã có + khuôn JSON) | Apps Script (5 phút/lần) | Bot |
+| 3. Viết câu | đọc ô Brief → dán JSON vào ô Kết quả | ChatGPT Plus/Pro (Agent 6:00 hoặc copy tay) | ChatGPT |
+| 4. Nhận + kiểm tra | JSON hỏng → cột Lỗi; câu đúng → `20_NGAN_HANG` **Chờ QC VN**; thiếu → lượt sau | Apps Script (ngay khi dán) | Bot |
+| 5–6. QC VN / QC JP | Đạt / Cần sửa (+ nhận xét) / Loại → **Đạt** | Sheet | GV Việt, GV Nhật |
+| 7. Vòng sửa | Cần sửa → Brief sửa → ChatGPT dán Kết quả sửa → Chờ QC VN (v+1) | Apps Script + ChatGPT | Bot |
+| 8. Hình + audio | hình Irodori `H001.png` / tranh ChatGPT vẽ `JQ-xxxx.png` → folder kho_hinh → tự gắn; audio Gemini TTS miễn phí | ChatGPT · Gemini | TG + Bot |
+| 9. Xuất LMS | mã đề / bài luyện `A1-05` / mã phiếu → `.xlsx` "MULTIPLE CHOICE (Advanced)" | Apps Script | Vận hành LMS |
 
-Bảng điều phối: sheet `05_LUONG_TU_DONG` (đếm việc đang chờ từng khâu). Nhật ký chạy: `06_NHAT_KY`.
+Hướng dẫn ChatGPT Project, Agent hẹn giờ, làm tay, tranh, audio: [`docs/ChatGPT_Project_JFT.md`](docs/ChatGPT_Project_JFT.md).
+Chạy thử toàn vòng bằng mô phỏng: `node tools/sim/run.cjs` (13 bước).
 
 ## Cài đặt (1 lần, ~10 phút)
 
 1. Mở Google Sheet → **Extensions › Apps Script**.
 2. Xoá nội dung cũ, dán `apps-script/Code.gs`. Project Settings › tick *Show appsscript.json* → dán `apps-script/appsscript.json`.
-3. Project Settings › **Script Properties** → thêm khoá theo bảng ở `05_LUONG_TU_DONG` (A25:D34):
-   `AI_PROVIDER` (openai | claude), `OPENAI_API_KEY` hoặc `CLAUDE_API_KEY`, `GCP_TTS_API_KEY`, `DRIVE_FOLDER_ID`.
-4. Lưu → tải lại Sheet → menu **🎌 JFT** xuất hiện → chạy thử 1 mục → cấp quyền.
+3. Project Settings › **Script Properties**: `DRIVE_FOLDER_ID` (bắt buộc), `GEMINI_API_KEY` (audio, key miễn phí, không bật thanh toán).
+4. Lưu → tải lại Sheet → menu **🎌 JFT › ⚙ Cài đặt** (cấp quyền) → **⏱ Bật chạy tự động**.
+5. Cài ChatGPT Project + Agent 6:00 theo `docs/ChatGPT_Project_JFT.md`.
 
 > Không dán API key vào sheet hay gửi qua chat.
 
@@ -33,7 +33,7 @@ Bảng điều phối: sheet `05_LUONG_TU_DONG` (đếm việc đang chờ từn
 - **QD-12**: luyện bài N chỉ dùng tình huống bài N, từ vựng/ngữ pháp bài 1→N.
 - **QD-01**: nhóm 1 và 2-1 yêu cầu song ngữ (VI trước, JP sau); còn lại chỉ VI.
 - **QD-04/06**: nghe 1 lần; tình huống + câu hỏi VI hiện trên đề; 3 tranh đánh số 1/2/3.
-- Câu do AI sinh **luôn là Draft** — phải qua tự kiểm tra + QC VN + QC JP.
+- Câu do AI viết luôn vào **Chờ QC VN** — chỉ câu **Đạt** (qua QC VN + QC JP) mới được xuất.
 
 ## Giới hạn
 - Apps Script tối đa 6 phút/lần chạy → script tự dừng ở ~4,5–5 phút; bấm lại menu để chạy tiếp.
