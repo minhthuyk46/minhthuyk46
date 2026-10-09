@@ -25,7 +25,8 @@ for i, (d, cap, bai, g, th, nd, ch, lc, da, gt, bh, sc) in enumerate(Q):
     rap.append(['DF-01', i + 1, ids[i], d, 'Đề full', 'Chờ QC JP'])
     lines = [vi] + ([jp] if jp else []) + ([th] if th else [])
     body = '\n'.join(l for l in nd.split('\n') if not l.startswith('[')) or (gtext.get(gid, '') if d in ('4-1', '4-2') else '')
-    if body and d not in LISTEN: lines.append(body)
+    if body and d in ('4-1', '4-2'): lines.append('\n━━━━━━ BÀI ĐỌC ━━━━━━\n' + body + '\n━━━━━━━━━━━━━━━━━━\n')
+    elif body and d not in LISTEN: lines.append(body)
     if ch: lines.append(ch)
     aud = ('AUDIO_' + (gid or ids[i]) + '.wav') if d in LISTEN else ''
     lms.append([aud, '\n'.join(lines), da, gt, (ids[i] + '.png') if img else '', *(lc + [''] * 4)[:4], i + 1, 'JFT|%s|%s-%02d|%s' % (d, cap, bai, ids[i])])
