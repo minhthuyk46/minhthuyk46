@@ -25,5 +25,5 @@ for typ, name, d, sc in ws.iter_rows(min_row=2, values_only=True):
     out = 'exports/audio/' + name
     if os.path.exists(out): continue
     for k in range(3):
-        try: open(out, 'wb').write(wav(tts(sc))); print('OK', name); break
+        try: data = wav(tts(sc)); open(out, 'wb').write(data); print('OK', name); break
         except Exception as e: print('lỗi', name, e); time.sleep(20)
