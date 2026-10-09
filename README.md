@@ -17,7 +17,7 @@ Quản lý trên **Google Sheet**, **Apps Script** điều phối, **ChatGPT Plu
 | 9. Xuất LMS | mã đề / bài luyện `A1-05` / mã phiếu → `.xlsx` "MULTIPLE CHOICE (Advanced)" | Apps Script | Vận hành LMS |
 
 Hướng dẫn ChatGPT Project, Agent hẹn giờ, làm tay, tranh, audio: [`docs/ChatGPT_Project_JFT.md`](docs/ChatGPT_Project_JFT.md).
-Chạy thử toàn vòng bằng mô phỏng: `node tools/sim/run.cjs` (13 bước).
+Chạy thử toàn vòng bằng mô phỏng: `node tools/sim/run.cjs` (14 bước).
 
 ## Cài đặt (1 lần, ~10 phút)
 
@@ -32,7 +32,7 @@ Chạy thử toàn vòng bằng mô phỏng: `node tools/sim/run.cjs` (13 bướ
 ## Luật nội dung chính
 - **QD-12**: luyện bài N chỉ dùng tình huống bài N, từ vựng/ngữ pháp bài 1→N.
 - **QD-01**: nhóm 1 và 2-1 yêu cầu song ngữ (VI trước, JP sau); còn lại chỉ VI.
-- **QD-04/06**: nghe 1 lần; tình huống + câu hỏi VI hiện trên đề; 3 tranh đánh số 1/2/3.
+- **QD-04/06/13**: nghe theo mẫu JFT chính thức (q07–q09): tình huống "Bạn sẽ nghe…" + câu hỏi VI trên đề, tranh người nói, 3 tranh lựa chọn; audio không người dẫn; 3-1/3-2 hội thoại 2 người ≥ 8 lượt, 3-3 độc thoại 1 người; nghe 1 lần.
 - Câu do AI viết luôn vào **Chờ duyệt** (tab `11_DUYET`, 1 người duyệt) — chỉ câu **Đạt** mới được xuất.
 
 ## Giới hạn

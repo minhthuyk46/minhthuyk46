@@ -93,7 +93,7 @@ function makeEnv(data, opts = {}) {
   };
   vm.createContext(ctx);
   vm.runInContext(fs.readFileSync(__dirname + '/../../apps-script/Code.gs', 'utf8') + '\n;this.__api = {' +
-    'caiDat, taoPhieuTuKeHoach, chayTuDong, xuLyKhiSua, taoAudio, xuatLMS_, ganHinh_, table_, col_ };', ctx);
+    'caiDat, taoPhieuTuKeHoach, chayTuDong, xuLyKhiSua, taoAudio, xuatLMS_, ganHinh_, table_, col_, validate_ };', ctx);
   ctx.ss = ss;
   ctx.edit = (sheetName, row, col1, value) => {           // giả lập người/Agent sửa ô rồi trigger onEdit
     const sh = ss.getSheetByName(sheetName);

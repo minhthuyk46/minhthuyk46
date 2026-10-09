@@ -94,7 +94,7 @@ ok('Lượt 2: brief "1 câu" + câu đã có; câu không có hình sách → t
 
 // 7. Nhóm 3-3: thiếu nguon hợp lệ → bỏ; đúng → 2 câu cùng mã nhóm
 const q33 = (k, extra) => Object.assign({ dang: '3-3', nguon: 'NL-0064', yeu_cau_vi: 'Nghe…', tinh_huong_vi: 'Ở căng tin…', cau_hoi: '(' + k + ') …?', lua_chon: ['1', '2', '3'], dap_an: k, giai_thich_vi: '…', brief_hinh: '3 khung…' }, extra || {});
-env.edit('10_YEU_CAU', 3, cKQ, JSON.stringify({ cau_hoi: [q33(1, { script_audio: 'N：しょくどうから おしらせです。\nF：きょうは さかなです。\nM：のみものは おちゃです。' }), q33(2)] }));
+env.edit('10_YEU_CAU', 3, cKQ, JSON.stringify({ cau_hoi: [q33(1, { script_audio: 'F：しょくどうから おしらせです。きょうの ひるごはんは さかなです。にくは ありません。のみものは おちゃです。コーヒーは ありません。12時から 1時までです。どうぞ きて ください。' }), q33(2)] }));
 bank = T('20_NGAN_HANG');
 assert.strictEqual(bank.rows.length, 4);
 const g1 = cell('20_NGAN_HANG', 2, 'Mã nhóm'), g2 = cell('20_NGAN_HANG', 3, 'Mã nhóm');
@@ -136,17 +136,23 @@ A.chayTuDong();
 assert(cell('20_NGAN_HANG', 1, 'URL hình').includes('uc?export=view'));
 ok('Thả "JQ-0002.png" (tranh ChatGPT vẽ) vào folder kho_hinh → tự gắn URL hình cho câu JQ-0002');
 
-// 12. Audio Gemini: 3 đoạn (N riêng, F+M chung) → 1 file WAV dùng chung cho nhóm
+// 12. Audio Gemini: 3-3 độc thoại 1 người → 1 lượt gọi (1 giọng) → 1 file WAV dùng chung cho nhóm
 A.taoAudio();
 const gem = env.__fetches.filter(f => /generativelanguage/.test(f.url)).map(f => JSON.parse(f.o.payload));
-assert.strictEqual(gem.length, 2);
-assert(gem[0].generationConfig.speechConfig.voiceConfig && gem[1].generationConfig.speechConfig.multiSpeakerVoiceConfig);
+assert.strictEqual(gem.length, 1);
+assert(gem[0].generationConfig.speechConfig.voiceConfig);
 const u3 = cell('20_NGAN_HANG', 2, 'URL audio'), u4 = cell('20_NGAN_HANG', 3, 'URL audio');
 assert(u3 && u3 === u4);
 const wav = env.__files.find(f => /\.wav$/.test(f.name)).blob.bytes;
 assert.strictEqual(String.fromCharCode(...wav.slice(0, 4)), 'RIFF');
-assert.strictEqual(wav.length, 44 + 4800 * 2 + 24000 * 2 * 0.8);
-ok('Audio: 2 lượt gọi Gemini (lời dẫn N 1 giọng + hội thoại F/M 2 giọng), ghép + 0,8 s nghỉ → 1 file WAV hợp lệ dùng chung cho nhóm');
+assert.strictEqual(wav.length, 44 + 4800);
+ok('Audio: 3-3 độc thoại 1 người → 1 lượt Gemini (1 giọng) → 1 file WAV hợp lệ dùng chung cho nhóm');
+
+// 12b. QD-13: script có người dẫn N hoặc 3-1 quá ngắn → bị từ chối
+const spec31 = ['3-1', '', '', '', '', 3, 1];
+const bad = A.validate_('3-1', { dang: '3-1', yeu_cau_vi: 'x', cau_hoi: 'x', lua_chon: ['1', '2', '3'], dap_an: 1, giai_thich_vi: 'x', brief_hinh: 'x', script_audio: 'N：会社です。\nF：おはよう。\nM：おはよう。' }, spec31, [], []);
+assert(bad.some(x => /người dẫn N/.test(x)) && bad.some(x => /≥ 8 lượt/.test(x)));
+ok('QD-13: từ chối script có người dẫn N và hội thoại 3-1 dưới 8 lượt');
 
 // 13. Xuất LMS
 const res = A.xuatLMS_('A1-05');

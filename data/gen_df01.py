@@ -1,8 +1,13 @@
-import json, df01
+import json, df01, listen_v2
 from openpyxl import Workbook
 from openpyxl.styles import Alignment, Font
-Q, YC = df01.Q, df01.YC
+Q, YC = list(df01.Q), df01.YC
 ids = ['JQ-%04d' % (25 + i) for i in range(48)]
+for _i, _m in enumerate(ids):              # ghi đè 12 câu nghe theo mẫu JFT chính thức
+    if _m in listen_v2.L:
+        _d = listen_v2.L[_m]; _q = list(Q[_i])
+        _q[4], _q[6], _q[8], _q[9], _q[10], _q[11] = _d['th'], _d['ch'], _d['da'], _d['gt'], _d['y'], _d['s']
+        Q[_i] = tuple(_q)
 gmap = {g: 'G-%04d' % (5 + k) for k, g in enumerate('ABCDEFGH')}
 LISTEN = {'3-1', '3-2', '3-3'}
 bank, rap, lms, media = [], [], [['Audio Url','Content','Correct Answer','Explanation','Image Url','Option 1','Option 2','Option 3','Option 4','STT','Tag']], []
@@ -12,7 +17,7 @@ for i, (d, cap, bai, g, th, nd, ch, lc, da, gt, bh, sc) in enumerate(Q):
     gid = gmap.get(g, '')
     if gid and nd and gid not in gtext: gtext[gid] = '\n'.join(l for l in nd.split('\n') if not l.startswith('['))
     img = (ids[i] if d in LISTEN or d == '1-1' else '')
-    ve = (df01.VE + ('' if d == '1-1' else '') + bh) if bh else ''
+    ve = (df01.VE + bh) if bh else ''
     row = [ids[i], gid, 'DF-01', "'" + d, 'Đề full', cap, bai, '', 'DF-01 (Claude soạn)', jp, vi, '', th, nd, ch, len(lc)] + (lc + [''] * 4)[:4] + \
           [da, '', '', gt, bh, '', '', sc, '', 'Claude', 'Bổ sung theo chủ đề', 'Đạt', 'Claude soát (cần GV duyệt nhanh)', '', '', '', 'Chờ QC JP']
     assert len(row) == 37

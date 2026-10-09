@@ -144,7 +144,7 @@ const KHUON_JSON = [
   '  "giai_thich_vi": "…",',
   '  "ma_hinh": "H012 hoặc \\"\\" (chỉ mã có trong KHO HÌNH bên trên)",',
   '  "brief_hinh": "mô tả tranh cần vẽ nếu không có ma_hinh; 3-x: 3 khung đánh số 1/2/3",',
-  '  "script_audio": "N：…\\nF：…\\nM：… (chỉ dạng nghe)"',
+  '  "script_audio": "F：…\\nM：… (chỉ dạng nghe; KHÔNG có người dẫn N – QD-13; 3-3 chỉ 1 người nói)"',
   '}]}',
 ].join('\n');
 
@@ -383,7 +383,17 @@ function validate_(loai, it, spec, allowedNguon, kho) {
   if (/^(1-2|1-4|2-1|2-2)$/.test(loai) && !/（\s*）|\(\s*\)/.test(nd)) e.push('thiếu chỗ trống （　）');
   if (LISTEN_TYPES.includes(loai)) {
     if (!it.cau_hoi) e.push('nghe thiếu câu hỏi VI');
-    if (!/^\s*[FMN]\s*[:：]/m.test(String(it.script_audio || '')) && !it._nhomSau) e.push('nghe thiếu script_audio (F：/M：/N：)');
+    const sc = String(it.script_audio || '');
+    const luot = sc.split('\n').filter(l => /^\s*[FM]\s*[:：]/.test(l));
+    if (!it._nhomSau) {
+      if (!luot.length) e.push('nghe thiếu script_audio (F：/M：)');
+      if (/^\s*N\s*[:：]/m.test(sc)) e.push('QD-13: không dùng người dẫn N');
+      const nguoi = new Set(luot.map(l => l.trim()[0]));
+      if (loai === '3-1' && (nguoi.size !== 2 || luot.length < 8)) e.push('3-1 cần 2 người, ≥ 8 lượt (QD-13)');
+      if (loai === '3-2' && (nguoi.size !== 2 || luot.length < 8)) e.push('3-2 cần khách–nhân viên, ≥ 8 lượt (QD-13)');
+      if (loai === '3-3' && nguoi.size !== 1) e.push('3-3 là độc thoại 1 người (QD-13)');
+      if (loai === '3-3' && (sc.match(/[。！？]/g) || []).length < 6) e.push('3-3 cần ≥ 6 câu (QD-13)');
+    }
   }
   if (IMG_TYPES.includes(loai) && !it.ma_hinh && !it.brief_hinh && !it._nhomSau) e.push('thiếu ma_hinh hoặc brief_hinh');
   if (it.ma_hinh && !kho.some(h => h.ma === it.ma_hinh)) e.push('ma_hinh ' + it.ma_hinh + ' không có trong kho');
