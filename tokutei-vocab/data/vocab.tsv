@@ -1,0 +1,347 @@
+STT	TU	DOC	NGHIA	BAI
+1	食品衛生	しょくひんえいせい	vệ sinh thực phẩm	Bài 1
+2	命、生命	いのち、せいめい	sinh mệnh	Bài 1
+3	食品製造	しょくひんせいぞう	chế tạo thực phẩm	Bài 1
+4	信用	しんよう	lòng tin, sự tin tưởng	Bài 1
+5	労働安全	ろうどうあんぜん	an toàn lao động	Bài 1
+6	工場	こうじょう	công xưởng	Bài 1
+7	起きる	おきる	gây ra, xảy ra	Bài 1
+8	作業場	さぎょうじょう	nơi làm việc	Bài 1
+9	作業服	さぎょうふく	quần áo đồng phục	Bài 1
+10	ヘルメット		nón bảo hộ	Bài 1
+11	保護具	ほごぐ	đồ bảo hộ	Bài 1
+12	着用	ちゃくよう	mặc, đeo	Bài 1
+13	ルール		nội quy, quy định	Bài 1
+14	器具	きぐ	dụng cụ	Bài 1
+15	作業手順書	さぎょうてじゅんしょ	bản quy trình công việc	Bài 1
+16	作業者	さぎょうしゃ	người làm việc	Bài 1
+17	手袋	てぶくろ	găng tay	Bài 2
+18	清潔	せいけつ	sạch sẽ	Bài 2
+19	設備	せつび	thiết bị	Bài 2
+20	機械	きかい	máy móc	Bài 2
+21	保管	ほかん	bảo quản	Bài 2
+22	共通	きょうつう	thông thường, điểm chung giống nhau	Bài 2
+23	種類	しゅるい	loại	Bài 2
+24	特徴	とくちょう	đặc trưng	Bài 2
+25	応じる	おうじる	ứng với	Bài 2
+26	重要	じゅうよう	quan trọng	Bài 2
+27	工程	こうてい	công đoạn	Bài 2
+28	重要管理点	じゅうようかんりてん	điểm quản lý quan trọng	Bài 2
+29	HACCPプラン		kế hoạch HACCP	Bài 2
+30	組み合わせる	くみあわせる	kết hợp, tổ hợp	Bài 2
+31	危害要因分析	きがいよういんぶんせき	phân tích nguyên nhân gây hại	Bài 2
+32	含む	ふくむ	bao gồm, chứa	Bài 2
+33	物理的	ぶつりてき	tính vật lý	Bài 3
+34	化学的	かがくてき	tính hóa học	Bài 3
+35	生物的	せいぶつてき	tính sinh học	Bài 3
+36	気を付ける	きをつける	chú ý	Bài 3
+37	硬い	かたい	cứng	Bài 3
+38	歯が欠ける	はがかける	sứt, mẻ răng	Bài 3
+39	尖る	とがる	nhọn, sắc	Bài 3
+40	金属片	きんぞくへん	mảnh kim loại	Bài 3
+41	ガラス片		mảnh kính, thủy tinh	Bài 3
+42	プラスチック片		mảnh nhựa cứng	Bài 3
+43	石	いし	đá	Bài 3
+44	取り除く	とりのぞく	lấy bỏ	Bài 3
+45	異物	いぶつ	dị vật	Bài 3
+46	卵の殻	たまごのから	vỏ trứng	Bài 3
+47	硬質異物	こうしついぶつ	dị vật cứng	Bài 3
+48	混入	こんにゅう	lẫn	Bài 3
+49	防止	ぼうし	phòng chống	Bài 3
+50	土	つち	đất	Bài 3
+51	洗浄	せんじょう	rửa	Bài 3
+52	選別	せんべつ	chọn, phân loại	Bài 3
+53	下処理	したしょり	sơ chế	Bài 3
+54	根	ね	gốc, rễ	Bài 3
+55	魚のエラ	さかなのえら	mang cá	Bài 3
+56	骨	ほね	xương	Bài 3
+57	調理	ちょうり	nấu ăn, chế biến	Bài 3
+58	蓋をする	ふたをする	đậy nắp	Bài 3
+59	虫	むし	côn trùng, sâu	Bài 3
+60	髪の毛	かみのけ	tóc	Bài 3
+61	紙片	しへん	mảnh giấy	Bài 3
+62	苦情、クレーム	くじょう	than phiền, khiếu nại	Bài 3
+63	返品	へんぴん	trả hàng	Bài 3
+64	発見	はっけん	phát hiện	Bài 3
+65	落とす	おとす	đánh rơi, làm mất	Bài 3
+66	アレルギー物質		vật chất dị ứng	Bài 4
+67	芽	め	mầm	Bài 4
+68	殺菌剤	さっきんざい	chất sát khuẩn	Bài 4
+69	薬剤	やくざい	dược liệu	Bài 4
+70	反応	はんのう	phản ứng	Bài 4
+71	過剰	かじょう	dư thừa	Bài 4
+72	かゆみ		ngứa	Bài 4
+73	蕁麻疹	じんましん	phát ban, nổi mẩn	Bài 4
+74	唇や瞼の腫れ	くちびるやまぶたのはれ	sưng mí mắt, môi	Bài 4
+75	鼻水	はなみず	nước mũi	Bài 4
+76	くしゃみ		hắt hơi	Bài 4
+77	吐き気	はきけ	buồn nôn	Bài 4
+78	法律	ほうりつ	pháp luật	Bài 4
+79	表示	ひょうじ	hiển thị	Bài 4
+80	特定原材料	とくていげんざいりょう	nguyên liệu đặc định	Bài 4
+81	推奨	すいしょう	tiến cử, khuyến khích	Bài 4
+82	準ずる	じゅんずる	tương ứng, tương tự	Bài 4
+83	まな板	まないた	thớt	Bài 4
+84	包丁	ほうちょう	dao	Bài 4
+85	洗浄剤	せんじょうざい	chất tẩy rửa	Bài 4
+86	残る	のこる	còn lại	Bài 4
+87	洗い流す	あらいながす	rửa trôi	Bài 4
+88	獲る	とる	bắt	Bài 4
+89	冷蔵	れいぞう	làm lạnh	Bài 4
+90	冷凍	れいとう	làm đông	Bài 4
+91	条件	じょうけん	điều kiện	Bài 4
+92	保存	ほぞん	bảo tồn, bảo quản	Bài 4
+93	赤身魚	あかみさかな	cá có thịt đỏ	Bài 4
+94	嘔吐	おうと	ói, nôn	Bài 4
+95	下痢	げり	tiêu chảy	Bài 4
+96	腹痛	ふくつう	đau bụng	Bài 4
+97	頭痛	ずつう	đau đầu	Bài 4
+98	寄生虫	きせいちゅう	ký sinh trùng	Bài 5
+99	カビ		nấm mốc	Bài 5
+100	細菌	さいきん	vi khuẩn	Bài 5
+101	ウィルス		vi rút	Bài 5
+102	病原性微生物	びょうげんせいびせいぶつ	vi sinh vật mang tính nguồn bệnh	Bài 5
+103	顕微鏡	けんびきょう	kính hiển vi	Bài 5
+104	生き物	いきもの	sinh vật sống	Bài 5
+105	発症	はっしょう	phát triệu chứng	Bài 5
+106	食肉	しょくにく	thịt	Bài 5
+107	腹痛	ふくつう	đau bụng	Bài 5
+108	発熱	はつねつ	sốt	Bài 5
+109	毒素	どくそ	độc tố	Bài 5
+110	魚介類	ぎょかいるい	hải sản	Bài 5
+111	激しい下痢	はげしいげり	tiêu chảy cấp	Bài 5
+112	井戸水	いどみず	nước giếng	Bài 5
+113	血便	けつべん	đi ngoài ra máu	Bài 5
+114	皮膚	ひふ	da	Bài 5
+115	芽胞	がほ	bào tử	Bài 5
+116	呼吸困難	こきゅうこんなん	khó thở	Bài 5
+117	つけない		không bám dính	Bài 5
+118	増やさない	ふやさない	không gia tăng	Bài 5
+119	遣っ付ける、殺す	やっつける、ころす	tiêu diệt, giết	Bài 5
+120	水分	すいぶん	nước	Bài 5
+121	栄養	えいよう	dinh dưỡng	Bài 5
+122	湿度	しつど	độ ẩm	Bài 5
+123	環境	かんきょう	môi trường	Bài 5
+124	好む	このむ	thích	Bài 5
+125	冷やす	ひやす	làm mát	Bài 5
+126	牡蠣	かき	con hàu	Bài 5
+127	汚染	おせん	ô nhiễm	Bài 5
+128	大便	だいべん	đại tiện	Bài 5
+129	吐いたもの	はいたもの	chất nôn	Bài 5
+130	加熱	かねつ	gia nhiệt	Bài 5
+131	中心温度	ちゅうしんおんど	nhiệt độ trung tâm	Bài 5
+132	消毒	しょうどく	khử trùng	Bài 5
+133	濃度	のうど	nồng độ	Bài 5
+134	持ち込まない	もちこまない	không mang vào	Bài 5
+135	広げない	ひろげない	không lan rộng	Bài 5
+136	生える	はえる	mọc	Bài 5
+137	整理	せいり	sàng lọc	Bài 6
+138	整頓	せいとん	sắp xếp	Bài 6
+139	清掃	せいそう	vệ sinh	Bài 6
+140	清潔	せいけつ	sạch sẽ	Bài 6
+141	習慣づけ、しつけ	しゅうかんづけ	sẵn sàng	Bài 6
+142	取り出す	とりだす	lấy ra	Bài 6
+143	置く	おく	đặt, để	Bài 6
+144	順序	じゅんじょ	thứ tự, trình tự	Bài 6
+145	数量	すうりょう	số lượng	Bài 6
+146	磨く	みがく	đánh, chà	Bài 6
+147	拭く	ふく	lau	Bài 6
+148	実行	じっこう	thực hiện	Bài 6
+149	役立つ	やくだつ	hữu ích	Bài 6
+150	触れる	ふれる	sờ, chạm	Bài 6
+151	交差汚染	こうさおせん	ô nhiễm chéo	Bài 6
+152	清潔作業区域	せいけつさぎょうくいき	khu vực sạch	Bài 7
+153	準清潔作業区域	じゅんせいけつさぎょうくいき	khu vực bán sạch	Bài 7
+154	汚染作業区域	おせんさぎょうくいき	khu vực ô nhiễm	Bài 7
+155	惣菜製造業	そうざいせいぞうぎょう	ngành chế tạo đồ ăn sẵn	Bài 7
+156	盛り付け	もりつけ	bày trí	Bài 7
+157	包装	ほうそう	đóng gói	Bài 7
+158	出荷	しゅっか	giao hàng	Bài 7
+159	段ボール箱	だんぼーるばこ	hộp carton	Bài 7
+160	取り扱う	とりあつかう	xử lý	Bài 7
+161	排水溝	はいすいこう	cống thoát nước	Bài 7
+162	ミキサー		máy trộn	Bài 7
+163	スライサー、フードカッター		máy cắt	Bài 7
+164	分解	ぶんかい	phân giải	Bài 7
+165	目立つ	めだつ	nổi bật	Bài 7
+166	直接	ちょくせつ	trực tiếp	Bài 7
+167	たわし		búi cọ bằng kim loại	Bài 7
+168	スポンジ		miếng bọt rửa	Bài 7
+169	モップ		cây lau sàn	Bài 7
+170	雑巾	ぞうきん	rẻ lau	Bài 7
+171	水切りワイパー	みずきりワイパー	cần gạt nước	Bài 7
+172	デッキブラシ		chổi cọ sàn	Bài 7
+173	健康チェック	けんこうチェック	kiểm tra sức khỏe	Bài 8
+174	報告	ほうこく	báo cáo	Bài 8
+175	健康診断	けんこうしんだん	kiểm tra sức khỏe	Bài 8
+176	検便	けんべん	kiểm tra phân	Bài 8
+177	指輪	ゆびわ	nhẫn	Bài 8
+178	腕時計	うでどけい	đồng hồ đeo tay	Bài 8
+179	腕輪	うでわ	vòng tay	Bài 8
+180	アクセサリー		đồ nữ trang	Bài 8
+181	ヘアピン		kẹp tóc	Bài 8
+182	鏡	かがみ	gương	Bài 8
+183	ブラッシング		chải tóc	Bài 8
+184	頭髪	とうはつ	đầu tóc	Bài 8
+185	ヘアネット		mũ lưới	Bài 8
+186	帽子	ぼうし	mũ	Bài 8
+187	ボタン		cúc	Bài 8
+188	ジッパー		khóa	Bài 8
+189	脱ぐ	ぬぐ	cởi	Bài 8
+190	袖をまくる	そで	xắn ống tay áo	Bài 8
+191	粘着ローラー	ねんちゃく	con lăn bụi	Bài 8
+192	エアシャワー		phòng thổi khí	Bài 8
+193	誇り	ほこり	bụi	Bài 8
+194	履物	はきもの	đồ đi, dép đi	Bài 8
+195	履き替える	はきかえる	thay dép đi	Bài 8
+196	裾	すそ	vạt áo	Bài 8
+197	絞る	しぼる	bó	Bài 8
+198	襟	えり	cổ áo	Bài 8
+199	付着	ふちゃく	dính, bám	Bài 8
+200	縦襟	たてえり	cổ áo dọc	Bài 8
+201	上着	うわぎ	áo khoác ngoài	Bài 8
+202	エプロン		tạp dề	Bài 8
+203	腕カバー		bao tay cánh tay	Bài 8
+204	隙間	すきま	khe hở	Bài 8
+205	束ねる	たばねる	buộc bó	Bài 8
+206	移動	いどう	di chuyển	Bài 8
+207	流水	りゅうすい	nước chảy	Bài 8
+208	石鹸	せっけん	xà phòng	Bài 8
+209	使い捨てペーパー	つかいすて	giấy dùng 1 lần	Bài 8
+210	エアタオル		máy sấy tay	Bài 8
+211	乾かす	かわかす	làm khô	Bài 8
+212	吹付る	ふきつける	xịt	Bài 8
+213	刷り込む	すりこむ	xoa, chà sát	Bài 8
+214	交換	こうかん	đổi mới	Bài 8
+215	徹底	てってい	triệt để	Bài 8
+216	たん		đờm	Bài 8
+217	唾	つば	nước bọt	Bài 8
+218	鼻をかむ	はなをかむ	xỉ mũi	Bài 8
+219	ホチキス		bấm ghim	Bài 8
+220	クリップ		kẹp giấy	Bài 8
+221	芯	しん	ruột, lõi	Bài 8
+222	影響	えいきょう	ảnh hưởng	Bài 8
+223	香水	こうすい	nước hoa	Bài 8
+224	倉庫	そうこ	nhà kho	Bài 8
+225	照らし合わせる	てらしあわせる	đối chiếu cho khớp	Bài 9
+226	規格	きかく	quy cách	Bài 9
+227	包装状態	ほうそうじょうたい	tình trạng đóng gói	Bài 9
+228	期限	きげん	hạn	Bài 9
+229	腐敗する	ふはいする	thối, hỏng	Bài 9
+230	異なる	ことなる	khác	Bài 9
+231	濃縮乳	のうしゅくにゅう	sữa đặc	Bài 9
+232	脱脂乳	だつしにゅう	sữa tách béo	Bài 9
+233	詰め込む	つめこむ	cho vào, xếp vào	Bài 9
+234	冷気	れいき	khí lạnh	Bài 9
+235	節電	せつでん	tiết kiệm điện	Bài 9
+236	容器	ようき	dụng cụ chứa	Bài 9
+237	賞味期限	しょうみきげん	hạn ăn ngon	Bài 9
+238	消費期限	しょうひきげん	hạn sử dụng	Bài 9
+239	未開封	みかいふう	chưa mở bao bì	Bài 9
+240	納品	のうひん	nhập hàng	Bài 9
+241	先入れ先出し	さきいいれさきだし	nhập trước xuất trước	Bài 9
+242	クラフト紙		giấy kraft, giấy xi măng	Bài 9
+243	バスケット		giỏ	Bài 9
+244	切れ端	きれはし	đầu cắt	Bài 9
+245	解凍	かいとう	cấp đông	Bài 9
+246	加温	かおん	gia nhiệt	Bài 9
+247	自然解凍	しぜんかいとう	giã đông tự nhiên	Bài 9
+248	冷蔵庫解凍	れいぞうこかいとう	giã đông bằng tủ lạnh	Bài 9
+249	流水解凍	りゅうすいかいとう	giã đông bằng nước chảy	Bài 9
+250	汁、ドリップ	しる	nước chảy ra từ thực phẩm	Bài 9
+251	トレー		khay	Bài 9
+252	網目トレー	あみめトレー	khay lưới	Bài 9
+253	ラック		kệ, giá	Bài 9
+254	密閉	みっぺい	kín hơi, kín gió	Bài 9
+255	穴	あな	lỗ hổng	Bài 9
+256	破れる	やぶれる	rách	Bài 9
+257	移し替える	うつしかえる	trút, đổ	Bài 9
+258	硬いペースト状		dạng bột nhão cứng	Bài 9
+259	劣化	れっか	giảm	Bài 9
+260	魚介藻類	ぎょうかいそうるい	hải sản, tảo	Bài 9
+261	食塩水	しょくえんすい	nước muối	Bài 9
+262	裁断	さいだん	phán xét, đánh giá	Bài 9
+263	魚の鱗	さかなのうろこ	vảy cá	Bài 9
+264	ヒレ		vây	Bài 9
+265	廃棄	はいき	vứt bỏ	Bài 9
+266	ⅹ線異物検出器	xせんいぶつけんしゅつき	dò dị vật tia X	Bài 9
+267	細断	さいだん	cắt nhỏ	Bài 10
+268	混合	こんごう	hỗn hợp, pha trộn	Bài 10
+269	配管	はいかん	đường ống	Bài 10
+270	消化	しょうか	tiêu hóa	Bài 10
+271	加熱殺菌	かねつさっきん	sát khuẩn gia nhiệt	Bài 10
+272	風冷	ふうれい	gió lạnh	Bài 10
+273	冷水	れいすい	nước lạnh	Bài 10
+274	処理	しょり	xử lý	Bài 10
+275	生鮮食品	せいせんしょくひん	thực phẩm tươi	Bài 10
+276	凍る	こおる	làm đông	Bài 10
+277	凍結	とうけつ	cấp đông	Bài 10
+278	弾力	だんりょく	lực đàn hồi	Bài 10
+279	食感	しょっかん	cảm giác ăn	Bài 10
+280	風味	ふうみ	hương vị	Bài 10
+281	短時間	たんじかん	thời gian ngắn	Bài 10
+282	急速	きゅうそく	cấp tốc	Bài 10
+283	充填	じゅうてん	chiết, rót cho sản phẩm vào bao chứa	Bài 10
+284	ボトル		chai nhựa	Bài 10
+285	キャップ		nắp chai	Bài 10
+286	印字	いんじ	chữ in	Bài 10
+287	金属探知機	きんぞくたんちき	máy dò kim loại	Bài 10
+288	テストピース		máy kiểm tra	Bài 10
+289	数量不足	すうりょうふそく	không đủ số lượng	Bài 10
+290	形状不良品	けいじょうふりょうひん	sản phẩm hình dạng không tốt	Bài 10
+291	大腸菌群	だいちょうきんぐん	khuẩn coliform	Bài 10
+292	サンプル		hàng mẫu	Bài 10
+293	運用	うんよう	vận dụng	Bài 11
+294	判断	はんだん	phán đoán	Bài 11
+295	監視、モニタリング	かんし	theo dõi, giám sát	Bài 11
+296	改善装置	かいぜんそうち	thiết bị cải thiện	Bài 11
+297	逸脱	いつだつ	sai lệch	Bài 11
+298	検証方法	けんしょうほうほう	phương pháp kiểm chứng	Bài 11
+299	除去	じょきょ	loại trừ, loại bỏ	Bài 11
+300	低減	ていげん	giảm thấp	Bài 11
+301	有効	ゆうこう	hiệu quả	Bài 11
+302	記録	きろく	ghi chép	Bài 11
+303	惣菜	そうざい	đồ ăn sẵn	Bài 11
+304	ゾーン		vùng, khu vực	Bài 11
+305	未熟練作業者	みじゅくれんさぎょうしゃ	người ít kinh nghiệm làm việc	Bài 12
+306	死傷者	ししょうしゃ	người chết và bị thương	Bài 12
+307	占める	しめる	chiếm	Bài 12
+308	滑る	すべる	trơn trượt	Bài 12
+309	躓く	つまずく	vấp	Bài 12
+310	脚立	きゃたつ	thang chữ A	Bài 12
+311	足を捻挫する	あしをねんざする	bong gân chân	Bài 12
+312	繰り返し	くりかえし	lặp đi lặp lại	Bài 12
+313	熱中症	ねっちゅうしょう	sốc nhiệt	Bài 12
+314	体温調節	たいおんちょうせつ	điều tiết nhiệt độ cơ thể	Bài 12
+315	激突	げきとつ	va chạm, đâm	Bài 12
+316	フォークリフト		xe nâng	Bài 12
+317	感染症	かんせんしょう	bệnh truyền nhiễm	Bài 13
+318	高所作業	こうしょさぎょう	làm việc trên cao	Bài 13
+319	微粉	びふん	bột mịn	Bài 13
+320	騒音	そうおん	tiếng ồn	Bài 13
+321	難聴	なんちょう	khó nghe, lãng tai	Bài 13
+322	耐熱の布	たいねつのぬの	vải chịu nhiệt	Bài 13
+323	耐切創手袋	たいせっそうてぶくろ	găng tay chống cắt	Bài 13
+324	横断方法	おうだんほうほう	phương pháp phân luồng lối đi	Bài 13
+325	安全標識	あんぜんひょうしき	biển báo an toàn	Bài 13
+326	振動	しんどう	rung lắc	Bài 13
+327	非常停止ボタン	ひじょうていしぼたん	nút dừng khẩn cấp	Bài 13
+328	緊急停止ボタン	きんきゅうていしぼたん	nút dừng khẩn cấp	Bài 14
+329	フェールセーフ		cơ chế an toàn tự động	Bài 13
+330	安全装置	あんぜんそうち	thiết bị an toàn	Bài 13
+331	安全カーバ	あんぜんかーば	tấm chắn an toàn	Bài 13
+332	フールプルーフ		thiết kế chống thao tác sai	Bài 13
+333	パネル		bảng, biển	Bài 13
+334	ぶら下げる		treo lên	Bài 13
+335	メンテナンス		bảo dưỡng	Bài 13
+336	塩素系の洗剤	えんそけいのせんざい	chất tẩy rửa clo	Bài 13
+337	酸性洗剤	さんせいせんざい	chất tẩy rửa axit	Bài 13
+338	避難	ひなん	lánh nạn	Bài 14
+339	ヒヤリハット		mối cận nguy	Bài 15
+340	危険予知訓練	きけんよちくんれん	huấn luyện dự báo nguy hiểm	Bài 15
+341	開き止め金具	ひらきどめかなぐ	khóa chốt đóng mở	Bài 15
+342	鉄板	てっぱん	tấm sắt	Bài 15
+343	素手	すで	tay trần, tay không	Bài 15
+344	運ぶ	はこぶ	vận chuyển	Bài 15
+345	隙間	すきま	khe hở	Bài 8
+346	排水溝	はいすいこう	cống thoát nước	Bài 7
