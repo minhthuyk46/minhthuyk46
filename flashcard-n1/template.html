@@ -165,7 +165,13 @@ const esc=s=>s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&qu
 const br=s=>esc(s.trim()).replace(/\n/g,"<br>");
 const isVi=l=>/[a-zA-ZÀ-ỹ]{3,}/.test(l)&&/[ăâđêôơưáàảãạéèẻẽẹíìỉĩịóòỏõọúùủũụýỳỷỹỵ]/i.test(l)&&!/[぀-ヿ]/.test(l.slice(0,4));
 const firstLine=s=>s.split("\n")[0].trim();
-function exHTML(s){return s.split("\n").filter(l=>l.trim()).map(l=>`<div class="${isVi(l)?"vi":"ja"}">${esc(l.trim())}</div>`).join("")}
+// Bản dịch bổ sung cho câu ví dụ chưa có dịch (translations.json), gắn theo thứ tự dòng tiếng Nhật
+const TR=/*TR*/;
+function exHTML(s,stt){const L=s.split("\n").map(l=>l.trim()).filter(Boolean),tr=(TR[stt]||[]).slice();
+  return L.map((l,i)=>{if(isVi(l))return `<div class="vi">${esc(l)}</div>`;
+    let h=`<div class="ja">${esc(l)}</div>`;
+    if(!/^【.*】$/.test(l)&&!(L[i+1]&&isVi(L[i+1]))&&tr.length)h+=`<div class="vi">${esc(tr.shift())}</div>`;
+    return h}).join("")}
 function jaText(s){return s.split("\n").filter(l=>l.trim()&&!isVi(l)).join("。")}
 
 function renderGroups(){
@@ -200,7 +206,7 @@ function render(){
   $("bPat").innerHTML=br(it.pat);
   $("bMean").innerHTML=br(it.mean);
   $("bUseBox").hidden=!it.form.trim();$("bUse").innerHTML=br(it.form);
-  $("bEx").innerHTML=exHTML(it.ex);
+  $("bEx").innerHTML=exHTML(it.ex,it.stt);
   $("bNoteBox").hidden=!it.note.trim();$("bNote").innerHTML=br(it.note);
   document.querySelectorAll('[data-act="ok"]').forEach(b=>{b.setAttribute("aria-pressed",done);b.textContent=done?"✓ Đã thuộc":"✓ Đánh dấu đã thuộc"});
 }
