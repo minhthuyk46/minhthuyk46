@@ -92,6 +92,12 @@ button:focus-visible,input:focus-visible,.card:focus-visible{outline:2px solid v
 .empty{text-align:center;color:var(--muted);padding:60px 0}
 @media (max-width:560px){.stage{gap:0}.nav{display:none}.card{height:500px}.front .pattern{font-size:26px}}
 @media (prefers-reduced-motion:reduce){.inner{transition:none}}
+/* Safari iOS: ẩn hẳn mặt đang úp để vòng 文 không hiện xuyên sang mặt sau */
+.front{visibility:visible;transition:visibility 0s .25s}
+.card.flipped .front{visibility:hidden}
+.back{visibility:hidden;transition:visibility 0s .25s}
+.card.flipped .back{visibility:visible}
+@media (prefers-reduced-motion:reduce){.front,.back{transition:none}}
 </style>
 
 <div class="wrap">
