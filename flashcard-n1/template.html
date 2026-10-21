@@ -97,7 +97,7 @@ button:focus-visible,input:focus-visible,.card:focus-visible{outline:2px solid v
 <div class="wrap">
   <header>
     <h1>N1 - Sổ tay ngữ pháp</h1>
-    <p class="sub">157 mẫu ngữ pháp N1 từ sheet N1文法, chia theo nhóm chức năng. Bấm vào thẻ để lật.</p>
+    <p class="sub"><span id="nAll"></span> mẫu ngữ pháp N1 từ sheet N1文法, lọc theo cột Phân loại. Bấm vào thẻ để lật.</p>
   </header>
   <div class="stats">
     <span class="stat"><span class="dot" style="background:var(--indigo)"></span><b id="sTotal">0</b> Mẫu</span>
@@ -145,25 +145,9 @@ button:focus-visible,input:focus-visible,.card:focus-visible{outline:2px solid v
 
 <script>
 const RAW=/*DATA*/;
-// Nhóm chức năng (đề xuất) — sửa số STT ở đây để đổi nhóm
-const GROUPS=[
- ["Thời điểm & trình tự",["1","2","3","4","5","111","113","136","139","151"]],
- ["Bối cảnh, mốc & phạm vi",["6","7","8","9","10","99","100","101","125","114"]],
- ["Mức độ & giới hạn",["11","12","13","14","15","16","69","70","72","75","76","77","78","80","123","156"]],
- ["Liệt kê & lựa chọn",["17","18","19","20","143"]],
- ["Tuỳ thuộc & bất chấp",["21","22","23","24","25","131","137"]],
- ["Trạng thái & dáng vẻ",["26","27","28","29","30","74","154","119","118"]],
- ["Kết hợp hành động",["31","32","33","115"]],
- ["Nghịch tiếp & nhượng bộ",["35","36","37","38","44","45","46","47","48","68","116","147","149"]],
- ["Giả định & điều kiện",["39","40","41","42","43","64","83","98","121","124","138","144"]],
- ["Mục đích & phương tiện",["49","50","51","103","104","110","141"]],
- ["Nguyên nhân & lý do",["52","53","54","55","56","129","142","146","150","153"]],
- ["Phủ định & khả năng",["57","58","59","60","61","62","81","84","94","95","97","122","126","128","132","133","134","135","148","157"]],
- ["Cảm xúc & nhấn mạnh",["85","88","89","90","91","92","96","105","112","127","145"]],
- ["Đánh giá & nhận định",["34","63","65","66","67","71","73","79","82","86","87+93","93","102","106","107","108","109","117","120","130","140","152","155"]]
-];
-const G={};GROUPS.forEach(([n,ids])=>ids.forEach(i=>G[i]=n));
-const ITEMS=RAW.map(r=>({stt:r[0],pat:r[1],form:r[2],mean:r[3],ex:r[4],note:r[5],grp:G[r[0]]||"Khác"}));
+// Nhóm lấy từ cột "Phân loại" trong sheet
+const ITEMS=RAW.map(r=>({stt:r[0],grp:(r[1]||"Khác").trim(),pat:r[2]||"",form:r[3]||"",mean:r[4]||"",ex:r[5]||"",note:r[6]||""}));
+const GNAMES=[...new Set(ITEMS.map(i=>i.grp))].sort((a,b)=>a.localeCompare(b,"vi"));
 const KEY="n1-bunpou-ok";
 let ok=new Set();try{ok=new Set(JSON.parse(localStorage.getItem(KEY)||"[]"))}catch(e){}
 const save=()=>{try{localStorage.setItem(KEY,JSON.stringify([...ok]))}catch(e){}};
@@ -178,7 +162,7 @@ function jaText(s){return s.split("\n").filter(l=>l.trim()&&!isVi(l)).join("。"
 
 function renderGroups(){
   const cnt={};ITEMS.forEach(i=>cnt[i.grp]=(cnt[i.grp]||0)+1);
-  const names=["Tất cả",...GROUPS.map(g=>g[0]).filter(n=>cnt[n])];
+  const names=["Tất cả",...GNAMES];
   $("groups").innerHTML=names.map(n=>`<button class="chip" data-g="${esc(n)}" aria-pressed="${n===group}">${esc(n)}<span class="n">${n==="Tất cả"?ITEMS.length:cnt[n]}</span></button>`).join("");
 }
 function filter(){
@@ -245,5 +229,5 @@ document.addEventListener("keydown",e=>{if(e.target.matches("input"))return;
   if(e.key==="ArrowLeft")go(idx-1);else if(e.key==="ArrowRight")go(idx+1);
   else if(e.key===" "){e.preventDefault();$("card").classList.toggle("flipped")}
   else if(e.key.toLowerCase()==="m")toggleOk();});
-renderGroups();render();
+$("nAll").textContent=ITEMS.length;renderGroups();render();
 </script>
