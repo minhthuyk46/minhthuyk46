@@ -4,31 +4,38 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Be+Vietnam+Pro:wght@400;500;600&family=Zen+Maru+Gothic:wght@500;700&display=swap">
 <style>
 /* Layout: bộ lọc nhóm ở trên, một thẻ lật kiểu điện thoại ở giữa, phân trang ở dưới */
+/* Màu thương hiệu Mankai lấy từ logo: cam #F37142, vàng #F3A41D */
 :root{
-  --bg:#f6f8f3; --surface:#ffffff; --fg:#1d2419; --muted:#69735f; --line:#e3e8dc;
-  --accent:#16b364; --accent-soft:#dcf7e8; --lime:#e4fbb4; --lime-fg:#24320c;
-  --use-bg:#fff8e1; --use-line:#f3dc8f; --use-fg:#9a5b00;
-  --ex-bg:#edf5ff; --ex-line:#c9defa; --ex-fg:#2f62c9;
-  --note-bg:#fdeef3; --note-line:#f4c6d4; --note-fg:#b0305d;
-  --shuffle:#ddf3f5; --orange:#f07a1a; --indigo:#5b5bd6;
+  --bg:#fbf7f3; --surface:#ffffff; --fg:#2a1d16; --muted:#7a6a5f; --line:#efe4da;
+  --brand:#f37142; --brand-2:#f3a41d;
+  --accent:#dd5a2c; --accent-soft:#fde9df; --lime:#fff0dc; --lime-fg:#4a2a12;
+  --use-bg:#fff7e6; --use-line:#f6d79a; --use-fg:#a05f00;
+  --ex-bg:#eef4ff; --ex-line:#cbdcf7; --ex-fg:#2f5fb8;
+  --note-bg:#fdecef; --note-line:#f3c3cd; --note-fg:#b0304f;
+  --shuffle:#f6efe8; --orange:#f3a41d; --indigo:#f37142; --logo-light:block; --logo-dark:none;
   --f-display:"Baloo 2","Be Vietnam Pro",system-ui,sans-serif;
   --f-body:"Be Vietnam Pro",system-ui,sans-serif;
   --f-ja:"Zen Maru Gothic","Hiragino Maru Gothic ProN","Noto Sans JP","Yu Gothic",sans-serif;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --bg:#12160f; --surface:#1b2117; --fg:#eef2e8; --muted:#a2ad97; --line:#2e3628;
-  --accent:#3fd58a; --accent-soft:#173a27; --lime:#33441a; --lime-fg:#eef8d6;
-  --use-bg:#2d2610; --use-line:#5a4a17; --use-fg:#f1c25a;
-  --ex-bg:#14223a; --ex-line:#2a4166; --ex-fg:#8db4ff;
+  --bg:#17120f; --surface:#211915; --fg:#f6ece5; --muted:#b8a598; --line:#3a2c24;
+  --accent:#f37142; --accent-soft:#3d2216; --lime:#3a2614; --lime-fg:#fde9d2;
+  --use-bg:#2e2410; --use-line:#5c4718; --use-fg:#f6c14f;
+  --ex-bg:#152239; --ex-line:#2a4166; --ex-fg:#8db4ff;
   --note-bg:#331722; --note-line:#5e2a3d; --note-fg:#f59ab8;
-  --shuffle:#163236; --orange:#ff9a4a; --indigo:#9a9af5; color-scheme:dark}}
+  --shuffle:#2b211b; --orange:#f3a41d; --indigo:#f37142; --logo-light:none; --logo-dark:block; color-scheme:dark}}
 :root[data-theme="dark"]{
-  --bg:#12160f; --surface:#1b2117; --fg:#eef2e8; --muted:#a2ad97; --line:#2e3628;
-  --accent:#3fd58a; --accent-soft:#173a27; --lime:#33441a; --lime-fg:#eef8d6;
-  --use-bg:#2d2610; --use-line:#5a4a17; --use-fg:#f1c25a;
-  --ex-bg:#14223a; --ex-line:#2a4166; --ex-fg:#8db4ff;
+  --bg:#17120f; --surface:#211915; --fg:#f6ece5; --muted:#b8a598; --line:#3a2c24;
+  --accent:#f37142; --accent-soft:#3d2216; --lime:#3a2614; --lime-fg:#fde9d2;
+  --use-bg:#2e2410; --use-line:#5c4718; --use-fg:#f6c14f;
+  --ex-bg:#152239; --ex-line:#2a4166; --ex-fg:#8db4ff;
   --note-bg:#331722; --note-line:#5e2a3d; --note-fg:#f59ab8;
-  --shuffle:#163236; --orange:#ff9a4a; --indigo:#9a9af5; color-scheme:dark}
+  --shuffle:#2b211b; --orange:#f3a41d; --indigo:#f37142; --logo-light:none; --logo-dark:block; color-scheme:dark}
+.brandbar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-bottom:12px;border-bottom:3px solid var(--brand);border-image:linear-gradient(90deg,var(--brand),var(--brand-2)) 1}
+.brandbar img{height:44px;width:auto;max-width:60%}
+.logo-l{display:var(--logo-light)} .logo-d{display:var(--logo-dark)}
+.brandtag{font-size:12px;color:var(--muted);text-align:right}
+.badge{background:linear-gradient(135deg,var(--brand),var(--brand-2))!important}
 *{box-sizing:border-box}
 body{background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:14px}
 .wrap{max-width:1100px;margin:0 auto;padding-block:20px 40px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:16px}
@@ -101,6 +108,7 @@ button:focus-visible,input:focus-visible,.card:focus-visible{outline:2px solid v
 </style>
 
 <div class="wrap">
+  <div class="brandbar"><img class="logo-l" src="/*LOGO*/" alt="Mankai Academy"><img class="logo-d" src="/*LOGOW*/" alt="Mankai Academy"><span class="brandtag">Đào tạo tiếng Nhật</span></div>
   <header>
     <h1>N1 - Sổ tay ngữ pháp</h1>
     <p class="sub"><span id="nAll"></span> mẫu ngữ pháp N1 từ sheet N1文法, lọc theo cột Phân loại. Bấm vào thẻ để lật.</p>
