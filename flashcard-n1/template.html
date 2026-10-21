@@ -151,6 +151,8 @@ button:focus-visible,input:focus-visible,.card:focus-visible{outline:2px solid v
 
 <script>
 const RAW=/*DATA*/;
+// Cách đọc kana cho phần nghe (đã rà soát chữ Hán đọc dễ sai). Sửa trong readings.json
+const READ=/*READ*/;
 // Nhóm lấy từ cột "Phân loại" trong sheet
 const ITEMS=RAW.map(r=>({stt:r[0],grp:(r[1]||"Khác").trim(),pat:r[2]||"",form:r[3]||"",mean:r[4]||"",ex:r[5]||"",note:r[6]||""}));
 const GNAMES=[...new Set(ITEMS.map(i=>i.grp))].sort((a,b)=>a.localeCompare(b,"vi"));
@@ -215,7 +217,7 @@ function toggleOk(){const it=list[idx];if(!it)return;ok.has(it.stt)?ok.delete(it
   const keep=$("onlyNew").checked&&ok.has(it.stt);render();if(keep)render();}
 function shuffle(){for(let i=order.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[order[i],order[j]]=[order[j],order[i]]}idx=0;render()}
 function speak(){const it=list[idx];if(!it||!window.speechSynthesis)return;speechSynthesis.cancel();
-  const u=new SpeechSynthesisUtterance(jaText(it.ex).replace(/[①②③]/g,""));u.lang="ja-JP";u.rate=.9;speechSynthesis.speak(u)}
+  const u=new SpeechSynthesisUtterance((READ[it.stt]?READ[it.stt].join("　"):jaText(it.ex)).replace(/[①②③]/g,""));u.lang="ja-JP";u.rate=.9;speechSynthesis.speak(u)}
 
 $("groups").addEventListener("click",e=>{const b=e.target.closest(".chip");if(!b)return;group=b.dataset.g;idx=0;renderGroups();render()});
 $("q").addEventListener("input",()=>{idx=0;render()});
