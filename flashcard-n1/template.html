@@ -1,0 +1,249 @@
+<title>Thẻ ngữ pháp N1</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Be+Vietnam+Pro:wght@400;500;600&family=Zen+Maru+Gothic:wght@500;700&display=swap">
+<style>
+/* Layout: bộ lọc nhóm ở trên, một thẻ lật kiểu điện thoại ở giữa, phân trang ở dưới */
+:root{
+  --bg:#f6f8f3; --surface:#ffffff; --fg:#1d2419; --muted:#69735f; --line:#e3e8dc;
+  --accent:#16b364; --accent-soft:#dcf7e8; --lime:#e4fbb4; --lime-fg:#24320c;
+  --use-bg:#fff8e1; --use-line:#f3dc8f; --use-fg:#9a5b00;
+  --ex-bg:#edf5ff; --ex-line:#c9defa; --ex-fg:#2f62c9;
+  --note-bg:#fdeef3; --note-line:#f4c6d4; --note-fg:#b0305d;
+  --shuffle:#ddf3f5; --orange:#f07a1a; --indigo:#5b5bd6;
+  --f-display:"Baloo 2","Be Vietnam Pro",system-ui,sans-serif;
+  --f-body:"Be Vietnam Pro",system-ui,sans-serif;
+  --f-ja:"Zen Maru Gothic","Hiragino Maru Gothic ProN","Noto Sans JP","Yu Gothic",sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#12160f; --surface:#1b2117; --fg:#eef2e8; --muted:#a2ad97; --line:#2e3628;
+  --accent:#3fd58a; --accent-soft:#173a27; --lime:#33441a; --lime-fg:#eef8d6;
+  --use-bg:#2d2610; --use-line:#5a4a17; --use-fg:#f1c25a;
+  --ex-bg:#14223a; --ex-line:#2a4166; --ex-fg:#8db4ff;
+  --note-bg:#331722; --note-line:#5e2a3d; --note-fg:#f59ab8;
+  --shuffle:#163236; --orange:#ff9a4a; --indigo:#9a9af5; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#12160f; --surface:#1b2117; --fg:#eef2e8; --muted:#a2ad97; --line:#2e3628;
+  --accent:#3fd58a; --accent-soft:#173a27; --lime:#33441a; --lime-fg:#eef8d6;
+  --use-bg:#2d2610; --use-line:#5a4a17; --use-fg:#f1c25a;
+  --ex-bg:#14223a; --ex-line:#2a4166; --ex-fg:#8db4ff;
+  --note-bg:#331722; --note-line:#5e2a3d; --note-fg:#f59ab8;
+  --shuffle:#163236; --orange:#ff9a4a; --indigo:#9a9af5; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:14px}
+.wrap{max-width:1100px;margin:0 auto;padding-block:20px 40px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:16px}
+h1{font-family:var(--f-display);font-size:24px;font-weight:800;margin:0;line-height:1.2;text-wrap:balance}
+.sub{color:var(--muted);margin:4px 0 0}
+.stats{display:flex;gap:8px;flex-wrap:wrap}
+.stat{display:flex;align-items:center;gap:6px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:6px 12px;font-size:12px;color:var(--muted)}
+.stat b{font-variant-numeric:tabular-nums;font-size:13px}
+.dot{width:8px;height:8px;border-radius:50%}
+.groups{display:flex;gap:6px;flex-wrap:wrap}
+.chip{font:inherit;font-size:12.5px;border:1px solid var(--line);background:var(--surface);color:var(--fg);border-radius:999px;padding:6px 12px;cursor:pointer;display:flex;gap:6px;align-items:center}
+.chip .n{color:var(--muted);font-variant-numeric:tabular-nums;font-size:11.5px}
+.chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+.chip[aria-pressed="true"] .n{color:#fff;opacity:.85}
+.tools{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.tools label{display:flex;gap:6px;align-items:center;font-size:13px;color:var(--muted);cursor:pointer}
+.tools input[type=search]{font:inherit;border:1px solid var(--line);background:var(--surface);color:var(--fg);border-radius:10px;padding:7px 12px;min-width:0;flex:1 1 200px;max-width:320px}
+button:focus-visible,input:focus-visible,.card:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.stage{display:flex;align-items:center;justify-content:center;gap:28px;margin-top:8px}
+.nav{width:48px;height:48px;border-radius:50%;border:0;background:var(--line);color:var(--fg);font-size:20px;cursor:pointer;flex:none}
+.nav:disabled{opacity:.4;cursor:default}
+.card{width:min(390px,100%);height:520px;perspective:1400px;cursor:pointer;flex:0 1 auto}
+.inner{position:relative;width:100%;height:100%;transition:transform .5s cubic-bezier(.3,.7,.3,1);transform-style:preserve-3d}
+.card.flipped .inner{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;background:var(--surface);border:1px solid var(--line);border-radius:36px;box-shadow:0 18px 40px -20px rgba(30,50,20,.35);display:flex;flex-direction:column;overflow:hidden}
+.back{transform:rotateY(180deg)}
+.top{display:flex;justify-content:space-between;align-items:center;padding:16px 18px 0}
+.status{font-size:12px;border-radius:8px;padding:5px 10px;background:var(--bg);color:var(--muted)}
+.status.ok{background:var(--accent-soft);color:var(--accent)}
+.ico{border:0;background:none;color:var(--muted);cursor:pointer;font-size:16px;padding:6px;border-radius:8px}
+.ico:hover{background:var(--bg)}
+.stt{font-variant-numeric:tabular-nums;font-size:12px;color:var(--muted)}
+.body{flex:1;overflow:auto;padding:12px 16px 16px;display:flex;flex-direction:column;gap:10px;min-height:0}
+.front .body{justify-content:center;align-items:center}
+.badge{width:76px;height:76px;border-radius:50%;background:var(--accent);color:#fff;display:grid;place-items:center;font-family:var(--f-ja);font-size:36px;font-weight:700;margin-bottom:-28px;position:relative;z-index:1;border:5px solid var(--surface)}
+.hero{background:var(--lime);color:var(--lime-fg);border-radius:18px;padding:36px 18px 18px;text-align:center;width:100%}
+.front .pattern{font-family:var(--f-ja);font-weight:700;font-size:30px;line-height:1.35;word-break:break-word}
+.form{font-family:var(--f-ja);color:var(--muted);margin-top:8px;font-size:15px}
+.grp{font-size:11.5px;color:var(--muted);margin-top:14px}
+.back .hero{padding:16px}
+.back .pattern{font-family:var(--f-ja);font-weight:700;font-size:20px}
+.mean{font-size:14px;line-height:1.55;margin-top:8px;text-align:left}
+.box{border-radius:14px;border:1px solid;padding:10px 12px;line-height:1.6}
+.box h3{margin:0 0 4px;font-size:11px;letter-spacing:.06em;text-transform:uppercase;font-weight:700}
+.use{background:var(--use-bg);border-color:var(--use-line)} .use h3{color:var(--use-fg)}
+.ex{background:var(--ex-bg);border-color:var(--ex-line)} .ex h3{color:var(--ex-fg)}
+.note{background:var(--note-bg);border-color:var(--note-line)} .note h3{color:var(--note-fg)}
+.ja{font-family:var(--f-ja);font-size:14.5px}
+.vi{font-style:italic;color:var(--muted);font-size:12.5px}
+.bar{display:grid;grid-template-columns:1fr 1fr;flex:none}
+.bar button{font:inherit;font-weight:600;border:0;padding:16px;cursor:pointer;display:flex;gap:8px;justify-content:center;align-items:center}
+.b-shuf{background:var(--shuffle);color:var(--fg)}
+.b-ok{background:var(--accent-soft);color:var(--accent)}
+.b-ok[aria-pressed="true"]{background:var(--accent);color:#fff}
+.hint{text-align:center;color:var(--muted);font-size:12px}
+.count{text-align:center;font-variant-numeric:tabular-nums}
+.pager{display:flex;gap:6px;justify-content:center;flex-wrap:wrap}
+.pg{font:inherit;min-width:38px;height:38px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--fg);cursor:pointer;font-variant-numeric:tabular-nums}
+.pg[aria-current="true"]{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:700}
+.pg:disabled{opacity:.4;cursor:default}
+.empty{text-align:center;color:var(--muted);padding:60px 0}
+@media (max-width:560px){.stage{gap:0}.nav{display:none}.card{height:500px}.front .pattern{font-size:26px}}
+@media (prefers-reduced-motion:reduce){.inner{transition:none}}
+</style>
+
+<div class="wrap">
+  <header>
+    <h1>N1 - Sổ tay ngữ pháp</h1>
+    <p class="sub">157 mẫu ngữ pháp N1 từ sheet N1文法, chia theo nhóm chức năng. Bấm vào thẻ để lật.</p>
+  </header>
+  <div class="stats">
+    <span class="stat"><span class="dot" style="background:var(--indigo)"></span><b id="sTotal">0</b> Mẫu</span>
+    <span class="stat"><span class="dot" style="background:var(--accent)"></span><b id="sOk">0</b> Đã thuộc</span>
+    <span class="stat"><span class="dot" style="background:var(--orange)"></span><b id="sLeft">0</b> Còn lại</span>
+  </div>
+  <nav class="groups" id="groups" aria-label="Nhóm ngữ pháp"></nav>
+  <div class="tools">
+    <input type="search" id="q" placeholder="Tìm mẫu câu, nghĩa…" aria-label="Tìm kiếm">
+    <label><input type="checkbox" id="onlyNew"> Chỉ hiện mẫu chưa thuộc</label>
+  </div>
+
+  <div class="stage">
+    <button class="nav" id="prev" aria-label="Thẻ trước">‹</button>
+    <div class="card" id="card" tabindex="0" role="button" aria-label="Lật thẻ">
+      <div class="inner">
+        <section class="face front">
+          <div class="top"><span class="status" id="fStatus">Chưa thuộc</span>
+            <span><button class="ico" id="fSpeak" aria-label="Nghe ví dụ">🔊</button><button class="ico" id="fCopy" aria-label="Sao chép mẫu câu">⧉</button></span></div>
+          <div class="body">
+            <div class="badge" aria-hidden="true">文</div>
+            <div class="hero"><div class="pattern" id="fPat"></div><div class="form" id="fForm"></div><div class="grp" id="fGrp"></div></div>
+          </div>
+          <div class="bar"><button class="b-shuf" data-act="shuffle">⤮ Xáo trộn</button><button class="b-ok" data-act="ok" aria-pressed="false">✓ Đã thuộc</button></div>
+        </section>
+        <section class="face back">
+          <div class="top"><span class="stt" id="bStt"></span><button class="ico" id="bSpeak" aria-label="Nghe ví dụ">🔊</button></div>
+          <div class="body">
+            <div class="hero"><div class="pattern" id="bPat"></div><div class="mean" id="bMean"></div></div>
+            <div class="box use" id="bUseBox"><h3>Cách chia</h3><div class="ja" id="bUse"></div></div>
+            <div class="box ex"><h3>Ví dụ</h3><div id="bEx"></div></div>
+            <div class="box note" id="bNoteBox"><h3>Lưu ý</h3><div id="bNote"></div></div>
+          </div>
+          <div class="bar"><button class="b-shuf" data-act="shuffle">⤮ Xáo trộn</button><button class="b-ok" data-act="ok" aria-pressed="false">✓ Đã thuộc</button></div>
+        </section>
+      </div>
+    </div>
+    <button class="nav" id="next" aria-label="Thẻ sau">›</button>
+  </div>
+  <div class="empty" id="empty" hidden>Không có mẫu nào khớp bộ lọc.</div>
+  <div class="count" id="count"></div>
+  <div class="hint">Phím tắt: ← → chuyển thẻ · Space lật thẻ · M đánh dấu đã thuộc</div>
+  <div class="pager" id="pager"></div>
+</div>
+
+<script>
+const RAW=/*DATA*/;
+// Nhóm chức năng (đề xuất) — sửa số STT ở đây để đổi nhóm
+const GROUPS=[
+ ["Thời điểm & trình tự",["1","2","3","4","5","111","113","136","139","151"]],
+ ["Bối cảnh, mốc & phạm vi",["6","7","8","9","10","99","100","101","125","114"]],
+ ["Mức độ & giới hạn",["11","12","13","14","15","16","69","70","72","75","76","77","78","80","123","156"]],
+ ["Liệt kê & lựa chọn",["17","18","19","20","143"]],
+ ["Tuỳ thuộc & bất chấp",["21","22","23","24","25","131","137"]],
+ ["Trạng thái & dáng vẻ",["26","27","28","29","30","74","154","119","118"]],
+ ["Kết hợp hành động",["31","32","33","115"]],
+ ["Nghịch tiếp & nhượng bộ",["35","36","37","38","44","45","46","47","48","68","116","147","149"]],
+ ["Giả định & điều kiện",["39","40","41","42","43","64","83","98","121","124","138","144"]],
+ ["Mục đích & phương tiện",["49","50","51","103","104","110","141"]],
+ ["Nguyên nhân & lý do",["52","53","54","55","56","129","142","146","150","153"]],
+ ["Phủ định & khả năng",["57","58","59","60","61","62","81","84","94","95","97","122","126","128","132","133","134","135","148","157"]],
+ ["Cảm xúc & nhấn mạnh",["85","88","89","90","91","92","96","105","112","127","145"]],
+ ["Đánh giá & nhận định",["34","63","65","66","67","71","73","79","82","86","87+93","93","102","106","107","108","109","117","120","130","140","152","155"]]
+];
+const G={};GROUPS.forEach(([n,ids])=>ids.forEach(i=>G[i]=n));
+const ITEMS=RAW.map(r=>({stt:r[0],pat:r[1],form:r[2],mean:r[3],ex:r[4],note:r[5],grp:G[r[0]]||"Khác"}));
+const KEY="n1-bunpou-ok";
+let ok=new Set();try{ok=new Set(JSON.parse(localStorage.getItem(KEY)||"[]"))}catch(e){}
+const save=()=>{try{localStorage.setItem(KEY,JSON.stringify([...ok]))}catch(e){}};
+let group="Tất cả",list=[],idx=0,order=ITEMS.slice();
+const $=id=>document.getElementById(id);
+const esc=s=>s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const br=s=>esc(s.trim()).replace(/\n/g,"<br>");
+const isVi=l=>/[a-zA-ZÀ-ỹ]{3,}/.test(l)&&/[ăâđêôơưáàảãạéèẻẽẹíìỉĩịóòỏõọúùủũụýỳỷỹỵ]/i.test(l)&&!/[぀-ヿ]/.test(l.slice(0,4));
+const firstLine=s=>s.split("\n")[0].trim();
+function exHTML(s){return s.split("\n").filter(l=>l.trim()).map(l=>`<div class="${isVi(l)?"vi":"ja"}">${esc(l.trim())}</div>`).join("")}
+function jaText(s){return s.split("\n").filter(l=>l.trim()&&!isVi(l)).join("。")}
+
+function renderGroups(){
+  const cnt={};ITEMS.forEach(i=>cnt[i.grp]=(cnt[i.grp]||0)+1);
+  const names=["Tất cả",...GROUPS.map(g=>g[0]).filter(n=>cnt[n])];
+  $("groups").innerHTML=names.map(n=>`<button class="chip" data-g="${esc(n)}" aria-pressed="${n===group}">${esc(n)}<span class="n">${n==="Tất cả"?ITEMS.length:cnt[n]}</span></button>`).join("");
+}
+function filter(){
+  const q=$("q").value.trim().toLowerCase(),only=$("onlyNew").checked;
+  list=order.filter(i=>(group==="Tất cả"||i.grp===group)&&(!only||!ok.has(i.stt))&&(!q||(i.pat+i.form+i.mean+i.ex).toLowerCase().includes(q)));
+  if(idx>=list.length)idx=Math.max(0,list.length-1);
+}
+function stats(){
+  const pool=ITEMS.filter(i=>group==="Tất cả"||i.grp===group);
+  const m=pool.filter(i=>ok.has(i.stt)).length;
+  $("sTotal").textContent=pool.length;$("sOk").textContent=m;$("sLeft").textContent=pool.length-m;
+}
+function render(){
+  filter();stats();
+  const has=list.length>0;$("card").hidden=!has;$("empty").hidden=has;
+  $("prev").disabled=idx<=0;$("next").disabled=idx>=list.length-1;
+  $("count").textContent=has?`${idx+1} / ${list.length}`:"";
+  renderPager();
+  if(!has)return;
+  const it=list[idx],done=ok.has(it.stt);
+  $("card").classList.remove("flipped");
+  $("fPat").innerHTML=br(it.pat);
+  $("fForm").textContent=it.form?`【${firstLine(it.form)}】`:"";
+  $("fGrp").textContent=it.grp;
+  $("fStatus").textContent=done?"Đã thuộc":"Chưa thuộc";$("fStatus").classList.toggle("ok",done);
+  $("bStt").textContent=`#${it.stt} · ${it.grp}`;
+  $("bPat").innerHTML=br(it.pat);
+  $("bMean").innerHTML=br(it.mean);
+  $("bUseBox").hidden=!it.form.trim();$("bUse").innerHTML=br(it.form);
+  $("bEx").innerHTML=exHTML(it.ex);
+  $("bNoteBox").hidden=!it.note.trim();$("bNote").innerHTML=br(it.note);
+  document.querySelectorAll('[data-act="ok"]').forEach(b=>{b.setAttribute("aria-pressed",done);b.textContent=done?"✓ Đã thuộc":"✓ Đánh dấu đã thuộc"});
+}
+function renderPager(){
+  const n=list.length,c=idx;if(!n){$("pager").innerHTML="";return}
+  const s=new Set([0,n-1]);for(let k=c-2;k<=c+2;k++)if(k>=0&&k<n)s.add(k);
+  const arr=[...s].sort((a,b)=>a-b);let h=`<button class="pg" data-go="${c-1}" ${c<=0?"disabled":""} aria-label="Trước">‹</button>`,last=-1;
+  arr.forEach(k=>{if(k-last>1)h+=`<button class="pg" disabled>…</button>`;h+=`<button class="pg" data-go="${k}" aria-current="${k===c}">${k+1}</button>`;last=k});
+  h+=`<button class="pg" data-go="${c+1}" ${c>=n-1?"disabled":""} aria-label="Sau">›</button>`;
+  $("pager").innerHTML=h;
+}
+function go(k){if(k<0||k>=list.length)return;idx=k;render()}
+function toggleOk(){const it=list[idx];if(!it)return;ok.has(it.stt)?ok.delete(it.stt):ok.add(it.stt);save();
+  const keep=$("onlyNew").checked&&ok.has(it.stt);render();if(keep)render();}
+function shuffle(){for(let i=order.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[order[i],order[j]]=[order[j],order[i]]}idx=0;render()}
+function speak(){const it=list[idx];if(!it||!window.speechSynthesis)return;speechSynthesis.cancel();
+  const u=new SpeechSynthesisUtterance(jaText(it.ex).replace(/[①②③]/g,""));u.lang="ja-JP";u.rate=.9;speechSynthesis.speak(u)}
+
+$("groups").addEventListener("click",e=>{const b=e.target.closest(".chip");if(!b)return;group=b.dataset.g;idx=0;renderGroups();render()});
+$("q").addEventListener("input",()=>{idx=0;render()});
+$("onlyNew").addEventListener("change",()=>{idx=0;render()});
+$("prev").onclick=()=>go(idx-1);$("next").onclick=()=>go(idx+1);
+$("pager").addEventListener("click",e=>{const b=e.target.closest("[data-go]");if(b&&!b.disabled)go(+b.dataset.go)});
+$("card").addEventListener("click",e=>{
+  const a=e.target.closest("[data-act]");
+  if(a){e.stopPropagation();a.dataset.act==="ok"?toggleOk():shuffle();return}
+  if(e.target.closest(".ico")){e.stopPropagation();
+    const id=e.target.closest(".ico").id;
+    if(id==="fCopy"){const t=list[idx].pat;navigator.clipboard?.writeText(t).catch(()=>{})}else speak();return}
+  if(e.target.closest(".back .body")&&window.getSelection().toString())return;
+  $("card").classList.toggle("flipped");
+});
+document.addEventListener("keydown",e=>{if(e.target.matches("input"))return;
+  if(e.key==="ArrowLeft")go(idx-1);else if(e.key==="ArrowRight")go(idx+1);
+  else if(e.key===" "){e.preventDefault();$("card").classList.toggle("flipped")}
+  else if(e.key.toLowerCase()==="m")toggleOk();});
+renderGroups();render();
+</script>
