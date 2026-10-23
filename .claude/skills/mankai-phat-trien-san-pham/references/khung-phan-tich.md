@@ -2,20 +2,20 @@
 
 ## §1. Bước 1–2: Làm sạch input + góc nhìn Đào tạo
 
-**Tab `01_INPUT_SACH`**, cột: Mã VĐ · Phân khúc (S1–S8) · Ai là người gặp vấn đề · Xếp loại · Vấn đề (đã tách khỏi giải pháp) · Giải pháp team đề xuất · Đối thủ · Nguồn (team – người) · Số team cùng nêu · Ghi chú làm sạch
+**Tab `01_INPUT_SACH`**, cột: Mã VĐ · Luồng (JLPT / TNGĐ / Nối tiếp / Ngoài trọng tâm DNA) · Khoảng cách (Kiến thức→Thi / Biết→Làm được) · Ai là người gặp vấn đề · Xếp loại · Vấn đề (đã tách khỏi giải pháp) · Giải pháp team đề xuất · Đối thủ · Nguồn (team – người) · Số team cùng nêu · Ghi chú làm sạch
 
-Quy tắc gộp: hai dòng cùng phân khúc và cùng cơ chế gốc → gộp thành 1, giữ mọi nguồn.
+Quy tắc gộp: hai dòng cùng luồng và cùng cơ chế gốc → gộp thành 1, giữ mọi nguồn.
 
-**Câu hỏi Đào tạo** (team khác thường bỏ sót) cho từng phân khúc:
-| Cơ chế học | Câu hỏi chẩn đoán |
-|---|---|
-| Ghi nhớ | HV có truy xuất (tự nhớ lại) hay chỉ xem lại? Có ôn ngắt quãng không? |
-| Hiểu ↔ ảo giác năng lực | HV có bằng chứng mình làm được (Can-do, test) hay chỉ "thấy hiểu"? |
-| Chiến lược làm bài | Sai do kiến thức, kỹ năng làm bài hay thời gian? |
-| Xử lý ngôn ngữ | Đọc/nghe bị dịch từng chữ, mất ý ở câu dài? |
-| Sản sinh (nói/viết) | Có ai sửa lỗi không? Có lỗi hóa thạch không? |
-| Phù hợp lộ trình | Tốc độ lộ trình có khớp đầu vào từng kỹ năng không? |
-| Động lực/nhịp | Có mốc tiến bộ ngắn, có người phát hiện khi HV tụt không? |
+**Câu hỏi Đào tạo** (team khác thường bỏ sót), xếp theo 3 TẬN:
+| Trụ cột | Cơ chế học | Câu hỏi chẩn đoán |
+|---|---|---|
+| Tận chắc | Ghi nhớ | HV có truy xuất (tự nhớ lại) hay chỉ xem lại? Có ôn ngắt quãng không? |
+| Tận chắc | Hiểu ↔ ảo giác năng lực | HV có bằng chứng mình làm được (Can-do, test) hay chỉ "thấy hiểu"? |
+| Tận chắc | Nguyên nhân sai | Sai do kiến thức, kỹ năng làm bài hay thời gian? |
+| Tận cùng | Phù hợp lộ trình | Tốc độ lộ trình có khớp đầu vào từng kỹ năng không? |
+| Tận cùng | Nhịp & đồng hành | Có mốc tiến bộ ngắn, có người (GV/Sempai/đồng đội) phát hiện khi HV tụt không? |
+| Tận dụng | Xử lý ngôn ngữ trong giới hạn giờ | Đọc chậm, nghe không bắt từ khóa, mất ý ở câu dài? |
+| Tận dụng | Sản sinh trong công việc | Có ai sửa nói/viết? Diễn đạt được trong họp, báo cáo, nắm kỳ vọng của sếp? |
 
 ## §2. Bước 3: Problem Statement + JTBD (tab `02_JTBD`)
 
@@ -47,21 +47,25 @@ Cột: Kết quả · Cơ hội · Giải pháp · Tác động (1–5) · Khả
 6. Mỗi tầng có **lý do nâng cấp** rõ ràng: HV ở tầng dưới gặp đúng vấn đề mà tầng trên giải quyết.
 7. Một quyền lợi chỉ xuất hiện lần đầu ở một tầng; tầng trên kế thừa.
 
-Ma trận, cột: Quyền lợi · Giải quyết cơ hội nào · Miễn phí · Giá rẻ · Trung · Cao · Chi phí vận hành/HV · Ghi chú (ô tầng: ✓ / giới hạn cụ thể / –)
+8. Không quyền lợi nào hứa tuyệt đối (đỗ 100%, việc làm, thu nhập). Cam kết có điều kiện → ghi điều kiện + `[CẦN XÁC NHẬN]` chính sách.
+9. Làm ma trận riêng cho từng luồng (JLPT, TNGĐ). Tầng Miễn phí/Giá rẻ có thể là cửa vào chung, kèm bước phân luồng theo mục tiêu.
 
-Kiểm tra cuối: mỗi phân khúc S1–S8 có tầng phù hợp chưa; mỗi vấn đề "k tự nhận diện được" có cửa chẩn đoán chưa.
+Ma trận, cột: Quyền lợi · Trụ cột 3 TẬN · Giải quyết cơ hội nào · Miễn phí · Giá rẻ · Trung · Cao · Chi phí vận hành/HV · Ghi chú (ô tầng: ✓ / giới hạn cụ thể / –)
+
+Kiểm tra cuối: mỗi tầng đủ 3 TẬN chưa (hoặc có lý do thiếu); mỗi vấn đề "k tự nhận diện được" có cửa chẩn đoán chưa; người ở VN và ở Nhật (lệch giờ) đều theo được chưa.
 
 ## §5. Bước 6: Khung SOP cho mỗi gói
 
 | Mục | Nội dung |
 |---|---|
-| 1. Thông tin gói | Tên · Tầng · Dòng (JLPT/BJT/IT/TNGD) · Cấp độ · Phân khúc chính · Giá [cần chốt] |
-| 2. Mục tiêu | Can-do đầu ra + chỉ số đo (tỷ lệ hoàn thành, điểm thi thử, tỷ lệ đỗ) |
-| 3. Nội dung | Lộ trình theo tuần, điểm chạm (video/flashcard/mini test/live/kaiwa) |
+| 1. Thông tin gói | Tên · Tầng · Luồng (JLPT N1/N2/N3, TNGĐ, Nối tiếp) · Phân khúc chính · Giá `[CẦN XÁC NHẬN]` |
+| 2. Mục tiêu | Can-do đầu ra + chỉ số đo (tỷ lệ hoàn thành, điểm thi thử, tỷ lệ đỗ có tử số/mẫu số/cohort; với TNGĐ: sản phẩm thực hành, hồ sơ năng lực) |
+| 3. Nội dung theo 3 TẬN | Tận chắc (hệ thống hóa, chẩn đoán lỗ hổng) · Tận cùng (lộ trình, phản hồi, ai giữ nhịp: GV/Sempai/đồng đội) · Tận dụng (bài thi, tình huống công việc, sản phẩm thực hành). Điểm chạm: LMS, lớp Lark, video chữa, buổi Host cùng Sempai |
 | 4. Hoạt động | Lịch 1 tuần mẫu của HV và của GV/trợ giảng |
 | 5. Tài liệu | Học liệu đã có / cần làm, người làm, hạn |
 | 6. Thời lượng | Tổng giờ HV, giờ công GV/trợ giảng mỗi HV |
 | 7. Vận hành | Quy trình: tuyển sinh → test đầu vào → onboard → theo dõi tuần → can thiệp khi tụt → đánh giá cuối → upsell. Mỗi bước: ai làm, công cụ, SLA |
-| 8. Đánh giá | Rubric/tiêu chí, mốc kiểm tra, điều kiện cam kết (nếu có) |
+| 8. Đánh giá | Rubric/tiêu chí, mốc kiểm tra trước–sau, điều kiện cam kết (nếu có, không tuyệt đối) |
+| 8b. Thông điệp | Mô tả gói theo khung Vấn đề → Hệ quả → Cơ chế → Bằng chứng → Hành động; giọng thương hiệu Mankai |
 | 9. Rủi ro | Điểm khó triển khai + phương án dự phòng |
 | 10. Thử nghiệm | Pilot: số HV, thời gian, chỉ số quyết định mở rộng hay dừng |
