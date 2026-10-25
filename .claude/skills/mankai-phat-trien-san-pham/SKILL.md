@@ -48,3 +48,4 @@ Hết mỗi bước: dừng, tóm tắt 3–5 dòng (đã làm gì, phát hiện
 ## Tài liệu kèm
 - `references/dna-mankai.md`: DNA, phân khúc, đối thủ, 4 tầng của Mankai
 - `references/khung-phan-tich.md`: chi tiết từng bước, mẫu bảng, quy tắc chia tầng, khung SOP
+- `references/dinh-huong-san-pham.md`: định hướng của Product Owner (phễu JLPT Mega → Coaching → TNGĐ; thang Học viên → Mentor → Coach → Speaker). Đọc trước bước 4–6; giải pháp đề xuất phải khớp định hướng này hoặc ghi rõ lý do lệch.
