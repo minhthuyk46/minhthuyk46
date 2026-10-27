@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BJT Luyện Đề</title>
+<style>
+:root{--bg:#f6f7fb;--card:#fff;--text:#1d2433;--muted:#667085;--line:#e4e7ec;--brand:#c0392b;--brand-soft:#fdecea;--ok:#1e8e5a;--ok-soft:#e6f6ee;--ng:#c62828;--ng-soft:#fdeaea;}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#12151c;--card:#1b1f29;--text:#e8eaf0;--muted:#98a2b3;--line:#2c3240;--brand:#ef6a5a;--brand-soft:#3a2220;--ok:#4cc38a;--ok-soft:#173226;--ng:#f07070;--ng-soft:#3a1d1d;}}
+:root[data-theme="dark"]{--bg:#12151c;--card:#1b1f29;--text:#e8eaf0;--muted:#98a2b3;--line:#2c3240;--brand:#ef6a5a;--brand-soft:#3a2220;--ok:#4cc38a;--ok-soft:#173226;--ng:#f07070;--ng-soft:#3a1d1d;}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI","Hiragino Sans","Noto Sans JP",sans-serif;line-height:1.6}
+.wrap{max-width:760px;margin:0 auto;padding:16px}
+header{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:12px}
+h1{font-size:1.3rem;margin:0}h1 span{color:var(--brand)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:12px}
+.btn{border:1px solid var(--line);background:var(--card);color:var(--text);border-radius:8px;padding:10px 14px;font-size:1rem;cursor:pointer}
+.btn.primary{background:var(--brand);border-color:var(--brand);color:#fff}
+.btn:disabled{opacity:.45;cursor:default}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}
+.mode{text-align:left;padding:14px}.mode b{display:block;font-size:1.05rem}.mode small{color:var(--muted)}
+.muted{color:var(--muted);font-size:.9rem}
+.tag{display:inline-block;font-size:.8rem;padding:2px 8px;border-radius:99px;background:var(--brand-soft);color:var(--brand);font-weight:600}
+.bar{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
+.timer{font-variant-numeric:tabular-nums;font-weight:700}
+.doc{border:1px dashed var(--line);border-radius:8px;padding:12px;margin:10px 0;white-space:pre-wrap;font-size:.95rem;overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:.9rem}td,th{border:1px solid var(--line);padding:6px;text-align:left}
+.q{font-weight:600;margin:10px 0}
+.opt{display:block;width:100%;text-align:left;margin:6px 0;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--text);font-size:1rem;cursor:pointer}
+.opt.sel{border-color:var(--brand);background:var(--brand-soft)}
+.opt.ok{border-color:var(--ok);background:var(--ok-soft)}.opt.ng{border-color:var(--ng);background:var(--ng-soft)}
+.nav{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.nav button{width:36px;height:36px;border-radius:6px;border:1px solid var(--line);background:var(--card);color:var(--text);cursor:pointer}
+.nav .done{background:var(--brand-soft);border-color:var(--brand)}.nav .cur{outline:2px solid var(--brand)}
+.nav .r-ok{background:var(--ok-soft);border-color:var(--ok)}.nav .r-ng{background:var(--ng-soft);border-color:var(--ng)}
+.exp{background:var(--bg);border-radius:8px;padding:10px 12px;margin-top:10px;font-size:.95rem}
+.score{font-size:2.4rem;font-weight:800;color:var(--brand)}
+.hidden{display:none}
+.script{font-size:.9rem;color:var(--muted);white-space:pre-wrap;margin-top:6px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header><h1>BJT <span>Luyện Đề</span></h1><button class="btn" id="home" onclick="goHome()">Trang chủ</button></header>
+<div id="app"></div>
+</div>
+<script>
+/* ===== NGÂN HÀNG CÂU HỎI =====
+ Giáo viên thêm câu theo đúng khuôn:
+ sec: "listen" (聴解) | "listenread" (聴読解) | "read" (読解)
+ script: lời thoại audio (máy đọc tiếng Nhật) — chỉ phần nghe
+ doc: tài liệu hiển thị (text hoặc HTML bảng)
+ opts: 4 phương án, ans: vị trí đúng (0-3), exp: giải thích tiếng Việt */
+const BANK = [
+{id:"L01",sec:"listen",part:"場面把握",
+ script:"女：部長、明日の会議の資料ですが、先ほど共有フォルダに入れておきました。\n男：ありがとう。ただ、売上の数字が先月のままになっているみたいだね。\n女：あ、申し訳ありません。すぐに差し替えます。",
+ q:"女の人はこのあと何をしますか。",
+ opts:["資料を印刷する","売上の数字を最新のものに直す","会議の時間を変更する","共有フォルダを新しく作る"],ans:1,
+ exp:"「すぐに差し替えます」= thay số liệu doanh thu cũ (tháng trước) bằng số mới. Nhiễu: (1) in tài liệu – không được nhắc; (3) đổi giờ họp – không có; (4) thư mục chung đã có sẵn, chị ấy đã bỏ tài liệu vào rồi."},
+{id:"L02",sec:"listen",part:"発言聴解",
+ script:"取引先：来週の打ち合わせですが、水曜日の午後はご都合いかがでしょうか。",
+ q:"取引先の人にどう答えますか。最も適切なものを選んでください。",
+ opts:["はい、水曜日の午後で結構です。","はい、水曜日の午後でご結構です。","水曜日の午後なら、行ってあげます。","はい、拝見します。"],ans:0,
+ exp:"「〜で結構です」là cách nhận lời lịch sự chuẩn. Nhiễu: (2) 「ご結構」 là keigo sai – không gắn ご vào 結構; (3) 「〜てあげる」 mang sắc thái ban ơn, thất lễ với đối tác; (4) 拝見する = xem (khiêm nhường), không hợp ngữ cảnh."},
+{id:"L03",sec:"listen",part:"発言聴解",
+ script:"電話の相手：お世話になっております。ABC商事の田中と申しますが、営業部の山本様はいらっしゃいますか。\n（山本さんは今、席にいません。）",
+ q:"電話を受けた人は何と言いますか。",
+ opts:["山本さんは今いらっしゃいません。","あいにく山本は席を外しております。","山本様は外出されています。","山本はただいまお休みになっています。"],ans:1,
+ exp:"Với người ngoài công ty, gọi đồng nghiệp mình không kèm さん/様 và dùng khiêm nhường: 「山本は席を外しております」. Nhiễu: (1)(3) dùng さん/様 và tôn kính cho người nhà mình – sai uchi/soto; (4) 「お休みになる」 là tôn kính → sai, và ý nghĩa cũng khác (nghỉ)."},
+{id:"L04",sec:"listen",part:"総合聴解",
+ script:"男：新製品の発売日ですが、工場の生産が遅れているので、当初予定していた4月1日から2週間延期したいと思います。\n女：広告は3月に出す予定でしたよね。\n男：ええ、広告の時期はそのままにして、発売日だけ変更しましょう。",
+ q:"新製品はいつ発売されますか。",
+ opts:["3月中","4月1日","4月15日ごろ","5月1日"],ans:2,
+ exp:"Ngày gốc 1/4, lùi 2 tuần → khoảng 15/4. Nhiễu: (1) tháng 3 là thời điểm quảng cáo, không phải ngày bán; (2) ngày dự kiến ban đầu – đã bị hoãn; (4) không được nhắc."},
+{id:"L05",sec:"listen",part:"総合聴解",
+ script:"男：この報告書、内容はいいんだけど、結論が最後にあるから読みにくいね。お客様向けだから、最初に結論を書いたほうがいいよ。グラフはこのままでいいから。\n女：はい、わかりました。",
+ q:"女の人は報告書をどう直しますか。",
+ opts:["グラフを増やす","結論を最初に書く","内容を短くする","結論を削除する"],ans:1,
+ exp:"Sếp yêu cầu đưa kết luận lên đầu (kết luận trước – 結論ファースト). Nhiễu: (1) 「グラフはこのままでいい」 → giữ nguyên biểu đồ; (3) nội dung được khen là tốt; (4) không bỏ kết luận mà chuyển vị trí."},
+{id:"LR01",sec:"listenread",part:"状況把握",
+ doc:'<b>会議室予約状況（明日）</b><table><tr><th>部屋</th><th>定員</th><th>予約</th></tr><tr><td>会議室A</td><td>10名</td><td>10:00〜12:00 予約済</td></tr><tr><td>会議室B</td><td>6名</td><td>予約なし</td></tr><tr><td>会議室C</td><td>20名</td><td>13:00〜15:00 予約済</td></tr></table>',
+ script:"男：明日の午後2時から、8人で打ち合わせをしたいんだけど、どの部屋が使えるかな。",
+ q:"どの会議室を予約しますか。",
+ opts:["会議室A","会議室B","会議室C","予約できる部屋はない"],ans:0,
+ exp:"Cần phòng ≥8 người lúc 14:00. A (10 người) chỉ bận buổi sáng → dùng được. Nhiễu: B chỉ 6 người; C bận 13:00–15:00, trùng giờ."},
+{id:"LR02",sec:"listenread",part:"資料聴読解",
+ doc:'<b>出張旅費規程（抜粋）</b><table><tr><th>項目</th><th>東京・大阪</th><th>その他の地域</th></tr><tr><td>宿泊費（1泊の上限）</td><td>12,000円</td><td>10,000円</td></tr><tr><td>日当（1日）</td><td>2,000円</td><td>2,000円</td></tr></table>',
+ script:"女：来週、名古屋に2泊3日で出張するんですが、宿泊費はいくらまで出ますか。",
+ q:"宿泊費の上限は合計でいくらですか。",
+ opts:["20,000円","24,000円","26,000円","30,000円"],ans:0,
+ exp:"Nagoya thuộc 「その他の地域」 → 10.000 yên/đêm × 2 đêm = 20.000 yên. Nhiễu: (2) dùng nhầm mức Tokyo/Osaka 12.000×2; (3) cộng thêm nhật phí 2.000×3 vào 20.000; (4) tính 3 đêm."},
+{id:"LR03",sec:"listenread",part:"資料聴読解",
+ doc:'<b>四半期別売上高（単位：百万円）</b><table><tr><th>第1四半期</th><th>第2四半期</th><th>第3四半期</th><th>第4四半期</th></tr><tr><td>120</td><td>150</td><td>140</td><td>180</td></tr></table>',
+ script:"男：前の四半期に比べて、売上が下がったのはどの期ですか。",
+ q:"答えを選んでください。",
+ opts:["第1四半期","第2四半期","第3四半期","第4四半期"],ans:2,
+ exp:"Q2 = 150 → Q3 = 140: giảm 10. Các kỳ khác đều tăng. Nhiễu (1): Q1 không có kỳ trước để so trong bảng."},
+{id:"LR04",sec:"listenread",part:"状況把握",
+ doc:'<b>【総務部より】健康診断のお知らせ</b>\n・営業部：5月10日（金）\n・開発部：5月12日（日）\n・総務部：5月14日（火）\n※指定日のご都合が悪い方は、予備日の5月20日（月）に受診してください。\n　その場合は、指定日の前日までに総務部へご連絡ください。',
+ script:"男：開発部の者なんですが、12日は大阪に出張なんです。どうすればいいですか。",
+ q:"男の人はどうしますか。",
+ opts:["5月10日に受診する","11日までに総務部に連絡して、5月20日に受診する","12日の当日に総務部に連絡する","健康診断を受けなくてもいい"],ans:1,
+ exp:"Không đi được ngày chỉ định → khám ngày dự phòng 20/5, báo Tổng vụ trước ngày chỉ định (tức chậm nhất 11/5). Nhiễu: (1) 10/5 là ngày của phòng Kinh doanh; (3) báo ngay trong ngày là trễ; (4) thông báo không cho miễn khám."},
+{id:"R01",sec:"read",part:"語彙・文法",
+ doc:"先日は貴重なお時間を（　　）、誠にありがとうございました。",
+ q:"（　　）に入る最も適切なものを選んでください。",
+ opts:["いただき","さしあげ","くださり","いたし"],ans:0,
+ exp:"「お時間をいただき」 = nhận thời gian của đối phương (khiêm nhường) – mẫu chuẩn trong email cảm ơn. Nhiễu: (2) さしあげる là mình cho người khác; (3) 「お時間をくださり」 không tự nhiên – thường nói 「お時間を割いてくださり」; (4) いたす = làm, không đi với お時間を."},
+{id:"R02",sec:"read",part:"語彙・文法",
+ doc:"お手数ですが、見積書を（　　）いただけますでしょうか。",
+ q:"（　　）に入る最も適切なものを選んでください。",
+ opts:["ご送付","ご送付して","送付されて","送付になって"],ans:0,
+ exp:"Mẫu 「ご＋danh từ Hán＋いただく」 → 「ご送付いただけますでしょうか」. Nhiễu: (2) 「ご送付していただく」 là lỗi keigo thừa して; (3) thể bị động không ghép với いただく; (4) 「送付になる」 không tồn tại."},
+{id:"R03",sec:"read",part:"語彙・文法",
+ doc:"（受付から内線で）部長、ABC商事の田中様が（　　）。",
+ q:"（　　）に入る最も適切なものを選んでください。",
+ opts:["参りました","お見えになりました","伺いました","おりました"],ans:1,
+ exp:"Khách đến → dùng tôn kính 「お見えになる」(= 来る). Nhiễu: (1)(3) 参る・伺う là khiêm nhường, chỉ dùng cho hành động của mình/người nhà mình; (4) おる cũng là khiêm nhường và sai nghĩa."},
+{id:"R04",sec:"read",part:"読解",
+ doc:"件名：納品日変更のお願い\n\n株式会社さくら物産　総務部　佐藤様\n\nいつもお世話になっております。ミナト印刷の木村です。\nご注文いただいたパンフレット（5,000部）につきまして、用紙の入荷が遅れているため、納品日を当初の6月3日から6月7日に変更させていただけないでしょうか。\nなお、6月3日までに必要な分がございましたら、500部までであれば先行してお届けすることが可能です。\nご迷惑をおかけし申し訳ございませんが、ご検討のほどよろしくお願いいたします。",
+ q:"このメールで木村さんが一番伝えたいことは何ですか。",
+ opts:["注文数を減らしてほしい","納品日を延ばしてほしい","用紙を早く送ってほしい","パンフレットの内容を変えたい"],ans:1,
+ exp:"Mục đích chính nằm ở tiêu đề và câu 「納品日を…変更させていただけないでしょうか」 → xin lùi ngày giao. Nhiễu: (1) không xin giảm số lượng; (3) giấy về chậm là lý do, không phải yêu cầu gửi khách; (4) không nói đến nội dung."},
+{id:"R05",sec:"read",part:"読解",
+ doc:"（前の問題と同じメール）\n\n…納品日を当初の6月3日から6月7日に変更させていただけないでしょうか。\nなお、6月3日までに必要な分がございましたら、500部までであれば先行してお届けすることが可能です。",
+ q:"佐藤さんが6月3日までに1,000部必要な場合、どうなりますか。",
+ opts:["6月3日までに1,000部届く","6月3日までに500部まで届けてもらえる","6月3日に5,000部すべて届く","6月7日まで1部も届かない"],ans:1,
+ exp:"Giao trước tối đa 500 bản → cần 1.000 thì cũng chỉ nhận trước được 500. Nhiễu: (1) vượt mức 500; (3) toàn bộ giao ngày 7/6; (4) sai vì có thể giao trước 500 bản."},
+{id:"R06",sec:"read",part:"読解",
+ doc:"【在宅勤務制度について】\n在宅勤務を希望する場合は、前週の金曜日までに上司の承認を得たうえで、勤怠システムに登録すること。\nただし、在宅勤務は週2日を上限とする。",
+ q:"この文書の内容と合っているものはどれですか。",
+ opts:["在宅勤務は週3日までできる","上司の承認を得る前にシステムに登録する","前週の金曜日までに上司の承認を得て、システムに登録する","当日の朝に上司に連絡すれば在宅勤務できる"],ans:2,
+ exp:"「〜たうえで」 = sau khi làm A rồi mới B → được duyệt trước, rồi mới đăng ký hệ thống, hạn thứ Sáu tuần trước. Nhiễu: (1) giới hạn là 2 ngày/tuần; (2) đảo ngược thứ tự; (4) trái với quy định đăng ký trước."}
+];
+const SEC = {listen:"聴解 (Nghe)",listenread:"聴読解 (Nghe + Đọc)",read:"読解 (Đọc)"};
+const MOCK_MIN = 30;
+
+/* ===== Lưu câu sai (chỉ trên trình duyệt này) ===== */
+function loadWrong(){try{return JSON.parse(localStorage.getItem("bjt_wrong")||"[]")}catch(e){return[]}}
+function saveWrong(a){try{localStorage.setItem("bjt_wrong",JSON.stringify(a))}catch(e){}}
+
+let S = null, timerId = null;
+const $ = id => document.getElementById(id);
+
+function goHome(){
+  clearInterval(timerId); speechSynthesis.cancel(); S = null;
+  const wrong = loadWrong();
+  const cnt = s => BANK.filter(q=>q.sec===s).length;
+  $("app").innerHTML = `
+  <div class="card"><b>Chọn chế độ luyện</b><p class="muted">Ngân hàng: ${BANK.length} câu · Phần nghe được máy đọc tiếng Nhật (cần bật âm thanh).</p>
+  <div class="grid">
+    <button class="btn mode" onclick="start('mock')"><b>🕒 Thi thử</b><small>Toàn bộ ${BANK.length} câu · ${MOCK_MIN} phút · mỗi audio nghe tối đa 2 lần · chấm điểm khi nộp</small></button>
+    <button class="btn mode" onclick="start('listen')"><b>🎧 ${SEC.listen}</b><small>${cnt("listen")} câu · xem đáp án ngay</small></button>
+    <button class="btn mode" onclick="start('listenread')"><b>📊 ${SEC.listenread}</b><small>${cnt("listenread")} câu · xem đáp án ngay</small></button>
+    <button class="btn mode" onclick="start('read')"><b>📄 ${SEC.read}</b><small>${cnt("read")} câu · xem đáp án ngay</small></button>
+    <button class="btn mode" onclick="start('wrong')" ${wrong.length?"":"disabled"}><b>🔁 Ôn câu sai</b><small>${wrong.length} câu đang lưu</small></button>
+  </div></div>
+  <div class="card muted">Điểm quy đổi 0–800 và mức J5–J1+ chỉ là <b>ước lượng</b> theo tỉ lệ đúng, không phải thang điểm chính thức của BJT. Câu hỏi là đề tự biên soạn theo dạng BJT, không phải đề thật.</div>`;
+}
+
+function start(mode){
+  let qs = mode==="mock" ? BANK.slice()
+        : mode==="wrong" ? BANK.filter(q=>loadWrong().includes(q.id))
+        : BANK.filter(q=>q.sec===mode);
+  S = {mode, qs, i:0, ans:Array(qs.length).fill(null), plays:{}, done:false, end: mode==="mock" ? Date.now()+MOCK_MIN*60000 : null};
+  if(S.end){ timerId = setInterval(tick,1000); }
+  render();
+}
+
+function tick(){
+  const left = Math.max(0, S.end - Date.now());
+  const el = $("timer"); if(el) el.textContent = fmt(left);
+  if(left===0){ clearInterval(timerId); finish(); }
+}
+const fmt = ms => { const s=Math.ceil(ms/1000); return String(Math.floor(s/60)).padStart(2,"0")+":"+String(s%60).padStart(2,"0"); };
+
+function play(){
+  const q = S.qs[S.i]; const n = S.plays[q.id]||0;
+  if(S.mode==="mock" && !S.done && n>=2) return;
+  S.plays[q.id]=n+1;
+  speechSynthesis.cancel();
+  const u = new SpeechSynthesisUtterance(q.script.replace(/^[^：\n]+：/gm,"").replace(/[（(][^）)]*[）)]/g,""));
+  u.lang="ja-JP"; u.rate=0.95;
+  const v = speechSynthesis.getVoices().find(v=>v.lang.startsWith("ja")); if(v) u.voice=v;
+  speechSynthesis.speak(u); render();
+}
+
+function pick(k){
+  const instant = S.mode!=="mock";
+  if(S.done || (instant && S.ans[S.i]!==null)) return;
+  S.ans[S.i]=k;
+  if(instant) record(S.qs[S.i], k);
+  render();
+}
+function record(q,k){
+  let w = loadWrong().filter(id=>id!==q.id);
+  if(k!==q.ans) w.push(q.id);
+  saveWrong(w);
+}
+
+function render(){
+  const q = S.qs[S.i], a = S.ans[S.i];
+  const reveal = S.done || (S.mode!=="mock" && a!==null);
+  const n = S.plays[q.id]||0;
+  const canPlay = !(S.mode==="mock" && !S.done && n>=2);
+  let h = `<div class="card"><div class="bar"><span class="tag">${SEC[q.sec]} · ${q.part}</span>
+    <span class="muted">Câu ${S.i+1}/${S.qs.length}</span>
+    ${S.end && !S.done ? `<span class="timer" id="timer">${fmt(S.end-Date.now())}</span>`:""}</div>`;
+  if(q.script) h += `<p><button class="btn" onclick="play()" ${canPlay?"":"disabled"}>▶ Nghe audio</button>
+     <span class="muted"> ${S.mode==="mock"&&!S.done?`Đã nghe ${n}/2 lần`:""}</span></p>`;
+  if(q.doc) h += `<div class="doc">${q.doc}</div>`;
+  h += `<div class="q">${q.q}</div>`;
+  q.opts.forEach((o,k)=>{
+    let c = "opt";
+    if(reveal){ if(k===q.ans) c+=" ok"; else if(k===a) c+=" ng"; }
+    else if(k===a) c+=" sel";
+    h += `<button class="${c}" onclick="pick(${k})">${k+1}. ${o}</button>`;
+  });
+  if(reveal){
+    h += `<div class="exp"><b>${a===q.ans?"✅ Đúng":"❌ Sai"} — Đáp án: ${q.ans+1}</b><br>${q.exp}`;
+    if(q.script) h += `<div class="script"><b>Script:</b>\n${q.script}</div>`;
+    h += `</div>`;
+  }
+  h += `<div class="bar" style="margin-top:12px"><button class="btn" onclick="go(-1)" ${S.i?"":"disabled"}>← Trước</button>`;
+  h += S.i<S.qs.length-1 ? `<button class="btn primary" onclick="go(1)">Tiếp →</button>`
+       : (S.done ? `<button class="btn primary" onclick="showResult()">Xem kết quả</button>` : `<button class="btn primary" onclick="confirmFinish()">Nộp bài</button>`);
+  h += `</div><div class="nav">`;
+  S.qs.forEach((x,k)=>{
+    let c = k===S.i ? "cur" : "";
+    if(S.done || (S.mode!=="mock" && S.ans[k]!==null)) c += S.ans[k]===x.ans ? " r-ok" : (S.ans[k]===null?"":" r-ng");
+    else if(S.ans[k]!==null) c += " done";
+    h += `<button class="${c}" onclick="jump(${k})">${k+1}</button>`;
+  });
+  $("app").innerHTML = h + `</div></div>`;
+}
+function go(d){ speechSynthesis.cancel(); S.i+=d; render(); }
+function jump(k){ speechSynthesis.cancel(); S.i=k; render(); }
+function confirmFinish(){
+  const blank = S.ans.filter(x=>x===null).length;
+  if(blank && !confirm(`Còn ${blank} câu chưa làm. Nộp bài?`)) return;
+  finish();
+}
+function finish(){
+  clearInterval(timerId); speechSynthesis.cancel();
+  if(S.mode==="mock") S.qs.forEach((q,k)=>record(q,S.ans[k]));
+  S.done = true; showResult();
+}
+function level(p){ return p>=600?"J1+":p>=530?"J1":p>=420?"J2":p>=320?"J3":p>=200?"J4":"J5"; }
+function showResult(){
+  const ok = S.qs.filter((q,k)=>S.ans[k]===q.ans).length;
+  const pt = Math.round(ok/S.qs.length*800);
+  let rows = "";
+  Object.keys(SEC).forEach(s=>{
+    const idx = S.qs.map((q,k)=>k).filter(k=>S.qs[k].sec===s);
+    if(!idx.length) return;
+    const c = idx.filter(k=>S.ans[k]===S.qs[k].ans).length;
+    rows += `<tr><td>${SEC[s]}</td><td>${c}/${idx.length}</td><td>${Math.round(c/idx.length*100)}%</td></tr>`;
+  });
+  $("app").innerHTML = `<div class="card"><div class="muted">Kết quả</div>
+    <div class="score">${pt}<small style="font-size:1rem"> / 800</small></div>
+    <p>Mức ước lượng: <span class="tag">${level(pt)}</span> · Đúng ${ok}/${S.qs.length} câu</p>
+    <table><tr><th>Phần</th><th>Đúng</th><th>Tỉ lệ</th></tr>${rows}</table>
+    <div class="bar" style="margin-top:12px">
+      <button class="btn" onclick="S.i=0;render()">Xem lại từng câu + giải thích</button>
+      <button class="btn primary" onclick="goHome()">Về trang chủ</button></div></div>`;
+}
+speechSynthesis.getVoices();
+goHome();
+</script>
+</body>
+</html>
