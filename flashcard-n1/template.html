@@ -1,4 +1,4 @@
-<title>Thẻ ngữ pháp N1</title>
+<title>Thẻ ngữ pháp JLPT</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Be+Vietnam+Pro:wght@400;500;600&family=Zen+Maru+Gothic:wght@500;700&display=swap">
@@ -45,6 +45,11 @@ h1{font-family:var(--f-display);font-size:24px;font-weight:800;margin:0;line-hei
 .stat{display:flex;align-items:center;gap:6px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:6px 12px;font-size:12px;color:var(--muted)}
 .stat b{font-variant-numeric:tabular-nums;font-size:13px}
 .dot{width:8px;height:8px;border-radius:50%}
+.levels{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;max-width:480px}
+.lv{font:inherit;font-family:var(--f-display);font-weight:800;font-size:20px;border:2px solid var(--line);background:var(--surface);color:var(--fg);border-radius:14px;padding:8px 10px;cursor:pointer;display:flex;flex-direction:column;align-items:center;line-height:1.1}
+.lv span{font-family:var(--f-body);font-weight:500;font-size:11.5px;color:var(--muted)}
+.lv[aria-selected="true"]{border-color:var(--accent);background:var(--accent);color:#fff}
+.lv[aria-selected="true"] span{color:#fff;opacity:.9}
 .groups{display:flex;gap:6px;flex-wrap:wrap}
 .chip{font:inherit;font-size:12.5px;border:1px solid var(--line);background:var(--surface);color:var(--fg);border-radius:999px;padding:6px 12px;cursor:pointer;display:flex;gap:6px;align-items:center}
 .chip .n{color:var(--muted);font-variant-numeric:tabular-nums;font-size:11.5px}
@@ -110,9 +115,10 @@ button:focus-visible,input:focus-visible,.card:focus-visible{outline:2px solid v
 <div class="wrap">
   <div class="brandbar"><img class="logo-l" src="/*LOGO*/" alt="Mankai Academy"><img class="logo-d" src="/*LOGOW*/" alt="Mankai Academy"><span class="brandtag">Đào tạo tiếng Nhật</span></div>
   <header>
-    <h1>N1 - Sổ tay ngữ pháp</h1>
-    <p class="sub"><span id="nAll"></span> mẫu ngữ pháp N1 từ sheet N1文法, lọc theo cột Phân loại. Bấm vào thẻ để lật.</p>
+    <h1 id="title">Sổ tay ngữ pháp</h1>
+    <p class="sub"><span id="nAll"></span> mẫu ngữ pháp <span id="lvName"></span>. Chọn cấp độ → chọn nhóm → bấm vào thẻ để lật.</p>
   </header>
+  <div class="levels" id="levels" role="tablist" aria-label="Cấp độ"></div>
   <div class="stats">
     <span class="stat"><span class="dot" style="background:var(--indigo)"></span><b id="sTotal">0</b> Mẫu</span>
     <span class="stat"><span class="dot" style="background:var(--accent)"></span><b id="sOk">0</b> Đã thuộc</span>
@@ -158,23 +164,30 @@ button:focus-visible,input:focus-visible,.card:focus-visible{outline:2px solid v
 </div>
 
 <script>
-const RAW=/*DATA*/;
+const LV=/*DATA*/;
+const LVINFO={N1:"N1 · sheet N1文法, nhóm theo cột Phân loại",N2:"N2 · sheet N2文法, nhóm theo Bài",N3:"N3 · sheet N3文法, nhóm đề xuất"};
 // Cách đọc kana cho phần nghe (đã rà soát chữ Hán đọc dễ sai). Sửa trong readings.json
-const READ=/*READ*/;
+const READA=/*READ*/;
 // Nhóm lấy từ cột "Phân loại" trong sheet
-const ITEMS=RAW.map(r=>({stt:r[0],grp:(r[1]||"Khác").trim(),pat:r[2]||"",form:r[3]||"",mean:r[4]||"",ex:r[5]||"",note:r[6]||""}));
-const GNAMES=[...new Set(ITEMS.map(i=>i.grp))].sort((a,b)=>a.localeCompare(b,"vi"));
-const KEY="n1-bunpou-ok";
-let ok=new Set();try{ok=new Set(JSON.parse(localStorage.getItem(KEY)||"[]"))}catch(e){}
+let level="N1",ITEMS=[],GNAMES=[],READ={},TR={},KEY="",ok=new Set(),group="Tất cả",list=[],idx=0,order=[];
 const save=()=>{try{localStorage.setItem(KEY,JSON.stringify([...ok]))}catch(e){}};
-let group="Tất cả",list=[],idx=0,order=ITEMS.slice();
+function setLevel(lv){level=lv;
+  ITEMS=LV[lv].map(r=>({stt:r[0],grp:(r[1]||"Khác").trim(),pat:r[2]||"",form:r[3]||"",mean:r[4]||"",ex:r[5]||"",note:r[6]||""}));
+  GNAMES=[...new Set(ITEMS.map(i=>i.grp))];if(lv==="N1")GNAMES.sort((a,b)=>a.localeCompare(b,"vi"));
+  READ=READA[lv]||{};TR=TRA[lv]||{};KEY=lv==="N1"?"n1-bunpou-ok":lv.toLowerCase()+"-bunpou-ok";
+  ok=new Set();try{ok=new Set(JSON.parse(localStorage.getItem(KEY)||"[]"))}catch(e){}
+  try{localStorage.setItem("bunpou-level",lv)}catch(e){}
+  group="Tất cả";idx=0;order=ITEMS.slice();$("q").value="";
+  $("title").textContent=lv+" - Sổ tay ngữ pháp";$("nAll").textContent=ITEMS.length;$("lvName").textContent=LVINFO[lv];
+  $("levels").innerHTML=Object.keys(LV).map(k=>`<button class="lv" role="tab" data-lv="${k}" aria-selected="${k===lv}">${k}<span>${LV[k].length} mẫu</span></button>`).join("");
+  renderGroups();render()}
 const $=id=>document.getElementById(id);
 const esc=s=>s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const br=s=>esc(s.trim()).replace(/\n/g,"<br>");
 const isVi=l=>/[a-zA-ZÀ-ỹ]{3,}/.test(l)&&/[ăâđêôơưáàảãạéèẻẽẹíìỉĩịóòỏõọúùủũụýỳỷỹỵ]/i.test(l)&&!/[぀-ヿ]/.test(l.slice(0,4));
 const firstLine=s=>s.split("\n")[0].trim();
 // Bản dịch bổ sung cho câu ví dụ chưa có dịch (translations.json), gắn theo thứ tự dòng tiếng Nhật
-const TR=/*TR*/;
+const TRA=/*TR*/;
 function exHTML(s,stt){const L=s.split("\n").map(l=>l.trim()).filter(Boolean),tr=(TR[stt]||[]).slice();
   return L.map((l,i)=>{if(isVi(l))return `<div class="vi">${esc(l)}</div>`;
     let h=`<div class="ja">${esc(l)}</div>`;
@@ -251,5 +264,7 @@ document.addEventListener("keydown",e=>{if(e.target.matches("input"))return;
   if(e.key==="ArrowLeft")go(idx-1);else if(e.key==="ArrowRight")go(idx+1);
   else if(e.key===" "){e.preventDefault();$("card").classList.toggle("flipped")}
   else if(e.key.toLowerCase()==="m")toggleOk();});
-$("nAll").textContent=ITEMS.length;renderGroups();render();
+$("levels").addEventListener("click",e=>{const b=e.target.closest(".lv");if(b&&b.dataset.lv!==level)setLevel(b.dataset.lv)});
+let start="N1";try{const s=localStorage.getItem("bunpou-level");if(s&&LV[s])start=s}catch(e){}
+setLevel(start);
 </script>
