@@ -98,7 +98,6 @@ def slide_cover(meta, total):
 <div style="position:absolute;top:220px;left:96px;font-size:260px;font-weight:800;line-height:1">{html.escape(meta["level"])}</div>
 <div class="jp" style="position:absolute;top:300px;left:560px;font-size:110px;font-weight:700">{html.escape(meta["sach"])}</div>
 <div style="position:absolute;top:530px;left:100px"><span class="pill jp" style="font-size:88px">{html.escape(meta["hoi"])}</span></div>
-<div style="position:absolute;top:760px;left:100px;font-size:40px;font-weight:600;line-height:1.6">{total} câu · {html.escape(meta.get("thoi_gian","10 phút"))}</div>
 ''', "vay-chao", True)
 
 
