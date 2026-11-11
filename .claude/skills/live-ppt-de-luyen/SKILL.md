@@ -42,6 +42,12 @@ Brand: trắng 60% · cam 25% · vàng 10%; chữ nâu mực #2B1D16; không ch�
 | `__từ__` | gạch chân + đậm |
 | `\n` | xuống dòng (A：… / B：…) |
 | `（　　）` | chỗ trống |
+| `[[1]]` | ô trống đánh số của 文章の文法 (nền vàng) |
+
+### 文法 問題3 文章の文法
+Thêm vào 問題 `"doan_van"` (đoạn văn, `\n` tách đoạn, chỗ trống `[[1]]`…) → tự chèn 1 slide đoạn văn sau slide tiêu đề 問題 (`co_chu_doan` mặc định 40). Mỗi câu hỏi: `cau` = câu chứa chỗ trống, rút gọn bằng `…`. Mẫu: `examples/n3_bunpou_01.json`.
+### 文法 問題2 並べ替え
+`cau` viết `＿＿ ＿＿ ★ ＿＿`, `dap_an` = lựa chọn ở vị trí ★ (theo 解答).
 
 ## Live trong TikTok LIVE Studio
 Hướng dọc → nguồn Camera đặt phần trên (kèm banner tiêu đề) → nguồn Window capture cửa sổ PowerPoint trình chiếu, kéo full ngang ở giữa khung → bấm → để qua slide.

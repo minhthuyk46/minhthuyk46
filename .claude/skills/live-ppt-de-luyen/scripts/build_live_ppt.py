@@ -37,6 +37,7 @@ body{width:1920px;height:1080px;position:relative;overflow:hidden;background:#ff
  radial-gradient(circle at 50% 100%,transparent 18px,var(--cam) 19px,var(--cam) 22px,transparent 23px,transparent 30px,var(--cam) 31px,var(--cam) 34px,transparent 35px,transparent 42px,var(--cam) 43px,var(--cam) 46px,transparent 47px) 0 0/100px 50px,
  radial-gradient(circle at 50% 100%,transparent 18px,var(--cam) 19px,var(--cam) 22px,transparent 23px,transparent 30px,var(--cam) 31px,var(--cam) 34px,transparent 35px,transparent 42px,var(--cam) 43px,var(--cam) 46px,transparent 47px) 50px 25px/100px 50px}
 .jp{font-family:"Noto Sans JP",sans-serif}
+.blank{display:inline-block;border:4px solid var(--ink);border-radius:10px;padding:0 18px;margin:0 6px;line-height:1.2;font-weight:800;background:var(--vang)}
 ruby rt{font-size:.42em;font-weight:500;color:var(--ink)}
 u{text-decoration-thickness:5px;text-underline-offset:12px;font-weight:700}
 .title{position:absolute;top:34px;left:56px;right:56px;height:88px;border-radius:44px;background:var(--cam);
@@ -70,6 +71,7 @@ def rich(t):
     t = html.escape(t)
     t = re.sub(r"\{([^|{}]+)\|([^{}]+)\}", r"<ruby>\1<rt>\2</rt></ruby>", t)
     t = re.sub(r"__(.+?)__", r"<u>\1</u>", t)
+    t = re.sub(r"\[\[(\d+)\]\]", r'<span class="blank">\1</span>', t)
     return t.replace("\\n", "<br>").replace("\n", "<br>")
 
 
@@ -114,6 +116,13 @@ def slide_mondai(meta, m, idx, nm):
 <div class="jp" style="position:absolute;top:240px;left:560px;font-size:64px;font-weight:700">{html.escape(m.get("dang",""))}</div>
 <div class="card jp" style="top:430px;left:56px;right:520px;font-size:54px;line-height:1.7;font-weight:500">{rich(m.get("yeu_cau",""))}</div>
 ''', "suy-nghi", True)
+
+
+def slide_passage(meta, m):
+    size = m.get("co_chu_doan", 40)
+    paras = "".join(f'<p style="text-indent:1em;margin-bottom:10px">{rich(x)}</p>' for x in m["doan_van"].split("\n"))
+    return page(f'''{title_bar(meta, f"{m['ten']} · 文章")}
+<div class="card jp" style="top:150px;left:56px;right:56px;bottom:40px;padding:30px 48px;font-size:{size}px;line-height:1.85;font-weight:500">{paras}</div>''')
 
 
 def slide_q(meta, m, q, reveal):
@@ -163,6 +172,8 @@ def build(data, out):
     pages = [slide_cover(meta, total), slide_rules(meta, total)]
     for i, m in enumerate(mondai, 1):
         pages.append(slide_mondai(meta, m, i, len(mondai)))
+        if m.get("doan_van"):
+            pages.append(slide_passage(meta, m))
         for q in m["cau_hoi"]:
             pages += [slide_q(meta, m, q, False), slide_q(meta, m, q, True)]
     pages += [slide_summary(meta, data), slide_end(meta)]
