@@ -98,14 +98,14 @@ def slide_cover(meta, total):
 <div style="position:absolute;top:220px;left:96px;font-size:260px;font-weight:800;line-height:1">{html.escape(meta["level"])}</div>
 <div class="jp" style="position:absolute;top:300px;left:560px;font-size:110px;font-weight:700">{html.escape(meta["sach"])}</div>
 <div style="position:absolute;top:530px;left:100px"><span class="pill jp" style="font-size:88px">{html.escape(meta["hoi"])}</span></div>
-<div style="position:absolute;top:760px;left:100px;font-size:40px;font-weight:600;line-height:1.6">{total} câu · {html.escape(meta.get("thoi_gian","10 phút"))}<br>Nguồn: <span class="jp">{html.escape(meta.get("nguon",""))}</span></div>
+<div style="position:absolute;top:760px;left:100px;font-size:40px;font-weight:600;line-height:1.6">{total} câu · {html.escape(meta.get("thoi_gian","10 phút"))}</div>
 ''', "vay-chao", True)
 
 
 def slide_rules(meta, total):
     return page(f'''{title_bar(meta, "LUẬT CHƠI")}
-<div class="card" style="top:180px;left:56px;right:520px;font-size:56px;font-weight:700;line-height:1.75;white-space:nowrap">
-⏱ Mỗi câu 20–30 giây<br>💬 Comment <b style="color:var(--camdam)">1 số</b>: 1 · 2 · 3 · 4<br>✔ Hiện đáp án ngay sau mỗi câu<br>🏆 Đúng nhiều nhất được vinh danh!</div>
+<div class="card" style="top:250px;left:56px;right:520px;font-size:60px;font-weight:700;line-height:1.9;white-space:nowrap">
+💬 Comment đáp án: <b style="color:var(--camdam)">1 / 2 / 3 / 4</b><br>🎁 Lụm list tổng hợp từ trúng tủ {html.escape(meta["level"])}<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sau phiên live</div>
 ''', "vay-chao", True)
 
 
