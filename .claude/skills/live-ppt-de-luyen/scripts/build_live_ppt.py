@@ -127,7 +127,7 @@ def slide_passage(meta, m):
 
 def slide_q(meta, m, q, reveal):
     n = len(m["cau_hoi"])
-    long_opts = max(plain_len(o) for o in q["lua_chon"]) > 14
+    long_opts = max(plain_len(o) for o in q["lua_chon"]) > 11
     ql = plain_len(q["cau"])
     opts = ""
     osize = q.get("co_chu_lc", 66 if not long_opts else 46)
