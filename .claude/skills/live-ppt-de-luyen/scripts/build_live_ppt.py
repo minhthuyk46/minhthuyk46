@@ -1,261 +1,195 @@
 #!/usr/bin/env python3
-"""PPT dọc 9:16 (1080x1920) chiếu đề luyện JLPT trên TikTok LIVE.
+"""Slide luyện đề JLPT cho TikTok LIVE (dọc 1080x1920, brand Mankai).
 
-    python3 build_live_ppt.py de.json [-o out.pptx] [--brand ../brand.json]
+    python3 build_live_ppt.py de.json [-o out.pptx]
 
-- Slide câu hỏi -> slide đáp án (chỉ tô màu khung đáp án đúng, không giải thích).
-- Nội dung nằm trong VÙNG AN TOÀN của TikTok LIVE: tránh thanh avatar/người xem
-  phía trên, cột icon bên phải, khung comment/quà phía dưới.
-Markup: __gạch chân__  {漢字|かな}  ★  （　　）
+Quy trình: JSON -> HTML từng slide (furigana dạng <ruby> như sách) -> PNG (Playwright)
+-> PPTX mỗi slide 1 ảnh full khung. Camera Sensei xoá phông ghép ở góc phải dưới
+trong LIVE Studio (vùng x 760–1050, y 770–1320 để trống sẵn).
+
+Markup trong JSON:
+    {漢字|かな}   furigana        __chữ__  gạch chân (từ được hỏi)
+    （　　）      chỗ trống       \n       xuống dòng (hội thoại A/B)
 """
 import argparse
+import html
 import json
 import os
 import re
+import shutil
+import subprocess
 import sys
+import tempfile
 
 from pptx import Presentation
-from pptx.dml.color import RGBColor
-from pptx.enum.shapes import MSO_SHAPE
-from pptx.enum.text import MSO_ANCHOR, PP_ALIGN
-from pptx.oxml.ns import qn
-from pptx.util import Inches, Pt
+from pptx.util import Emu
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-W, H = Inches(7.5), Inches(13.333)          # 1080 x 1920
-# Vùng an toàn TikTok LIVE (inch, khung 7.5 x 13.333)
-SAFE_L, SAFE_R = 0.35, 6.55                 # chừa ~0.95in cột icon bên phải
-SAFE_T, SAFE_B = 1.75, 9.05                 # trên: avatar/viewer; dưới: comment + quà
-SAFE_W = SAFE_R - SAFE_L
+ASSETS = os.path.normpath(os.path.join(HERE, "..", "assets"))
 
-B = {}          # brand, nạp lúc chạy
-FONT = "Noto Sans JP"
-
-
-def c(key):
-    return RGBColor.from_string(B["mau"][key])
-
-
-TOKEN = re.compile(r"(__.+?__|\{[^|{}]+\|[^{}]+\}|★)")
-
-
-def set_font(run, size, color, bold=False, underline=False):
-    f = run.font
-    f.size, f.bold, f.underline, f.name = Pt(size), bold, underline, FONT
-    f.color.rgb = color
-    rPr = run._r.get_or_add_rPr()
-    for tag in ("a:ea", "a:cs"):
-        el = rPr.find(qn(tag))
-        if el is None:
-            el = rPr.makeelement(qn(tag), {}); rPr.append(el)
-        el.set("typeface", FONT)
-
-
-def add_rich(p, text, size, color, bold=False, accent=None):
-    accent = accent or c("chu_dao")
-    for part in TOKEN.split(text):
-        if not part:
-            continue
-        if part.startswith("__"):
-            for sub in re.split(r"(\{[^|{}]+\|[^{}]+\})", part[2:-2]):
-                if sub.startswith("{"):
-                    k, kana = sub[1:-1].split("|", 1)
-                    r = p.add_run(); r.text = k; set_font(r, size, accent, True, True)
-                    r = p.add_run(); r.text = f"({kana})"; set_font(r, size * .5, accent, False, True)
-                elif sub:
-                    r = p.add_run(); r.text = sub; set_font(r, size, accent, True, True)
-        elif part.startswith("{"):
-            k, kana = part[1:-1].split("|", 1)
-            r = p.add_run(); r.text = k; set_font(r, size, color, bold)
-            r = p.add_run(); r.text = f"({kana})"; set_font(r, size * .5, color)
-        elif part == "★":
-            r = p.add_run(); r.text = "★"; set_font(r, size, accent, True)
-        else:
-            r = p.add_run(); r.text = part; set_font(r, size, color, bold)
+CSS = r"""
+:root{--cam:#F37142;--vang:#F3A41D;--ink:#2B1D16;--dao:#FDE3D3;--camdam:#C2461F}
+*{box-sizing:border-box;margin:0}
+body{width:1080px;height:1920px;position:relative;overflow:hidden;background:#fff;
+ font-family:"Be Vietnam Pro","Noto Sans JP",sans-serif;color:var(--ink)}
+.sei{position:absolute;left:0;right:0;opacity:.10;background:
+ radial-gradient(circle at 50% 100%,transparent 18px,var(--cam) 19px,var(--cam) 22px,transparent 23px,transparent 30px,var(--cam) 31px,var(--cam) 34px,transparent 35px,transparent 42px,var(--cam) 43px,var(--cam) 46px,transparent 47px) 0 0/100px 50px,
+ radial-gradient(circle at 50% 100%,transparent 18px,var(--cam) 19px,var(--cam) 22px,transparent 23px,transparent 30px,var(--cam) 31px,var(--cam) 34px,transparent 35px,transparent 42px,var(--cam) 43px,var(--cam) 46px,transparent 47px) 50px 25px/100px 50px}
+.jp{font-family:"Noto Sans JP",sans-serif}
+ruby rt{font-size:.42em;font-weight:500;color:var(--ink)}
+u{text-decoration-thickness:4px;text-underline-offset:10px;font-weight:700}
+.title{position:absolute;top:268px;left:210px;right:80px;height:76px;border-radius:38px;background:var(--cam);
+ display:flex;align-items:center;justify-content:space-between;padding:0 14px 0 30px;font-weight:800;font-size:31px;white-space:nowrap}
+.title .p{background:#fff;border-radius:26px;padding:4px 18px;font-size:28px}
+.q{position:absolute;top:378px;left:90px;right:90px;height:280px;border-radius:36px;background:#fff;border:4px solid var(--ink);
+ box-shadow:8px 8px 0 var(--ink);padding:20px 34px;display:flex;gap:22px;align-items:center}
+.num{flex:none;width:76px;height:76px;border-radius:50%;background:var(--vang);display:grid;place-items:center;font-weight:800;font-size:40px}
+.qt{line-height:1.7;font-weight:500}
+.opts{position:absolute;top:700px;left:90px;width:660px;display:flex;flex-direction:column;gap:18px}
+.o{height:104px;border-radius:28px;border:3px solid #E5D9D0;background:#fff;display:flex;align-items:center;gap:22px;padding:0 26px;font-weight:500;line-height:1.5}
+.o b{font-family:"Be Vietnam Pro";font-weight:800;color:var(--camdam);flex:none;width:30px}
+.opts.long{width:900px;gap:18px}
+.opts.long .o{height:auto;min-height:96px;padding:12px 24px}
+.o.ok{background:var(--cam);border:4px solid var(--ink);box-shadow:6px 6px 0 var(--ink);font-weight:700}
+.o.ok b{color:var(--ink)}
+.o.dim{opacity:.33}
+.st{position:absolute;top:1200px;left:90px;height:96px;border-radius:48px;background:var(--dao);white-space:nowrap;
+ display:flex;align-items:center;gap:18px;padding:0 30px 0 14px;font-size:30px;font-weight:700}
+.t{background:var(--vang);border-radius:36px;padding:10px 22px;font-weight:800;font-size:34px}
+.camzone{position:absolute;right:30px;top:770px;width:290px;height:550px;border-radius:145px 145px 28px 28px;background:var(--dao);opacity:.55}
+.neko{position:absolute;left:585px;top:1125px;height:205px}
+.big{position:absolute;left:90px;right:90px;text-align:center}
+.pill{display:inline-block;background:var(--cam);border:4px solid var(--ink);box-shadow:8px 8px 0 var(--ink);border-radius:60px;padding:14px 56px;font-weight:800}
+.card{position:absolute;left:90px;right:90px;border-radius:36px;background:#fff;border:4px solid var(--ink);box-shadow:8px 8px 0 var(--ink);padding:36px 40px}
+.grid{position:absolute;left:90px;width:660px;top:400px;display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.cell{border-radius:22px;border:3px solid #E5D9D0;background:#fff;height:96px;display:flex;align-items:center;justify-content:center;gap:12px}
+.cell small{font-size:22px;font-weight:600}.cell span{font-size:44px;font-weight:800;color:var(--camdam)}
+"""
 
 
-def text(slide, x, y, w, h, lines, size, color, bold=False,
-         align=PP_ALIGN.LEFT, anchor=MSO_ANCHOR.MIDDLE):
-    tb = slide.shapes.add_textbox(Inches(x), Inches(y), Inches(w), Inches(h))
-    tf = tb.text_frame; tf.word_wrap = True; tf.vertical_anchor = anchor
-    for m in ("margin_left", "margin_right", "margin_top", "margin_bottom"):
-        setattr(tf, m, Inches(0.04))
-    for i, line in enumerate([lines] if isinstance(lines, str) else lines):
-        p = tf.paragraphs[0] if i == 0 else tf.add_paragraph()
-        p.alignment = align
-        add_rich(p, line, size, color, bold)
-    return tb
+def rich(t):
+    t = html.escape(t)
+    t = re.sub(r"\{([^|{}]+)\|([^{}]+)\}", r"<ruby>\1<rt>\2</rt></ruby>", t)
+    t = re.sub(r"__(.+?)__", r"<u>\1</u>", t)
+    return t.replace("\\n", "<br>").replace("\n", "<br>")
 
 
-def card(slide, x, y, w, h, fill, line=None, line_w=2.0, rad=0.12):
-    s = slide.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE,
-                               Inches(x), Inches(y), Inches(w), Inches(h))
-    s.adjustments[0] = rad
-    s.fill.solid(); s.fill.fore_color.rgb = fill
-    if line is None:
-        s.line.fill.background()
-    else:
-        s.line.color.rgb = line; s.line.width = Pt(line_w)
-    s.shadow.inherit = False
-    return s
+def plain_len(t):
+    return len(re.sub(r"__|\{([^|]+)\|[^}]+\}|\\n|\n", r"\1", t))
 
 
-def label(shape, txt, size, color, bold=True, align=PP_ALIGN.CENTER):
-    tf = shape.text_frame; tf.word_wrap = True; tf.vertical_anchor = MSO_ANCHOR.MIDDLE
-    tf.margin_left = tf.margin_right = Inches(0.12)
-    p = tf.paragraphs[0]; p.alignment = align
-    add_rich(p, txt, size, color, bold)
+def page(body, neko=None, cam=True):
+    font = "file://" + os.path.join(ASSETS, "fonts", "fonts.css")
+    n = f'<img class="neko" src="file://{ASSETS}/neko/{neko}.png">' if neko else ""
+    cz = '<div class="camzone"></div>' if cam else ""
+    return (f'<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="{font}">'
+            f'<style>{CSS}</style></head><body><div class="sei" style="top:0;height:240px"></div>'
+            f'<div class="sei" style="top:1360px;bottom:0"></div>{cz}{body}{n}</body></html>')
 
 
-def base(prs, meta, right=""):
-    s = prs.slides.add_slide(prs.slide_layouts[6])
-    s.background.fill.solid(); s.background.fill.fore_color.rgb = c("nen")
-    # dải màu thương hiệu mép trên (nằm dưới avatar TikTok, chỉ là trang trí)
-    bar = s.shapes.add_shape(MSO_SHAPE.RECTANGLE, 0, 0, W, Inches(0.18))
-    bar.fill.solid(); bar.fill.fore_color.rgb = c("chu_dao"); bar.line.fill.background()
-    # thanh tiêu đề trong vùng an toàn
-    pill = card(s, SAFE_L, SAFE_T, SAFE_W, 0.62, c("phu"), rad=0.5)
-    label(pill, f"{meta.get('level','')} {meta.get('sach','')} ｜ {meta.get('hoi','')}"
-          + (f"   {right}" if right else ""), 18, c("the"))
-    logo = B.get("logo")
-    if logo and os.path.exists(logo):
-        s.shapes.add_picture(logo, Inches(SAFE_L), Inches(SAFE_B + 0.15), height=Inches(0.5))
-    else:
-        text(s, SAFE_L, SAFE_B + 0.1, SAFE_W, 0.45, B.get("ten_thuong_hieu", ""), 14,
-             c("chu_dao"), True)
-    return s
+def title_bar(meta, right):
+    return (f'<div class="title"><span>Luyện đề {html.escape(meta["level"])} '
+            f'<span class="jp">{html.escape(meta["sach"])}</span> · <span class="jp">{html.escape(meta["hoi"])}</span></span>'
+            f'<span class="p jp">{right}</span></div>')
 
 
-# ---------- slides ----------
-def slide_cover(prs, meta):
-    s = base(prs, meta)
-    text(s, SAFE_L, 2.8, SAFE_W, 0.8, meta.get("tieu_de_live", "LUYỆN ĐỀ JLPT"), 30, c("chu_dao"), True,
-         PP_ALIGN.CENTER)
-    text(s, SAFE_L, 3.7, SAFE_W, 1.6, meta.get("level", ""), 96, c("phu"), True, PP_ALIGN.CENTER)
-    text(s, SAFE_L, 5.3, SAFE_W, 0.9, meta.get("sach", ""), 44, c("phu"), True, PP_ALIGN.CENTER)
-    pill = card(s, 1.6, 6.45, SAFE_W - 2.5, 0.95, c("chu_dao"), rad=0.5)
-    label(pill, meta.get("hoi", ""), 36, c("chu_tren_dung"))
-    if meta.get("ngay"):
-        text(s, SAFE_L, 7.6, SAFE_W, 0.6, meta["ngay"], 22, c("chu"), False, PP_ALIGN.CENTER)
-    if meta.get("nguon"):
-        text(s, SAFE_L, 8.3, SAFE_W, 0.6, "Nguồn: " + meta["nguon"], 13, c("chu"), False, PP_ALIGN.CENTER)
+def slide_cover(meta, total):
+    return page(f'''{title_bar(meta, "LIVE")}
+<div class="big" style="top:440px;font-size:40px;font-weight:800;color:var(--camdam)">LUYỆN ĐỀ JLPT CÙNG SENSEI</div>
+<div class="big" style="top:520px;font-size:170px;font-weight:800;line-height:1">{html.escape(meta["level"])}</div>
+<div class="big jp" style="top:720px;font-size:64px;font-weight:700;width:640px;right:auto;text-align:left;left:90px">{html.escape(meta["sach"])}</div>
+<div style="position:absolute;top:840px;left:90px"><span class="pill jp" style="font-size:60px">{html.escape(meta["hoi"])}</span></div>
+<div style="position:absolute;top:1010px;left:90px;width:640px;font-size:30px;font-weight:600;line-height:1.5">{total} câu · {html.escape(meta.get("thoi_gian","10 phút"))}<br>Nguồn: <span class="jp">{html.escape(meta.get("nguon",""))}</span></div>
+''', "vay-chao")
 
 
-def slide_rules(prs, meta, total):
-    s = base(prs, meta)
-    card(s, SAFE_L, 2.7, SAFE_W, 6.0, c("the"), c("vien_the"))
-    text(s, SAFE_L + 0.3, 2.9, SAFE_W - 0.6, 5.6, [
-        f"⏱ {meta.get('thoi_gian','10 phút')} · {total} câu",
-        "",
-        "💬 Comment đáp án:",
-        "1-3  2-2  3-1 …",
-        "",
-        "🏆 Đúng hết được",
-        "ghim tên cuối live!",
-    ], 30, c("chu"), True, PP_ALIGN.CENTER)
+def slide_rules(meta, total):
+    return page(f'''{title_bar(meta, "LUẬT CHƠI")}
+<div class="card" style="top:400px;right:90px;font-size:38px;font-weight:700;line-height:1.9;white-space:nowrap">
+⏱ Mỗi câu 20–30 giây<br>💬 Comment <b style="color:var(--camdam)">1 số</b>: 1 · 2 · 3 · 4<br>✔ Hiện đáp án ngay sau mỗi câu<br>🏆 Đúng nhiều nhất được<br>&nbsp;&nbsp;&nbsp;&nbsp;vinh danh cuối live!</div>
+''', "vay-chao")
 
 
-def slide_mondai(prs, meta, m):
-    s = base(prs, meta)
-    pill = card(s, 1.4, 3.6, SAFE_W - 2.1, 1.1, c("chu_dao"), rad=0.5)
-    label(pill, m["ten"], 44, c("chu_tren_dung"))
-    if m.get("dang"):
-        text(s, SAFE_L, 4.9, SAFE_W, 0.8, m["dang"], 28, c("phu"), True, PP_ALIGN.CENTER)
-    if m.get("yeu_cau"):
-        text(s, SAFE_L + 0.2, 5.9, SAFE_W - 0.4, 2.6, m["yeu_cau"], 22, c("chu"), False,
-             PP_ALIGN.LEFT, MSO_ANCHOR.TOP)
+def slide_mondai(meta, m, idx, nm):
+    return page(f'''{title_bar(meta, f"{idx}/{nm}")}
+<div style="position:absolute;top:420px;left:90px"><span class="pill jp" style="font-size:64px">{html.escape(m["ten"])}</span></div>
+<div class="jp" style="position:absolute;top:580px;left:90px;font-size:44px;font-weight:700">{html.escape(m.get("dang",""))}</div>
+<div class="card jp" style="top:680px;right:350px;font-size:38px;line-height:1.7;font-weight:500">{rich(m.get("yeu_cau",""))}</div>
+''', "suy-nghi")
 
 
-def _plain_len(t):
-    return len(re.sub(r"__|\{([^|]+)\|[^}]+\}", r"\1", t))
-
-
-def slide_q(prs, meta, m, q, reveal):
-    s = base(prs, meta, f"{m['ten']}-{q['so']}")
-    # khung câu hỏi
-    y0, qh = 2.6, 2.55
-    card(s, SAFE_L, y0, SAFE_W, qh, c("the"), c("vien_the"))
-    num = card(s, SAFE_L + 0.2, y0 + 0.2, 0.75, 0.75, c("chu_dao"), rad=0.5)
-    label(num, str(q["so"]), 26, c("chu_tren_dung"))
-    n = _plain_len(q["cau"])
-    size = q.get("co_chu", 30 if n <= 28 else 26 if n <= 45 else 22)
-    text(s, SAFE_L + 0.25, y0 + 0.95, SAFE_W - 0.5, qh - 1.05, q["cau"], size, c("chu"))
-    # 4 lựa chọn xếp dọc (dễ đọc trên điện thoại)
-    longest = max(_plain_len(o) for o in q["lua_chon"])
-    osize = q.get("co_chu_lc", 28 if longest <= 10 else 22 if longest <= 18 else 17)
-    top, gap = y0 + qh + 0.22, 0.16
-    oh = (SAFE_B - 0.05 - top - gap * 3) / 4
+def slide_q(meta, m, q, reveal):
+    n = len(m["cau_hoi"])
+    long_opts = max(plain_len(o) for o in q["lua_chon"]) > 12
+    ql = plain_len(q["cau"])
+    qsize = q.get("co_chu", 72 if ql <= 6 else 52 if ql <= 22 else 46 if ql <= 34 else 40)
+    osize = q.get("co_chu_lc", 46 if not long_opts else 38)
+    opts = ""
     for i, o in enumerate(q["lua_chon"]):
         k = i + 1
-        ok = reveal and k == q["dap_an"]
-        box = card(s, SAFE_L, top + (oh + gap) * i, SAFE_W, oh,
-                   c("dung") if ok else c("the"),
-                   c("dung") if ok else c("vien_the"), 3 if ok else 1.5)
-        tf = box.text_frame; tf.word_wrap = True; tf.vertical_anchor = MSO_ANCHOR.MIDDLE
-        tf.margin_left = Inches(0.3)
-        p = tf.paragraphs[0]; p.alignment = PP_ALIGN.LEFT
-        col = c("chu_tren_dung") if ok else c("chu")
-        r = p.add_run(); r.text = f"{k}   "
-        set_font(r, osize, c("chu_tren_dung") if ok else c("chu_dao"), True)
-        add_rich(p, o, osize, col, bold=ok, accent=col if ok else None)
+        cls = ("ok" if k == q["dap_an"] else "dim") if reveal else ""
+        opts += f'<div class="o {cls}" style="font-size:{osize}px"><b>{k}</b><span>{rich(o)}</span></div>'
+    st = (f'<span class="t">✔ Đáp án {q["dap_an"]}</span>' if reveal
+          else '<span class="t">⏱ 0:25</span>💬 Comment 1–4')
+    if long_opts:  # 用法: câu dài -> lựa chọn full ngang, bỏ thanh trạng thái/Neko để nhường chỗ
+        body = f'''{title_bar(meta, f"{m['ten']} · {q['so']}/{n}")}
+<div class="q" style="height:200px"><div class="num">{q["so"]}</div><div class="qt jp" style="font-size:{qsize}px">{rich(q["cau"])}</div></div>
+<div class="opts long jp" style="top:612px">{opts}</div>'''
+        return page(body, None, cam=False)
+    body = f'''{title_bar(meta, f"{m['ten']} · {q['so']}/{n}")}
+<div class="q"><div class="num">{q["so"]}</div><div class="qt jp" style="font-size:{qsize}px">{rich(q["cau"])}</div></div>
+<div class="opts jp">{opts}</div><div class="st">{st}</div>'''
+    return page(body, "bien-dung" if reveal else "suy-nghi")
 
 
-def slide_times_up(prs, meta):
-    s = base(prs, meta)
-    text(s, SAFE_L, 3.5, SAFE_W, 3.5, ["⏰", "HẾT GIỜ!", "Cùng chữa đề nhé"], 44, c("chu_dao"), True,
-         PP_ALIGN.CENTER)
+def slide_summary(meta, data):
+    cells = "".join(
+        f'<div class="cell"><small class="jp">{html.escape(m["ten"].replace("問題","問"))}-{q["so"]}</small><span>{q["dap_an"]}</span></div>'
+        for m in data["mondai"] for q in m["cau_hoi"])
+    return page(f'''{title_bar(meta, "ĐÁP ÁN")}
+<div class="grid">{cells}</div>
+<div class="st" style="top:1210px">🎯 Comment số câu đúng!</div>''', "cup-vang")
 
 
-def slide_summary(prs, meta, data):
-    s = base(prs, meta, "ĐÁP ÁN")
-    items = [(m["ten"].replace("問題", "問"), q["so"], q["dap_an"])
-             for m in data["mondai"] for q in m["cau_hoi"]]
-    cols = 4
-    rows = (len(items) + cols - 1) // cols
-    cw = (SAFE_W - 0.12 * (cols - 1)) / cols
-    ch = min(0.95, (SAFE_B - 2.6 - 0.1 * (rows - 1)) / rows)
-    for i, (mt, so, da) in enumerate(items):
-        r, col = divmod(i, cols)
-        x, y = SAFE_L + (cw + 0.12) * col, 2.6 + (ch + 0.1) * r
-        b = card(s, x, y, cw, ch, c("the"), c("vien_the"))
-        tf = b.text_frame; tf.vertical_anchor = MSO_ANCHOR.MIDDLE
-        p = tf.paragraphs[0]; p.alignment = PP_ALIGN.CENTER
-        rr = p.add_run(); rr.text = f"{mt}-{so}  "; set_font(rr, 13, c("chu"))
-        rr = p.add_run(); rr.text = str(da); set_font(rr, 28, c("chu_dao"), True)
-
-
-def slide_end(prs, meta):
-    end = meta.get("ket_thuc") or [B.get("slogan", "")]
-    s = base(prs, meta)
-    text(s, SAFE_L, 3.0, SAFE_W, 5.0, end if isinstance(end, list) else [end], 32, c("phu"), True,
-         PP_ALIGN.CENTER)
+def slide_end(meta):
+    lines = meta.get("ket_thuc") or ["Hẹn gặp lại buổi sau!"]
+    return page(f'''{title_bar(meta, "HẸN GẶP LẠI")}
+<div class="card" style="top:460px;right:350px;font-size:48px;font-weight:800;line-height:1.6">{"<br>".join(rich(x) for x in lines)}</div>''',
+                "vay-chao")
 
 
 def build(data, out):
-    meta = data.get("meta", {})
-    prs = Presentation(); prs.slide_width, prs.slide_height = W, H
-    total = sum(len(m["cau_hoi"]) for m in data["mondai"])
-    slide_cover(prs, meta)
-    slide_rules(prs, meta, total)
-    if meta.get("che_do", "xen_ke") == "chua_sau":
-        for m in data["mondai"]:
-            slide_mondai(prs, meta, m)
-            for q in m["cau_hoi"]:
-                slide_q(prs, meta, m, q, False)
-        slide_times_up(prs, meta)
-        for m in data["mondai"]:
-            for q in m["cau_hoi"]:
-                slide_q(prs, meta, m, q, True)
-    else:
-        for m in data["mondai"]:
-            slide_mondai(prs, meta, m)
-            for q in m["cau_hoi"]:
-                slide_q(prs, meta, m, q, False)
-                slide_q(prs, meta, m, q, True)
-    slide_summary(prs, meta, data)
-    slide_end(prs, meta)
-    prs.save(out)
-    return len(prs.slides)
+    meta = data["meta"]
+    mondai = data["mondai"]
+    total = sum(len(m["cau_hoi"]) for m in mondai)
+    pages = [slide_cover(meta, total), slide_rules(meta, total)]
+    for i, m in enumerate(mondai, 1):
+        pages.append(slide_mondai(meta, m, i, len(mondai)))
+        for q in m["cau_hoi"]:
+            pages += [slide_q(meta, m, q, False), slide_q(meta, m, q, True)]
+    pages += [slide_summary(meta, data), slide_end(meta)]
+
+    tmp = tempfile.mkdtemp()
+    try:
+        for i, h in enumerate(pages):
+            with open(os.path.join(tmp, f"{i:03d}.html"), "w", encoding="utf-8") as f:
+                f.write(h)
+        subprocess.run(["node", os.path.join(HERE, "render.cjs"), tmp], check=True, cwd="/tmp")
+        prs = Presentation()
+        prs.slide_width, prs.slide_height = Emu(6858000), Emu(12192000)  # 7.5 x 13.333 in
+        for i in range(len(pages)):
+            s = prs.slides.add_slide(prs.slide_layouts[6])
+            s.shapes.add_picture(os.path.join(tmp, f"{i:03d}.png"), 0, 0, prs.slide_width, prs.slide_height)
+        prs.save(out)
+        png_dir = os.path.splitext(out)[0] + "_png"
+        if os.environ.get("KEEP_PNG"):
+            shutil.rmtree(png_dir, ignore_errors=True)
+            os.makedirs(png_dir)
+            for i in range(len(pages)):
+                shutil.copy(os.path.join(tmp, f"{i:03d}.png"), png_dir)
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+    return len(pages)
 
 
 def validate(data):
@@ -267,8 +201,6 @@ def validate(data):
                 errs.append(f"{tag}: cần đúng 4 lựa chọn")
             if q.get("dap_an") not in (1, 2, 3, 4):
                 errs.append(f"{tag}: dap_an phải là 1–4")
-            if q.get("loai") == "sapxep" and "★" not in q.get("cau", ""):
-                errs.append(f"{tag}: câu 並べ替え phải có ★")
     return errs
 
 
@@ -276,17 +208,10 @@ if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("json")
     ap.add_argument("-o", "--out")
-    ap.add_argument("--brand", default=os.path.join(HERE, "..", "brand.json"))
     a = ap.parse_args()
-    with open(a.brand, encoding="utf-8") as f:
-        B.update(json.load(f))
-    FONT = B.get("font", FONT)
-    if B.get("logo") and not os.path.isabs(B["logo"]):
-        B["logo"] = os.path.join(os.path.dirname(os.path.abspath(a.brand)), B["logo"])
-    with open(a.json, encoding="utf-8") as f:
-        data = json.load(f)
+    data = json.load(open(a.json, encoding="utf-8"))
     errs = validate(data)
     if errs:
         print("LỖI DỮ LIỆU:\n- " + "\n- ".join(errs)); sys.exit(1)
-    out = a.out or a.json.rsplit(".", 1)[0] + ".pptx"
+    out = os.path.abspath(a.out or a.json.rsplit(".", 1)[0] + ".pptx")
     print(f"OK: {out} ({build(data, out)} slide)")
