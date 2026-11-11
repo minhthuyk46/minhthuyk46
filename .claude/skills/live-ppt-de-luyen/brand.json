@@ -1,0 +1,18 @@
+{
+  "_ghi_chu": "Nhận diện thương hiệu Mankai Academy. THAY mã màu/logo theo brand guideline chính thức. Màu viết dạng HEX không có dấu #.",
+  "ten_thuong_hieu": "Mankai Academy",
+  "font": "Noto Sans JP",
+  "logo": "",
+  "mau": {
+    "nen": "FFF8F0",
+    "chu_dao": "C8102E",
+    "phu": "1F2A44",
+    "chu": "1F2A44",
+    "the": "FFFFFF",
+    "vien_the": "E6DED3",
+    "dung": "C8102E",
+    "dung_nen": "FDE7EA",
+    "chu_tren_dung": "FFFFFF"
+  },
+  "slogan": "Học tiếng Nhật cùng Mankai"
+}

@@ -1,18 +1,16 @@
 #!/usr/bin/env python3
-"""Tạo PPT 16:9 chiếu câu đề luyện JLPT trên livestream.
+"""PPT dọc 9:16 (1080x1920) chiếu đề luyện JLPT trên TikTok LIVE.
 
-Cách dùng:
-    python3 build_live_ppt.py de.json [-o output.pptx]
+    python3 build_live_ppt.py de.json [-o out.pptx] [--brand ../brand.json]
 
-Định dạng JSON: xem ../examples/n2_bunpou_01.json và SKILL.md.
-Markup trong câu/đáp án:
-    __chữ__        -> gạch chân (từ được hỏi ở 漢字読み/表記/言い換え)
-    {漢字|かな}     -> hiện furigana nhỏ trong ngoặc: 漢字(かな)
-    （　）          -> chỗ trống, giữ nguyên
-    ★              -> ô sao của 並べ替え, tô màu
+- Slide câu hỏi -> slide đáp án (chỉ tô màu khung đáp án đúng, không giải thích).
+- Nội dung nằm trong VÙNG AN TOÀN của TikTok LIVE: tránh thanh avatar/người xem
+  phía trên, cột icon bên phải, khung comment/quà phía dưới.
+Markup: __gạch chân__  {漢字|かな}  ★  （　　）
 """
 import argparse
 import json
+import os
 import re
 import sys
 
@@ -21,344 +19,241 @@ from pptx.dml.color import RGBColor
 from pptx.enum.shapes import MSO_SHAPE
 from pptx.enum.text import MSO_ANCHOR, PP_ALIGN
 from pptx.oxml.ns import qn
-from pptx.util import Emu, Inches, Pt
+from pptx.util import Inches, Pt
 
+HERE = os.path.dirname(os.path.abspath(__file__))
+W, H = Inches(7.5), Inches(13.333)          # 1080 x 1920
+# Vùng an toàn TikTok LIVE (inch, khung 7.5 x 13.333)
+SAFE_L, SAFE_R = 0.35, 6.55                 # chừa ~0.95in cột icon bên phải
+SAFE_T, SAFE_B = 1.75, 9.05                 # trên: avatar/viewer; dưới: comment + quà
+SAFE_W = SAFE_R - SAFE_L
+
+B = {}          # brand, nạp lúc chạy
 FONT = "Noto Sans JP"
-FONT_FALLBACK_EA = "Meiryo"
-
-THEMES = {
-    "navy": dict(bg="0F1B33", card="FFFFFF", ink="1A1A1A", accent="F5A623",
-                 sub="C9D3E6", ok="1E9E5A", ok_bg="E3F6EC", dim="9AA3B2",
-                 dim_bg="F1F3F6", star="E0245E"),
-    "light": dict(bg="F4F1EA", card="FFFFFF", ink="1A1A1A", accent="C0392B",
-                  sub="5A5A5A", ok="1E8E4F", ok_bg="E3F6EC", dim="A0A0A0",
-                  dim_bg="F2F2F2", star="C0392B"),
-}
-
-W, H = Inches(13.333), Inches(7.5)
 
 
-def rgb(h):
-    return RGBColor.from_string(h)
+def c(key):
+    return RGBColor.from_string(B["mau"][key])
 
 
-# ---------- text helpers ----------
 TOKEN = re.compile(r"(__.+?__|\{[^|{}]+\|[^{}]+\}|★)")
 
 
 def set_font(run, size, color, bold=False, underline=False):
     f = run.font
-    f.size = Pt(size)
-    f.bold = bold
-    f.underline = underline
-    f.color.rgb = rgb(color)
-    f.name = FONT
+    f.size, f.bold, f.underline, f.name = Pt(size), bold, underline, FONT
+    f.color.rgb = color
     rPr = run._r.get_or_add_rPr()
     for tag in ("a:ea", "a:cs"):
         el = rPr.find(qn(tag))
         if el is None:
-            el = rPr.makeelement(qn(tag), {})
-            rPr.append(el)
+            el = rPr.makeelement(qn(tag), {}); rPr.append(el)
         el.set("typeface", FONT)
-    # fallback hint for machines without Noto Sans JP
-    rPr.set("altLang", "ja-JP")
 
 
-def add_rich(paragraph, text, size, color, theme, bold=False):
-    """Viết text có markup vào 1 paragraph."""
+def add_rich(p, text, size, color, bold=False, accent=None):
+    accent = accent or c("chu_dao")
     for part in TOKEN.split(text):
         if not part:
             continue
-        if part.startswith("__") and part.endswith("__"):
-            inner = part[2:-2]
-            add_rich_inner(paragraph, inner, size, theme["accent"] if color != theme["dim"] else color,
-                           bold=True, underline=True, theme=theme)
+        if part.startswith("__"):
+            for sub in re.split(r"(\{[^|{}]+\|[^{}]+\})", part[2:-2]):
+                if sub.startswith("{"):
+                    k, kana = sub[1:-1].split("|", 1)
+                    r = p.add_run(); r.text = k; set_font(r, size, accent, True, True)
+                    r = p.add_run(); r.text = f"({kana})"; set_font(r, size * .5, accent, False, True)
+                elif sub:
+                    r = p.add_run(); r.text = sub; set_font(r, size, accent, True, True)
         elif part.startswith("{"):
-            kanji, kana = part[1:-1].split("|", 1)
-            r = paragraph.add_run(); r.text = kanji
-            set_font(r, size, color, bold)
-            r = paragraph.add_run(); r.text = f"({kana})"
-            set_font(r, max(size * 0.5, 10), color)
+            k, kana = part[1:-1].split("|", 1)
+            r = p.add_run(); r.text = k; set_font(r, size, color, bold)
+            r = p.add_run(); r.text = f"({kana})"; set_font(r, size * .5, color)
         elif part == "★":
-            r = paragraph.add_run(); r.text = "★"
-            set_font(r, size, theme["star"], True)
+            r = p.add_run(); r.text = "★"; set_font(r, size, accent, True)
         else:
-            r = paragraph.add_run(); r.text = part
-            set_font(r, size, color, bold)
+            r = p.add_run(); r.text = part; set_font(r, size, color, bold)
 
 
-def add_rich_inner(paragraph, text, size, color, bold, underline, theme):
-    for part in re.split(r"(\{[^|{}]+\|[^{}]+\})", text):
-        if not part:
-            continue
-        if part.startswith("{"):
-            kanji, kana = part[1:-1].split("|", 1)
-            r = paragraph.add_run(); r.text = kanji
-            set_font(r, size, color, bold, underline)
-            r = paragraph.add_run(); r.text = f"({kana})"
-            set_font(r, max(size * 0.5, 10), color, False, underline)
-        else:
-            r = paragraph.add_run(); r.text = part
-            set_font(r, size, color, bold, underline)
-
-
-def textbox(slide, x, y, w, h, text, size, color, theme, bold=False,
-            align=PP_ALIGN.LEFT, anchor=MSO_ANCHOR.TOP):
-    tb = slide.shapes.add_textbox(x, y, w, h)
-    tf = tb.text_frame
-    tf.word_wrap = True
-    tf.vertical_anchor = anchor
+def text(slide, x, y, w, h, lines, size, color, bold=False,
+         align=PP_ALIGN.LEFT, anchor=MSO_ANCHOR.MIDDLE):
+    tb = slide.shapes.add_textbox(Inches(x), Inches(y), Inches(w), Inches(h))
+    tf = tb.text_frame; tf.word_wrap = True; tf.vertical_anchor = anchor
     for m in ("margin_left", "margin_right", "margin_top", "margin_bottom"):
-        setattr(tf, m, Inches(0.05))
-    lines = text.split("\n") if isinstance(text, str) else text
-    for i, line in enumerate(lines):
+        setattr(tf, m, Inches(0.04))
+    for i, line in enumerate([lines] if isinstance(lines, str) else lines):
         p = tf.paragraphs[0] if i == 0 else tf.add_paragraph()
         p.alignment = align
-        add_rich(p, line, size, color, theme, bold)
+        add_rich(p, line, size, color, bold)
     return tb
 
 
-def box(slide, x, y, w, h, fill, line=None, radius=True):
-    shp = slide.shapes.add_shape(
-        MSO_SHAPE.ROUNDED_RECTANGLE if radius else MSO_SHAPE.RECTANGLE, x, y, w, h)
-    if radius:
-        shp.adjustments[0] = 0.08
-    shp.fill.solid(); shp.fill.fore_color.rgb = rgb(fill)
-    if line:
-        shp.line.color.rgb = rgb(line); shp.line.width = Pt(2.5)
+def card(slide, x, y, w, h, fill, line=None, line_w=2.0, rad=0.12):
+    s = slide.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE,
+                               Inches(x), Inches(y), Inches(w), Inches(h))
+    s.adjustments[0] = rad
+    s.fill.solid(); s.fill.fore_color.rgb = fill
+    if line is None:
+        s.line.fill.background()
     else:
-        shp.line.fill.background()
-    shp.shadow.inherit = False
-    return shp
+        s.line.color.rgb = line; s.line.width = Pt(line_w)
+    s.shadow.inherit = False
+    return s
 
 
-def background(slide, theme):
-    bg = slide.background.fill
-    bg.solid(); bg.fore_color.rgb = rgb(theme["bg"])
+def label(shape, txt, size, color, bold=True, align=PP_ALIGN.CENTER):
+    tf = shape.text_frame; tf.word_wrap = True; tf.vertical_anchor = MSO_ANCHOR.MIDDLE
+    tf.margin_left = tf.margin_right = Inches(0.12)
+    p = tf.paragraphs[0]; p.alignment = align
+    add_rich(p, txt, size, color, bold)
 
 
-def header(slide, meta, theme, right_text=""):
-    left = f"{meta.get('level','')} {meta.get('sach','')}  ｜  {meta.get('hoi','')}".strip()
-    textbox(slide, Inches(0.5), Inches(0.2), Inches(8.5), Inches(0.5), left, 16,
-            theme["sub"], theme)
-    if right_text:
-        textbox(slide, Inches(8.5), Inches(0.2), Inches(4.35), Inches(0.5), right_text, 16,
-                theme["accent"], theme, bold=True, align=PP_ALIGN.RIGHT)
-    if meta.get("kenh"):
-        textbox(slide, Inches(0.5), H - Inches(0.55), Inches(12.3), Inches(0.4),
-                meta["kenh"], 12, theme["sub"], theme, align=PP_ALIGN.RIGHT)
+def base(prs, meta, right=""):
+    s = prs.slides.add_slide(prs.slide_layouts[6])
+    s.background.fill.solid(); s.background.fill.fore_color.rgb = c("nen")
+    # dải màu thương hiệu mép trên (nằm dưới avatar TikTok, chỉ là trang trí)
+    bar = s.shapes.add_shape(MSO_SHAPE.RECTANGLE, 0, 0, W, Inches(0.18))
+    bar.fill.solid(); bar.fill.fore_color.rgb = c("chu_dao"); bar.line.fill.background()
+    # thanh tiêu đề trong vùng an toàn
+    pill = card(s, SAFE_L, SAFE_T, SAFE_W, 0.62, c("phu"), rad=0.5)
+    label(pill, f"{meta.get('level','')} {meta.get('sach','')} ｜ {meta.get('hoi','')}"
+          + (f"   {right}" if right else ""), 18, c("the"))
+    logo = B.get("logo")
+    if logo and os.path.exists(logo):
+        s.shapes.add_picture(logo, Inches(SAFE_L), Inches(SAFE_B + 0.15), height=Inches(0.5))
+    else:
+        text(s, SAFE_L, SAFE_B + 0.1, SAFE_W, 0.45, B.get("ten_thuong_hieu", ""), 14,
+             c("chu_dao"), True)
+    return s
 
 
-def notes(slide, text):
-    if text:
-        slide.notes_slide.notes_text_frame.text = text
-
-
-# ---------- slide builders ----------
-def slide_cover(prs, meta, theme):
-    s = prs.slides.add_slide(prs.slide_layouts[6]); background(s, theme)
-    textbox(s, Inches(0.8), Inches(1.4), Inches(11.7), Inches(0.8),
-            meta.get("tieu_de_live", "LIVESTREAM LUYỆN ĐỀ JLPT"), 26, theme["accent"], theme, True)
-    textbox(s, Inches(0.8), Inches(2.3), Inches(11.7), Inches(1.6),
-            f"{meta.get('level','')} {meta.get('sach','')}", 54, "FFFFFF" if theme is THEMES["navy"] else theme["ink"],
-            theme, True)
-    textbox(s, Inches(0.8), Inches(3.9), Inches(11.7), Inches(1.0),
-            meta.get("hoi", ""), 40, theme["sub"], theme, True)
-    if meta.get("nguon"):
-        textbox(s, Inches(0.8), Inches(6.2), Inches(11.7), Inches(0.5),
-                "Nguồn: " + meta["nguon"], 14, theme["sub"], theme)
+# ---------- slides ----------
+def slide_cover(prs, meta):
+    s = base(prs, meta)
+    text(s, SAFE_L, 2.8, SAFE_W, 0.8, meta.get("tieu_de_live", "LUYỆN ĐỀ JLPT"), 30, c("chu_dao"), True,
+         PP_ALIGN.CENTER)
+    text(s, SAFE_L, 3.7, SAFE_W, 1.6, meta.get("level", ""), 96, c("phu"), True, PP_ALIGN.CENTER)
+    text(s, SAFE_L, 5.3, SAFE_W, 0.9, meta.get("sach", ""), 44, c("phu"), True, PP_ALIGN.CENTER)
+    pill = card(s, 1.6, 6.45, SAFE_W - 2.5, 0.95, c("chu_dao"), rad=0.5)
+    label(pill, meta.get("hoi", ""), 36, c("chu_tren_dung"))
     if meta.get("ngay"):
-        textbox(s, Inches(0.8), Inches(5.0), Inches(11.7), Inches(0.6),
-                meta["ngay"], 22, theme["sub"], theme)
-    notes(s, meta.get("ghi_chu_mo_dau", ""))
+        text(s, SAFE_L, 7.6, SAFE_W, 0.6, meta["ngay"], 22, c("chu"), False, PP_ALIGN.CENTER)
+    if meta.get("nguon"):
+        text(s, SAFE_L, 8.3, SAFE_W, 0.6, "Nguồn: " + meta["nguon"], 13, c("chu"), False, PP_ALIGN.CENTER)
 
 
-def slide_rules(prs, meta, theme, total):
-    s = prs.slides.add_slide(prs.slide_layouts[6]); background(s, theme)
-    header(s, meta, theme)
-    box(s, Inches(0.8), Inches(1.1), Inches(11.7), Inches(5.6), theme["card"])
-    t = meta.get("thoi_gian", "10 phút")
-    lines = [
-        f"⏱  Thời gian làm bài: {t}  ·  {total} câu",
-        "💬  Comment đáp án theo cú pháp:",
-        "      1-3  2-2  3-1  …",
-        "🏆  Ai đúng hết được ghim tên cuối live!",
-    ]
-    textbox(s, Inches(1.3), Inches(1.6), Inches(10.8), Inches(4.8), lines, 34, theme["ink"], theme,
-            anchor=MSO_ANCHOR.MIDDLE)
-    notes(s, "Giới thiệu luật chơi, bật đồng hồ đếm ngược trên màn hình live.")
+def slide_rules(prs, meta, total):
+    s = base(prs, meta)
+    card(s, SAFE_L, 2.7, SAFE_W, 6.0, c("the"), c("vien_the"))
+    text(s, SAFE_L + 0.3, 2.9, SAFE_W - 0.6, 5.6, [
+        f"⏱ {meta.get('thoi_gian','10 phút')} · {total} câu",
+        "",
+        "💬 Comment đáp án:",
+        "1-3  2-2  3-1 …",
+        "",
+        "🏆 Đúng hết được",
+        "ghim tên cuối live!",
+    ], 30, c("chu"), True, PP_ALIGN.CENTER)
 
 
-def slide_mondai(prs, meta, theme, mondai):
-    s = prs.slides.add_slide(prs.slide_layouts[6]); background(s, theme)
-    header(s, meta, theme)
-    chip = box(s, Inches(0.8), Inches(2.2), Inches(3.2), Inches(1.0), theme["accent"])
-    tf = chip.text_frame; tf.vertical_anchor = MSO_ANCHOR.MIDDLE
-    p = tf.paragraphs[0]; p.alignment = PP_ALIGN.CENTER
-    add_rich(p, mondai["ten"], 32, "FFFFFF", theme, True)
-    if mondai.get("dang"):
-        textbox(s, Inches(4.3), Inches(2.35), Inches(8.2), Inches(0.8), mondai["dang"], 26,
-                theme["sub"], theme, True)
-    textbox(s, Inches(0.8), Inches(3.6), Inches(11.7), Inches(2.4), mondai.get("yeu_cau", ""),
-            28, "FFFFFF" if theme is THEMES["navy"] else theme["ink"], theme)
+def slide_mondai(prs, meta, m):
+    s = base(prs, meta)
+    pill = card(s, 1.4, 3.6, SAFE_W - 2.1, 1.1, c("chu_dao"), rad=0.5)
+    label(pill, m["ten"], 44, c("chu_tren_dung"))
+    if m.get("dang"):
+        text(s, SAFE_L, 4.9, SAFE_W, 0.8, m["dang"], 28, c("phu"), True, PP_ALIGN.CENTER)
+    if m.get("yeu_cau"):
+        text(s, SAFE_L + 0.2, 5.9, SAFE_W - 0.4, 2.6, m["yeu_cau"], 22, c("chu"), False,
+             PP_ALIGN.LEFT, MSO_ANCHOR.TOP)
 
 
-def _option_layout(options):
-    longest = max(len(re.sub(r"__|\{([^|]+)\|[^}]+\}", r"\1", o)) for o in options)
-    if longest <= 5:
-        return "grid4"   # 4 ô 1 hàng
-    if longest <= 22:
-        return "grid2"   # 2x2
-    return "list"        # 用法: câu dài, xếp dọc
+def _plain_len(t):
+    return len(re.sub(r"__|\{([^|]+)\|[^}]+\}", r"\1", t))
 
 
-def draw_question(s, q, theme, reveal=False):
-    is_sort = q.get("loai") == "sapxep"
-    q_size = q.get("co_chu", 34 if len(q["cau"]) < 60 else 28)
-    box(s, Inches(0.5), Inches(0.85), Inches(12.33), Inches(2.45 if not reveal else 2.2), theme["card"])
-    num = box(s, Inches(0.75), Inches(1.1), Inches(0.9), Inches(0.9), theme["accent"])
-    tf = num.text_frame; tf.vertical_anchor = MSO_ANCHOR.MIDDLE
-    p = tf.paragraphs[0]; p.alignment = PP_ALIGN.CENTER
-    add_rich(p, str(q["so"]), 30, "FFFFFF", theme, True)
-    textbox(s, Inches(1.9), Inches(1.0), Inches(10.7), Inches(2.1 if not reveal else 1.9),
-            q["cau"], q_size, theme["ink"], theme, anchor=MSO_ANCHOR.MIDDLE)
-
-    opts = q["lua_chon"]
-    ans = q.get("dap_an")
-    layout = _option_layout(opts)
-    top = Inches(3.55 if not reveal else 3.25)
-    avail_h = (Inches(6.85) if not reveal else Inches(4.75)) - top
-    if layout == "grid4":
-        cols, rows = 4, 1
-    elif layout == "grid2":
-        cols, rows = 2, 2
-    else:
-        cols, rows = 1, 4
-    gap = Inches(0.18)
-    cw = (Inches(12.33) - gap * (cols - 1)) / cols
-    ch = (avail_h - gap * (rows - 1)) / rows
-    o_size = {"grid4": 30, "grid2": 28, "list": 22}[layout]
-    if reveal:
-        o_size = {"grid4": 26, "grid2": 22, "list": 16}[layout]
-    for i, o in enumerate(opts):
-        r, c = divmod(i, cols)
-        x = Inches(0.5) + (cw + gap) * c
-        y = top + (ch + gap) * r
-        n = i + 1
-        is_ok = reveal and not is_sort and n == ans
-        fill = theme["ok_bg"] if is_ok else (theme["dim_bg"] if reveal and not is_sort else theme["card"])
-        line = theme["ok"] if is_ok else None
-        b = box(s, int(x), int(y), int(cw), int(ch), fill, line)
-        tf = b.text_frame; tf.word_wrap = True; tf.vertical_anchor = MSO_ANCHOR.MIDDLE
-        tf.margin_left = Inches(0.25)
+def slide_q(prs, meta, m, q, reveal):
+    s = base(prs, meta, f"{m['ten']}-{q['so']}")
+    # khung câu hỏi
+    y0, qh = 2.6, 2.55
+    card(s, SAFE_L, y0, SAFE_W, qh, c("the"), c("vien_the"))
+    num = card(s, SAFE_L + 0.2, y0 + 0.2, 0.75, 0.75, c("chu_dao"), rad=0.5)
+    label(num, str(q["so"]), 26, c("chu_tren_dung"))
+    n = _plain_len(q["cau"])
+    size = q.get("co_chu", 30 if n <= 28 else 26 if n <= 45 else 22)
+    text(s, SAFE_L + 0.25, y0 + 0.95, SAFE_W - 0.5, qh - 1.05, q["cau"], size, c("chu"))
+    # 4 lựa chọn xếp dọc (dễ đọc trên điện thoại)
+    longest = max(_plain_len(o) for o in q["lua_chon"])
+    osize = q.get("co_chu_lc", 28 if longest <= 10 else 22 if longest <= 18 else 17)
+    top, gap = y0 + qh + 0.22, 0.16
+    oh = (SAFE_B - 0.05 - top - gap * 3) / 4
+    for i, o in enumerate(q["lua_chon"]):
+        k = i + 1
+        ok = reveal and k == q["dap_an"]
+        box = card(s, SAFE_L, top + (oh + gap) * i, SAFE_W, oh,
+                   c("dung") if ok else c("the"),
+                   c("dung") if ok else c("vien_the"), 3 if ok else 1.5)
+        tf = box.text_frame; tf.word_wrap = True; tf.vertical_anchor = MSO_ANCHOR.MIDDLE
+        tf.margin_left = Inches(0.3)
         p = tf.paragraphs[0]; p.alignment = PP_ALIGN.LEFT
-        color = theme["ok"] if is_ok else (theme["dim"] if reveal and not is_sort else theme["ink"])
-        r_ = p.add_run(); r_.text = f"{n}  "
-        set_font(r_, o_size, theme["accent"] if not reveal or is_ok else theme["dim"], True)
-        add_rich(p, o, o_size, color, theme, bold=is_ok)
-        if is_ok:
-            r_ = p.add_run(); r_.text = "  ✔"
-            set_font(r_, o_size, theme["ok"], True)
+        col = c("chu_tren_dung") if ok else c("chu")
+        r = p.add_run(); r.text = f"{k}   "
+        set_font(r, osize, c("chu_tren_dung") if ok else c("chu_dao"), True)
+        add_rich(p, o, osize, col, bold=ok, accent=col if ok else None)
 
 
-def slide_question(prs, meta, theme, mondai, q):
-    s = prs.slides.add_slide(prs.slide_layouts[6]); background(s, theme)
-    header(s, meta, theme, f"{mondai['ten']}  ·  Câu {q['so']}")
-    draw_question(s, q, theme, reveal=False)
-    notes(s, q.get("ghi_chu_gv", "Đọc câu hỏi, cho người xem 30–45 giây suy nghĩ rồi mời comment."))
+def slide_times_up(prs, meta):
+    s = base(prs, meta)
+    text(s, SAFE_L, 3.5, SAFE_W, 3.5, ["⏰", "HẾT GIỜ!", "Cùng chữa đề nhé"], 44, c("chu_dao"), True,
+         PP_ALIGN.CENTER)
 
 
-def slide_answer(prs, meta, theme, mondai, q):
-    s = prs.slides.add_slide(prs.slide_layouts[6]); background(s, theme)
-    header(s, meta, theme, f"{mondai['ten']}  ·  Đáp án câu {q['so']}")
-    draw_question(s, q, theme, reveal=True)
-    box(s, Inches(0.5), Inches(4.95), Inches(12.33), Inches(1.95), theme["card"])
-    lines = []
-    if q.get("loai") == "sapxep":
-        lines.append(f"✔ Thứ tự đúng: {q.get('thu_tu','')}   →   ★ = {q['dap_an']}")
-        if q.get("cau_hoan_chinh"):
-            lines.append(q["cau_hoan_chinh"])
-    else:
-        lines.append(f"✔ Đáp án: {q['dap_an']}. {q['lua_chon'][q['dap_an']-1]}")
-    if q.get("giai_thich"):
-        lines.append("💡 " + q["giai_thich"])
-    for k, v in (q.get("phuong_an_nhieu") or {}).items():
-        lines.append(f"✘ {k}: {v}")
-    size = 22 if len(lines) <= 3 else (19 if len(lines) <= 4 else 17)
-    textbox(s, Inches(0.75), Inches(5.02), Inches(11.85), Inches(1.85), lines, size,
-            theme["ink"], theme, anchor=MSO_ANCHOR.MIDDLE)
-    notes(s, q.get("ghi_chu_dap_an", ""))
-
-
-def slide_summary(prs, meta, theme, data):
-    s = prs.slides.add_slide(prs.slide_layouts[6]); background(s, theme)
-    header(s, meta, theme, "BẢNG ĐÁP ÁN")
-    items = [(m["ten"], q["so"], q["dap_an"]) for m in data["mondai"] for q in m["cau_hoi"]]
-    n = len(items)
-    cols = min(10, max(5, (n + 1) // 2 if n <= 20 else 10))
-    rows = (n + cols - 1) // cols
-    table_h = min(Inches(0.9) * rows * 2, Inches(5.6))
-    tbl = s.shapes.add_table(rows * 2, cols, Inches(0.5), Inches(1.0), Inches(12.33), table_h).table
+def slide_summary(prs, meta, data):
+    s = base(prs, meta, "ĐÁP ÁN")
+    items = [(m["ten"].replace("問題", "問"), q["so"], q["dap_an"])
+             for m in data["mondai"] for q in m["cau_hoi"]]
+    cols = 4
+    rows = (len(items) + cols - 1) // cols
+    cw = (SAFE_W - 0.12 * (cols - 1)) / cols
+    ch = min(0.95, (SAFE_B - 2.6 - 0.1 * (rows - 1)) / rows)
     for i, (mt, so, da) in enumerate(items):
-        r, c = divmod(i, cols)
-        for rr, txt, color, fill in ((r * 2, f"{mt.replace('問題','問')}-{so}", theme["sub"] if False else "FFFFFF", theme["accent"]),
-                                     (r * 2 + 1, str(da), theme["ink"], theme["card"])):
-            cell = tbl.cell(rr, c)
-            cell.fill.solid(); cell.fill.fore_color.rgb = rgb(fill)
-            cell.vertical_anchor = MSO_ANCHOR.MIDDLE
-            p = cell.text_frame.paragraphs[0]; p.alignment = PP_ALIGN.CENTER
-            r_ = p.add_run(); r_.text = txt
-            set_font(r_, 16 if rr % 2 == 0 else 28, color, True)
-    for r in range(rows * 2):
-        for c in range(cols):
-            cell = tbl.cell(r, c)
-            if not cell.text_frame.text:
-                cell.fill.solid(); cell.fill.fore_color.rgb = rgb(theme["dim_bg"])
-    notes(s, "Chốt đáp án, mời người xem tự chấm điểm và comment số điểm /"
-             + str(meta.get("tong_diem", n)))
+        r, col = divmod(i, cols)
+        x, y = SAFE_L + (cw + 0.12) * col, 2.6 + (ch + 0.1) * r
+        b = card(s, x, y, cw, ch, c("the"), c("vien_the"))
+        tf = b.text_frame; tf.vertical_anchor = MSO_ANCHOR.MIDDLE
+        p = tf.paragraphs[0]; p.alignment = PP_ALIGN.CENTER
+        rr = p.add_run(); rr.text = f"{mt}-{so}  "; set_font(rr, 13, c("chu"))
+        rr = p.add_run(); rr.text = str(da); set_font(rr, 28, c("chu_dao"), True)
 
 
-def slide_end(prs, meta, theme):
-    end = meta.get("ket_thuc")
-    if not end:
-        return
-    s = prs.slides.add_slide(prs.slide_layouts[6]); background(s, theme)
-    header(s, meta, theme)
-    lines = end if isinstance(end, list) else [end]
-    textbox(s, Inches(0.8), Inches(1.5), Inches(11.7), Inches(5.0), lines, 34,
-            "FFFFFF" if theme is THEMES["navy"] else theme["ink"], theme, True,
-            anchor=MSO_ANCHOR.MIDDLE)
+def slide_end(prs, meta):
+    end = meta.get("ket_thuc") or [B.get("slogan", "")]
+    s = base(prs, meta)
+    text(s, SAFE_L, 3.0, SAFE_W, 5.0, end if isinstance(end, list) else [end], 32, c("phu"), True,
+         PP_ALIGN.CENTER)
 
 
 def build(data, out):
     meta = data.get("meta", {})
-    theme = THEMES.get(meta.get("theme", "navy"), THEMES["navy"])
-    mode = meta.get("che_do", "xen_ke")  # xen_ke | chua_sau
     prs = Presentation(); prs.slide_width, prs.slide_height = W, H
     total = sum(len(m["cau_hoi"]) for m in data["mondai"])
-    slide_cover(prs, meta, theme)
-    slide_rules(prs, meta, theme, total)
-    if mode == "chua_sau":
+    slide_cover(prs, meta)
+    slide_rules(prs, meta, total)
+    if meta.get("che_do", "xen_ke") == "chua_sau":
         for m in data["mondai"]:
-            slide_mondai(prs, meta, theme, m)
+            slide_mondai(prs, meta, m)
             for q in m["cau_hoi"]:
-                slide_question(prs, meta, theme, m, q)
-        textbox_slide = prs.slides.add_slide(prs.slide_layouts[6]); background(textbox_slide, theme)
-        textbox(textbox_slide, Inches(0.8), Inches(2.5), Inches(11.7), Inches(2.5),
-                ["⏰ HẾT GIỜ!", "Cùng chữa đề nhé 👇"], 54,
-                "FFFFFF" if theme is THEMES["navy"] else theme["ink"], theme, True,
-                align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+                slide_q(prs, meta, m, q, False)
+        slide_times_up(prs, meta)
         for m in data["mondai"]:
             for q in m["cau_hoi"]:
-                slide_answer(prs, meta, theme, m, q)
+                slide_q(prs, meta, m, q, True)
     else:
         for m in data["mondai"]:
-            slide_mondai(prs, meta, theme, m)
+            slide_mondai(prs, meta, m)
             for q in m["cau_hoi"]:
-                slide_question(prs, meta, theme, m, q)
-                slide_answer(prs, meta, theme, m, q)
-    slide_summary(prs, meta, theme, data)
-    slide_end(prs, meta, theme)
+                slide_q(prs, meta, m, q, False)
+                slide_q(prs, meta, m, q, True)
+    slide_summary(prs, meta, data)
+    slide_end(prs, meta)
     prs.save(out)
     return len(prs.slides)
 
@@ -381,12 +276,17 @@ if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("json")
     ap.add_argument("-o", "--out")
+    ap.add_argument("--brand", default=os.path.join(HERE, "..", "brand.json"))
     a = ap.parse_args()
+    with open(a.brand, encoding="utf-8") as f:
+        B.update(json.load(f))
+    FONT = B.get("font", FONT)
+    if B.get("logo") and not os.path.isabs(B["logo"]):
+        B["logo"] = os.path.join(os.path.dirname(os.path.abspath(a.brand)), B["logo"])
     with open(a.json, encoding="utf-8") as f:
         data = json.load(f)
     errs = validate(data)
     if errs:
         print("LỖI DỮ LIỆU:\n- " + "\n- ".join(errs)); sys.exit(1)
     out = a.out or a.json.rsplit(".", 1)[0] + ".pptx"
-    n = build(data, out)
-    print(f"OK: {out} ({n} slide)")
+    print(f"OK: {out} ({build(data, out)} slide)")
