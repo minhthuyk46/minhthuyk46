@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
-"""Slide luyện đề JLPT cho TikTok LIVE (dọc 1080x1920, brand Mankai).
+"""Slide luyện đề JLPT cho TikTok LIVE — khổ NGANG 16:9 (1920x1080), brand Mankai.
 
     python3 build_live_ppt.py de.json [-o out.pptx]
 
-Quy trình: JSON -> HTML từng slide (furigana dạng <ruby> như sách) -> PNG (Playwright)
--> PPTX mỗi slide 1 ảnh full khung. Camera Sensei xoá phông ghép ở góc phải dưới
-trong LIVE Studio (vùng x 760–1050, y 770–1320 để trống sẵn).
+Bố cục live (khung dọc TikTok): camera Sensei ở trên, slide 16:9 nằm GIỮA khung
+(full chiều ngang màn hình điện thoại), comment ở dưới. Slide không chứa camera.
 
-Markup trong JSON:
-    {漢字|かな}   furigana        __chữ__  gạch chân (từ được hỏi)
-    （　　）      chỗ trống       \n       xuống dòng (hội thoại A/B)
+Quy trình: JSON -> HTML từng slide (furigana <ruby> như sách) -> PNG (Playwright)
+-> PPTX 16:9, mỗi slide 1 ảnh full khung.
+
+Markup: {漢字|かな} furigana · __từ__ gạch chân · \\n xuống dòng · （　　） chỗ trống
 """
 import argparse
 import html
@@ -26,44 +26,43 @@ from pptx.util import Emu
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ASSETS = os.path.normpath(os.path.join(HERE, "..", "assets"))
+W, H = 1920, 1080
 
 CSS = r"""
-:root{--cam:#F37142;--vang:#F3A41D;--ink:#2B1D16;--dao:#FDE3D3;--camdam:#C2461F}
+:root{--cam:#F37142;--vang:#F3A41D;--ink:#2B1D16;--dao:#FDE3D3;--camdam:#C2461F;--line:#E5D9D0}
 *{box-sizing:border-box;margin:0}
-body{width:1080px;height:1920px;position:relative;overflow:hidden;background:#fff;
+body{width:1920px;height:1080px;position:relative;overflow:hidden;background:#fff;
  font-family:"Be Vietnam Pro","Noto Sans JP",sans-serif;color:var(--ink)}
-.sei{position:absolute;left:0;right:0;opacity:.10;background:
+.sei{position:absolute;opacity:.10;background:
  radial-gradient(circle at 50% 100%,transparent 18px,var(--cam) 19px,var(--cam) 22px,transparent 23px,transparent 30px,var(--cam) 31px,var(--cam) 34px,transparent 35px,transparent 42px,var(--cam) 43px,var(--cam) 46px,transparent 47px) 0 0/100px 50px,
  radial-gradient(circle at 50% 100%,transparent 18px,var(--cam) 19px,var(--cam) 22px,transparent 23px,transparent 30px,var(--cam) 31px,var(--cam) 34px,transparent 35px,transparent 42px,var(--cam) 43px,var(--cam) 46px,transparent 47px) 50px 25px/100px 50px}
 .jp{font-family:"Noto Sans JP",sans-serif}
 ruby rt{font-size:.42em;font-weight:500;color:var(--ink)}
-u{text-decoration-thickness:4px;text-underline-offset:10px;font-weight:700}
-.title{position:absolute;top:268px;left:210px;right:80px;height:76px;border-radius:38px;background:var(--cam);
- display:flex;align-items:center;justify-content:space-between;padding:0 14px 0 30px;font-weight:800;font-size:31px;white-space:nowrap}
-.title .p{background:#fff;border-radius:26px;padding:4px 18px;font-size:28px}
-.q{position:absolute;top:378px;left:90px;right:90px;height:280px;border-radius:36px;background:#fff;border:4px solid var(--ink);
- box-shadow:8px 8px 0 var(--ink);padding:20px 34px;display:flex;gap:22px;align-items:center}
-.num{flex:none;width:76px;height:76px;border-radius:50%;background:var(--vang);display:grid;place-items:center;font-weight:800;font-size:40px}
-.qt{line-height:1.7;font-weight:500}
-.opts{position:absolute;top:700px;left:90px;width:660px;display:flex;flex-direction:column;gap:18px}
-.o{height:104px;border-radius:28px;border:3px solid #E5D9D0;background:#fff;display:flex;align-items:center;gap:22px;padding:0 26px;font-weight:500;line-height:1.5}
-.o b{font-family:"Be Vietnam Pro";font-weight:800;color:var(--camdam);flex:none;width:30px}
-.opts.long{width:900px;gap:18px}
-.opts.long .o{height:auto;min-height:96px;padding:12px 24px}
-.o.ok{background:var(--cam);border:4px solid var(--ink);box-shadow:6px 6px 0 var(--ink);font-weight:700}
+u{text-decoration-thickness:5px;text-underline-offset:12px;font-weight:700}
+.title{position:absolute;top:34px;left:56px;right:56px;height:88px;border-radius:44px;background:var(--cam);
+ display:flex;align-items:center;justify-content:space-between;padding:0 16px 0 40px;font-weight:800;font-size:42px;white-space:nowrap}
+.title .p{background:#fff;border-radius:32px;padding:6px 26px;font-size:38px}
+.q{position:absolute;top:156px;left:56px;right:56px;height:300px;border-radius:40px;background:#fff;border:5px solid var(--ink);
+ box-shadow:10px 10px 0 var(--ink);padding:24px 48px;display:flex;gap:32px;align-items:center}
+.num{flex:none;width:104px;height:104px;border-radius:50%;background:var(--vang);display:grid;place-items:center;font-weight:800;font-size:56px}
+.qt{line-height:1.65;font-weight:500}
+.opts{position:absolute;top:494px;left:56px;right:56px;display:grid;grid-template-columns:1fr 1fr;gap:28px 36px}
+.o{height:168px;border-radius:32px;border:4px solid var(--line);background:#fff;display:flex;align-items:center;gap:30px;padding:0 40px;font-weight:500;line-height:1.45}
+.o b{font-family:"Be Vietnam Pro";font-weight:800;color:var(--camdam);flex:none;font-size:1.05em}
+.opts.long{top:370px;grid-template-columns:1fr;gap:20px}
+.opts.long .o{height:auto;min-height:140px;padding:14px 40px}
+.o.ok{background:var(--cam);border:5px solid var(--ink);box-shadow:8px 8px 0 var(--ink);font-weight:700}
 .o.ok b{color:var(--ink)}
-.o.dim{opacity:.33}
-.st{position:absolute;top:1200px;left:90px;height:96px;border-radius:48px;background:var(--dao);white-space:nowrap;
- display:flex;align-items:center;gap:18px;padding:0 30px 0 14px;font-size:30px;font-weight:700}
-.t{background:var(--vang);border-radius:36px;padding:10px 22px;font-weight:800;font-size:34px}
-.camzone{position:absolute;right:30px;top:770px;width:290px;height:550px;border-radius:145px 145px 28px 28px;background:var(--dao);opacity:.55}
-.neko{position:absolute;left:585px;top:1125px;height:205px}
-.big{position:absolute;left:90px;right:90px;text-align:center}
-.pill{display:inline-block;background:var(--cam);border:4px solid var(--ink);box-shadow:8px 8px 0 var(--ink);border-radius:60px;padding:14px 56px;font-weight:800}
-.card{position:absolute;left:90px;right:90px;border-radius:36px;background:#fff;border:4px solid var(--ink);box-shadow:8px 8px 0 var(--ink);padding:36px 40px}
-.grid{position:absolute;left:90px;width:660px;top:400px;display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.cell{border-radius:22px;border:3px solid #E5D9D0;background:#fff;height:96px;display:flex;align-items:center;justify-content:center;gap:12px}
-.cell small{font-size:22px;font-weight:600}.cell span{font-size:44px;font-weight:800;color:var(--camdam)}
+.o.dim{opacity:.30}
+.st{position:absolute;top:906px;left:56px;height:118px;border-radius:59px;background:var(--dao);white-space:nowrap;
+ display:flex;align-items:center;gap:26px;padding:0 44px 0 18px;font-size:46px;font-weight:700}
+.t{background:var(--vang);border-radius:46px;padding:12px 30px;font-weight:800;font-size:50px}
+.neko{position:absolute;right:56px;bottom:0;height:240px}
+.pill{display:inline-block;background:var(--cam);border:5px solid var(--ink);box-shadow:10px 10px 0 var(--ink);border-radius:70px;padding:16px 64px;font-weight:800}
+.card{position:absolute;border-radius:40px;background:#fff;border:5px solid var(--ink);box-shadow:10px 10px 0 var(--ink);padding:44px 56px}
+.grid{position:absolute;left:56px;right:420px;top:170px;display:grid;grid-template-columns:repeat(6,1fr);gap:18px}
+.cell{border-radius:24px;border:4px solid var(--line);background:#fff;height:112px;display:flex;align-items:center;justify-content:center;gap:14px}
+.cell small{font-size:28px;font-weight:600}.cell span{font-size:58px;font-weight:800;color:var(--camdam)}
 """
 
 
@@ -78,13 +77,13 @@ def plain_len(t):
     return len(re.sub(r"__|\{([^|]+)\|[^}]+\}|\\n|\n", r"\1", t))
 
 
-def page(body, neko=None, cam=True):
+def page(body, neko=None, big_neko=False):
     font = "file://" + os.path.join(ASSETS, "fonts", "fonts.css")
-    n = f'<img class="neko" src="file://{ASSETS}/neko/{neko}.png">' if neko else ""
-    cz = '<div class="camzone"></div>' if cam else ""
+    style = ' style="height:420px"' if big_neko else ""
+    n = f'<img class="neko"{style} src="file://{ASSETS}/neko/{neko}.png">' if neko else ""
     return (f'<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="{font}">'
-            f'<style>{CSS}</style></head><body><div class="sei" style="top:0;height:240px"></div>'
-            f'<div class="sei" style="top:1360px;bottom:0"></div>{cz}{body}{n}</body></html>')
+            f'<style>{CSS}</style></head><body><div class="sei" style="right:0;bottom:0;width:560px;height:260px"></div>'
+            f'{body}{n}</body></html>')
 
 
 def title_bar(meta, right):
@@ -94,52 +93,52 @@ def title_bar(meta, right):
 
 
 def slide_cover(meta, total):
-    return page(f'''{title_bar(meta, "LIVE")}
-<div class="big" style="top:440px;font-size:40px;font-weight:800;color:var(--camdam)">LUYỆN ĐỀ JLPT CÙNG SENSEI</div>
-<div class="big" style="top:520px;font-size:170px;font-weight:800;line-height:1">{html.escape(meta["level"])}</div>
-<div class="big jp" style="top:720px;font-size:64px;font-weight:700;width:640px;right:auto;text-align:left;left:90px">{html.escape(meta["sach"])}</div>
-<div style="position:absolute;top:840px;left:90px"><span class="pill jp" style="font-size:60px">{html.escape(meta["hoi"])}</span></div>
-<div style="position:absolute;top:1010px;left:90px;width:640px;font-size:30px;font-weight:600;line-height:1.5">{total} câu · {html.escape(meta.get("thoi_gian","10 phút"))}<br>Nguồn: <span class="jp">{html.escape(meta.get("nguon",""))}</span></div>
-''', "vay-chao")
+    return page(f'''<div class="sei" style="left:0;top:0;width:100%;height:180px"></div>
+<div style="position:absolute;top:150px;left:100px;font-size:52px;font-weight:800;color:var(--camdam)">LUYỆN ĐỀ JLPT CÙNG SENSEI</div>
+<div style="position:absolute;top:220px;left:96px;font-size:260px;font-weight:800;line-height:1">{html.escape(meta["level"])}</div>
+<div class="jp" style="position:absolute;top:300px;left:560px;font-size:110px;font-weight:700">{html.escape(meta["sach"])}</div>
+<div style="position:absolute;top:530px;left:100px"><span class="pill jp" style="font-size:88px">{html.escape(meta["hoi"])}</span></div>
+<div style="position:absolute;top:760px;left:100px;font-size:40px;font-weight:600;line-height:1.6">{total} câu · {html.escape(meta.get("thoi_gian","10 phút"))}<br>Nguồn: <span class="jp">{html.escape(meta.get("nguon",""))}</span></div>
+''', "vay-chao", True)
 
 
 def slide_rules(meta, total):
     return page(f'''{title_bar(meta, "LUẬT CHƠI")}
-<div class="card" style="top:400px;right:90px;font-size:38px;font-weight:700;line-height:1.9;white-space:nowrap">
-⏱ Mỗi câu 20–30 giây<br>💬 Comment <b style="color:var(--camdam)">1 số</b>: 1 · 2 · 3 · 4<br>✔ Hiện đáp án ngay sau mỗi câu<br>🏆 Đúng nhiều nhất được<br>&nbsp;&nbsp;&nbsp;&nbsp;vinh danh cuối live!</div>
-''', "vay-chao")
+<div class="card" style="top:180px;left:56px;right:520px;font-size:56px;font-weight:700;line-height:1.75;white-space:nowrap">
+⏱ Mỗi câu 20–30 giây<br>💬 Comment <b style="color:var(--camdam)">1 số</b>: 1 · 2 · 3 · 4<br>✔ Hiện đáp án ngay sau mỗi câu<br>🏆 Đúng nhiều nhất được vinh danh!</div>
+''', "vay-chao", True)
 
 
 def slide_mondai(meta, m, idx, nm):
     return page(f'''{title_bar(meta, f"{idx}/{nm}")}
-<div style="position:absolute;top:420px;left:90px"><span class="pill jp" style="font-size:64px">{html.escape(m["ten"])}</span></div>
-<div class="jp" style="position:absolute;top:580px;left:90px;font-size:44px;font-weight:700">{html.escape(m.get("dang",""))}</div>
-<div class="card jp" style="top:680px;right:350px;font-size:38px;line-height:1.7;font-weight:500">{rich(m.get("yeu_cau",""))}</div>
-''', "suy-nghi")
+<div style="position:absolute;top:200px;left:56px"><span class="pill jp" style="font-size:96px">{html.escape(m["ten"])}</span></div>
+<div class="jp" style="position:absolute;top:240px;left:560px;font-size:64px;font-weight:700">{html.escape(m.get("dang",""))}</div>
+<div class="card jp" style="top:430px;left:56px;right:520px;font-size:54px;line-height:1.7;font-weight:500">{rich(m.get("yeu_cau",""))}</div>
+''', "suy-nghi", True)
 
 
 def slide_q(meta, m, q, reveal):
     n = len(m["cau_hoi"])
-    long_opts = max(plain_len(o) for o in q["lua_chon"]) > 12
+    long_opts = max(plain_len(o) for o in q["lua_chon"]) > 14
     ql = plain_len(q["cau"])
-    qsize = q.get("co_chu", 72 if ql <= 6 else 52 if ql <= 22 else 46 if ql <= 34 else 40)
-    osize = q.get("co_chu_lc", 46 if not long_opts else 38)
     opts = ""
+    osize = q.get("co_chu_lc", 66 if not long_opts else 46)
     for i, o in enumerate(q["lua_chon"]):
         k = i + 1
         cls = ("ok" if k == q["dap_an"] else "dim") if reveal else ""
         opts += f'<div class="o {cls}" style="font-size:{osize}px"><b>{k}</b><span>{rich(o)}</span></div>'
+    head = title_bar(meta, f"{m['ten']} · {q['so']}/{n}")
+    if long_opts:  # 用法: từ được hỏi + 4 câu dài xếp dọc full ngang
+        qsize = q.get("co_chu", 84)
+        return page(f'''{head}
+<div class="q" style="height:180px"><div class="num">{q["so"]}</div><div class="qt jp" style="font-size:{qsize}px">{rich(q["cau"])}</div></div>
+<div class="opts long jp">{opts}</div>''')
+    qsize = q.get("co_chu", 84 if ql <= 8 else 66 if ql <= 24 else 58 if ql <= 34 else 52)
     st = (f'<span class="t">✔ Đáp án {q["dap_an"]}</span>' if reveal
-          else '<span class="t">⏱ 0:25</span>💬 Comment 1–4')
-    if long_opts:  # 用法: câu dài -> lựa chọn full ngang, bỏ thanh trạng thái/Neko để nhường chỗ
-        body = f'''{title_bar(meta, f"{m['ten']} · {q['so']}/{n}")}
-<div class="q" style="height:200px"><div class="num">{q["so"]}</div><div class="qt jp" style="font-size:{qsize}px">{rich(q["cau"])}</div></div>
-<div class="opts long jp" style="top:612px">{opts}</div>'''
-        return page(body, None, cam=False)
-    body = f'''{title_bar(meta, f"{m['ten']} · {q['so']}/{n}")}
+          else '<span class="t">⏱ 0:25</span>💬 Comment 1 – 4')
+    return page(f'''{head}
 <div class="q"><div class="num">{q["so"]}</div><div class="qt jp" style="font-size:{qsize}px">{rich(q["cau"])}</div></div>
-<div class="opts jp">{opts}</div><div class="st">{st}</div>'''
-    return page(body, "bien-dung" if reveal else "suy-nghi")
+<div class="opts jp">{opts}</div><div class="st">{st}</div>''', "bien-dung" if reveal else "suy-nghi")
 
 
 def slide_summary(meta, data):
@@ -148,14 +147,14 @@ def slide_summary(meta, data):
         for m in data["mondai"] for q in m["cau_hoi"])
     return page(f'''{title_bar(meta, "ĐÁP ÁN")}
 <div class="grid">{cells}</div>
-<div class="st" style="top:1210px">🎯 Comment số câu đúng!</div>''', "cup-vang")
+<div class="st">🎯 Comment số câu bạn làm đúng!</div>''', "cup-vang", True)
 
 
 def slide_end(meta):
     lines = meta.get("ket_thuc") or ["Hẹn gặp lại buổi sau!"]
     return page(f'''{title_bar(meta, "HẸN GẶP LẠI")}
-<div class="card" style="top:460px;right:350px;font-size:48px;font-weight:800;line-height:1.6">{"<br>".join(rich(x) for x in lines)}</div>''',
-                "vay-chao")
+<div class="card" style="top:260px;left:56px;right:520px;font-size:68px;font-weight:800;line-height:1.6">{"<br>".join(rich(x) for x in lines)}</div>''',
+                "vay-chao", True)
 
 
 def build(data, out):
@@ -174,15 +173,16 @@ def build(data, out):
         for i, h in enumerate(pages):
             with open(os.path.join(tmp, f"{i:03d}.html"), "w", encoding="utf-8") as f:
                 f.write(h)
-        subprocess.run(["node", os.path.join(HERE, "render.cjs"), tmp], check=True, cwd="/tmp")
+        env = dict(os.environ, W=str(W), H=str(H))
+        subprocess.run(["node", os.path.join(HERE, "render.cjs"), tmp], check=True, cwd="/tmp", env=env)
         prs = Presentation()
-        prs.slide_width, prs.slide_height = Emu(6858000), Emu(12192000)  # 7.5 x 13.333 in
+        prs.slide_width, prs.slide_height = Emu(12192000), Emu(6858000)  # 13.333 x 7.5 in
         for i in range(len(pages)):
             s = prs.slides.add_slide(prs.slide_layouts[6])
             s.shapes.add_picture(os.path.join(tmp, f"{i:03d}.png"), 0, 0, prs.slide_width, prs.slide_height)
         prs.save(out)
-        png_dir = os.path.splitext(out)[0] + "_png"
         if os.environ.get("KEEP_PNG"):
+            png_dir = os.path.splitext(out)[0] + "_png"
             shutil.rmtree(png_dir, ignore_errors=True)
             os.makedirs(png_dir)
             for i in range(len(pages)):

@@ -1,28 +1,32 @@
 ---
 name: live-ppt-de-luyen
-description: Tạo bộ slide dọc 9:16 theo brand Mankai để chiếu đề luyện JLPT (文字・語彙 / 文法, N3–N2, sách 日本語パワードリル hoặc đề tự soạn) trên TikTok LIVE — furigana như sách gốc, camera Sensei xoá phông ở góc phải dưới, slide đáp án chỉ tô cam khung đúng, Neko-chan theo nhịp. Dùng khi người dùng nói "làm slide live 第N回", "tạo slide chiếu đề luyện", "slide livestream luyện đề".
+description: Tạo bộ slide NGANG 16:9 theo brand Mankai để chiếu đề luyện JLPT (文字・語彙 / 文法, N3–N1, sách 日本語パワードリル, 徹底トレーニング hoặc đề tự soạn) trên TikTok LIVE — slide đặt giữa khung dọc (camera Sensei ở trên, comment ở dưới), furigana như sách gốc, slide đáp án chỉ tô cam khung đúng, Neko-chan theo nhịp. Dùng khi người dùng nói "làm slide live 第N回", "tạo slide chiếu đề luyện", "slide livestream luyện đề".
 ---
 
 # Skill: Slide luyện đề cho TikTok LIVE
 
 ## Đầu ra
-`.pptx` dọc 1080×1920, mỗi slide là 1 ảnh full khung (dựng bằng HTML để có furigana `<ruby>` như sách).
+`.pptx` **ngang 16:9 (1920×1080)**, mỗi slide là 1 ảnh full khung (dựng bằng HTML để có furigana `<ruby>` như sách).
 
 Thứ tự: Bìa → Luật chơi → [Tiêu đề 問題 → (Câu hỏi → Đáp án) × n] × 問題 → Bảng đáp án → Kết.
 
-## Bố cục (đã đo theo preview TikTok LIVE Studio của Mankai)
-| Vùng | y (px) | Nội dung |
-|---|---|---|
-| TikTok che (avatar, ranking, LIVE Goal) | 0–260 | Seigaiha cam 10% |
-| Thanh tiêu đề | 268–344, x ≥ 210 | "Luyện đề N3 語彙 · 第3回" + 問題·câu |
-| Thẻ câu hỏi | 378–658 | Noto Sans JP, furigana trên chữ Hán, từ được hỏi gạch chân |
-| 4 lựa chọn | 700–1170, rộng 660 | Đáp án đúng: nền cam #F37142, chữ nâu mực, bóng đổ cứng; còn lại mờ |
-| Trạng thái + Neko | 1125–1330 | ⏱ / 💬 Comment 1–4 → ✔ Đáp án N |
-| **Camera Sensei xoá phông** | x 760–1050, y 770–1320 | Khung đào nhạt trống, ghép camera trong LIVE Studio |
-| TikTok comment + quà | 1330–1920 | Chỉ nền |
-Câu 用法 (lựa chọn > 12 ký tự): tự chuyển sang lựa chọn full ngang, bỏ khung camera/Neko để đủ chỗ.
+## Bố cục live (khung dọc TikTok 1080×1920)
+| Vùng | Nội dung |
+|---|---|
+| Trên (~y 240–760) | Camera Sensei + banner tiêu đề live (TikTok đè avatar/Follow lên phần đầu) |
+| **Giữa (~y 760–1370)** | **Slide 16:9 này**, full chiều ngang màn hình |
+| Dưới | Comment + quà |
 
-Brand: trắng 60% · cam 25% · vàng 10%; chữ nâu mực #2B1D16; không chữ trắng trên cam; Be Vietnam Pro + Noto Sans JP. Neko: `vay-chao` (bìa, luật, kết), `suy-nghi` (câu hỏi), `bien-dung` (đáp án), `cup-vang` (bảng đáp án) — trong `assets/neko/`, lấy từ kho linh vật Mankai.
+## Bố cục slide (1920×1080)
+| Thành phần | Thông số |
+|---|---|
+| Thanh tiêu đề | cam, "Luyện đề N3 語彙 · 第3回" + 問題·câu |
+| Thẻ câu hỏi | cao 300px, chữ Nhật 52–84px tự co theo độ dài, furigana trên chữ Hán, từ được hỏi gạch chân |
+| 4 lựa chọn | lưới 2×2, chữ 66px. Đáp án: khung đúng nền cam #F37142 + chữ nâu mực, còn lại mờ |
+| Trạng thái | ⏱ 0:25 · 💬 Comment 1–4 → ✔ Đáp án N; Neko góc phải dưới |
+| 用法 (lựa chọn > 14 ký tự) | 4 câu xếp dọc full ngang, chữ 46px, không Neko |
+
+Brand: trắng 60% · cam 25% · vàng 10%; chữ nâu mực #2B1D16; không chữ trắng trên cam; Be Vietnam Pro + Noto Sans JP. Neko (`assets/neko/`): `vay-chao` (bìa, luật, kết), `suy-nghi` (tiêu đề 問題, câu hỏi), `bien-dung` (đáp án), `cup-vang` (bảng đáp án).
 
 ## Quy trình
 1. Đọc trang PDF (Read `pages`), gõ lại đề **nguyên văn**, furigana chỉ ở đúng chỗ sách có. Từ được hỏi ở 問題1 không có furigana.
@@ -40,4 +44,4 @@ Brand: trắng 60% · cam 25% · vàng 10%; chữ nâu mực #2B1D16; không ch�
 | `（　　）` | chỗ trống |
 
 ## Live trong TikTok LIVE Studio
-Hướng dọc → nguồn 1: cửa sổ PowerPoint trình chiếu (full khung) → nguồn 2: camera bật xoá phông, đặt vào khung đào nhạt góc phải dưới → bấm → để qua slide.
+Hướng dọc → nguồn Camera đặt phần trên (kèm banner tiêu đề) → nguồn Window capture cửa sổ PowerPoint trình chiếu, kéo full ngang ở giữa khung → bấm → để qua slide.
