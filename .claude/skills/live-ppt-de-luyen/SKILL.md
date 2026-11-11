@@ -26,7 +26,7 @@ Brand: trắng 60% · cam 25% · vàng 10%; chữ nâu mực #2B1D16; không ch�
 
 ## Quy trình
 1. Đọc trang PDF (Read `pages`), gõ lại đề **nguyên văn**, furigana chỉ ở đúng chỗ sách có. Từ được hỏi ở 問題1 không có furigana.
-2. Giải `dap_an`. Báo người dùng đối chiếu 別冊 (file scan không có đáp án).
+2. Lấy `dap_an` từ trang **解答 ở cuối file PDF** (sau phần đề; ví dụ N2 文字・語彙: PDF trang 81+, N3 文字・語彙: PDF trang 72+). Tự giải thêm một lượt để đối chiếu; lệch thì báo người dùng, không tự sửa đáp án của sách.
 3. Viết JSON (mẫu: `examples/n3_goi_03.json`).
 4. `python3 scripts/build_live_ppt.py de.json -o exports/Live_<...>.pptx` (cần node + playwright có sẵn). Thêm `KEEP_PNG=1` để giữ ảnh kiểm tra.
 5. Xem ảnh vài slide (câu dài, 用法, hội thoại A/B) → tràn thì thêm `co_chu` / `co_chu_lc` cho câu đó.
