@@ -71,7 +71,7 @@ def rich(t):
     t = html.escape(t)
     t = re.sub(r"\{([^|{}]+)\|([^{}]+)\}", r"<ruby>\1<rt>\2</rt></ruby>", t)
     t = re.sub(r"__(.+?)__", r"<u>\1</u>", t)
-    t = re.sub(r"\[\[(\d+)\]\]", r'<span class="blank">\1</span>', t)
+    t = re.sub(r"\[\[([0-9a-z\-]+)\]\]", r'<span class="blank">\1</span>', t)
     return t.replace("\\n", "<br>").replace("\n", "<br>")
 
 
@@ -137,10 +137,11 @@ def slide_q(meta, m, q, reveal):
         opts += f'<div class="o {cls}" style="font-size:{osize}px"><b>{k}</b><span>{rich(o)}</span></div>'
     head = title_bar(meta, f"{m['ten']} · {q['so']}/{n}")
     if long_opts:  # 用法: từ được hỏi + 4 câu dài xếp dọc full ngang
-        qsize = q.get("co_chu", 84)
+        qsize = q.get("co_chu", 84 if ql <= 8 else 48)
+        qh = 180 if ql <= 8 else 230
         return page(f'''{head}
-<div class="q" style="height:180px"><div class="num">{q["so"]}</div><div class="qt jp" style="font-size:{qsize}px">{rich(q["cau"])}</div></div>
-<div class="opts long jp">{opts}</div>''')
+<div class="q" style="height:{qh}px"><div class="num">{q["so"]}</div><div class="qt jp" style="font-size:{qsize}px">{rich(q["cau"])}</div></div>
+<div class="opts long jp" style="top:{qh + 190}px">{opts}</div>''')
     qsize = q.get("co_chu", 84 if ql <= 8 else 66 if ql <= 24 else 58 if ql <= 34 else 52)
     st = (f'<span class="t">✔ Đáp án {q["dap_an"]}</span>' if reveal
           else '<span class="t">⏱ 0:25</span>💬 Comment 1 – 4')
