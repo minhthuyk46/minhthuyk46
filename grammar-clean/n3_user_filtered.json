@@ -1,0 +1,1402 @@
+[
+[
+"STT",
+"Phân loại",
+"Mẫu câu",
+"Cách chia",
+"Ý nghĩa",
+"Ví dụ",
+"Dịch ví dụ",
+"Lưu ý"
+],
+[
+"1",
+"Nhóm 01 · Thời điểm, thể & động từ ghép",
+"AとB／AたらB",
+"V-ru + と / V-ta + ら + 発見したこと（過去）",
+"Làm A xong thì tình cờ phát hiện / gặp B\n(B: sự việc thực tế, ngoài dự tính)",
+"本屋に行ったら、学生時代の友達に会った。",
+"Đi đến hiệu sách thì gặp bạn thời đi học.",
+"A xong thì phát hiện B; khác điều kiện giả định."
+],
+[
+"2",
+"Nhóm 01 · Thời điểm, thể & động từ ghép",
+"Aていく",
+"V-te + いく",
+"①Từ nay trở đi tiếp tục / dần A\n②Làm A rồi đi xa điểm nhìn",
+"これからも、日本語の勉強を続けていきたい。",
+"Từ nay về sau, tôi muốn tiếp tục học tiếng Nhật.",
+"Từ hiện tại về sau; cũng có hướng đi xa điểm nhìn."
+],
+[
+"3",
+"Nhóm 01 · Thời điểm, thể & động từ ghép",
+"Aことがある",
+"V-ru / V-nai + ことがある",
+"Cũng có lúc A\n(khác Vたことがある: kinh nghiệm)",
+"忙しい日は、昼ご飯を食べないことがある。",
+"Những ngày bận, có khi tôi không ăn trưa.",
+"Cũng có lúc; khác Vたことがある."
+],
+[
+"4",
+"Nhóm 01 · Thời điểm, thể & động từ ghép",
+"AままB",
+"V-ta / V-nai / Ai-い / Ana-な / N-の + まま",
+"Giữ nguyên trạng thái A mà B",
+"眼鏡をかけたまま、寝てしまった。",
+"Tôi lỡ ngủ quên mà vẫn đeo kính.",
+"Giữ nguyên trạng thái."
+],
+[
+"5",
+"Nhóm 01 · Thời điểm, thể & động từ ghép",
+"AたびにB",
+"V-ru / N-の + たびに",
+"Cứ mỗi lần A là lại B",
+"この写真を見るたびに、家族を思い出す。",
+"Mỗi lần xem bức ảnh này, tôi lại nhớ đến gia đình.",
+"Mỗi lần A đều B."
+],
+[
+"6",
+"Nhóm 01 · Thời điểm, thể & động từ ghép",
+"Aてくる",
+"V-te + くる",
+"①Từ trước đến nay dần A\n②Làm A rồi đến gần điểm nhìn",
+"毎日練習して、少し自信がついてきた。",
+"Luyện tập mỗi ngày nên tôi đã dần tự tin hơn.",
+"Biến đổi đến hiện tại; hướng về điểm nhìn."
+],
+[
+"7",
+"Nhóm 01 · Thời điểm, thể & động từ ghép",
+"AうちにB",
+"V-ru / V-te + いる / V-nai / Ai-い / Ana-な / N-の + うちに",
+"①Tranh thủ khi còn A thì làm B\n②Trong lúc A thì B dần thay đổi",
+"若いうちに、いろいろな国を旅行したい。\n毎日話しているうちに、日本語が上手になった。",
+"Tôi muốn đi du lịch nhiều nước khi còn trẻ.\nNói chuyện mỗi ngày, dần dần tiếng Nhật của tôi giỏi lên.",
+"①Tranh thủ còn A; ②Trong lúc A thì B thay đổi."
+],
+[
+"8",
+"Nhóm 01 · Thời điểm, thể & động từ ghép",
+"Aばかりだ",
+"V-ta + ばかりだ",
+"Vừa mới A xong\n(theo cảm nhận của người nói, không nhất thiết ngay trước lúc nói)",
+"このスマホは、昨日買ったばかりだ。",
+"Chiếc điện thoại này tôi mới mua hôm qua.",
+"Cảm giác vừa mới; không nhất thiết ngay trước lúc nói."
+],
+[
+"9",
+"Nhóm 01 · Thời điểm, thể & động từ ghép",
+"A間B／A間にB",
+"V-ru / V-te + いる / Ai-い / Ana-な / N-の + 間（に）",
+"①Suốt khoảng thời gian A thì B (間)\n②Trong khoảng thời gian A thì B xảy ra (間に)",
+"私が会議に出ている間に、荷物が届いた。",
+"Trong lúc tôi đang họp thì hàng đã được giao đến.",
+"間: suốt khoảng; 間に: một việc xảy ra trong khoảng."
+],
+[
+"13",
+"Nhóm 01 · Thời điểm, thể & động từ ghép",
+"AまでB",
+"V-ru / N + まで",
+"B tiếp diễn cho đến mốc A",
+"雨がやむまで、ここで待ちましょう。",
+"Chờ ở đây cho đến khi tạnh mưa nhé.",
+"まで: hành động tiếp diễn đến mốc."
+],
+[
+"14",
+"Nhóm 01 · Thời điểm, thể & động từ ghép",
+"AまでにB",
+"N時間 / V-ru + までに",
+"Hoàn thành B trước mốc A\n(hạn chót)",
+"金曜日までに、レポートを出してください。",
+"Hãy nộp báo cáo trước thứ Sáu.",
+"までに: hoàn tất trước / đúng hạn."
+],
+[
+"16",
+"Nhóm 01 · Thời điểm, thể & động từ ghép",
+"Aてしまう",
+"V-te + しまう（V-de + しまう）",
+"①Làm xong hẳn A\n②Lỡ A (tiếc nuối, bất ngờ)",
+"大事なメールを消してしまった。",
+"Tôi lỡ xoá mất email quan trọng.",
+"Lỡ / tiếc nuối; cũng dùng cho hoàn tất."
+],
+[
+"17",
+"Nhóm 01 · Thời điểm, thể & động từ ghép",
+"Aてある",
+"他動詞て + ある",
+"A đã được làm sẵn, kết quả vẫn còn\n(他動詞; do ai đó chuẩn bị)",
+"机の上に、資料が並べてある。",
+"Trên bàn có tài liệu được xếp sẵn.",
+"他動詞; trạng thái do ai đó chuẩn bị."
+],
+[
+"18",
+"Nhóm 01 · Thời điểm, thể & động từ ghép",
+"Aている／Aていた",
+"V-te + いる / いた",
+"Đang A / Trạng thái A vẫn còn\n(ている: hiện tại / ていた: tại thời điểm trong quá khứ)",
+"昨日電話したとき、彼はまだ寝ていた。",
+"Lúc tôi gọi điện hôm qua, anh ấy vẫn đang ngủ.",
+"Thì của trạng thái so với thời điểm đang nói tới."
+],
+[
+"19",
+"Nhóm 01 · Thời điểm, thể & động từ ghép",
+"Aるところだ",
+"V-ru + ところだ",
+"Sắp sửa làm A\n(chưa bắt đầu)",
+"今から昼ご飯を食べるところです。",
+"Bây giờ tôi chuẩn bị ăn trưa.",
+"Sắp bắt đầu."
+],
+[
+"20",
+"Nhóm 01 · Thời điểm, thể & động từ ghép",
+"Aているところだ",
+"V-te + いる + ところだ",
+"Đúng lúc đang làm A",
+"今、昼ご飯を食べているところです。",
+"Bây giờ tôi đang ăn trưa.",
+"Đúng lúc đang làm."
+],
+[
+"21",
+"Nhóm 01 · Thời điểm, thể & động từ ghép",
+"Aたところだ",
+"V-ta + ところだ",
+"Vừa mới làm xong A\n(ngay trước thời điểm nói)",
+"今、昼ご飯を食べたところです。",
+"Tôi vừa ăn trưa xong.",
+"Vừa mới hoàn tất."
+],
+[
+"22",
+"Nhóm 01 · Thời điểm, thể & động từ ghép",
+"Aたことがある",
+"V-ta + ことがある",
+"Đã từng A\n(kinh nghiệm)",
+"京都に行ったことがあります。",
+"Tôi đã từng đến Kyoto.",
+"Kinh nghiệm; khác Vることがある."
+],
+[
+"23",
+"Nhóm 01 · Thời điểm, thể & động từ ghép",
+"A始める",
+"V-masu (bỏ masu) + 始める",
+"Bắt đầu làm A",
+"宿題をやり始めたら、友達から電話が来た。",
+"Vừa bắt đầu làm bài tập thì bạn gọi điện đến.",
+"Bắt đầu làm V; khác 終わる."
+],
+[
+"24",
+"Nhóm 01 · Thời điểm, thể & động từ ghép",
+"A続ける",
+"V-masu (bỏ masu) + 続ける",
+"Cứ tiếp tục làm A",
+"二人は、一時間も話し続けている。",
+"Hai người đã nói chuyện liên tục tới tận một tiếng.",
+"Hành động liên tục."
+],
+[
+"25",
+"Nhóm 01 · Thời điểm, thể & động từ ghép",
+"A出す",
+"V-masu (bỏ masu) + 出す",
+"Đột nhiên bắt đầu A",
+"傘を持っていないのに、雨が降り出した。",
+"Không mang ô mà trời đổ mưa.",
+"Bắt đầu, thường đột ngột; khác động từ đơn 思い出す."
+],
+[
+"26",
+"Nhóm 01 · Thời điểm, thể & động từ ghép",
+"AずにB",
+"V-nai (bỏ nai) + ずに（する→せずに）",
+"Không làm A mà B\n（＝AないでB; する→せずに）",
+"辞書を使わずに、日本語でメールを書いた。",
+"Tôi đã viết email bằng tiếng Nhật mà không dùng từ điển.",
+"＝ないで; thiếu hành động kèm theo."
+],
+[
+"27",
+"Nhóm 01 · Thời điểm, thể & động từ ghép",
+"A直す",
+"V-masu (bỏ masu) + 直す",
+"Làm lại A (cho đúng / tốt hơn)",
+"分かりにくいので、もう一度書き直します。",
+"Khó hiểu quá nên tôi sẽ viết lại một lần nữa.",
+"Vます bỏ ます."
+],
+[
+"28",
+"Nhóm 01 · Thời điểm, thể & động từ ghép",
+"A終わる",
+"V-masu (bỏ masu) + 終わる",
+"Làm xong A",
+"この本を読み終わったら、貸してあげる。",
+"Đọc xong cuốn sách này, tớ sẽ cho cậu mượn.",
+"Hoàn tất một hành động."
+],
+[
+"32",
+"Nhóm 01 · Thời điểm, thể & động từ ghép",
+"AないでB",
+"V-nai + で",
+"Không làm A mà làm B\nLàm B trong trạng thái không A",
+"今朝は、朝ご飯を食べないで出かけた。",
+"Sáng nay tôi ra khỏi nhà mà không ăn sáng.",
+"Không làm A mà làm B."
+],
+[
+"33",
+"Nhóm 01 · Thời điểm, thể & động từ ghép",
+"AなくてB",
+"V-nai (bỏ i) + くて",
+"Vì không A nên B\n(khác ないで)",
+"名前が思い出せなくて、困っている。",
+"Không nhớ ra tên nên đang khổ sở.",
+"Phủ định nối lý do; khác ないで."
+],
+[
+"34",
+"Nhóm 02 · Nguyên nhân, mục đích, lý do",
+"Aため（に）B",
+"TTT / Ai-い / Ana-な / N-の + ため（に）",
+"Do A nên B\n(nguyên nhân; khác Vるために: mục đích)",
+"大雪のため、電車が止まった。",
+"Do tuyết rơi dày nên tàu đã dừng chạy.",
+"Nguyên nhân; khác Vるために chỉ mục đích."
+],
+[
+"35",
+"Nhóm 02 · Nguyên nhân, mục đích, lý do",
+"AおかげでB",
+"TTT / Ai-い / Ana-な / N-の + おかげで",
+"Nhờ A nên B\n(kết quả tốt, biết ơn)",
+"先生のおかげで、試験に合格できた。",
+"Nhờ thầy mà tôi đã đỗ kỳ thi.",
+"Nhờ; kết quả tốt."
+],
+[
+"37",
+"Nhóm 02 · Nguyên nhân, mục đích, lý do",
+"AせいでB",
+"TTT / Ai-い / Ana-な / N-の + せいで",
+"Tại A nên B\n(kết quả xấu, trách móc)",
+"目覚ましが鳴らなかったせいで、寝坊した。",
+"Tại đồng hồ báo thức không kêu nên tôi ngủ quên.",
+"Tại vì; thường là kết quả xấu."
+],
+[
+"36",
+"Nhóm 02 · Nguyên nhân, mục đích, lý do",
+"AによってB／AによるB",
+"N + によって / により / によるN",
+"Do A nên B\n(nguyên nhân)",
+"台風によって、多くの家が壊れた。",
+"Do bão mà nhiều ngôi nhà bị hư hại.",
+"Nguyên nhân; phân biệt tùy theo."
+],
+[
+"38",
+"Nhóm 02 · Nguyên nhân, mục đích, lý do",
+"AようにB",
+"V-ru / V-khả năng / V-nai + ように",
+"Làm B để có thể A / để không A\n(A: thể khả năng, Vない, động từ không ý chí)",
+"後ろの人にも聞こえるように、大きな声で話してください。",
+"Hãy nói to để cả người ngồi sau cũng nghe thấy.",
+"Khả năng・Vない; phân biệt ために."
+],
+[
+"39",
+"Nhóm 02 · Nguyên nhân, mục đích, lý do",
+"AためにB",
+"V-ru / N-の + ために",
+"Làm B để A / vì A\n(mục đích; động từ có ý chí)",
+"日本で働くために、日本語を勉強している。",
+"Tôi đang học tiếng Nhật để làm việc ở Nhật.",
+"Mục đích; V có ý chí."
+],
+[
+"41",
+"Nhóm 02 · Nguyên nhân, mục đích, lý do",
+"AのだからB",
+"TTT + のだから（N / Ana-な：なのだから）",
+"Vì A (điều đã rõ) nên đương nhiên B",
+"せっかく日本に来たのだから、京都にも行こう。",
+"Đã mất công đến Nhật rồi thì đi cả Kyoto nữa đi.",
+"Lý do đã rõ; lời khuyên / ý chí."
+],
+[
+"42",
+"Nhóm 02 · Nguyên nhân, mục đích, lý do",
+"AだけにB",
+"N / TTT（Ana-な） + だけに",
+"Chính vì A nên càng B",
+"楽しみにしていただけに、中止は残念だ。",
+"Chính vì đã rất mong chờ nên việc bị huỷ thật đáng tiếc.",
+"Chính vì kỳ vọng nên cảm xúc mạnh."
+],
+[
+"43",
+"Nhóm 02 · Nguyên nhân, mục đích, lý do",
+"AことからB",
+"TTT / Ai-い / Ana-な・である / Nである + ことから",
+"Từ sự thật A mà suy ra / đặt tên là B",
+"駅に近いことから、このホテルは人気がある。",
+"Vì gần ga nên khách sạn này được ưa chuộng.",
+"Từ một sự thật suy ra lý do."
+],
+[
+"44",
+"Nhóm 02 · Nguyên nhân, mục đích, lý do",
+"AにはB",
+"V-ru + には / N + には",
+"Để A thì cần / khó B",
+"この仕事を一人で終えるには、時間が足りない。",
+"Để một mình hoàn thành công việc này thì không đủ thời gian.",
+"Vるには: để làm… thì cần / khó…"
+],
+[
+"45",
+"Nhóm 02 · Nguyên nhân, mục đích, lý do",
+"AのにB",
+"V-ru + のに/ N + に",
+"Để A thì cần / tốn B\n(B: thời gian, chi phí)",
+"この料理を作るのに、一時間かかった。",
+"Để nấu món này mất một tiếng.",
+"のに: công dụng / thời gian; không phải mặc dù."
+],
+[
+"47",
+"Nhóm 03 · Điều kiện, giả định, nghịch tiếp",
+"AならB",
+"TTT（N・Ana bỏ だ） + なら",
+"Nếu (định) A thì B\n(lời khuyên, đề nghị)",
+"日本語を勉強するなら、この本がおすすめです。",
+"Nếu học tiếng Nhật thì tôi khuyên dùng cuốn sách này.",
+"Nêu chủ đề / điều kiện rồi đưa lời khuyên."
+],
+[
+"48",
+"Nhóm 03 · Điều kiện, giả định, nghịch tiếp",
+"AたってB",
+"V-ta + って / Ai (bỏ い) + くたって / Ana-な・N + だって",
+"Dù A thì vẫn B\n（＝AてもB; văn nói）",
+"いくら安くたって、必要ない物は買わない。",
+"Dù rẻ đến đâu, đồ không cần thì tôi không mua.",
+"＝ても; phủ định なくたって."
+],
+[
+"49",
+"Nhóm 03 · Điều kiện, giả định, nghịch tiếp",
+"AようならB",
+"TTT / Ai-い / Ana-な / N-の + ようなら",
+"Nếu tình trạng A thì B\n(hay dùng để khuyên)",
+"熱が下がらないようなら、病院に行ってください。",
+"Nếu sốt mãi không hạ thì hãy đi bệnh viện.",
+"Nếu có tình trạng đó thì…; hay dùng lời khuyên."
+],
+[
+"50",
+"Nhóm 03 · Điều kiện, giả định, nghịch tiếp",
+"AとしたらB",
+"TTT + としたら",
+"Giả sử A thì B",
+"もし一週間休めるとしたら、何をしたいですか。",
+"Nếu được nghỉ một tuần thì bạn muốn làm gì?",
+"Giả định."
+],
+[
+"51",
+"Nhóm 03 · Điều kiện, giả định, nghịch tiếp",
+"AとしてもB",
+"TTT + としても",
+"Dù giả sử A thì vẫn B",
+"雨が降ったとしても、試合は行います。",
+"Dù trời có mưa thì trận đấu vẫn diễn ra.",
+"Giả sử A vẫn B."
+],
+[
+"52",
+"Nhóm 03 · Điều kiện, giả định, nghịch tiếp",
+"AとするとB",
+"TTT + とすると",
+"Nếu cho rằng A thì B\n(suy luận từ giả định)",
+"彼が来ないとすると、誰に頼めばいいだろう。",
+"Nếu anh ấy không đến thì nên nhờ ai đây nhỉ.",
+"Dựa trên giả định để suy luận."
+],
+[
+"58",
+"Nhóm 03 · Điều kiện, giả định, nghịch tiếp",
+"AんだったらB",
+"TTT + んだったら（N / Ana-な：なんだったら）",
+"Nếu đúng là A thì (hãy) B\n(dựa trên thông tin vừa nghe)",
+"コンビニに行くんだったら、牛乳も買ってきて。",
+"Nếu cậu đi cửa hàng tiện lợi thì mua cả sữa về nhé.",
+"Dựa trên thông tin vừa nghe."
+],
+[
+"60",
+"Nhóm 04 · Suy đoán, ví von, cảm thán",
+"Aだろうと思う",
+"TTT（N・Ana bỏ だ） + だろうと思う",
+"Tôi nghĩ có lẽ A",
+"新入社員は緊張しているだろうと思い、声をかけた。",
+"Tôi nghĩ chắc nhân viên mới đang hồi hộp nên đã bắt chuyện.",
+"Truyền đạt suy đoán của mình."
+],
+[
+"61",
+"Nhóm 04 · Suy đoán, ví von, cảm thán",
+"Aそうにない／Aそうもない",
+"V-masu (bỏ masu) + そうにない / そうもない",
+"Có vẻ không thể A",
+"この給料では、家は買えそうもない。",
+"Với mức lương này thì chắc không mua nổi nhà.",
+"Không có vẻ sẽ làm được; phủ định 様態そうだ."
+],
+[
+"62",
+"Nhóm 04 · Suy đoán, ví von, cảm thán",
+"Aみたいだ",
+"TTT（N・Ana bỏ だ） + みたいだ",
+"Hình như A\n(suy đoán từ dấu hiệu; văn nói)",
+"外が静かだね。雪が降っているみたいだ。",
+"Bên ngoài yên ắng nhỉ. Hình như tuyết đang rơi.",
+"Suy đoán từ dấu hiệu; văn nói."
+],
+[
+"63",
+"Nhóm 04 · Suy đoán, ví von, cảm thán",
+"Aはずだ",
+"TTT / Ai-い / Ana-な / N-の + はずだ",
+"Chắc hẳn A\n(suy luận có căn cứ)",
+"今日は休みだから、会社には誰もいないはずだ。",
+"Hôm nay nghỉ nên chắc chắn ở công ty không có ai.",
+"Suy luận có căn cứ; はずがない = không thể có chuyện."
+],
+[
+"64",
+"Nhóm 04 · Suy đoán, ví von, cảm thán",
+"Aらしい",
+"N + らしい",
+"Đúng chất A, ra dáng A",
+"動物が大好きな田中さんらしい部屋ですね。",
+"Căn phòng đúng chất anh Tanaka, người rất yêu động vật nhỉ.",
+"Đúng đặc trưng của N; khác suy đoán らしい."
+],
+[
+"65",
+"Nhóm 04 · Suy đoán, ví von, cảm thán",
+"Aに違いない",
+"TTT（N・Ana bỏ だ） + に違いない",
+"Chắc chắn A\n(người nói tin chắc)",
+"毎日練習しているから、きっと合格するに違いない。",
+"Ngày nào cũng luyện tập nên chắc chắn sẽ đỗ.",
+"Người nói tin chắc từ căn cứ."
+],
+[
+"66",
+"Nhóm 04 · Suy đoán, ví von, cảm thán",
+"Aそうだ（様態）",
+"V-masu (bỏ masu) / Ai (bỏ い) / Ana-な + そうだ",
+"Trông có vẻ A\n(様態: dựa vào quan sát)",
+"このケーキ、おいしそうですね。",
+"Cái bánh này trông ngon nhỉ.",
+"様態: dựa vào điều quan sát được."
+],
+[
+"67",
+"Nhóm 04 · Suy đoán, ví von, cảm thán",
+"Aそうだ（伝聞）",
+"TTT + そうだ",
+"Nghe nói A\n(伝聞: truyền đạt thông tin)",
+"天気予報によると、明日は雨が降るそうだ。",
+"Theo dự báo thời tiết thì nghe nói mai trời mưa.",
+"伝聞: 普通形＋そうだ; không bỏ い／だ."
+],
+[
+"68",
+"Nhóm 04 · Suy đoán, ví von, cảm thán",
+"Aらしい（推量）",
+"TTT（N / Ana bỏ だ） + らしい",
+"Hình như / nghe đâu A\n(suy đoán từ thông tin gián tiếp)",
+"田中さんは、来月結婚するらしい。",
+"Nghe đâu tháng sau anh Tanaka sẽ kết hôn.",
+"Suy đoán / nghe nói; N・Aな bỏ だ."
+],
+[
+"70",
+"Nhóm 04 · Suy đoán, ví von, cảm thán",
+"Aのではないだろうか",
+"TTT + のではないだろうか",
+"Phải chăng là A\n(nêu ý kiến dè dặt)",
+"少し休んだほうがいいのではないだろうか。",
+"Chẳng phải là nên nghỉ ngơi một chút sao.",
+"Nêu suy nghĩ một cách dè dặt."
+],
+[
+"71",
+"Nhóm 04 · Suy đoán, ví von, cảm thán",
+"Aてもおかしくない",
+"V-te / Ai-くて / Ana-な・Nで + もおかしくない",
+"Có A cũng không lạ",
+"あの選手なら、優勝してもおかしくない。",
+"Nếu là tuyển thủ đó thì có vô địch cũng chẳng lạ.",
+"A xảy ra cũng hợp lý."
+],
+[
+"74",
+"Nhóm 04 · Suy đoán, ví von, cảm thán",
+"なんてA（の／なん）だろう",
+"なんて + Ai-い + （の）だろう / Ana-な・N + なんだろう",
+"Thật là A biết bao!\n(cảm thán)",
+"なんてきれいな景色なんだろう。",
+"Phong cảnh đẹp biết bao!",
+"Cảm thán; không phải câu hỏi xin thông tin."
+],
+[
+"75",
+"Nhóm 04 · Suy đoán, ví von, cảm thán",
+"AほどB",
+"TTT / Ai-い / Ana-な / N + ほど",
+"B đến mức A",
+"今日は、外に出たくないほど寒い。",
+"Hôm nay lạnh đến mức không muốn ra ngoài.",
+"Mức độ; khác ば～ほど."
+],
+[
+"76",
+"Nhóm 04 · Suy đoán, ví von, cảm thán",
+"Aようだ／AようにB／AようなB",
+"N-の / TTT + ようだ・ように・ようなN",
+"①Giống như A\n②B như A (ví von)",
+"彼の絵は、写真のように見える。",
+"Tranh của anh ấy trông như ảnh chụp.",
+"So sánh / ví von; ように không phải mục đích ở đây."
+],
+[
+"77",
+"Nhóm 05 · So sánh, đối tượng, chủ đề",
+"AにとってB",
+"N + にとって（は / も）",
+"Đối với A thì B\n(lập trường đánh giá; khác に対して)",
+"私にとって、家族が一番大切だ。",
+"Đối với tôi, gia đình là quan trọng nhất.",
+"Lập trường đánh giá; khác に対して."
+],
+[
+"78",
+"Nhóm 05 · So sánh, đối tượng, chủ đề",
+"AによってB／AによるB（tuỳ theo）",
+"N + によって / によるN",
+"Tùy theo A mà B khác nhau",
+"好みは、人によって違う。",
+"Sở thích thì tuỳ mỗi người mà khác nhau.",
+"Tùy người・nơi・thời điểm mà khác."
+],
+[
+"79",
+"Nhóm 05 · So sánh, đối tượng, chủ đề",
+"AにしたがってB",
+"V-ru / N + にしたがって",
+"A thay đổi thì B cũng thay đổi theo",
+"仕事に慣れるにしたがって、緊張しなくなった。",
+"Càng quen việc thì tôi càng bớt căng thẳng.",
+"A thay đổi → B cùng thay đổi."
+],
+[
+"80",
+"Nhóm 05 · So sánh, đối tượng, chủ đề",
+"A一方でB",
+"TTT / Ai-い / Ana-な・である / Nである + 一方で",
+"Một mặt A, mặt khác B",
+"ネット通販は便利な一方で、買いすぎる危険もある。",
+"Mua hàng online tiện lợi, nhưng mặt khác cũng dễ mua quá tay.",
+"Hai mặt của cùng một sự việc."
+],
+[
+"81",
+"Nhóm 05 · So sánh, đối tượng, chủ đề",
+"Aに比べてB／Aと比べてB",
+"N + に比べて / と比べて",
+"So với A thì B",
+"去年に比べて、残業が少なくなった。",
+"So với năm ngoái, giờ làm thêm đã ít đi.",
+"Nに比べて／Nと比べて."
+],
+[
+"82",
+"Nhóm 05 · So sánh, đối tượng, chủ đề",
+"AだけではなくB",
+"TTT / N + だけではなく",
+"Không chỉ A mà cả B",
+"この店は安いだけではなく、料理もおいしい。",
+"Quán này không chỉ rẻ mà đồ ăn còn ngon.",
+"Không chỉ A mà B cũng."
+],
+[
+"84",
+"Nhóm 05 · So sánh, đối tượng, chủ đề",
+"Aという点でB",
+"TTT + という点で",
+"Xét về điểm A thì B",
+"私たちは、甘い物が好きだという点で似ている。",
+"Chúng tôi giống nhau ở điểm thích đồ ngọt.",
+"Nêu điểm / phương diện."
+],
+[
+"85",
+"Nhóm 05 · So sánh, đối tượng, chủ đề",
+"Aに対してB",
+"N + に対して / に対するN",
+"Đối với A thì B\n(đối tượng của hành động, thái độ)",
+"この会社は、社員に対して研修を行っている。",
+"Công ty này tổ chức đào tạo cho nhân viên.",
+"Đối tượng của hành động / thái độ."
+],
+[
+"86",
+"Nhóm 05 · So sánh, đối tượng, chủ đề",
+"AについてB",
+"N + について / についてのN",
+"Về A thì B\n(chủ đề)",
+"来週の予定について、相談したい。",
+"Tôi muốn bàn về lịch tuần sau.",
+"Chủ đề nói・nghe・tìm hiểu."
+],
+[
+"87",
+"Nhóm 06 · Giới hạn, liệt kê, số lượng",
+"Aばかり／Aてばかりいる",
+"N + ばかり / V-te + ばかりいる",
+"Toàn là A / Cứ A suốt\n(phê bình)",
+"弟はゲームばかりして、全然勉強しない。",
+"Em trai tôi chỉ toàn chơi game, chẳng học gì cả.",
+"Chỉ toàn; không phải vừa mới."
+],
+[
+"88",
+"Nhóm 06 · Giới hạn, liệt kê, số lượng",
+"AなんかB",
+"N + なんか",
+"A chẳng hạn\n(văn nói của など)",
+"プレゼントなら、花なんかどうですか。",
+"Nếu là quà thì hoa chẳng hạn, thấy sao?",
+"Văn nói của など; nêu ví dụ."
+],
+[
+"89",
+"Nhóm 06 · Giới hạn, liệt kê, số lượng",
+"AとかBとか",
+"NとかNとか / TTTとかTTTとか",
+"Nào là A, nào là B\n(nêu ví dụ)",
+"週末は、映画を見るとか、買い物するとかしたい。",
+"Cuối tuần tôi muốn xem phim hay đi mua sắm gì đó.",
+"Liệt kê ví dụ; chưa bao quát toàn bộ."
+],
+[
+"90",
+"Nhóm 06 · Giới hạn, liệt kê, số lượng",
+"AとしてB",
+"N + として",
+"Với tư cách A thì B",
+"今回は通訳として会議に参加する。",
+"Lần này tôi tham gia cuộc họp với tư cách phiên dịch.",
+"Vai trò / tư cách."
+],
+[
+"91",
+"Nhóm 06 · Giới hạn, liệt kê, số lượng",
+"AにおいてB",
+"N + において",
+"Tại / trong A thì B\n(văn viết)",
+"この技術は医療分野において使われている。",
+"Công nghệ này được sử dụng trong lĩnh vực y tế.",
+"Văn viết; phạm vi / địa điểm."
+],
+[
+"93",
+"Nhóm 06 · Giới hạn, liệt kê, số lượng",
+"Aだけ／AだけでB",
+"N / TTT + だけ（で）",
+"①Chỉ A\n②Chỉ cần A là B",
+"この店は、昼だけ営業している。",
+"Quán này chỉ mở cửa buổi trưa.",
+"Giới hạn; không bắt buộc phủ định."
+],
+[
+"94",
+"Nhóm 06 · Giới hạn, liệt kê, số lượng",
+"AしかBない",
+"N / trợ từ + しか + phủ định",
+"Chỉ A, ngoài ra không B\n(しか đi với phủ định)",
+"財布には、千円しか残っていない。",
+"Trong ví chỉ còn có 1.000 yên.",
+"しか bắt buộc đi với phủ định."
+],
+[
+"98",
+"Nhóm 06 · Giới hạn, liệt kê, số lượng",
+"AでもB",
+"N + でも",
+"A chẳng hạn\n(gợi ý nhẹ nhàng)",
+"週末、一緒にお茶でも飲みませんか。",
+"Cuối tuần cùng đi uống trà hay gì đó không?",
+"Gợi ý nhẹ nhàng một ví dụ."
+],
+[
+"103",
+"Nhóm 06 · Giới hạn, liệt kê, số lượng",
+"AずつB",
+"Số lượng + ずつ",
+"Mỗi … A\n(chia đều)",
+"一人に二枚ずつ配ってください。",
+"Hãy phát cho mỗi người 2 tờ.",
+"Phân phối số lượng bằng nhau."
+],
+[
+"108",
+"Nhóm 07 · Trợ từ ghép, từ để hỏi",
+"Aを中心にB",
+"N + を中心に",
+"Lấy A làm trung tâm mà B",
+"田中さんを中心に、準備を進めている。",
+"Chúng tôi đang tiến hành chuẩn bị với anh Tanaka làm trung tâm.",
+"Người / vật làm trung tâm."
+],
+[
+"112",
+"Nhóm 07 · Trợ từ ghép, từ để hỏi",
+"AのことでB",
+"N + のことで",
+"Về chuyện A thì B",
+"将来のことで、少し悩んでいる。",
+"Tôi đang hơi trăn trở về chuyện tương lai.",
+"Nội dung / chuyện liên quan."
+],
+[
+"113",
+"Nhóm 08 · Trích dẫn, văn nói, chỉ thị",
+"Aように言う／Aように頼む",
+"V-ru / V-nai + ように + 言う・頼む",
+"Bảo / nhờ (ai) hãy A\n(truyền đạt chỉ thị gián tiếp)",
+"医者に、たばこをやめるように言われた。",
+"Tôi bị bác sĩ bảo bỏ thuốc lá.",
+"Truyền đạt chỉ thị gián tiếp; không phải 伝聞そうだ."
+],
+[
+"114",
+"Nhóm 08 · Trích dẫn, văn nói, chỉ thị",
+"AというB",
+"名前 + という + N",
+"B có tên là A",
+"「ブンチャー」というベトナム料理が好きだ。",
+"Tôi thích món Việt tên là \"bún chả\".",
+"Tên gọi＋loại sự vật."
+],
+[
+"115",
+"Nhóm 08 · Trích dẫn, văn nói, chỉ thị",
+"Aって言う／AってB",
+"TTT + って / 名前 + って + N",
+"①Nói rằng A\n②B có tên A\n(văn nói của と／という)",
+"田中さんは、明日は休むって言っていた。",
+"Anh Tanaka bảo là mai sẽ nghỉ.",
+"Văn nói của と／という."
+],
+[
+"116",
+"Nhóm 08 · Trích dẫn, văn nói, chỉ thị",
+"Aてる／Aちゃう／Aとく",
+"ている→てる；てしまう→ちゃう；でしまう→じゃう；ておく→とく",
+"①Đang A ②Lỡ / làm xong A ③Làm sẵn A\n(dạng rút gọn văn nói)",
+"もう電車が来ちゃうから、急ごう。",
+"Tàu sắp đến rồi, nhanh lên thôi.",
+"Văn nói; không dùng tùy tiện trong văn bản trang trọng."
+],
+[
+"117",
+"Nhóm 08 · Trích dẫn, văn nói, chỉ thị",
+"Aじゃない",
+"TTT + じゃない（N・Ana bỏ だ）",
+"A đấy chứ! / Chẳng phải A sao!\n(xác nhận, cảm thán)",
+"この店、安くておいしいじゃない。",
+"Quán này rẻ mà ngon đấy chứ.",
+"Ngữ điệu xác nhận / cảm thán; không chỉ phủ định."
+],
+[
+"118",
+"Nhóm 08 · Trích dẫn, văn nói, chỉ thị",
+"AってB",
+"N + って",
+"Nói đến A thì B / A là thế nào?\n(nêu chủ đề; văn nói)",
+"田中さんって、どんな人ですか。",
+"Anh Tanaka là người thế nào?",
+"Văn nói, nêu chủ đề tương đương は."
+],
+[
+"119",
+"Nhóm 08 · Trích dẫn, văn nói, chỉ thị",
+"A（連用形）、B",
+"V-masu (bỏ masu) + 、 / Ai (bỏ い) + く、 / N・Ana-な + であり、",
+"A rồi B\n(nối câu văn viết, thay thể て)",
+"鍋に油を入れ、野菜を炒める。",
+"Cho dầu vào nồi rồi xào rau.",
+"Nối vế theo văn viết; thay thể て."
+],
+[
+"125",
+"Nhóm 08 · Trích dẫn, văn nói, chỉ thị",
+"こんなにB／そんなにB／あんなにB",
+"指示副詞 + V / A",
+"B đến mức này / mức đó / mức kia",
+"こんなにおいしいのに、どうして食べないの？",
+"Ngon thế này mà sao không ăn?",
+"こんなに: mức này; そんなに／あんなに: mức ấy / kia."
+],
+[
+"126",
+"Nhóm 08 · Trích dẫn, văn nói, chỉ thị",
+"こうB／そうB／ああB",
+"こう / そう / ああ + V",
+"B như thế này / thế đó / thế kia",
+"先輩みたいに、私もああなりたい。",
+"Tôi cũng muốn trở nên như đàn anh.",
+"Chỉ cách thức / trạng thái."
+],
+[
+"127",
+"Nhóm 09 · Thể, ý chí, cho nhận, sai khiến",
+"A（さ）せられる",
+"V-sai khiến bị động：食べる→食べさせられる",
+"Bị bắt phải A\n(không tự nguyện)",
+"子どものころ、毎日母に野菜を食べさせられた。",
+"Hồi nhỏ, ngày nào tôi cũng bị mẹ bắt ăn rau.",
+"Bị bắt làm; nhóm 1 thường rút gọn 書かされる."
+],
+[
+"128",
+"Nhóm 09 · Thể, ý chí, cho nhận, sai khiến",
+"Aがる／Aたがる",
+"Ai (bỏ い) / Ana-な + がる；V-masu (bỏ masu) + たがる",
+"(Người khác) tỏ ra A / muốn A",
+"弟は、新しいスマホを欲しがっている。",
+"Em trai tôi đang muốn có điện thoại mới.",
+"Biểu hiện cảm xúc / mong muốn của người khác."
+],
+[
+"129",
+"Nhóm 09 · Thể, ý chí, cho nhận, sai khiến",
+"A（よ）うとする",
+"V-ou + とする",
+"Định / cố làm A",
+"出かけようとしたとき、電話が鳴った。",
+"Đúng lúc định ra ngoài thì điện thoại reo.",
+"Định / cố làm; ようとしない = không chịu làm."
+],
+[
+"131",
+"Nhóm 09 · Thể, ý chí, cho nhận, sai khiến",
+"Aことになる",
+"V-ru / V-nai + ことになる",
+"Được quyết định là A\n(do hoàn cảnh, người khác)",
+"来月から新しい部署で働くことになった。",
+"Từ tháng sau tôi sẽ làm việc ở bộ phận mới.",
+"Quyết định / quy định từ bên ngoài."
+],
+[
+"132",
+"Nhóm 09 · Thể, ý chí, cho nhận, sai khiến",
+"Aことにする",
+"V-ru / V-nai + ことにする",
+"(Tự) quyết định làm A",
+"健康のために、毎朝歩くことにした。",
+"Vì sức khoẻ, tôi đã quyết định sáng nào cũng đi bộ.",
+"Tự mình quyết định."
+],
+[
+"133",
+"Nhóm 09 · Thể, ý chí, cho nhận, sai khiến",
+"Aようになる",
+"V-ru / V-nai / V-khả năng + ようになる",
+"Trở nên có thể A / bắt đầu A\n(thay đổi khả năng, thói quen)",
+"毎日練習して、日本語で電話できるようになった。",
+"Luyện tập mỗi ngày nên giờ tôi đã có thể gọi điện bằng tiếng Nhật.",
+"Khả năng / thói quen thay đổi."
+],
+[
+"134",
+"Nhóm 09 · Thể, ý chí, cho nhận, sai khiến",
+"Aようにする",
+"V-ru / V-nai + ようにする",
+"Cố gắng làm A\n(tạo thói quen)",
+"忘れないように、すぐメモするようにしている。",
+"Để không quên, tôi cố gắng ghi chú ngay.",
+"Chủ động tạo thói quen."
+],
+[
+"135",
+"Nhóm 09 · Thể, ý chí, cho nhận, sai khiến",
+"Aておく",
+"V-te + おく（V-de + おく）",
+"Làm sẵn A",
+"会議の前に、資料を印刷しておきます。",
+"Trước cuộc họp, tôi sẽ in sẵn tài liệu.",
+"Chuẩn bị trước."
+],
+[
+"142",
+"Nhóm 09 · Thể, ý chí, cho nhận, sai khiến",
+"Aたらどう（ですか）\nAたらいかがですか",
+"V-ta + らどう（ですか / でしょう）\nV-ta + らいかがですか",
+"Thử A xem sao?\n(khuyên)",
+"疲れているなら、少し休んだらどうですか。\nこちらのホテルに泊まったらいかがですか。",
+"Nếu mệt thì nghỉ một chút xem sao?\nAnh/chị thử ở khách sạn này xem sao ạ?",
+"Đưa lời khuyên."
+],
+[
+"144",
+"Nhóm 09 · Thể, ý chí, cho nhận, sai khiến",
+"Aばいい",
+"Vば + いい",
+"Chỉ cần A là được",
+"分からないことは、聞けばいいですよ。",
+"Chỗ nào không hiểu thì cứ hỏi là được.",
+"Làm như vậy là được."
+],
+[
+"145",
+"Nhóm 09 · Thể, ý chí, cho nhận, sai khiến",
+"Aてよかった",
+"V-te + よかった",
+"May mà đã A",
+"早めに予約してよかった。",
+"May mà đã đặt trước sớm.",
+"May mà đã làm."
+],
+[
+"146",
+"Nhóm 09 · Thể, ý chí, cho nhận, sai khiến",
+"Aつもりだ",
+"V-ru / V-nai + つもりだ",
+"Dự định A",
+"来年、日本で働くつもりです。",
+"Năm sau tôi định làm việc ở Nhật.",
+"Dự định của chủ thể."
+],
+[
+"147",
+"Nhóm 09 · Thể, ý chí, cho nhận, sai khiến",
+"A（よ）うと思う",
+"V-ou + と思う",
+"Tôi định A",
+"今週末は、部屋を片付けようと思っています。",
+"Cuối tuần này tôi định dọn phòng.",
+"V意向形＋と思う."
+],
+[
+"148",
+"Nhóm 09 · Thể, ý chí, cho nhận, sai khiến",
+"A（よ）うか",
+"V-ou + か",
+"Cùng A nhé? / Có nên A không nhỉ?",
+"そろそろ帰ろうか。",
+"Sắp về thôi nhỉ?",
+"Rủ / cân nhắc."
+],
+[
+"149",
+"Nhóm 09 · Thể, ý chí, cho nhận, sai khiến",
+"Aましょうか",
+"V-masu (bỏ masu) + ましょうか",
+"Để tôi A nhé?\n(đề nghị)",
+"荷物を持ちましょうか。",
+"Để tôi xách đồ giúp nhé?",
+"Đề nghị giúp."
+],
+[
+"150",
+"Nhóm 09 · Thể, ý chí, cho nhận, sai khiến",
+"Aたい／Aたくなる",
+"V-masu (bỏ masu) + たい / たくなる",
+"Muốn A / Bắt đầu muốn A",
+"急にラーメンが食べたくなった。",
+"Tự nhiên thèm ăn ramen.",
+"たい→たくなる."
+],
+[
+"151",
+"Nhóm 09 · Thể, ý chí, cho nhận, sai khiến",
+"Aてほしい",
+"人に + V-teほしい",
+"Muốn (người khác) A",
+"分からないときは、すぐ聞いてほしい。",
+"Khi không hiểu, tôi muốn bạn hỏi ngay.",
+"Muốn người khác V."
+],
+[
+"155",
+"Nhóm 09 · Thể, ý chí, cho nhận, sai khiến",
+"Aてくれない（か）",
+"V-te + くれない（か）",
+"A giúp tôi được không?\n(nhờ thân mật)",
+"明日、少し手伝ってくれない？",
+"Mai giúp tớ một chút được không?",
+"Nhờ thân mật bằng phủ định."
+],
+[
+"156",
+"Nhóm 09 · Thể, ý chí, cho nhận, sai khiến",
+"Aてもらえませんか",
+"V-te + もらえませんか",
+"Có thể A giúp tôi được không?\n(nhờ lịch sự)",
+"もう一度説明してもらえませんか。",
+"Anh/chị giải thích lại một lần nữa được không ạ?",
+"Nhờ lịch sự bằng thể khả năng."
+],
+[
+"157",
+"Nhóm 09 · Thể, ý chí, cho nhận, sai khiến",
+"Aてくれ",
+"V-te + くれ",
+"Hãy A cho tôi\n(yêu cầu mạnh, thân mật)",
+"着いたら、電話してくれ。",
+"Đến nơi thì gọi điện cho tôi.",
+"Yêu cầu mạnh; dùng với người thân / dưới."
+],
+[
+"158",
+"Nhóm 09 · Thể, ý chí, cho nhận, sai khiến",
+"A（さ）せる",
+"V-sai khiến",
+"Bắt / cho phép (người khác) A",
+"母は弟に部屋を掃除させた。",
+"Mẹ bắt em trai dọn phòng.",
+"Bắt / cho phép; 人に・人を tùy động từ."
+],
+[
+"159",
+"Nhóm 09 · Thể, ý chí, cho nhận, sai khiến",
+"A（さ）せてください",
+"V-sai khiến (て) + ください",
+"Xin cho phép tôi A",
+"一つ質問させてください。",
+"Cho phép tôi hỏi một câu.",
+"Xin cho phép chính mình làm."
+],
+[
+"162",
+"Nhóm 09 · Thể, ý chí, cho nhận, sai khiến",
+"A（ら）れる（可能）",
+"V-khả năng（nhóm 2：～られる）",
+"Có thể A\n(thể khả năng)",
+"この店では、ベトナム料理も食べられる。",
+"Ở quán này cũng ăn được món Việt.",
+"Khả năng; nhóm 1: 書く→書ける."
+],
+[
+"163",
+"Nhóm 09 · Thể, ý chí, cho nhận, sai khiến",
+"A（ら）れる（受身）",
+"V-bị động",
+"Bị / được A\n(bị động)",
+"この本は、多くの国で読まれている。",
+"Cuốn sách này được đọc ở nhiều nước.",
+"Bị động; không mặc định là bất lợi."
+],
+[
+"165",
+"Nhóm 09 · Thể, ý chí, cho nhận, sai khiến",
+"A（命令形）",
+"V-mệnh lệnh：寝ろ、しろ…",
+"Hãy A!\n(mệnh lệnh mạnh)",
+"父に「早く寝ろ」と言われた。",
+"Tôi bị bố bảo \"Đi ngủ sớm đi\".",
+"Mệnh lệnh mạnh; 寝る→寝ろ."
+],
+[
+"166",
+"Nhóm 09 · Thể, ý chí, cho nhận, sai khiến",
+"Aるな",
+"V-ru + な",
+"Đừng A!\n(cấm đoán mạnh)",
+"ここに車を止めるな。",
+"Cấm đỗ xe ở đây.",
+"Cấm đoán mạnh; Vる＋な."
+],
+[
+"167",
+"Nhóm 09 · Thể, ý chí, cho nhận, sai khiến",
+"Aなさい",
+"V-masu (bỏ masu) + なさい",
+"Hãy A đi\n(người trên nói với người dưới)",
+"宿題が終わったら、寝なさい。",
+"Làm xong bài tập thì đi ngủ đi.",
+"Mệnh lệnh từ người trên."
+],
+[
+"168",
+"Nhóm 09 · Thể, ý chí, cho nhận, sai khiến",
+"Aをしている",
+"N形・色 + をしている",
+"Có (hình dạng, màu sắc) A",
+"この魚は、きれいな色をしている。",
+"Con cá này có màu sắc đẹp.",
+"形・色＋をしている."
+],
+[
+"170",
+"Nhóm 10 · Kính ngữ",
+"おAいただく／ごAいただく",
+"お + V-masu (bỏ masu) + いただく / ご + Nサ変 + いただく",
+"Được (người trên) làm A cho\n(khiêm nhường)",
+"先生に、新しい資料をご紹介いただいた。",
+"Tôi đã được thầy giới thiệu tài liệu mới.",
+"Được người trên làm cho; khiêm nhường."
+],
+[
+"171",
+"Nhóm 10 · Kính ngữ",
+"Aでしょうか",
+"丁寧な疑問表現 + でしょうか",
+"A không ạ?\n(hỏi lịch sự)",
+"明日は、何時に伺えばよろしいでしょうか。",
+"Ngày mai tôi đến lúc mấy giờ thì được ạ?",
+"Hỏi lịch sự; không nhầm với dự đoán でしょう."
+],
+[
+"172",
+"Nhóm 10 · Kính ngữ",
+"Aでいらっしゃる",
+"N / Ana-な + でいらっしゃる",
+"Là A\n(tôn kính của です)",
+"あちらは、田中先生でいらっしゃいます。",
+"Vị kia là thầy Tanaka ạ.",
+"Tôn kính của です; Vている dùng ていらっしゃる."
+],
+[
+"173",
+"Nhóm 10 · Kính ngữ",
+"A（さ）せていただく",
+"V-sai khiến (て) + いただく",
+"Xin phép được làm A\n(khiêm nhường)",
+"本日は、私から説明させていただきます。",
+"Hôm nay, tôi xin phép được trình bày.",
+"Được cho phép làm; chủ thể là mình."
+],
+[
+"174",
+"Nhóm 10 · Kính ngữ",
+"Aでございます",
+"N / Ana-な + でございます",
+"Là A ạ\n(lịch sự của です)",
+"こちらは、会議室でございます。",
+"Đây là phòng họp ạ.",
+"N＋でございます."
+],
+[
+"175",
+"Nhóm 10 · Kính ngữ",
+"いらっしゃる・おっしゃる・なさる・ご覧になる・お見えになる・ご存じだ・くださる",
+"Động từ đặc biệt (thay thế động từ gốc)",
+"(Người trên) làm hành động – dùng động từ đặc biệt thay động từ gốc\n(tôn kính: nâng hành động của người trên)\nいらっしゃる（＝行く・来る・いる）\nおっしゃる（＝言う）\nなさる（＝する）\nご覧になる（＝見る）\nお見えになる（＝来る）\nご存じだ（＝知っている）\nくださる（＝くれる）",
+"先生は、今、研究室にいらっしゃいます。\n先生は、何とおっしゃいましたか。\nお飲み物は、何になさいますか。\nこの資料をご覧になりましたか。\n社長は、もうお見えになりました。\nこの方をご存じですか。\n先生が、私に本をくださった。",
+"Thầy hiện đang ở phòng nghiên cứu ạ.\nThầy đã nói gì vậy ạ?\nQuý khách dùng đồ uống gì ạ?\nAnh/chị đã xem tài liệu này chưa ạ?\nGiám đốc đã đến rồi ạ.\nAnh/chị có biết vị này không ạ?\nThầy đã cho tôi cuốn sách.",
+"Chủ ngữ: người trên/khách. Không dùng cho bản thân."
+],
+[
+"176",
+"Nhóm 10 · Kính ngữ",
+"おる・伺う・参る・いたす・申す・申し上げる・拝見する・お目にかかる・差し上げる・いただく・ございます",
+"Động từ đặc biệt (thay thế động từ gốc)",
+"(Tôi/phía mình) làm hành động – dùng động từ đặc biệt thay động từ gốc\n(khiêm nhường: hạ hành động của mình)\nおる（＝いる）\n伺う（＝聞く・訪ねる）\n参る（＝行く・来る）\nいたす（＝する）\n申す・申し上げる（＝言う）\n拝見する（＝見る）\nお目にかかる（＝会う）\n差し上げる（＝あげる）\nいただく（＝もらう・食べる・飲む）\nございます（＝ある; lịch sự, không dùng cho người）",
+"担当者は、ただいま席を外しております。\n一つ伺いたいことがあるのですが。\n明日、十時にそちらへ参ります。\n会場までご案内いたします。\n営業部の田中と申します。\n心よりお礼を申し上げます。\n先生の新しい本を拝見しました。\nまた先生にお目にかかりたいです。\n先生に、お土産を差し上げた。\n先生から本をいただきました。\nお手洗いは、二階にございます。",
+"Người phụ trách hiện đang không có mặt ở chỗ ngồi ạ.\nTôi có một điều muốn hỏi ạ.\nNgày mai, 10 giờ tôi sẽ đến chỗ anh/chị.\nTôi xin dẫn quý khách đến hội trường.\nTôi là Tanaka ở phòng kinh doanh.\nTôi xin chân thành cảm ơn.\nTôi đã được xem cuốn sách mới của thầy.\nTôi mong lại được gặp thầy.\nTôi đã biếu thầy quà.\nTôi đã nhận được sách từ thầy.\nNhà vệ sinh ở tầng hai ạ.",
+"Chủ ngữ: bản thân/người phía mình. ございます là 丁寧語, chủ ngữ là vật."
+],
+[
+"177",
+"Nhóm 10 · Kính ngữ",
+"Aていただく",
+"V-te + いただく",
+"Được (người trên) làm A cho\n(khiêm nhường của 〜てもらう)",
+"先生に推薦状を書いていただきました。",
+"Tôi đã được thầy viết thư giới thiệu cho.",
+"てもらうの謙譲語."
+],
+[
+"178",
+"Nhóm 10 · Kính ngữ",
+"Aてくださる",
+"V-te + くださる",
+"(Người trên) làm A cho tôi\n(tôn kính của 〜てくれる)",
+"先生が駅まで送ってくださいました。",
+"Thầy đã đưa tôi đến tận ga.",
+"てくれるの尊敬語."
+],
+[
+"179",
+"Nhóm 10 · Kính ngữ",
+"おAする・いたす／ごAする・いたす",
+"お + V-masu (bỏ masu) / ご + Nサ変 + する・いたす",
+"(Tôi) làm A\n(khiêm nhường)",
+"お荷物をお持ちいたします。",
+"Để tôi xách hành lý giúp ạ.",
+"おVますする／いたす; ごNする／いたす."
+],
+[
+"180",
+"Nhóm 10 · Kính ngữ",
+"おAになる",
+"お + V-masu (bỏ masu) + になる",
+"(Người trên) làm A\n(tôn kính)",
+"先生は、もうお帰りになりました。",
+"Thầy đã về rồi ạ.",
+"おVますになる; tôn kính."
+],
+[
+"181",
+"Nhóm 10 · Kính ngữ",
+"おAください",
+"お + V-masu (bỏ masu) + ください",
+"Xin hãy A\n(yêu cầu lịch sự)",
+"少々お待ちください。",
+"Xin vui lòng đợi một chút.",
+"おVますください; yêu cầu lịch sự."
+],
+[
+"183",
+"Nhóm 10 · Kính ngữ",
+"Aていらっしゃる",
+"V-te + いらっしゃる",
+"(Người trên) đang A\n(tôn kính)",
+"部長は、今、お客様と話していらっしゃいます。",
+"Trưởng phòng hiện đang nói chuyện với khách ạ.",
+"Vているの尊敬語."
+],
+[
+"184",
+"Nhóm 10 · Kính ngữ",
+"Aておる",
+"V-te + おる",
+"(Tôi) đang A\n(khiêm nhường)",
+"皆様のご参加をお待ちしております。",
+"Chúng tôi rất mong sự tham gia của quý vị.",
+"Vている→Vておる."
+],
+[
+"185",
+"Nhóm 10 · Kính ngữ",
+"A（さ）せていただけませんか",
+"V-sai khiến (て) + いただけませんか",
+"Xin cho phép tôi A được không ạ?",
+"この資料をコピーさせていただけませんか。",
+"Cho phép tôi photo tài liệu này được không ạ?",
+"Xin phép làm; chủ thể là mình."
+],
+[
+"186",
+"Nhóm 10 · Kính ngữ",
+"Aてもよろしいでしょうか",
+"V-te + もよろしいでしょうか",
+"Tôi A có được không ạ?",
+"こちらに座ってもよろしいでしょうか。",
+"Tôi ngồi đây có được không ạ?",
+"てもいいですかの丁寧な形."
+],
+[
+"187",
+"Nhóm 11 · Phó từ đi với phủ định",
+"必ずしもAない",
+"必ずしも + mệnh đề phủ định",
+"Không hẳn A",
+"高い物が、必ずしもいいとは限らない。",
+"Đồ đắt không hẳn lúc nào cũng tốt.",
+"Không phải lúc nào cũng; vế sau phủ định."
+],
+[
+"188",
+"Nhóm 11 · Phó từ đi với phủ định",
+"少しもAない",
+"少しも + phủ định",
+"Không A chút nào",
+"この映画は、少しも面白くなかった。",
+"Bộ phim này chẳng hay chút nào.",
+"Không chút nào."
+],
+[
+"189",
+"Nhóm 11 · Phó từ đi với phủ định",
+"なかなかAない",
+"なかなか + phủ định",
+"Mãi vẫn không A",
+"彼に電話しても、なかなか出ない。",
+"Gọi điện cho anh ấy mà mãi không nghe máy.",
+"Mãi không; khó đạt kỳ vọng."
+],
+[
+"190",
+"Nhóm 11 · Phó từ đi với phủ định",
+"決してAない",
+"決して + phủ định",
+"Tuyệt đối không A",
+"このことは、決して忘れません。",
+"Chuyện này tôi tuyệt đối không quên.",
+"Quyết tâm phủ định mạnh."
+],
+[
+"191",
+"Nhóm 11 · Phó từ đi với phủ định",
+"全然Aない",
+"全然 + phủ định",
+"Hoàn toàn không A",
+"昨日は、全然眠れなかった。",
+"Hôm qua tôi hoàn toàn không ngủ được.",
+"Hoàn toàn không."
+],
+[
+"192",
+"Nhóm 11 · Phó từ đi với phủ định",
+"どんなにAか",
+"どんなに + V / A",
+"A đến mức nào",
+"この仕事がどんなに大変か、やって初めて分かった。",
+"Phải làm rồi tôi mới hiểu công việc này vất vả đến nhường nào.",
+"Mức độ; thường với câu hỏi gián tiếp."
+],
+[
+"193",
+"Nhóm 12 · Ngữ pháp bổ sung",
+"Aなくなる",
+"V-nai (bỏ i) + くなる",
+"Không còn A nữa\n(thay đổi trạng thái: trước A → giờ không A)",
+"夜食を食べなくなってから、体が軽くなった。",
+"Từ khi không ăn đêm nữa, cơ thể nhẹ nhõm hẳn.",
+"Đối lập: Aようになる (#133)"
+],
+[
+"194",
+"Nhóm 12 · Ngữ pháp bổ sung",
+"Aても仕方がない・\nAてもしかたない",
+"V-te / V-nai (bỏ i) + くても + 仕方がない",
+"Có A thì cũng đành / Dù A cũng chẳng trách được\n（＝〜てもやむを得ない）",
+"時間がないから、全部読まなくても仕方がない。",
+"Không có thời gian nên không đọc hết được cũng đành.",
+"Chấp nhận tình huống không mong muốn."
+]
+]
