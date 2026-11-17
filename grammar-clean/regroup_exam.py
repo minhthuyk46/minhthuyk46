@@ -35,8 +35,12 @@ MAP={
  'D4=92,93,94,95,96,97,100,101,102,103 D6=104,105,106,107,108,109,111,112,113 D7=110,131,133 '
  'D8=114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,132'),
 }
+# Quyết định của người dùng (form phản hồi)
+OVR={'N1':{'34':'G3','106':'D1','61':'D2','62':'D2'},'N2':{'108':'D2','121':'D1','124':'D4'},'N3':{}}
+SEC={'N1':{'125':'D4'},'N2':{'58':'D4','129':'D4','128':'D2'},'N3':{}}
+for k in MAP: MAP[k].update(OVR[k])
 D=json.load(open('grammar-clean/clean.json'))
-H=['STT','Phân loại','Mẫu câu','Cách chia','Ý nghĩa','Ví dụ','Dịch ví dụ','Lưu ý']
+H=['STT','Phân loại','Nhóm phụ','Mẫu câu','Cách chia','Ý nghĩa','Ví dụ','Dịch ví dụ','Lưu ý']
 out_dir=sys.argv[1]
 for lv,rows in D.items():
     m=MAP[lv]; ids=[r[0] for r in rows]
@@ -52,6 +56,10 @@ for lv,rows in D.items():
         for j in (4,7):
             r[j]=re.sub(r'#(\d+(?:\+\d+)?)',lambda x:'#'+ren.get(x.group(1),x.group(1)),r[j])
         r[0]=ren[r[0]]
+    for r in rows: pass
+    D[lv]=rows
+    inv={v:k for k,v in ren.items()}
+    rows=[r[:2]+[NAME[SEC[lv][inv[r[0]]]] if inv[r[0]] in SEC[lv] else '']+r[2:] for r in rows]
     D[lv]=rows
     csv.writer(open(f'{out_dir}/{lv}_v5.csv','w',newline='',encoding='utf-8')).writerows([H]+rows)
     from collections import Counter
