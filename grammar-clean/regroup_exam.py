@@ -41,7 +41,10 @@ out_dir=sys.argv[1]
 for lv,rows in D.items():
     m=MAP[lv]; ids=[r[0] for r in rows]
     assert set(m)==set(ids),(lv,set(ids)-set(m),set(m)-set(ids))
-    rows=sorted(rows,key=lambda r:(ORD[m[r[0]]],ids.index(r[0])))
+    labs=[]
+    for r in rows:
+        if r[1] not in labs: labs.append(r[1])
+    rows=sorted(rows,key=lambda r:(ORD[m[r[0]]],labs.index(r[1]),ids.index(r[0])))
     ren={}
     for i,r in enumerate(rows,1): ren[r[0]]=str(i)
     for r in rows:

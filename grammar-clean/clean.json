@@ -13,26 +13,6 @@
 [
 "2",
 "Đuôi câu · Khẳng định",
-"①AともなくA・\nAともなしにA\n②A（疑問詞）ともなくB・\nA（疑問詞）ともなしにB",
-"V-ru + ともなく",
-"①Vô thức làm A (vô tri)\n②B mà không rõ A\n(＝Whか）",
-"①会議中に窓の外を見るともなく見ていた。\n②どこからともなく、おいしそうなカレーのにおいがしてくる。",
-"Trong cuộc họp, tôi cứ vô thức nhìn ra ngoài cửa sổ.\nChẳng biết từ đâu, mùi cà ri thơm phức bay tới.",
-""
-],
-[
-"3",
-"Đuôi câu · Khẳng định",
-"Aながらに (して)B",
-"V-masu (bỏ masu)/ N + ながらに(して)",
-"cứ trạng thái A mãi\n（ずっとAのまま）\n生まれ・昔・涙",
-"人は生まれながらに平等である。",
-"Con người sinh ra vốn đã bình đẳng.",
-""
-],
-[
-"4",
-"Đuôi câu · Khẳng định",
 "Aきらいがある",
 "V-ru / V-nai / N + の + きらいがある",
 "Thằng đó có thói quen, bản tính, xu hướng A xấu",
@@ -41,67 +21,7 @@
 ""
 ],
 [
-"5",
-"Đuôi câu · Khẳng định",
-"Aにかたくない",
-"N-suru / V-ru + にかたくない",
-"Không khó để cảm (nhận) - tưởng (tượng) A",
-"でき上がった作品を見れば、彼のこれまでの努力は想像にかたくない。",
-"Nhìn tác phẩm đã hoàn thành, không khó để hình dung nỗ lực của anh ấy từ trước đến nay.",
-""
-],
-[
-"6",
-"Đuôi câu · Khẳng định",
-"（Aてあげく）B始末だ",
-"V-ru + 始末だ",
-"(Sau một chuỗi chuyện xấu A) dẫn đến kết cục B tệ nhất",
-"あんなに仲がよかったのに、結婚したら毎日喧嘩ばかりで、とうとう離婚する始末だ。",
-"Hồi trước thân thiết là thế, vậy mà cưới xong ngày nào cũng cãi nhau, cuối cùng đi đến ly hôn.",
-""
-],
-[
-"7",
-"Đuôi câu · Khẳng định",
-"Aっぱなし",
-"V-masu (bỏ masu) + っぱなし（だ / で / に / の〜）",
-"cứ để A nguyên thế mà B",
-"昨日は電気をつけっぱなしで寝てしまった。\n友達に半年も本を借りっぱなしになっている。",
-"Hôm qua tôi để đèn sáng nguyên như thế rồi ngủ quên mất.\nTôi mượn sách của bạn suốt nửa năm mà vẫn chưa trả.",
-""
-],
-[
-"8",
-"Đuôi câu · Khẳng định",
-"Aまでだ・\nAまでのことだ",
-"V-ru / V-ta + までだ・までのことだ",
-"① (Hết cách thì) cùng lắm đành phải A (V-ru, quyết tâm)\n② Chỉ là vì A thôi mà (V-ta, khiêm tốn)",
-"①だれも協力してくれないのなら、一人でやってみるまでだ\n②お褒め言葉をいただきましたが、わたしはただ自分のするべきことをしたまでです。",
-"Nếu không ai giúp thì cùng lắm tôi tự làm một mình là được.\nĐược khen như vậy, nhưng tôi chỉ làm việc mình cần làm thôi ạ.",
-""
-],
-[
-"9",
-"Đuôi câu · Khẳng định",
-"Aばそれまでだ",
-"V-điều kiện + ばそれまでだ",
-"một khi đã A thì coi như xong/là hết\n(＝Aたらおしまいだ・Aたが最後B・たら最後B）",
-"人間、死んでしまえばそれまでだ。生きているうちにやりたいことをやろう。",
-"Con người ta chết đi là hết. Hãy làm những gì mình muốn khi còn sống.",
-""
-],
-[
-"10",
-"Đuôi câu · Khẳng định",
-"Aでなくてなんだろう(か)",
-"N + でなくてなんだろう(か)",
-"Không phải là A thì còn là cái gì nữa! Đúng là A rồi!\n(愛, 運命, 奇跡)",
-"一度聞いただけの曲をかんぺきに演奏できるなんて、彼は天才でなくてなんだろうか。",
-"Chỉ nghe một lần mà chơi được bản nhạc hoàn hảo thế thì không phải thiên tài thì là gì.",
-""
-],
-[
-"11",
+"3",
 "Đuôi câu · Khẳng định",
 "Aに足る",
 "V-ru / N-suru + に足る",
@@ -111,107 +31,7 @@
 ""
 ],
 [
-"12",
-"Đuôi câu · Khẳng định",
-"Aに堪える／Aに堪えない",
-"V-ru / N-suru + に堪える / に堪えない",
-"①B là thứ (+) Đáng A/ (-) chẳng đáng để/không chịu nổi khi A - thưởng thức\n②(+) Vô cùng A - cảm (xúc) trào dâng\n(A: 感謝, 感激, 同情, 後悔)",
-"①この映画は、大人でも十分に見るに堪える素晴らしい作品だ。\n／最近のテレビ番組には、見るに堪えない内容のものもある。\n②お忙しいところを多くの方にお集まりいただき、感激に堪えません。",
-"Bộ phim này là tác phẩm tuyệt vời, người lớn xem cũng rất đáng.\nChương trình TV gần đây có cả những nội dung xem không nổi.\nĐược rất nhiều quý vị đến dự dù đang bận rộn, tôi vô cùng xúc động.",
-""
-],
-[
-"13",
-"Đuôi câu · Khẳng định",
-"Aといったらない",
-"Ai-い/Ana-な/N + といったらない",
-"(A thì) có độ B hết chỗ nói → B cực kỳ \n（B: mức độ, đặc điểm)",
-"あいつはだらしないといったらない。物はよくなくすし、時間にルーズだし。\n久しぶりに食べたお母さんの手料理のおいしさったらなかった。",
-"Thằng đó luộm thuộm hết chỗ nói. Đồ đạc thì hay làm mất, giờ giấc thì lề mề.\nMón mẹ nấu lâu lắm mới được ăn lại, ngon hết sảy.",
-""
-],
-[
-"14",
-"Đuôi câu · Khẳng định",
-"Aかぎりだ",
-"Ai-い + かぎりだ",
-"Tôi cảm thấy A vô cùng\n(buồn - vui - gato)",
-"憧れの大学に合格できて、喜ばしい限りだ。",
-"Đỗ được trường đại học mơ ước, vui mừng khôn xiết.",
-""
-],
-[
-"15",
-"Đuôi câu · Khẳng định",
-"（Aは）B極まる・\nB極まりない",
-"Ana-な + 極まる/極まりない",
-"(Việc A) cực kỳ là B (xấu đỉnh nóc) \nB: A(na) gốc Hán\n（残念・失礼・迷惑・危険・不快・無責任・不健康…）",
-"上映中に大声で電話をするなんて、迷惑極まる行為だ。",
-"Gọi điện thoại oang oang trong lúc chiếu phim, đúng là hành vi cực kỳ phiền toái.",
-""
-],
-[
-"16",
-"Đuôi câu · Khẳng định",
-"AとはB",
-"N / Thể thông thường + とは",
-"việc A thật là B (bất ngờ/ đánh giá)",
-"私のことを覚えていてくださったとは、感激です。",
-"Anh vẫn còn nhớ đến tôi, thật là cảm động.",
-""
-],
-[
-"17",
-"Đuôi câu · Khẳng định",
-"Aないではすまない・\nAずにはすまない",
-"V-nai + ではすまない / V-nai (bỏ nai) + ずにはすまない",
-"Không làm A thì không xong đâu (đạo đức, thường thức)",
-"人の心を傷つけてしまったなら、謝らないではすまない。",
-"Đã lỡ làm tổn thương người khác thì không xin lỗi là không xong đâu.",
-""
-],
-[
-"18",
-"Đuôi câu · Khẳng định",
-"Aを禁じ得ない",
-"N + を禁じ得ない",
-"Không kìm nén nổi cảm xúc A\n(A: 怒り・涙・同情・疑問)",
-"将来の年金制度に対する無責任な政府の発言に、怒りを禁じ得ない。",
-"Tôi không kìm được cơn giận trước phát ngôn vô trách nhiệm của chính phủ về chế độ lương hưu tương lai.",
-""
-],
-[
-"19",
-"Đuôi câu · Khẳng định",
-"Aてならない・\nAでならない",
-"V-te / Ai-くて / Ana-で + ならない",
-"Vô cùng A (cảm xúc, trạng thái tự trào lên)\n（＝〜てしかたがない／〜てしょうがない／〜てたまらない）",
-"あの二人はどうして離婚したのか、知りたくてならない.\ntoang?",
-"Tôi VÔ CÙNG TÒ MÒ không biết tại sao 2 người đó lại",
-""
-],
-[
-"20",
-"Đuôi câu · Khẳng định",
-"Aつつある",
-"V-masu (bỏ masu) + つつある",
-"①Đang dần A (thay đổi)\n②Đang dần chuyển sang trạng thái A",
-"少子高齢化が進みつつある。\n② あの犬は死につつある。",
-"Tình hình già hoá dân số đang dần tiến triển (nghiêm trọng).\nChú cún kia đang chết dần chết mòn!",
-""
-],
-[
-"21",
-"Đuôi câu · Khẳng định",
-"Aざるを得ない",
-"V-nai (bỏ nai) + ざるを得ない\n(する ➔ せざるを得ない)",
-"Đành phải A\n(không còn lựa chọn nào khác)",
-"足が痛く、歩ける状況ではないので、病院へ行かざるを得ない。",
-"Chân cẳng đau không nhấc lên mà đi được nên tôi đành tới bệnh viện kiểm tra xem sao.",
-""
-],
-[
-"22",
+"4",
 "Đuôi câu · Khẳng định",
 "Aにもほどがある（程）",
 "N / V-ru / Ai-い / Ana-な + にもほどがある",
@@ -221,57 +41,7 @@
 ""
 ],
 [
-"23",
-"Đuôi câu · Khẳng định",
-"Aと言っても過言ではない",
-"TTT + と言っても過言ではない",
-"Nói là A cũng không quá lời\n(cảm thán, đánh giá cao)",
-"彼は天才だと言っても過言ではない。",
-"Nói cậu ta là thiên tài cũng chả\nquá nhời nhỉ?!",
-""
-],
-[
-"24",
-"Đuôi câu · Khẳng định",
-"Aても始まらない",
-"V-te + も + 始まらない",
-"Có A mãi thì cũng không giải quyết được gì",
-"泣いても始まらないから、何か解決する方法を考えましょう。",
-"Khóc thì CŨNG KHÔNG GIẢI QUYẾT ĐỰC GÌ, phải nghĩ cách giải quyết đi thôi!",
-""
-],
-[
-"25",
-"Đuôi câu · Khẳng định",
-"Aは否（いな）めない",
-"N + は否めない\nV-ru / V-ta / Ai-い / Ana-な + ことは否めない",
-"Không thể phủ nhận A\n（＝否定したいけれど、否定できない）",
-"彼は確かに性格は良くないかもしれないが、有能である事は否めない。",
-"Đúng là anh ta tính tình dở hơi, nhưng KHÔNG THỂ PHỦ NHẬN anh ta có tài năng!",
-""
-],
-[
-"26",
-"Đuôi câu · Khẳng định",
-"Aことか",
-"V-ru / V-ta / Ai-い / Ana-な + ことか",
-"A biết bao, đến nhường nào\n(đi với どんなに・いくら・何回・どれだけ)",
-"息子が生まれた時、私がどれだけ嬉しかったことか。",
-"Tôi vui sướng BIẾT BAO khi cậu con trai bé nhỏ chào đời!",
-""
-],
-[
-"27",
-"Đuôi câu · Khẳng định",
-"Aている",
-"V-te + いる (kinh nghiệm / kỷ lục trong quá khứ)",
-"Đã từng A (kỷ lục, dấu ấn trong quá khứ)",
-"この家は５年前の地震で壊れている。",
-"Ngôi nhà này từng bị đổ nát trong trận động đất vào 5 năm trước.",
-""
-],
-[
-"28",
+"5",
 "Đuôi câu · Khẳng định",
 "Aというものだ・\nAってもんだ",
 "TTT + というものだ / ってもんだ",
@@ -281,7 +51,247 @@
 ""
 ],
 [
+"6",
+"Đuôi câu · Khẳng định",
+"Aまでだ・\nAまでのことだ",
+"V-ru / V-ta + までだ・までのことだ",
+"① (Hết cách thì) cùng lắm đành phải A (V-ru, quyết tâm)\n② Chỉ là vì A thôi mà (V-ta, khiêm tốn)",
+"①だれも協力してくれないのなら、一人でやってみるまでだ\n②お褒め言葉をいただきましたが、わたしはただ自分のするべきことをしたまでです。",
+"Nếu không ai giúp thì cùng lắm tôi tự làm một mình là được.\nĐược khen như vậy, nhưng tôi chỉ làm việc mình cần làm thôi ạ.",
+""
+],
+[
+"7",
+"Đuôi câu · Khẳng định",
+"Aでなくてなんだろう(か)",
+"N + でなくてなんだろう(か)",
+"Không phải là A thì còn là cái gì nữa! Đúng là A rồi!\n(愛, 運命, 奇跡)",
+"一度聞いただけの曲をかんぺきに演奏できるなんて、彼は天才でなくてなんだろうか。",
+"Chỉ nghe một lần mà chơi được bản nhạc hoàn hảo thế thì không phải thiên tài thì là gì.",
+""
+],
+[
+"8",
+"Đuôi câu · Khẳng định",
+"Aと言っても過言ではない",
+"TTT + と言っても過言ではない",
+"Nói là A cũng không quá lời\n(cảm thán, đánh giá cao)",
+"彼は天才だと言っても過言ではない。",
+"Nói cậu ta là thiên tài cũng chả\nquá nhời nhỉ?!",
+""
+],
+[
+"9",
+"Đuôi câu · Khẳng định",
+"Aは否（いな）めない",
+"N + は否めない\nV-ru / V-ta / Ai-い / Ana-な + ことは否めない",
+"Không thể phủ nhận A\n（＝否定したいけれど、否定できない）",
+"彼は確かに性格は良くないかもしれないが、有能である事は否めない。",
+"Đúng là anh ta tính tình dở hơi, nhưng KHÔNG THỂ PHỦ NHẬN anh ta có tài năng!",
+""
+],
+[
+"10",
+"Đuôi câu · Khẳng định",
+"Aばそれまでだ",
+"V-điều kiện + ばそれまでだ",
+"một khi đã A thì coi như xong/là hết\n(＝Aたらおしまいだ・Aたが最後B・たら最後B）",
+"人間、死んでしまえばそれまでだ。生きているうちにやりたいことをやろう。",
+"Con người ta chết đi là hết. Hãy làm những gì mình muốn khi còn sống.",
+""
+],
+[
+"11",
+"Đuôi câu · Khẳng định",
+"Aにかたくない",
+"N-suru / V-ru + にかたくない",
+"Không khó để cảm (nhận) - tưởng (tượng) A",
+"でき上がった作品を見れば、彼のこれまでの努力は想像にかたくない。",
+"Nhìn tác phẩm đã hoàn thành, không khó để hình dung nỗ lực của anh ấy từ trước đến nay.",
+""
+],
+[
+"12",
+"Đuôi câu · Khẳng định",
+"①AともなくA・\nAともなしにA\n②A（疑問詞）ともなくB・\nA（疑問詞）ともなしにB",
+"V-ru + ともなく",
+"①Vô thức làm A (vô tri)\n②B mà không rõ A\n(＝Whか）",
+"①会議中に窓の外を見るともなく見ていた。\n②どこからともなく、おいしそうなカレーのにおいがしてくる。",
+"Trong cuộc họp, tôi cứ vô thức nhìn ra ngoài cửa sổ.\nChẳng biết từ đâu, mùi cà ri thơm phức bay tới.",
+""
+],
+[
+"13",
+"Đuôi câu · Khẳng định",
+"Aながらに (して)B",
+"V-masu (bỏ masu)/ N + ながらに(して)",
+"cứ trạng thái A mãi\n（ずっとAのまま）\n生まれ・昔・涙",
+"人は生まれながらに平等である。",
+"Con người sinh ra vốn đã bình đẳng.",
+""
+],
+[
+"14",
+"Đuôi câu · Khẳng định",
+"（Aてあげく）B始末だ",
+"V-ru + 始末だ",
+"(Sau một chuỗi chuyện xấu A) dẫn đến kết cục B tệ nhất",
+"あんなに仲がよかったのに、結婚したら毎日喧嘩ばかりで、とうとう離婚する始末だ。",
+"Hồi trước thân thiết là thế, vậy mà cưới xong ngày nào cũng cãi nhau, cuối cùng đi đến ly hôn.",
+""
+],
+[
+"15",
+"Đuôi câu · Khẳng định",
+"Aっぱなし",
+"V-masu (bỏ masu) + っぱなし（だ / で / に / の〜）",
+"cứ để A nguyên thế mà B",
+"昨日は電気をつけっぱなしで寝てしまった。\n友達に半年も本を借りっぱなしになっている。",
+"Hôm qua tôi để đèn sáng nguyên như thế rồi ngủ quên mất.\nTôi mượn sách của bạn suốt nửa năm mà vẫn chưa trả.",
+""
+],
+[
+"16",
+"Đuôi câu · Khẳng định",
+"Aつつある",
+"V-masu (bỏ masu) + つつある",
+"①Đang dần A (thay đổi)\n②Đang dần chuyển sang trạng thái A",
+"少子高齢化が進みつつある。\n② あの犬は死につつある。",
+"Tình hình già hoá dân số đang dần tiến triển (nghiêm trọng).\nChú cún kia đang chết dần chết mòn!",
+""
+],
+[
+"17",
+"Đuôi câu · Khẳng định",
+"Aている",
+"V-te + いる (kinh nghiệm / kỷ lục trong quá khứ)",
+"Đã từng A (kỷ lục, dấu ấn trong quá khứ)",
+"この家は５年前の地震で壊れている。",
+"Ngôi nhà này từng bị đổ nát trong trận động đất vào 5 năm trước.",
+""
+],
+[
+"18",
+"Đuôi câu · Khẳng định",
+"Aないではすまない・\nAずにはすまない",
+"V-nai + ではすまない / V-nai (bỏ nai) + ずにはすまない",
+"Không làm A thì không xong đâu (đạo đức, thường thức)",
+"人の心を傷つけてしまったなら、謝らないではすまない。",
+"Đã lỡ làm tổn thương người khác thì không xin lỗi là không xong đâu.",
+""
+],
+[
+"19",
+"Đuôi câu · Khẳng định",
+"Aざるを得ない",
+"V-nai (bỏ nai) + ざるを得ない\n(する ➔ せざるを得ない)",
+"Đành phải A\n(không còn lựa chọn nào khác)",
+"足が痛く、歩ける状況ではないので、病院へ行かざるを得ない。",
+"Chân cẳng đau không nhấc lên mà đi được nên tôi đành tới bệnh viện kiểm tra xem sao.",
+""
+],
+[
+"20",
+"Đuôi câu · Khẳng định",
+"Aても始まらない",
+"V-te + も + 始まらない",
+"Có A mãi thì cũng không giải quyết được gì",
+"泣いても始まらないから、何か解決する方法を考えましょう。",
+"Khóc thì CŨNG KHÔNG GIẢI QUYẾT ĐỰC GÌ, phải nghĩ cách giải quyết đi thôi!",
+""
+],
+[
+"21",
+"Đuôi câu · Khẳng định",
+"Aに堪える／Aに堪えない",
+"V-ru / N-suru + に堪える / に堪えない",
+"①B là thứ (+) Đáng A/ (-) chẳng đáng để/không chịu nổi khi A - thưởng thức\n②(+) Vô cùng A - cảm (xúc) trào dâng\n(A: 感謝, 感激, 同情, 後悔)",
+"①この映画は、大人でも十分に見るに堪える素晴らしい作品だ。\n／最近のテレビ番組には、見るに堪えない内容のものもある。\n②お忙しいところを多くの方にお集まりいただき、感激に堪えません。",
+"Bộ phim này là tác phẩm tuyệt vời, người lớn xem cũng rất đáng.\nChương trình TV gần đây có cả những nội dung xem không nổi.\nĐược rất nhiều quý vị đến dự dù đang bận rộn, tôi vô cùng xúc động.",
+""
+],
+[
+"22",
+"Đuôi câu · Khẳng định",
+"Aといったらない",
+"Ai-い/Ana-な/N + といったらない",
+"(A thì) có độ B hết chỗ nói → B cực kỳ \n（B: mức độ, đặc điểm)",
+"あいつはだらしないといったらない。物はよくなくすし、時間にルーズだし。\n久しぶりに食べたお母さんの手料理のおいしさったらなかった。",
+"Thằng đó luộm thuộm hết chỗ nói. Đồ đạc thì hay làm mất, giờ giấc thì lề mề.\nMón mẹ nấu lâu lắm mới được ăn lại, ngon hết sảy.",
+""
+],
+[
+"23",
+"Đuôi câu · Khẳng định",
+"Aかぎりだ",
+"Ai-い + かぎりだ",
+"Tôi cảm thấy A vô cùng\n(buồn - vui - gato)",
+"憧れの大学に合格できて、喜ばしい限りだ。",
+"Đỗ được trường đại học mơ ước, vui mừng khôn xiết.",
+""
+],
+[
+"24",
+"Đuôi câu · Khẳng định",
+"（Aは）B極まる・\nB極まりない",
+"Ana-な + 極まる/極まりない",
+"(Việc A) cực kỳ là B (xấu đỉnh nóc) \nB: A(na) gốc Hán\n（残念・失礼・迷惑・危険・不快・無責任・不健康…）",
+"上映中に大声で電話をするなんて、迷惑極まる行為だ。",
+"Gọi điện thoại oang oang trong lúc chiếu phim, đúng là hành vi cực kỳ phiền toái.",
+""
+],
+[
+"25",
+"Đuôi câu · Khẳng định",
+"AとはB",
+"N / Thể thông thường + とは",
+"việc A thật là B (bất ngờ/ đánh giá)",
+"私のことを覚えていてくださったとは、感激です。",
+"Anh vẫn còn nhớ đến tôi, thật là cảm động.",
+""
+],
+[
+"26",
+"Đuôi câu · Khẳng định",
+"Aを禁じ得ない",
+"N + を禁じ得ない",
+"Không kìm nén nổi cảm xúc A\n(A: 怒り・涙・同情・疑問)",
+"将来の年金制度に対する無責任な政府の発言に、怒りを禁じ得ない。",
+"Tôi không kìm được cơn giận trước phát ngôn vô trách nhiệm của chính phủ về chế độ lương hưu tương lai.",
+""
+],
+[
+"27",
+"Đuôi câu · Khẳng định",
+"Aてならない・\nAでならない",
+"V-te / Ai-くて / Ana-で + ならない",
+"Vô cùng A (cảm xúc, trạng thái tự trào lên)\n（＝〜てしかたがない／〜てしょうがない／〜てたまらない）",
+"あの二人はどうして離婚したのか、知りたくてならない.\ntoang?",
+"Tôi VÔ CÙNG TÒ MÒ không biết tại sao 2 người đó lại",
+""
+],
+[
+"28",
+"Đuôi câu · Khẳng định",
+"Aことか",
+"V-ru / V-ta / Ai-い / Ana-な + ことか",
+"A biết bao, đến nhường nào\n(đi với どんなに・いくら・何回・どれだけ)",
+"息子が生まれた時、私がどれだけ嬉しかったことか。",
+"Tôi vui sướng BIẾT BAO khi cậu con trai bé nhỏ chào đời!",
+""
+],
+[
 "29",
+"Đuôi câu · Phủ định",
+"A+でもあるまい",
+"N + でもあるまい",
+"Giờ không còn là lúc để A nữa\n(hay đi với いまさら／いまごろ)",
+"六十になって結婚でもあるまい。",
+"Trời ơi, tôi sáu chục tuổi đầu rồi còn cưới xin gì nữa.",
+""
+],
+[
+"30",
 "Đuôi câu · Phủ định",
 "①AにAない・\n②AようにもAない",
 "V-ru + に + V-khả năng phủ định\nV-ou + にも + V-khả năng phủ định",
@@ -291,7 +301,7 @@
 ""
 ],
 [
-"30",
+"31",
 "Đuôi câu · Phủ định",
 "Aて（は）いられない",
 "V-te + はいられない",
@@ -301,7 +311,7 @@
 ""
 ],
 [
-"31",
+"32",
 "Đuôi câu · Phủ định",
 "Aべくもない",
 "V-ru + べくもない\n（＊）するべくもない / すべくもない",
@@ -311,7 +321,7 @@
 ""
 ],
 [
-"32",
+"33",
 "Đuôi câu · Phủ định",
 "AたりともBない",
 "1 Lượng từ + たりとも + ~ない",
@@ -321,7 +331,7 @@
 ""
 ],
 [
-"33",
+"34",
 "Đuôi câu · Phủ định",
 "Aまでもない",
 "V-ru + までもない",
@@ -331,7 +341,7 @@
 ""
 ],
 [
-"34",
+"35",
 "Đuôi câu · Phủ định",
 "Aには当たらない",
 "V-ru / N-suru + には当たらない",
@@ -341,7 +351,7 @@
 ""
 ],
 [
-"35",
+"36",
 "Đuôi câu · Phủ định",
 "Aものか・Aものですか・Aもんか",
 "TTT (Ana-な / N-な) + ものか / ものですか / もんか",
@@ -351,7 +361,7 @@
 ""
 ],
 [
-"36",
+"37",
 "Đuôi câu · Phủ định",
 "Aようと（は・も）しない",
 "V-ou + と(は・も)しない",
@@ -361,7 +371,7 @@
 ""
 ],
 [
-"37",
+"38",
 "Đuôi câu · Phủ định",
 "Aどころではない",
 "N / V-ru + どころではない",
@@ -371,23 +381,13 @@
 ""
 ],
 [
-"38",
+"39",
 "Đuôi câu · Phủ định",
 "A（ます）＋もしない",
 "V-masu (bỏ masu) + もしない\n(する ➔ しもしない)",
 "Ngay cả A cũng không làm\n(phủ định hoàn toàn)",
 "A：これ、すごくまずそうだよ…\nB：食べもしないで文句を言わないで！",
 "A: Cái này có vẻ dở nhỉ?!\nB: Trời đất, chả ăn miếng nào mà phán như đúng rồi!",
-""
-],
-[
-"39",
-"Đuôi câu · Phủ định",
-"A+でもあるまい",
-"N + でもあるまい",
-"Giờ không còn là lúc để A nữa\n(hay đi với いまさら／いまごろ)",
-"六十になって結婚でもあるまい。",
-"Trời ơi, tôi sáu chục tuổi đầu rồi còn cưới xin gì nữa.",
 ""
 ],
 [
@@ -413,21 +413,21 @@
 [
 "42",
 "Đuôi câu · Ý chí / dự định / mong muốn",
-"Aてやまない",
-"V-te + やまない",
-"luôn hằng mong mỏi・hằng cầu chúc (→ cảm xúc dài)",
-"卒業生の皆さんの幸せを願ってやみません。",
-"Tôi luôn cầu chúc hạnh phúc cho các em học sinh tốt nghiệp.",
-""
-],
-[
-"43",
-"Đuôi câu · Ý chí / dự định / mong muốn",
 "Aないではおかない・\nAずにはおかない",
 "V-nai + ではおかない / V-nai (bỏ nai) + ずにはおかない",
 "①(Tôi) quyết tâm nhất định phải khiến A\n②(Sự vật) chắc chắn sẽ làm A xảy ra\n(①ý chí người nói / ②chủ ngữ là sự vật)",
 "①私は今度こそ、彼に本当のことを言わせないではおかない。\n②彼の情熱的なスピーチは、聴衆の心を感動させずにはおかない。",
 "Lần này nhất định tôi phải bắt hắn nói ra sự thật.\nBài phát biểu đầy nhiệt huyết của anh ấy chắc chắn sẽ khiến người nghe xúc động.",
+""
+],
+[
+"43",
+"Đuôi câu · Ý chí / dự định / mong muốn",
+"Aてやまない",
+"V-te + やまない",
+"luôn hằng mong mỏi・hằng cầu chúc (→ cảm xúc dài)",
+"卒業生の皆さんの幸せを願ってやみません。",
+"Tôi luôn cầu chúc hạnh phúc cho các em học sinh tốt nghiệp.",
 ""
 ],
 [
@@ -473,6 +473,16 @@
 [
 "48",
 "Đuôi câu · Yêu cầu / khuyên bảo",
+"Aに越したことはない",
+"V-ru / V-nai / Ai-い / Ana-である / N-である + に越したことはない",
+"A là tốt nhất\n(không có lựa chọn nào hơn A)",
+"疲れている時には、ゆっくり休むに越したことはありません。",
+"Lúc ốm đau, mệt mỏi thì được nghỉ ngơi tĩnh dưỡng là tuyệt vời nhất",
+""
+],
+[
+"49",
+"Đuôi câu · Yêu cầu / khuyên bảo",
 "AところをB",
 "TTT (Ana-な / N-の) + ところを",
 "Xin lỗi (B) vì phiền đúng lúc đang A",
@@ -481,7 +491,7 @@
 ""
 ],
 [
-"49",
+"50",
 "Đuôi câu · Yêu cầu / khuyên bảo",
 "Aべからず・〜べからざる",
 "V-ru + べからず /\nV-ru + べからざる + N (giữa câu)",
@@ -491,23 +501,13 @@
 ""
 ],
 [
-"50",
+"51",
 "Đuôi câu · Yêu cầu / khuyên bảo",
 "AまじきB",
 "V-ru + まじき + N",
 "phát ngôn/hành vi B không A được",
 "会社の秘密をSNSに漏らすとは、社会人にあるまじき行為だ。\n言うまじきことを言ってしまった\n許すまじき行為・発言",
 "Tiết lộ bí mật công ty lên mạng xã hội là hành vi không thể chấp nhận ở một người đi làm.\nTôi đã lỡ nói điều không được phép nói.\nHành vi, phát ngôn không thể tha thứ",
-""
-],
-[
-"51",
-"Đuôi câu · Yêu cầu / khuyên bảo",
-"Aに越したことはない",
-"V-ru / V-nai / Ai-い / Ana-である / N-である + に越したことはない",
-"A là tốt nhất\n(không có lựa chọn nào hơn A)",
-"疲れている時には、ゆっくり休むに越したことはありません。",
-"Lúc ốm đau, mệt mỏi thì được nghỉ ngơi tĩnh dưỡng là tuyệt vời nhất",
 ""
 ],
 [
@@ -733,16 +733,6 @@
 [
 "74",
 "Giữa câu · Nếu – thì",
-"〜につけ",
-"V-ru + につけ(て)",
-"Cứ hễ A là lại B (cảm xúc)\n（＝につけて）",
-"あの写真を見るにつけ、悲しくなる。",
-"Mỗi lần xem tấm ảnh ấy tôi lại buồn chảy cả nước mắt nước\nmũi!",
-""
-],
-[
-"75",
-"Giữa câu · Nếu – thì",
 "Aよう によっては（用）、B",
 "V-masu (bỏ masu) + ようによっては / ようによる",
 "Tùy vào cách A mà có trường hợp B\n(V-masu＋よう: cách làm V)",
@@ -751,7 +741,7 @@
 ""
 ],
 [
-"76",
+"75",
 "Giữa câu · Nếu – thì",
 "A(V-you)ものなら、〜",
 "V-ou + ものなら",
@@ -761,7 +751,7 @@
 ""
 ],
 [
-"77",
+"76",
 "Giữa câu · Nếu – thì",
 "A限り（は）B",
 "V-ru / V-te + いる / V-nai / Ai-い / Ana-である / N-である + 限り(は)",
@@ -771,7 +761,7 @@
 ""
 ],
 [
-"78",
+"77",
 "Giữa câu · Nếu – thì",
 "②A次第だ ・\nA次第でB",
 "N + 次第だ / 次第で",
@@ -781,7 +771,7 @@
 ""
 ],
 [
-"79",
+"78",
 "Giữa câu · Nếu – thì",
 "AとすればB",
 "N / TTT + とすれば / としたら / とすると",
@@ -791,137 +781,17 @@
 ""
 ],
 [
+"79",
+"Giữa câu · Nếu – thì",
+"〜につけ",
+"V-ru + につけ(て)",
+"Cứ hễ A là lại B (cảm xúc)\n（＝につけて）",
+"あの写真を見るにつけ、悲しくなる。",
+"Mỗi lần xem tấm ảnh ấy tôi lại buồn chảy cả nước mắt nước\nmũi!",
+""
+],
+[
 "80",
-"Giữa câu · Tuy – nhưng",
-"A1であれA2であれB・\nA1であろうとA2であろうとB",
-"N + であれN + であれ",
-"Dù là A1 hay A2 thì đều B (như nhau)\n（A1にしてもA2にしても、どちらも〜）",
-"お金持ちであれ貧乏であれ、大切なのは心の満足です。",
-"Dù giàu hay nghèo, điều quan trọng là sự thoả mãn trong tâm hồn.",
-""
-],
-[
-"81",
-"Giữa câu · Tuy – nhưng",
-"AいかんにかかわらずB・\nAいかんによらずB・\nAいかんを問わずB",
-"N （の） + いかんにかかわらず",
-"Bất kể/Không phụ thuộc A như nào thì vẫn B\n（＝AにかかわらずB)\nAがどうであるかに関係なく、B",
-"成果のいかんによらず、最後まで全力を尽くします。\n合否のいかんを問わず、結果は全員に郵送します。\n内容のいかんにかかわらず、個人情報の問い合わせにはお答えしておりません。",
-"Bất kể thành quả thế nào, tôi cũng sẽ dốc hết sức đến cùng.\nDù đỗ hay trượt, kết quả đều được gửi qua bưu điện cho tất cả mọi người.\nBất kể nội dung gì, chúng tôi không trả lời các câu hỏi về thông tin cá nhân.",
-""
-],
-[
-"82",
-"Giữa câu · Tuy – nhưng",
-"Aをものともせず (に)B",
-"N + をものともせず(に)",
-"Bất chấp trở ngại cực lớn A để kiên cường làm B",
-"母は強かった。ガンの宣告をものともせず、最期まで明るくふるまった。",
-"Mẹ tôi thật mạnh mẽ. Bất chấp việc bị chẩn đoán ung thư, bà vẫn sống vui vẻ cho đến giây phút cuối cùng.",
-""
-],
-[
-"83",
-"Giữa câu · Tuy – nhưng",
-"AをよそにB",
-"N + をよそに",
-"Phớt lờ A (lo lắng, phản đối, khuyên can) để tự tiện làm B\n(chỉ trích, phê phán)",
-"両親の反対をよそに、彼と結婚することにした。",
-"Mặc kệ sự phản đối của bố mẹ, tôi đã quyết định cưới anh ấy.",
-""
-],
-[
-"84",
-"Giữa câu · Tuy – nhưng",
-"AならいざしらずB",
-"N / TTT + ならいざしらず",
-"Nếu A thì không cần biết nhưng B thì không chấp nhận được",
-"新人ならいざしらず、ベテラン社員がこんなミスをするとは思いませんでした。",
-"Nhân viên mới thì không nói, chứ tôi không ngờ một nhân viên kỳ cựu lại mắc lỗi như thế này.",
-""
-],
-[
-"85",
-"Giữa câu · Tuy – nhưng",
-"Aば／Aたら　Bものを（C)",
-"TTT (Ana-な) + ものを",
-"Giá mà A thì đã B\n(A,B trái thực tế)",
-"一言声をかけてくれれば手伝ったものを。\n安静にしていれば、治るものを、田中さんはすぐに働き始めて、また病気を悪化させてしまった。",
-"Giá mà cậu nói một tiếng thì tôi đã giúp rồi.\nGiá mà cứ tĩnh dưỡng thì đã khỏi, vậy mà anh Tanaka lại đi làm ngay, khiến bệnh trở nặng.",
-""
-],
-[
-"86",
-"Giữa câu · Tuy – nhưng",
-"AとはいえB",
-"N / TTT + とはいえ",
-"Tuy A đúng thật đấy nhưng mà B (ngược)",
-"12月に入ったとはいえ、まだ年末という気がしない。",
-"Dù đã sang tháng 12 nhưng vẫn chưa thấy không khí cuối năm.",
-""
-],
-[
-"87",
-"Giữa câu · Tuy – nhưng",
-"AといえどもB",
-"N / TTT + といえども",
-"Dù ở cương vị A đi nữa thì vẫn phải/không được phép B",
-"未成年者といえども、公共の場で勝手なことをしてはならない。\nいかに困難な状況にあったといえども、罪を犯したことは許されない。",
-"Dù là trẻ vị thành niên cũng không được làm càn ở nơi công cộng.\nDù hoàn cảnh có khó khăn đến đâu, phạm tội vẫn là điều không thể tha thứ.",
-""
-],
-[
-"88",
-"Giữa câu · Tuy – nhưng",
-"Aと思いきやB",
-"TTT + と思いきや",
-"Cứ tưởng là A nhưng thực tế lại B",
-"試験問題は簡単だったので、満点を取れたと思いきや、名前を書くのを忘れて0点にされてしまった。",
-"Đề thi dễ nên cứ tưởng được điểm tuyệt đối, ai ngờ quên ghi tên nên bị 0 điểm.",
-""
-],
-[
-"89",
-"Giữa câu · Tuy – nhưng",
-"A（よ）うと（も）B・\nA（よ）うがB",
-"V-ou / A-かろう / Ana-だろう / N-だろう + と(も) / が",
-"Cho dù có A thì B vẫn không đổi \n(thường đi với たとえ、いかに、どんなに)\n（=AてもB)",
-"たとえ雨が降ろうとも、試合は行います。\n目標までどんなに遠かろうと、僕は夢を捨てないぞ。",
-"Dù trời có mưa, trận đấu vẫn diễn ra.\nDù mục tiêu có xa đến đâu, tôi cũng không từ bỏ ước mơ!",
-""
-],
-[
-"90",
-"Giữa câu · Tuy – nhưng",
-"A（よ）うとAまいとB・\nA（よ）うがAまいがB",
-"V-ou + と/が + V-ru + まい + と/が",
-"Dù có A hay không A thì B vẫn không đổi",
-"雨が降ろうが降るまいが、サッカーの練習に休みはない。",
-"Dù mưa hay không mưa, buổi tập bóng đá vẫn không nghỉ.",
-""
-],
-[
-"91",
-"Giữa câu · Tuy – nhưng",
-"AであれB・\nAであろうとB",
-"N / Wh + であれ / であろうと",
-"Cho dù là A thì B vẫn không đổi \n(＝AでもB）",
-"どんな権力者であれ、いつかは命の終わりが来る。\nどんな結果であれ受け入れるしかない。",
-"Dù là kẻ quyền lực đến đâu, rồi cũng có ngày phải chết.\nDù kết quả thế nào cũng chỉ còn cách chấp nhận.",
-""
-],
-[
-"92",
-"Giữa câu · Tuy – nhưng",
-"AたところでB",
-"V-ta + ところで",
-"Dù cho đã A thì cũng chẳng B được (vô ích thôi!)",
-"いくら謝ったところで、彼女との関係は元には戻らないと思う。",
-"Dù có xin lỗi bao nhiêu đi nữa, tôi nghĩ quan hệ với cô ấy cũng không trở lại như xưa được.",
-""
-],
-[
-"93",
 "Giữa câu · Tuy – nhưng",
 "A1ともあろうA、B",
 "N + ともあろう + N (người)",
@@ -931,27 +801,77 @@
 ""
 ],
 [
-"94",
+"81",
 "Giữa câu · Tuy – nhưng",
-"AないまでもB",
-"V-nai + までも",
-"Dù chưa đạt đến mức lý tưởng A, nhưng cũng được mức B (gần thế)",
-"満点を取れないまでも、合格できるように頑張りなさい。\n彼の日本語は完璧じゃないまでも、日常会話には困らない。",
-"Dù không được điểm tuyệt đối thì cũng hãy cố để đỗ.\nTiếng Nhật của anh ấy tuy chưa hoàn hảo nhưng giao tiếp hằng ngày thì không gặp khó khăn.",
+"A1であれA2であれB・\nA1であろうとA2であろうとB",
+"N + であれN + であれ",
+"Dù là A1 hay A2 thì đều B (như nhau)\n（A1にしてもA2にしても、どちらも〜）",
+"お金持ちであれ貧乏であれ、大切なのは心の満足です。",
+"Dù giàu hay nghèo, điều quan trọng là sự thoả mãn trong tâm hồn.",
 ""
 ],
 [
-"95",
+"82",
 "Giữa câu · Tuy – nhưng",
-"AながらB （逆接）",
-"V-masu (bỏ masu) / Ai-い / Ana-な / N + ながら(も)",
-"Tuy A nhưng B\n(nghịch tiếp)",
-"お金がないながら、幸せに暮らしている。",
-"Không có tiền nhưng vẫn vui sống mỗi ngày ^^",
+"AいかんにかかわらずB・\nAいかんによらずB・\nAいかんを問わずB",
+"N （の） + いかんにかかわらず",
+"Bất kể/Không phụ thuộc A như nào thì vẫn B\n（＝AにかかわらずB)\nAがどうであるかに関係なく、B",
+"成果のいかんによらず、最後まで全力を尽くします。\n合否のいかんを問わず、結果は全員に郵送します。\n内容のいかんにかかわらず、個人情報の問い合わせにはお答えしておりません。",
+"Bất kể thành quả thế nào, tôi cũng sẽ dốc hết sức đến cùng.\nDù đỗ hay trượt, kết quả đều được gửi qua bưu điện cho tất cả mọi người.\nBất kể nội dung gì, chúng tôi không trả lời các câu hỏi về thông tin cá nhân.",
 ""
 ],
 [
-"96",
+"83",
+"Giữa câu · Tuy – nhưng",
+"AといえどもB",
+"N / TTT + といえども",
+"Dù ở cương vị A đi nữa thì vẫn phải/không được phép B",
+"未成年者といえども、公共の場で勝手なことをしてはならない。\nいかに困難な状況にあったといえども、罪を犯したことは許されない。",
+"Dù là trẻ vị thành niên cũng không được làm càn ở nơi công cộng.\nDù hoàn cảnh có khó khăn đến đâu, phạm tội vẫn là điều không thể tha thứ.",
+""
+],
+[
+"84",
+"Giữa câu · Tuy – nhưng",
+"A（よ）うと（も）B・\nA（よ）うがB",
+"V-ou / A-かろう / Ana-だろう / N-だろう + と(も) / が",
+"Cho dù có A thì B vẫn không đổi \n(thường đi với たとえ、いかに、どんなに)\n（=AてもB)",
+"たとえ雨が降ろうとも、試合は行います。\n目標までどんなに遠かろうと、僕は夢を捨てないぞ。",
+"Dù trời có mưa, trận đấu vẫn diễn ra.\nDù mục tiêu có xa đến đâu, tôi cũng không từ bỏ ước mơ!",
+""
+],
+[
+"85",
+"Giữa câu · Tuy – nhưng",
+"A（よ）うとAまいとB・\nA（よ）うがAまいがB",
+"V-ou + と/が + V-ru + まい + と/が",
+"Dù có A hay không A thì B vẫn không đổi",
+"雨が降ろうが降るまいが、サッカーの練習に休みはない。",
+"Dù mưa hay không mưa, buổi tập bóng đá vẫn không nghỉ.",
+""
+],
+[
+"86",
+"Giữa câu · Tuy – nhưng",
+"AであれB・\nAであろうとB",
+"N / Wh + であれ / であろうと",
+"Cho dù là A thì B vẫn không đổi \n(＝AでもB）",
+"どんな権力者であれ、いつかは命の終わりが来る。\nどんな結果であれ受け入れるしかない。",
+"Dù là kẻ quyền lực đến đâu, rồi cũng có ngày phải chết.\nDù kết quả thế nào cũng chỉ còn cách chấp nhận.",
+""
+],
+[
+"87",
+"Giữa câu · Tuy – nhưng",
+"AたところでB",
+"V-ta + ところで",
+"Dù cho đã A thì cũng chẳng B được (vô ích thôi!)",
+"いくら謝ったところで、彼女との関係は元には戻らないと思う。",
+"Dù có xin lỗi bao nhiêu đi nữa, tôi nghĩ quan hệ với cô ấy cũng không trở lại như xưa được.",
+""
+],
+[
+"88",
 "Giữa câu · Tuy – nhưng",
 "AにせよB",
 "N / TTT (Ana-な / N, bỏ だ) + にせよ / にしろ / にしても",
@@ -961,7 +881,7 @@
 ""
 ],
 [
-"97",
+"89",
 "Giữa câu · Tuy – nhưng",
 "Vる＋ったって",
 "V-ru + ったって (văn nói, = といっても)",
@@ -971,7 +891,77 @@
 ""
 ],
 [
-"98",
+"90",
+"Giữa câu · Tuy – nhưng",
+"Aをものともせず (に)B",
+"N + をものともせず(に)",
+"Bất chấp trở ngại cực lớn A để kiên cường làm B",
+"母は強かった。ガンの宣告をものともせず、最期まで明るくふるまった。",
+"Mẹ tôi thật mạnh mẽ. Bất chấp việc bị chẩn đoán ung thư, bà vẫn sống vui vẻ cho đến giây phút cuối cùng.",
+""
+],
+[
+"91",
+"Giữa câu · Tuy – nhưng",
+"AをよそにB",
+"N + をよそに",
+"Phớt lờ A (lo lắng, phản đối, khuyên can) để tự tiện làm B\n(chỉ trích, phê phán)",
+"両親の反対をよそに、彼と結婚することにした。",
+"Mặc kệ sự phản đối của bố mẹ, tôi đã quyết định cưới anh ấy.",
+""
+],
+[
+"92",
+"Giữa câu · Tuy – nhưng",
+"Aば／Aたら　Bものを（C)",
+"TTT (Ana-な) + ものを",
+"Giá mà A thì đã B\n(A,B trái thực tế)",
+"一言声をかけてくれれば手伝ったものを。\n安静にしていれば、治るものを、田中さんはすぐに働き始めて、また病気を悪化させてしまった。",
+"Giá mà cậu nói một tiếng thì tôi đã giúp rồi.\nGiá mà cứ tĩnh dưỡng thì đã khỏi, vậy mà anh Tanaka lại đi làm ngay, khiến bệnh trở nặng.",
+""
+],
+[
+"93",
+"Giữa câu · Tuy – nhưng",
+"Aと思いきやB",
+"TTT + と思いきや",
+"Cứ tưởng là A nhưng thực tế lại B",
+"試験問題は簡単だったので、満点を取れたと思いきや、名前を書くのを忘れて0点にされてしまった。",
+"Đề thi dễ nên cứ tưởng được điểm tuyệt đối, ai ngờ quên ghi tên nên bị 0 điểm.",
+""
+],
+[
+"94",
+"Giữa câu · Tuy – nhưng",
+"AながらB （逆接）",
+"V-masu (bỏ masu) / Ai-い / Ana-な / N + ながら(も)",
+"Tuy A nhưng B\n(nghịch tiếp)",
+"お金がないながら、幸せに暮らしている。",
+"Không có tiền nhưng vẫn vui sống mỗi ngày ^^",
+""
+],
+[
+"95",
+"Giữa câu · Tuy – nhưng",
+"AならいざしらずB",
+"N / TTT + ならいざしらず",
+"Nếu A thì không cần biết nhưng B thì không chấp nhận được",
+"新人ならいざしらず、ベテラン社員がこんなミスをするとは思いませんでした。",
+"Nhân viên mới thì không nói, chứ tôi không ngờ một nhân viên kỳ cựu lại mắc lỗi như thế này.",
+""
+],
+[
+"96",
+"Giữa câu · Tuy – nhưng",
+"AとはいえB",
+"N / TTT + とはいえ",
+"Tuy A đúng thật đấy nhưng mà B (ngược)",
+"12月に入ったとはいえ、まだ年末という気がしない。",
+"Dù đã sang tháng 12 nhưng vẫn chưa thấy không khí cuối năm.",
+""
+],
+[
+"97",
 "Giữa câu · Tuy – nhưng",
 "A＋こそ〜が／けれど、〜",
 "N + こそ + 〜が / けれど",
@@ -981,7 +971,7 @@
 ""
 ],
 [
-"99",
+"98",
 "Giữa câu · Tuy – nhưng",
 "AもののB",
 "TTT (Ana-な / N-である) + ものの",
@@ -991,13 +981,23 @@
 ""
 ],
 [
-"100",
+"99",
 "Giữa câu · Tuy – nhưng",
 "AならまだしもB",
 "N / TTT + ならまだしも",
 "A thì còn chấp nhận được, chứ B thì không",
 "泥棒に入られてしまった。財布だけならまだしも、金庫まで盗まれてしまった。",
 "Nhà tôi bị trộm hỏi thăm. Chỉ lấy mỗi ví tiền thôi THÌ CÒN ĐỠ, đây đến cả két sắt hắn cũng vét sạch.",
+""
+],
+[
+"100",
+"Giữa câu · Tuy – nhưng",
+"AないまでもB",
+"V-nai + までも",
+"Dù chưa đạt đến mức lý tưởng A, nhưng cũng được mức B (gần thế)",
+"満点を取れないまでも、合格できるように頑張りなさい。\n彼の日本語は完璧じゃないまでも、日常会話には困らない。",
+"Dù không được điểm tuyệt đối thì cũng hãy cố để đỗ.\nTiếng Nhật của anh ấy tuy chưa hoàn hảo nhưng giao tiếp hằng ngày thì không gặp khó khăn.",
 ""
 ],
 [
@@ -1063,96 +1063,6 @@
 [
 "107",
 "Giữa câu · Liệt kê",
-"AにとどまらずB",
-"N / V-ru + にとどまらず",
-"Không dừng ở A lan rộng ra B thì cũng\n（phạm vi B > A)",
-"この新技術は製造業にとどまらず、さまざまな業界で応用されています。",
-"Công nghệ mới này không chỉ dừng lại ở ngành sản xuất mà còn được ứng dụng trong nhiều lĩnh vực khác nhau.",
-""
-],
-[
-"108",
-"Giữa câu · Liệt kê",
-"AはおろかB",
-"N + はおろか",
-"Đừng nói đến A, đến cả B cũng chịu\n(B còn k thể -> A đương nhiên không)\n(Aはもちろんだが、Bさえ〜できない)",
-"事故で記憶を失った彼女は、住所はおろか、名前すら覚えていなかった。",
-"Cô ấy mất trí nhớ sau tai nạn, đừng nói địa chỉ, đến cả tên mình cũng không nhớ.",
-""
-],
-[
-"109",
-"Giữa câu · Liệt kê",
-"AもさることながらB",
-"N + もさることながら、N + も",
-"không chỉ A mà còn B hơn thế\n(B>A)\n(Aはもちろんだが、それ以上Bも〜）",
-"彼は、人柄もさることながら、その頭の働きの良さで周囲の人をぐいぐい引っ張っていく。",
-"Anh ấy không chỉ có nhân cách tốt mà còn nhờ đầu óc nhanh nhạy mà dẫn dắt mạnh mẽ những người xung quanh.",
-""
-],
-[
-"110",
-"Giữa câu · Liệt kê",
-"A1なりA2なりB",
-"N / V-ru + なり、N / V-ru + なり",
-"(đề xuất) A1 hay A2 đều B (→ chọn đi)\n(*) A1, A2: đề xuất → lựa chọn",
-"言葉の意味がわからなかったら、辞書で調べるなりインターネットで探してみるなりしてみたらどうですか。",
-"Nếu không hiểu nghĩa của từ, sao không thử tra từ điển hay tìm trên mạng xem?",
-""
-],
-[
-"111",
-"Giữa câu · Liệt kê",
-"A1といいA2といい、B",
-"N + といい、N + といい",
-"(khía cạnh) A1 hay A2 đều B (khen/chê)\n(*) A1, A2: khía cạnh của cùng 1 đối tượng → B đánh giá",
-"彼のプレゼンは、話し方といい資料の準備といい、とてもプロフェッショナルです。",
-"Bài thuyết trình của anh ấy, từ cách nói cho đến khâu chuẩn bị tài liệu, đều rất chuyên nghiệp.",
-""
-],
-[
-"112",
-"Giữa câu · Liệt kê",
-"A1といわずA2といわずB",
-"N + といわずN + といわず",
-"bất kể A1 hay A2 (vị trí, không gian, thời gian) đều B",
-"昼といわず夜といわず、彼はいつも勉強している。",
-"Bất kể ngày hay đêm, lúc nào anh ấy cũng học.",
-""
-],
-[
-"113",
-"Giữa câu · Liệt kê",
-"AがてらB",
-"Nする/V-masu (bỏ masu) + がてら",
-"Tiện công đi làm A thì làm B\nNhân tiện đi làm chính sự A thì kết hợp làm B\n(＝ついでに)",
-"花火の見物がてら一度うちへもおいでください。",
-"Nhân tiện đi xem pháo hoa, mời anh ghé qua nhà tôi một lần nhé.",
-""
-],
-[
-"114",
-"Giữa câu · Liệt kê",
-"AかたがたB",
-"N + かたがた",
-"Đi làm B kết hợp mục đích A (お礼・お詫び・ご挨拶）",
-"先日のお礼かたがた、お伺いしたいと存じます。",
-"Tôi xin phép đến thăm, cũng là để cảm ơn chuyện hôm trước.",
-""
-],
-[
-"115",
-"Giữa câu · Liệt kê",
-"AかたわらB",
-"N-の / V-ru + かたわら",
-"Bên cạnh nghề A chính thì có nghề tay trái B",
-"わたしは会社勤務のかたわら子どもたちにサッカーを教えています。",
-"Bên cạnh công việc ở công ty, tôi còn dạy bóng đá cho trẻ em.",
-""
-],
-[
-"116",
-"Giữa câu · Liệt kê",
 "①Aに至ってB\n②Aに至ってもB",
 "N / V-ru + に至って / に至っても",
 "①Mãi đến khi xảy ra A trầm trọng thì mới làm B\n（Aになって、やっとB)\n②Dù đã đến mức A rồi mà vẫn không làm B",
@@ -1161,57 +1071,7 @@
 ""
 ],
 [
-"117",
-"Giữa câu · Liệt kê",
-"Aから Bにかけて",
-"N + から + N + にかけて",
-"Từ A đến B (thời gian, không gian)\n(ranh giới không rõ ràng)",
-"夕方から明日の朝にかけて大雨となるでしょう。",
-"TỪ chiều tối TỚI sáng mai có khả năng sẽ có mưa lớn.",
-""
-],
-[
-"118",
-"Giữa câu · Liệt kê",
-"Aを機にB",
-"N + を機に(して)\nV-ru / V-ta + の + を機に(して)",
-"Nhân cơ hội A thì bắt đầu làm B\n（＝AをきっかけにB／Aを契機にB）",
-"日本人の彼女ができたのを機に、日本語の勉強を始めました。",
-"NHÂN CƠ HỘI có em người yêu người Nhật nên tôi quyết chiến học tiếng N luôn.",
-""
-],
-[
-"119",
-"Giữa câu · Liệt kê",
-"(A) V-taなり、B",
-"V-ta + なり",
-"Từ lúc A thì cứ nguyên như vậy (không làm việc tiếp theo B)\n（＝V-taまま）",
-"お父さんは朝出かけたなり、まだ帰ってこないの？",
-"Bố con đi ra ngoài suốt từ sáng giờ chưa về à?",
-""
-],
-[
-"120",
-"Giữa câu · Liệt kê",
-"AながらB （同時）",
-"V-masu (bỏ masu) + ながら",
-"Vừa làm A vừa làm B\n(đồng thời)",
-"音楽を聴きながら勉強する。",
-"Vừa nghe nhạc vừa học.",
-""
-],
-[
-"121",
-"Giữa câu · Liệt kê",
-"AどころかB",
-"N / TTT (Ana-な / N-である) + どころか",
-"Đâu chỉ A, mà còn B\n(B là mức cao hơn hoặc trái ngược A)",
-"A：新しい先生はやさしい？\nB：やさしいどころか、とても厳しいよ…",
-"A: Cô mới hiền không anh em?\nB: Trời, hiền gì mà hiền…cô nghiêm lắm mày ơi!",
-""
-],
-[
-"122",
+"108",
 "Giữa câu · Liệt kê",
 "①A次第B",
 "V-masu (bỏ masu) / Nする + 次第",
@@ -1221,7 +1081,7 @@
 ""
 ],
 [
-"123",
+"109",
 "Giữa câu · Liệt kê",
 "Aに先立ちB・\nAに先立ってB",
 "N / V-ru + に先立ち / に先立って / に先立つ + N",
@@ -1231,7 +1091,7 @@
 ""
 ],
 [
-"124",
+"110",
 "Giữa câu · Liệt kê",
 "Aを控えて、B",
 "N + を控えて / N1 + を控えた + N2",
@@ -1241,27 +1101,157 @@
 ""
 ],
 [
+"111",
+"Giữa câu · Liệt kê",
+"Aから Bにかけて",
+"N + から + N + にかけて",
+"Từ A đến B (thời gian, không gian)\n(ranh giới không rõ ràng)",
+"夕方から明日の朝にかけて大雨となるでしょう。",
+"TỪ chiều tối TỚI sáng mai có khả năng sẽ có mưa lớn.",
+""
+],
+[
+"112",
+"Giữa câu · Liệt kê",
+"Aを機にB",
+"N + を機に(して)\nV-ru / V-ta + の + を機に(して)",
+"Nhân cơ hội A thì bắt đầu làm B\n（＝AをきっかけにB／Aを契機にB）",
+"日本人の彼女ができたのを機に、日本語の勉強を始めました。",
+"NHÂN CƠ HỘI có em người yêu người Nhật nên tôi quyết chiến học tiếng N luôn.",
+""
+],
+[
+"113",
+"Giữa câu · Liệt kê",
+"AにとどまらずB",
+"N / V-ru + にとどまらず",
+"Không dừng ở A lan rộng ra B thì cũng\n（phạm vi B > A)",
+"この新技術は製造業にとどまらず、さまざまな業界で応用されています。",
+"Công nghệ mới này không chỉ dừng lại ở ngành sản xuất mà còn được ứng dụng trong nhiều lĩnh vực khác nhau.",
+""
+],
+[
+"114",
+"Giữa câu · Liệt kê",
+"AはおろかB",
+"N + はおろか",
+"Đừng nói đến A, đến cả B cũng chịu\n(B còn k thể -> A đương nhiên không)\n(Aはもちろんだが、Bさえ〜できない)",
+"事故で記憶を失った彼女は、住所はおろか、名前すら覚えていなかった。",
+"Cô ấy mất trí nhớ sau tai nạn, đừng nói địa chỉ, đến cả tên mình cũng không nhớ.",
+""
+],
+[
+"115",
+"Giữa câu · Liệt kê",
+"AもさることながらB",
+"N + もさることながら、N + も",
+"không chỉ A mà còn B hơn thế\n(B>A)\n(Aはもちろんだが、それ以上Bも〜）",
+"彼は、人柄もさることながら、その頭の働きの良さで周囲の人をぐいぐい引っ張っていく。",
+"Anh ấy không chỉ có nhân cách tốt mà còn nhờ đầu óc nhanh nhạy mà dẫn dắt mạnh mẽ những người xung quanh.",
+""
+],
+[
+"116",
+"Giữa câu · Liệt kê",
+"AどころかB",
+"N / TTT (Ana-な / N-である) + どころか",
+"Đâu chỉ A, mà còn B\n(B là mức cao hơn hoặc trái ngược A)",
+"A：新しい先生はやさしい？\nB：やさしいどころか、とても厳しいよ…",
+"A: Cô mới hiền không anh em?\nB: Trời, hiền gì mà hiền…cô nghiêm lắm mày ơi!",
+""
+],
+[
+"117",
+"Giữa câu · Liệt kê",
+"A1なりA2なりB",
+"N / V-ru + なり、N / V-ru + なり",
+"(đề xuất) A1 hay A2 đều B (→ chọn đi)\n(*) A1, A2: đề xuất → lựa chọn",
+"言葉の意味がわからなかったら、辞書で調べるなりインターネットで探してみるなりしてみたらどうですか。",
+"Nếu không hiểu nghĩa của từ, sao không thử tra từ điển hay tìm trên mạng xem?",
+""
+],
+[
+"118",
+"Giữa câu · Liệt kê",
+"A1といいA2といい、B",
+"N + といい、N + といい",
+"(khía cạnh) A1 hay A2 đều B (khen/chê)\n(*) A1, A2: khía cạnh của cùng 1 đối tượng → B đánh giá",
+"彼のプレゼンは、話し方といい資料の準備といい、とてもプロフェッショナルです。",
+"Bài thuyết trình của anh ấy, từ cách nói cho đến khâu chuẩn bị tài liệu, đều rất chuyên nghiệp.",
+""
+],
+[
+"119",
+"Giữa câu · Liệt kê",
+"A1といわずA2といわずB",
+"N + といわずN + といわず",
+"bất kể A1 hay A2 (vị trí, không gian, thời gian) đều B",
+"昼といわず夜といわず、彼はいつも勉強している。",
+"Bất kể ngày hay đêm, lúc nào anh ấy cũng học.",
+""
+],
+[
+"120",
+"Giữa câu · Liệt kê",
+"AがてらB",
+"Nする/V-masu (bỏ masu) + がてら",
+"Tiện công đi làm A thì làm B\nNhân tiện đi làm chính sự A thì kết hợp làm B\n(＝ついでに)",
+"花火の見物がてら一度うちへもおいでください。",
+"Nhân tiện đi xem pháo hoa, mời anh ghé qua nhà tôi một lần nhé.",
+""
+],
+[
+"121",
+"Giữa câu · Liệt kê",
+"AかたがたB",
+"N + かたがた",
+"Đi làm B kết hợp mục đích A (お礼・お詫び・ご挨拶）",
+"先日のお礼かたがた、お伺いしたいと存じます。",
+"Tôi xin phép đến thăm, cũng là để cảm ơn chuyện hôm trước.",
+""
+],
+[
+"122",
+"Giữa câu · Liệt kê",
+"AかたわらB",
+"N-の / V-ru + かたわら",
+"Bên cạnh nghề A chính thì có nghề tay trái B",
+"わたしは会社勤務のかたわら子どもたちにサッカーを教えています。",
+"Bên cạnh công việc ở công ty, tôi còn dạy bóng đá cho trẻ em.",
+""
+],
+[
+"123",
+"Giữa câu · Liệt kê",
+"AながらB （同時）",
+"V-masu (bỏ masu) + ながら",
+"Vừa làm A vừa làm B\n(đồng thời)",
+"音楽を聴きながら勉強する。",
+"Vừa nghe nhạc vừa học.",
+""
+],
+[
+"124",
+"Giữa câu · Liệt kê",
+"(A) V-taなり、B",
+"V-ta + なり",
+"Từ lúc A thì cứ nguyên như vậy (không làm việc tiếp theo B)\n（＝V-taまま）",
+"お父さんは朝出かけたなり、まだ帰ってこないの？",
+"Bố con đi ra ngoài suốt từ sáng giờ chưa về à?",
+""
+],
+[
 "125",
 "Giữa câu · So sánh",
-"Aんばかり（に）B",
-"V-nai (bỏ nai) + んばかりだ\n(する➔せん)",
-"B cứ như sắp A\n（AそうなほどB)",
-"彼女は飛び上がらんばかりに喜んだ。",
-"Cô ấy vui mừng như muốn nhảy cẫng lên.",
+"AにもましてB",
+"N/Wh + にもまして",
+"Trạng thái B (+) hơn hẳn A thường/ hơn tất cả A \n（＝whよりもB）",
+"今年は去年にもまして、暑くジメジメする。\n結婚式の日の彼女は、いつにもまして美しかった。",
+"Năm nay còn nóng và ẩm hơn cả năm ngoái.\nCô ấy trong ngày cưới đẹp hơn hẳn mọi khi.",
 ""
 ],
 [
 "126",
-"Giữa câu · So sánh",
-"Aとばかり (に)B",
-"Trích dẫn ND + とばかり(に)",
-"B (thái độ) cứ như muốn nói là A\nThái độ B = câu nói A",
-"彼女は「黙ってろ」とばかりに私を睨んだ。",
-"Cô ấy lườm tôi như muốn nói “Im đi”.",
-""
-],
-[
-"127",
 "Giữa câu · So sánh",
 "AくらいならB",
 "V-ru + くらいなら",
@@ -1271,7 +1261,7 @@
 "B:〜ほうがいい・ましだ"
 ],
 [
-"128",
+"127",
 "Giữa câu · So sánh",
 "AにひきかえB",
 "TTT(Ana-な/である) + の / N + にひきかえ",
@@ -1281,13 +1271,23 @@
 ""
 ],
 [
+"128",
+"Giữa câu · So sánh",
+"Aんばかり（に）B",
+"V-nai (bỏ nai) + んばかりだ\n(する➔せん)",
+"B cứ như sắp A\n（AそうなほどB)",
+"彼女は飛び上がらんばかりに喜んだ。",
+"Cô ấy vui mừng như muốn nhảy cẫng lên.",
+""
+],
+[
 "129",
 "Giữa câu · So sánh",
-"AにもましてB",
-"N/Wh + にもまして",
-"Trạng thái B (+) hơn hẳn A thường/ hơn tất cả A \n（＝whよりもB）",
-"今年は去年にもまして、暑くジメジメする。\n結婚式の日の彼女は、いつにもまして美しかった。",
-"Năm nay còn nóng và ẩm hơn cả năm ngoái.\nCô ấy trong ngày cưới đẹp hơn hẳn mọi khi.",
+"Aとばかり (に)B",
+"Trích dẫn ND + とばかり(に)",
+"B (thái độ) cứ như muốn nói là A\nThái độ B = câu nói A",
+"彼女は「黙ってろ」とばかりに私を睨んだ。",
+"Cô ấy lườm tôi như muốn nói “Im đi”.",
 ""
 ],
 [
@@ -1313,6 +1313,76 @@
 [
 "132",
 "Giữa câu · Trợ từ ghép (đối tượng, chủ đề, phạm vi, căn cứ)",
+"AにかけてはB",
+"N + にかけては",
+"Về khoản / lĩnh vực A thì B là giỏi nhất",
+"鈴木さんって勉強は全然できないけど、絵を描くことにかけては本当にすごいよね。",
+"Anh Suzuki học hành thì chẳng ra sao, nhưng riêng khoản vẽ tranh thì đỉnh thật đấy.",
+""
+],
+[
+"133",
+"Giữa câu · Trợ từ ghép (đối tượng, chủ đề, phạm vi, căn cứ)",
+"AをBとする",
+"N1 + を + N2 + とする / N1 + を + N2 + とした + N3",
+"Coi A là B, lấy A làm B",
+"この試験では、60点以上を合格とする。\n環境問題をテーマとした番組",
+"Kỳ thi này lấy mức từ 60 điểm trở lên là điểm đỗ.\nChương trình có chủ đề là các vấn đề môi trường",
+""
+],
+[
+"134",
+"Giữa câu · Trợ từ ghép (đối tượng, chủ đề, phạm vi, căn cứ)",
+"AとしてB",
+"N + として / N1 + としての + N2",
+"Làm B với tư cách là A",
+"彼女はただの友達として接してくれた。",
+"Cô ấy đối xử với tôi coi như một người bạn mà thôi",
+""
+],
+[
+"135",
+"Giữa câu · Trợ từ ghép (đối tượng, chủ đề, phạm vi, căn cứ)",
+"Aとは（定義・説明）",
+"N + とは ( + 〜のことだ / 〜ということだ)",
+"A có nghĩa là B (định nghĩa, giải thích)\n（＝Aって／Aというのは）\nB: 〜のことだ／〜ということだ",
+"「ググる」とはグーグルで意味や方法などを調べることだ。",
+"Từ \"Guguru\" có nghĩa là tra cứu bằng google.",
+""
+],
+[
+"136",
+"Giữa câu · Trợ từ ghép (đối tượng, chủ đề, phạm vi, căn cứ)",
+"Aがらみの（絡み）",
+"N + がらみ(の) + N",
+"Dính líu, liên quan đến A\n(A: bê bối, vấn đề tiêu cực)",
+"酒絡みの事件・事故が絶えません！",
+"Mấy vụ án, tai nạn liên quan rượu bia mãi chả dứt nhỉ, sợ\nquá má ơi!",
+""
+],
+[
+"137",
+"Giữa câu · Trợ từ ghép (đối tượng, chủ đề, phạm vi, căn cứ)",
+"Aにしてみれば B・\nAにしたらB ・\nAにすればB",
+"N + にしてみれば / にしたら / にすれば",
+"Nếu đặt mình vào vị trí A thì B",
+"私のような考え方は若い人にしてみれば、古いと思われるでしょう。",
+"Cách suy nghĩ của tôi có thể là lỗi thời NẾU ĐẶT VÀO VỊ TRÍ CỦA NGƯỜI TRẺ (mà suy nghĩ).",
+""
+],
+[
+"138",
+"Giữa câu · Trợ từ ghép (đối tượng, chủ đề, phạm vi, căn cứ)",
+"Aはともかく（として）B",
+"N ( + trợ từ) + はともかく(として)\nTTT (Ana-な / N-な) + の + はともかく(として)",
+"Chưa bàn đến A, (điều quan trọng là) B\n(nhấn mạnh B hơn A)",
+"結果はともかく、最後まで全力を出すことが大切です。",
+"CHƯA VỘI nói đến kết quả, việc nỗ lực hết mình đến cuối cùng mới là quan trọng.",
+""
+],
+[
+"139",
+"Giữa câu · Trợ từ ghép (đối tượng, chủ đề, phạm vi, căn cứ)",
 "Aに至るまでB",
 "N + に至るまで",
 "Đến cả mức A mà cũng B\n（＝〜まで、さえ、すら）",
@@ -1321,87 +1391,7 @@
 ""
 ],
 [
-"133",
-"Giữa câu · Trợ từ ghép (đối tượng, chủ đề, phạm vi, căn cứ)",
-"Aを限りにB",
-"N + を限りに",
-"Đến mốc A thì B (hết, kết thúc)\n(Nốt A thì B thề-hứa-đảm bảo!)",
-"今日を限りにたばこをやめるぞ！",
-"Từ hôm nay trở đi, tôi bỏ thuốc lá luôn!",
-""
-],
-[
-"134",
-"Giữa câu · Trợ từ ghép (đối tượng, chủ đề, phạm vi, căn cứ)",
-"AをもってB",
-"N + をもって",
-"①Đến mốc A thì B (hết, kết thúc)\n(thông báo kì hạn/sự kiện) \n②Bằng phương thức/công cụ A, làm B (liên lạc, thông báo)",
-"①以上をもちまして、本日の会議を終了いたします。\n②書面をもって、結果をお知らせします。",
-"Đến đây, xin phép kết thúc cuộc họp hôm nay.\nChúng tôi sẽ thông báo kết quả bằng văn bản.",
-""
-],
-[
-"135",
-"Giữa câu · Trợ từ ghép (đối tượng, chủ đề, phạm vi, căn cứ)",
-"AをおいてB",
-"N + をおいて",
-"Ngoài A thì không B nào tốt thế\n(lựa chọn tốt nhất)\nB:ほかに〜ない",
-"この仕事を任せられるのは、彼をおいてほかにいない。",
-"Ngoài anh ấy ra thì không ai có thể giao công việc này được.",
-""
-],
-[
-"136",
-"Giữa câu · Trợ từ ghép (đối tượng, chủ đề, phạm vi, căn cứ)",
-"AならではB",
-"N + ならでは",
-"Chỉ có A mới B tuyệt vời đến thế\n(độc đáo)",
-"納豆は日本ならではの食べ物だ。",
-"Natto là món ăn chỉ Nhật Bản mới có.",
-""
-],
-[
-"137",
-"Giữa câu · Trợ từ ghép (đối tượng, chủ đề, phạm vi, căn cứ)",
-"Aをもって（すれば）B",
-"N + をもって",
-"làm B bằng phương tiện A",
-"本日の採用試験の結果は後日書面をもってご連絡いたします。",
-"Kết quả kỳ thi tuyển dụng hôm nay sẽ được thông báo bằng văn bản vào ngày sau.",
-""
-],
-[
-"138",
-"Giữa câu · Trợ từ ghép (đối tượng, chủ đề, phạm vi, căn cứ)",
-"AときたらB",
-"N + ときたら",
-"Nói đến A thì chê (B) nha\n(＝AはB)",
-"うちの息子ときたら、毎日ゲームばかりしていて全然勉強しない。",
-"Thằng con nhà tôi ấy à, ngày nào cũng chỉ chơi game, chẳng học hành gì cả.",
-""
-],
-[
-"139",
-"Giữa câu · Trợ từ ghép (đối tượng, chủ đề, phạm vi, căn cứ)",
-"Aたるもの（は）B",
-"N + たるもの(は)",
-"Là A thì phải B (cho ra dáng)",
-"紳士たるもの、強く優しくなければならない。",
-"Đã là quý ông thì phải mạnh mẽ và dịu dàng.",
-""
-],
-[
 "140",
-"Giữa câu · Trợ từ ghép (đối tượng, chủ đề, phạm vi, căn cứ)",
-"AなりにB・\nAなりのB",
-"N / TTT + なりに",
-"(Ghi nhận) Dốc sức làm B hết mức/theo cách A (dù nhỏ bé)\n\nV-ruなり：(Thằng đó) Vừa mới A thì đã làm B\nV-taなり：cứ A nguyên như vậy\nN/V-ruなりN/V-ruなり：hoặc là A1 hoặc là A2, (B) chọn đi",
-"かれは経験が浅いなりに、一生懸命仕事をしている。\nあの子も子供なりに親のことを心配して気を遣っている。",
-"Dù kinh nghiệm còn ít, anh ấy vẫn làm việc hết mình theo cách của mình.\nĐứa bé ấy cũng theo cách của trẻ con mà lo lắng, quan tâm đến bố mẹ.",
-""
-],
-[
-"141",
 "Giữa câu · Trợ từ ghép (đối tượng, chủ đề, phạm vi, căn cứ)",
 "Aに至ってはB",
 "N + に至っては",
@@ -1411,7 +1401,7 @@
 ""
 ],
 [
-"142",
+"141",
 "Giữa câu · Trợ từ ghép (đối tượng, chủ đề, phạm vi, căn cứ)",
 "AすらB",
 "N / Trợ từ + すら",
@@ -1421,7 +1411,7 @@
 ""
 ],
 [
-"143",
+"142",
 "Giữa câu · Trợ từ ghép (đối tượng, chủ đề, phạm vi, căn cứ)",
 "①AだにB（ー）\n②AだにB（＋）",
 "N / V-ru + だに",
@@ -1431,23 +1421,33 @@
 ""
 ],
 [
+"143",
+"Giữa câu · Trợ từ ghép (đối tượng, chủ đề, phạm vi, căn cứ)",
+"Aを限りにB",
+"N + を限りに",
+"Đến mốc A thì B (hết, kết thúc)\n(Nốt A thì B thề-hứa-đảm bảo!)",
+"今日を限りにたばこをやめるぞ！",
+"Từ hôm nay trở đi, tôi bỏ thuốc lá luôn!",
+""
+],
+[
 "144",
+"Giữa câu · Trợ từ ghép (đối tượng, chủ đề, phạm vi, căn cứ)",
+"AをもってB",
+"N + をもって",
+"①Đến mốc A thì B (hết, kết thúc)\n(thông báo kì hạn/sự kiện) \n②Bằng phương thức/công cụ A, làm B (liên lạc, thông báo)",
+"①以上をもちまして、本日の会議を終了いたします。\n②書面をもって、結果をお知らせします。",
+"Đến đây, xin phép kết thúc cuộc họp hôm nay.\nChúng tôi sẽ thông báo kết quả bằng văn bản.",
+""
+],
+[
+"145",
 "Giữa câu · Trợ từ ghép (đối tượng, chủ đề, phạm vi, căn cứ)",
 "AにしてB",
 "N + にして",
 "① Tầm A mà cũng B (thì mình thường thôi)\n② Phải đến tận mốc A muộn mới có thể  (やっと・はじめて）B",
 "①プロの職人にして失敗をするのだ。君がうまくいかなくてもしょうがないだろう。\n②5回目にして、やっとN１に合格することができた。\n③父親と同じように、息子もみごとに一流のピアニストになった。この父にしてこの息子である。",
 "Đến thợ chuyên nghiệp còn thất bại cơ mà. Cậu làm chưa tốt cũng là chuyện đương nhiên.\nĐến lần thứ 5 thì cuối cùng tôi cũng đỗ N1.\nGiống như bố, cậu con trai cũng trở thành nghệ sĩ piano hàng đầu. Đúng là cha nào con nấy.",
-""
-],
-[
-"145",
-"Giữa câu · Trợ từ ghép (đối tượng, chủ đề, phạm vi, căn cứ)",
-"AからあるB・\nAからするB・\nAからのB",
-"〜さ + からある / からの\n値段 + からする\n人数 + からの",
-"B lên đến trên/hơn (số) lượng A (KHÔNG hề nhỏ)",
-"彼女は10万円からする服を、値段を見ないで何着も買った。",
-"Cô ấy mua liền mấy bộ quần áo giá từ 100 nghìn yên trở lên mà không cần nhìn giá.",
 ""
 ],
 [
@@ -1463,15 +1463,65 @@
 [
 "147",
 "Giữa câu · Trợ từ ghép (đối tượng, chủ đề, phạm vi, căn cứ)",
-"AにかけてはB",
-"N + にかけては",
-"Về khoản / lĩnh vực A thì B là giỏi nhất",
-"鈴木さんって勉強は全然できないけど、絵を描くことにかけては本当にすごいよね。",
-"Anh Suzuki học hành thì chẳng ra sao, nhưng riêng khoản vẽ tranh thì đỉnh thật đấy.",
+"AときたらB",
+"N + ときたら",
+"Nói đến A thì chê (B) nha\n(＝AはB)",
+"うちの息子ときたら、毎日ゲームばかりしていて全然勉強しない。",
+"Thằng con nhà tôi ấy à, ngày nào cũng chỉ chơi game, chẳng học hành gì cả.",
 ""
 ],
 [
 "148",
+"Giữa câu · Trợ từ ghép (đối tượng, chủ đề, phạm vi, căn cứ)",
+"Aたるもの（は）B",
+"N + たるもの(は)",
+"Là A thì phải B (cho ra dáng)",
+"紳士たるもの、強く優しくなければならない。",
+"Đã là quý ông thì phải mạnh mẽ và dịu dàng.",
+""
+],
+[
+"149",
+"Giữa câu · Trợ từ ghép (đối tượng, chủ đề, phạm vi, căn cứ)",
+"AをおいてB",
+"N + をおいて",
+"Ngoài A thì không B nào tốt thế\n(lựa chọn tốt nhất)\nB:ほかに〜ない",
+"この仕事を任せられるのは、彼をおいてほかにいない。",
+"Ngoài anh ấy ra thì không ai có thể giao công việc này được.",
+""
+],
+[
+"150",
+"Giữa câu · Trợ từ ghép (đối tượng, chủ đề, phạm vi, căn cứ)",
+"AならではB",
+"N + ならでは",
+"Chỉ có A mới B tuyệt vời đến thế\n(độc đáo)",
+"納豆は日本ならではの食べ物だ。",
+"Natto là món ăn chỉ Nhật Bản mới có.",
+""
+],
+[
+"151",
+"Giữa câu · Trợ từ ghép (đối tượng, chủ đề, phạm vi, căn cứ)",
+"AからあるB・\nAからするB・\nAからのB",
+"〜さ + からある / からの\n値段 + からする\n人数 + からの",
+"B lên đến trên/hơn (số) lượng A (KHÔNG hề nhỏ)",
+"彼女は10万円からする服を、値段を見ないで何着も買った。",
+"Cô ấy mua liền mấy bộ quần áo giá từ 100 nghìn yên trở lên mà không cần nhìn giá.",
+""
+],
+[
+"152",
+"Giữa câu · Trợ từ ghép (đối tượng, chủ đề, phạm vi, căn cứ)",
+"AなりにB・\nAなりのB",
+"N / TTT + なりに",
+"(Ghi nhận) Dốc sức làm B hết mức/theo cách A (dù nhỏ bé)\n\nV-ruなり：(Thằng đó) Vừa mới A thì đã làm B\nV-taなり：cứ A nguyên như vậy\nN/V-ruなりN/V-ruなり：hoặc là A1 hoặc là A2, (B) chọn đi",
+"かれは経験が浅いなりに、一生懸命仕事をしている。\nあの子も子供なりに親のことを心配して気を遣っている。",
+"Dù kinh nghiệm còn ít, anh ấy vẫn làm việc hết mình theo cách của mình.\nĐứa bé ấy cũng theo cách của trẻ con mà lo lắng, quan tâm đến bố mẹ.",
+""
+],
+[
+"153",
 "Giữa câu · Trợ từ ghép (đối tượng, chủ đề, phạm vi, căn cứ)",
 "Vru+まま（に）",
 "V-ru / V-ta + まま(に)",
@@ -1481,63 +1531,13 @@
 ""
 ],
 [
-"149",
-"Giữa câu · Trợ từ ghép (đối tượng, chủ đề, phạm vi, căn cứ)",
-"AをBとする",
-"N1 + を + N2 + とする / N1 + を + N2 + とした + N3",
-"Coi A là B, lấy A làm B",
-"この試験では、60点以上を合格とする。\n環境問題をテーマとした番組",
-"Kỳ thi này lấy mức từ 60 điểm trở lên là điểm đỗ.\nChương trình có chủ đề là các vấn đề môi trường",
-""
-],
-[
-"150",
-"Giữa câu · Trợ từ ghép (đối tượng, chủ đề, phạm vi, căn cứ)",
-"AとしてB",
-"N + として / N1 + としての + N2",
-"Làm B với tư cách là A",
-"彼女はただの友達として接してくれた。",
-"Cô ấy đối xử với tôi coi như một người bạn mà thôi",
-""
-],
-[
-"151",
-"Giữa câu · Trợ từ ghép (đối tượng, chủ đề, phạm vi, căn cứ)",
-"Aとは（定義・説明）",
-"N + とは ( + 〜のことだ / 〜ということだ)",
-"A có nghĩa là B (định nghĩa, giải thích)\n（＝Aって／Aというのは）\nB: 〜のことだ／〜ということだ",
-"「ググる」とはグーグルで意味や方法などを調べることだ。",
-"Từ \"Guguru\" có nghĩa là tra cứu bằng google.",
-""
-],
-[
-"152",
-"Giữa câu · Trợ từ ghép (đối tượng, chủ đề, phạm vi, căn cứ)",
-"Aがらみの（絡み）",
-"N + がらみ(の) + N",
-"Dính líu, liên quan đến A\n(A: bê bối, vấn đề tiêu cực)",
-"酒絡みの事件・事故が絶えません！",
-"Mấy vụ án, tai nạn liên quan rượu bia mãi chả dứt nhỉ, sợ\nquá má ơi!",
-""
-],
-[
-"153",
-"Giữa câu · Trợ từ ghép (đối tượng, chủ đề, phạm vi, căn cứ)",
-"Aにしてみれば B・\nAにしたらB ・\nAにすればB",
-"N + にしてみれば / にしたら / にすれば",
-"Nếu đặt mình vào vị trí A thì B",
-"私のような考え方は若い人にしてみれば、古いと思われるでしょう。",
-"Cách suy nghĩ của tôi có thể là lỗi thời NẾU ĐẶT VÀO VỊ TRÍ CỦA NGƯỜI TRẺ (mà suy nghĩ).",
-""
-],
-[
 "154",
 "Giữa câu · Trợ từ ghép (đối tượng, chủ đề, phạm vi, căn cứ)",
-"Aはともかく（として）B",
-"N ( + trợ từ) + はともかく(として)\nTTT (Ana-な / N-な) + の + はともかく(として)",
-"Chưa bàn đến A, (điều quan trọng là) B\n(nhấn mạnh B hơn A)",
-"結果はともかく、最後まで全力を出すことが大切です。",
-"CHƯA VỘI nói đến kết quả, việc nỗ lực hết mình đến cuối cùng mới là quan trọng.",
+"Aをもって（すれば）B",
+"N + をもって",
+"làm B bằng phương tiện A",
+"本日の採用試験の結果は後日書面をもってご連絡いたします。",
+"Kết quả kỳ thi tuyển dụng hôm nay sẽ được thông báo bằng văn bản vào ngày sau.",
 ""
 ],
 [
