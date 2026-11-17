@@ -79,13 +79,20 @@ def plain_len(t):
     return len(re.sub(r"__|\{([^|]+)\|[^}]+\}|\\n|\n", r"\1", t))
 
 
+LOGO = {"on": False}
+
+
 def page(body, neko=None, big_neko=False):
     font = "file://" + os.path.join(ASSETS, "fonts", "fonts.css")
     style = ' style="height:420px"' if big_neko else ""
     n = f'<img class="neko"{style} src="file://{ASSETS}/neko/{neko}.png">' if neko else ""
+    logo = ""
+    if LOGO["on"]:
+        logo = (f'<style>.title{{left:170px}}</style>'
+                f'<img src="file://{ASSETS}/logo_mankai.png" style="position:absolute;left:28px;top:14px;width:124px;height:124px;object-fit:contain">')
     return (f'<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="{font}">'
             f'<style>{CSS}</style></head><body><div class="sei" style="right:0;bottom:0;width:560px;height:260px"></div>'
-            f'{body}{n}</body></html>')
+            f'{body}{n}{logo}</body></html>')
 
 
 def title_bar(meta, right):
@@ -168,6 +175,7 @@ def slide_end(meta):
 
 def build(data, out):
     meta = data["meta"]
+    LOGO["on"] = bool(meta.get("logo"))
     mondai = data["mondai"]
     total = sum(len(m["cau_hoi"]) for m in mondai)
     pages = [slide_cover(meta, total), slide_rules(meta, total)]
