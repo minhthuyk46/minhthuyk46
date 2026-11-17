@@ -165,7 +165,7 @@ button:focus-visible,input:focus-visible,.card:focus-visible{outline:2px solid v
 
 <script>
 const LV=/*DATA*/;
-const LVINFO={N1:"N1 · sheet N1文法, nhóm theo cột Phân loại",N2:"N2 · sheet N2文法, nhóm theo Bài",N3:"N3 · sheet N3文法, nhóm đề xuất"};
+const LVINFO={N1:"N1 · bản sạch, nhóm theo dạng đề",N2:"N2 · bản sạch, nhóm theo dạng đề",N3:"N3 · bản sạch, nhóm theo dạng đề"};
 // Cách đọc kana cho phần nghe (đã rà soát chữ Hán đọc dễ sai). Sửa trong readings.json
 const READA=/*READ*/;
 // Nhóm lấy từ cột "Phân loại" trong sheet
@@ -173,8 +173,8 @@ let level="N1",ITEMS=[],GNAMES=[],READ={},TR={},KEY="",ok=new Set(),group="Tất
 const save=()=>{try{localStorage.setItem(KEY,JSON.stringify([...ok]))}catch(e){}};
 function setLevel(lv){level=lv;
   ITEMS=LV[lv].map(r=>({stt:r[0],grp:(r[1]||"Khác").trim(),pat:r[2]||"",form:r[3]||"",mean:r[4]||"",ex:r[5]||"",note:r[6]||""}));
-  GNAMES=[...new Set(ITEMS.map(i=>i.grp))];if(lv==="N1")GNAMES.sort((a,b)=>a.localeCompare(b,"vi"));
-  READ=READA[lv]||{};TR=TRA[lv]||{};KEY=lv==="N1"?"n1-bunpou-ok":lv.toLowerCase()+"-bunpou-ok";
+  GNAMES=[...new Set(ITEMS.map(i=>i.grp))];
+  READ=READA[lv]||{};TR=TRA[lv]||{};KEY=lv.toLowerCase()+"-bunpou-ok-v2";
   ok=new Set();try{ok=new Set(JSON.parse(localStorage.getItem(KEY)||"[]"))}catch(e){}
   try{localStorage.setItem("bunpou-level",lv)}catch(e){}
   group="Tất cả";idx=0;order=ITEMS.slice();$("q").value="";
