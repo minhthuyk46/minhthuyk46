@@ -126,10 +126,40 @@ def slide_mondai(meta, m, idx, nm):
 
 
 def slide_passage(meta, m):
+    """Trả về list trang. Đoạn văn quá dài (nhiều chỗ trống) tự chia thành nhiều slide."""
     size = m.get("co_chu_doan", 40)
-    paras = "".join(f'<p style="text-indent:1em;margin-bottom:10px">{rich(x)}</p>' for x in m["doan_van"].split("\n"))
-    return page(f'''{title_bar(meta, f"{m['ten']} · 文章")}
-<div class="card jp" style="top:150px;left:56px;right:56px;bottom:40px;padding:30px 48px;font-size:{size}px;line-height:1.85;font-weight:500">{paras}</div>''')
+    plain = lambda t: len(re.sub(r"\{([^|]+)\|[^}]+\}|\[\[[^\]]+\]\]", r"\1", t))
+    paras = [x for x in m["doan_van"].split("\n") if x.strip()]
+    budget = 0.72 * 768000 / (size * size)
+    total = sum(plain(x) for x in paras)
+    chunks = [paras]
+    cap = 1.1 * budget
+    if total > cap * 1.05:
+        import itertools, math
+        lens = [plain(x) for x in paras]
+        k = max(2, math.ceil(total / cap))
+        best = None
+        while best is None and k <= len(paras):
+            for cuts in itertools.combinations(range(1, len(paras)), k - 1):
+                idx = (0,) + cuts + (len(paras),)
+                sizes = [sum(lens[idx[i]:idx[i + 1]]) for i in range(k)]
+                if best is None or max(sizes) < best[0]:
+                    best = (max(sizes), idx)
+            if best and best[0] > cap * 1.12:
+                best = None
+            k += 1
+        if best is None:
+            idx = tuple(range(len(paras) + 1))
+        else:
+            idx = best[1]
+        chunks = [paras[idx[i]:idx[i + 1]] for i in range(len(idx) - 1)]
+    out = []
+    for i, ch in enumerate(chunks, 1):
+        body = "".join(f'<p style="text-indent:1em;margin-bottom:10px">{rich(x)}</p>' for x in ch)
+        tag = "文章" if len(chunks) == 1 else f"文章 {i}/{len(chunks)}"
+        out.append(page(f'''{title_bar(meta, f"{m['ten']} · {tag}")}
+<div class="card jp" style="top:150px;left:56px;right:56px;bottom:40px;padding:30px 48px;font-size:{size}px;line-height:1.85;font-weight:500">{body}</div>'''))
+    return out
 
 
 def slide_q(meta, m, q, reveal):
@@ -182,7 +212,7 @@ def build(data, out):
     for i, m in enumerate(mondai, 1):
         pages.append(slide_mondai(meta, m, i, len(mondai)))
         if m.get("doan_van"):
-            pages.append(slide_passage(meta, m))
+            pages.extend(slide_passage(meta, m))
         for q in m["cau_hoi"]:
             pages += [slide_q(meta, m, q, False), slide_q(meta, m, q, True)]
     pages += [slide_summary(meta, data), slide_end(meta)]

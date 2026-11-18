@@ -46,6 +46,7 @@ Brand: trắng 60% · cam 25% · vàng 10%; chữ nâu mực #2B1D16; không ch�
 
 ### 文法 問題3 文章の文法
 Thêm vào 問題 `"doan_van"` (đoạn văn, `\n` tách đoạn, chỗ trống `[[1]]`…) → tự chèn 1 slide đoạn văn sau slide tiêu đề 問題 (`co_chu_doan` mặc định 40). Mỗi câu hỏi: `cau` = câu chứa chỗ trống, rút gọn bằng `…`. Mẫu: `examples/n3_bunpou_01.json`.
+Đoạn văn dài (nhiều chỗ trống, ví dụ 5 chỗ trống của N1 文法 第16回 trở đi) tự chia thành 2 slide "文章 1/2, 2/2" để không bị cắt chữ.
 ### 文法 問題2 並べ替え
 `cau` viết `＿＿ ＿＿ ★ ＿＿`, `dap_an` = lựa chọn ở vị trí ★ (theo 解答).
 
