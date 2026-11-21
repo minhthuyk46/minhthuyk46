@@ -158,7 +158,7 @@ footer{color:var(--muted);font-size:12px;text-align:center;margin-top:22px}
 <div class="wrap">
   <header>
     <div class="brand"><span class="logo" role="img" aria-label="Mankai Academy"></span><span class="pt">Luyện 並べ替え（★）<br>JLPT đề thật</span></div>
-    <button class="btn" id="back" hidden></button>
+    <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap"><span id="acct"></span><button class="btn" id="back" hidden></button></div>
   </header>
 
   <!-- 1. CHỌN CẤP ĐỘ -->
@@ -183,6 +183,7 @@ footer{color:var(--muted);font-size:12px;text-align:center;margin-top:22px}
 
   <!-- 2. THIẾT LẬP PHIÊN -->
   <section id="v-setup" hidden>
+    <div id="setup-cta"></div>
     <div class="kpis" id="kpis"></div>
     <div class="card">
       <p class="eyebrow">Thiết lập</p><h2>Phiên luyện mới</h2>
@@ -219,6 +220,8 @@ footer{color:var(--muted);font-size:12px;text-align:center;margin-top:22px}
   <footer>Lịch sử luyện tập được lưu trên trình duyệt của thiết bị này.</footer>
 </div>
 
+<script src="config.js"></script>
+<script src="sync.js"></script>
 <script src="data/n2.js"></script>
 <script src="data/n3.js" onerror="0"></script>
 <script src="data/n1.js" onerror="0"></script>
@@ -240,7 +243,7 @@ function loadDB(l){
   if(old&&!Object.keys(d.hist).length){d.hist=old;for(const id in old)if(!old[id].last)d.kho[id]='sai'}
   return d;
 }
-const saveDB=()=>ls('nb_db_'+level,db);
+const saveDB=()=>{ls('nb_db_'+level,db);Sync.save(level,db)};
 
 let level=null,db=null,byId={};
 let sess=null; // {qs:[], i, answers:[{id,pick,ok}], src}
@@ -307,6 +310,7 @@ function renderSetup(){
   };
   document.querySelectorAll('#v-setup input,#f-exam').forEach(i=>i.onchange=upd);upd();
   renderKho();renderSessions();
+  Sync.cta($('#setup-cta'),'Bạn đang luyện ở chế độ khách: tiến độ chỉ lưu trên máy này. Đăng nhập để lưu trên mọi thiết bị.');
 }
 function renderKho(){
   const items=DATA[level].filter(x=>db.kho[x.id]);
@@ -440,7 +444,7 @@ function check(){
   const h=db.hist[q.id]||{n:0,ok:0};h.n++;if(ok)h.ok++;h.last=ok;db.hist[q.id]=h;
   if(!ok){db.kho[q.id]='sai';$('#bm').checked=true}
   saveDB();
-  sess.answers.push({id:q.id,pick:picked,ok});
+  sess.answers.push({id:q.id,pick:picked,ok});Sync.answer(level,q,picked,ok);
   document.querySelectorAll('.slot').forEach(el=>{const i=+el.dataset.slot;if(slots[i]!=null)el.classList.add(slots[i]===q.order[i]?'ok':'bad')});
   paint();
   const st=q.options[q.star-1];
@@ -460,7 +464,7 @@ function nextQ(){if(sess.i+1<sess.qs.length){sess.i++;loadQ();window.scrollTo(0,
 /* ---------- 4. kết quả phiên ---------- */
 function finish(){
   const a=sess.answers,ok=a.filter(x=>x.ok).length;
-  if(a.length){db.sessions.push({t:Date.now(),src:sess.src,total:a.length,ok});saveDB()}
+  if(a.length){const s={t:Date.now(),src:sess.src,total:a.length,ok};db.sessions.push(s);ls('nb_db_'+level,db);Sync.session(level,s,db)}
   show('sum');
   const wrong=a.filter(x=>!x.ok).map(x=>byId[x.id]);
   $('#sum').innerHTML=`
@@ -472,6 +476,7 @@ function finish(){
         <td class="${x.ok?'ok-t':'bad-t'}">${x.ok?'✓':'✗'}</td>
         <td class="num"><input type="checkbox" data-kho="${x.id}"${db.kho[x.id]?' checked':''} aria-label="Lưu vào kho"></td></tr>`}).join('')}</tbody></table></div>`
     :'<div class="empty">Bạn chưa trả lời câu nào trong phiên này.</div>'}
+    <div id="sum-cta" style="margin-top:16px"></div>
     <div class="actions">
       ${wrong.length?`<button class="btn primary" id="redo">Luyện lại ${wrong.length} câu sai</button>`:''}
       <button class="btn" id="again">Phiên mới</button>
@@ -480,6 +485,7 @@ function finish(){
   $('#sum').querySelectorAll('[data-kho]').forEach(c=>c.onchange=()=>{const id=c.dataset.kho;if(c.checked)db.kho[id]=db.kho[id]||'tick';else delete db.kho[id];saveDB()});
   if(wrong.length)$('#redo').onclick=()=>startSession(wrong,'Làm lại câu sai');
   $('#again').onclick=renderSetup;$('#home2').onclick=renderHome;
+  Sync.cta($('#sum-cta'),'Đăng nhập để lưu kết quả này và kho câu sai, luyện tiếp trên điện thoại hay máy tính đều được.');
 }
 
 document.addEventListener('keydown',e=>{
@@ -489,6 +495,10 @@ document.addEventListener('keydown',e=>{
   else if(e.key==='s'||e.key==='S'){const b=$('#bm');b.checked=!b.checked;b.onchange({target:b})}
 });
 
+Sync.init(()=>{ // sau khi đồng bộ xong: tải lại dữ liệu và vẽ lại màn hiện tại
+  if(level){db=loadDB(level);if(!$('#v-setup').hidden)renderSetup()}
+  else if(!$('#v-home').hidden)renderHome();
+});
 renderHome();
 })();
 </script>

@@ -16,7 +16,8 @@ Trang tĩnh để luyện dạng ngữ pháp sắp xếp câu của JLPT (N3, N2
   - Câu làm sai tự vào kho; học viên có thể tick 🔖 để tự lưu thêm câu.
   - Gỡ câu khỏi kho bằng nút ✕.
 - Lịch sử: số câu đã làm, tỉ lệ đúng theo lượt, danh sách các phiên (thời gian, nguồn, số câu, đúng, tỉ lệ).
-- Toàn bộ lịch sử lưu trên trình duyệt (localStorage) của từng máy.
+- Không đăng nhập vẫn luyện được: lịch sử lưu trên trình duyệt của máy đó.
+- Đăng nhập (Google hoặc mã gửi qua email) để lưu tiến độ lên Google Sheet và dùng tiếp trên máy khác. Cách bật: xem `apps-script/HUONG_DAN.md`.
 
 ## Thêm dữ liệu N3 / N1
 1. Soạn Google Doc đúng format như bản N2:
