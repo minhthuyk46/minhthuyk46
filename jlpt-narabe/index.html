@@ -26,10 +26,6 @@ body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 "Be Vietnam Pr
 .wrap{max-width:860px;margin:0 auto;padding:16px}
 header{display:flex;flex-wrap:wrap;align-items:center;gap:12px;justify-content:space-between;margin-bottom:14px}
 h1{font-size:20px;margin:0}h1 small{color:var(--muted);font-weight:500;font-size:13px;margin-left:6px}
-.tabs{display:flex;gap:6px}
-.tab{border:1px solid var(--line);background:var(--card);color:var(--ink);padding:6px 14px;border-radius:999px;font:inherit;font-weight:600;cursor:pointer}
-.tab[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
-.tab:disabled{opacity:.45;cursor:not-allowed}
 .bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:14px}
 select,.btn{font:inherit;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:10px;padding:7px 12px}
 .btn{cursor:pointer;font-weight:600}
@@ -64,6 +60,17 @@ select,.btn{font:inherit;border:1px solid var(--line);background:var(--card);col
 .full mark{background:var(--accent-soft);color:inherit;border-radius:4px;padding:0 2px}
 .explain{margin:8px 0;padding-left:20px}.explain li{margin:3px 0}
 .trans{color:var(--muted);font-style:italic}
+.home{text-align:center;padding:30px 0 10px}
+.home h2{font-size:22px;margin:0 0 6px}.home p{color:var(--muted);margin:0 0 22px}
+.levels{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.lv{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px 10px;cursor:pointer;font:inherit;color:var(--ink);transition:transform .12s,border-color .12s}
+.lv:hover:not(:disabled){transform:translateY(-2px);border-color:var(--accent)}
+.lv:disabled{opacity:.5;cursor:not-allowed}
+.lv .big{display:block;font-size:34px;font-weight:700;color:var(--accent)}
+.lv .sub{display:block;color:var(--muted);font-size:14px;margin-top:4px}
+.lv .prog{display:block;font-size:13px;margin-top:8px}
+[hidden]{display:none!important}
+@media (max-width:560px){.levels{grid-template-columns:1fr}}
 .empty{text-align:center;color:var(--muted);padding:40px 10px}
 footer{color:var(--muted);font-size:12px;text-align:center;margin-top:18px}
 @media (max-width:560px){.stem{font-size:17px}.slot{min-width:60px}.stats{margin-left:0;width:100%}}
@@ -73,9 +80,16 @@ footer{color:var(--muted);font-size:12px;text-align:center;margin-top:18px}
 <div class="wrap">
   <header>
     <h1>Luyện 並べ替え（★）<small>JLPT đề thật</small></h1>
-    <div class="tabs" id="tabs"></div>
+    <button class="btn" id="back" hidden>← Đổi cấp độ</button>
   </header>
 
+  <section class="home" id="home">
+    <h2>Chọn cấp độ</h2>
+    <p>Luyện dạng sắp xếp câu (並べ替え) từ đề thi thật các kỳ</p>
+    <div class="levels" id="levels"></div>
+  </section>
+
+  <div id="practice" hidden>
   <div class="bar">
     <select id="exam" aria-label="Kỳ thi"></select>
     <select id="mode" aria-label="Chế độ">
@@ -89,7 +103,8 @@ footer{color:var(--muted);font-size:12px;text-align:center;margin-top:18px}
   </div>
 
   <main class="card" id="card"></main>
-  <footer>Kéo thẻ vào ô trống (hoặc chạm thẻ → chạm ô). Chỉ cần đặt đúng thẻ vào ô ★. Phím tắt: 1–4 đặt thẻ, Enter kiểm tra, → câu tiếp.</footer>
+  </div>
+  <footer id="foot" hidden>Kéo thẻ vào ô trống (hoặc chạm thẻ → chạm ô). Chỉ cần đặt đúng thẻ vào ô ★. Phím tắt: 1–4 đặt thẻ, Enter kiểm tra, → câu tiếp.</footer>
 </div>
 
 <script src="data/n2.js"></script>
@@ -103,20 +118,27 @@ const $=s=>document.querySelector(s);
 const store={get(k,d){try{return JSON.parse(localStorage.getItem(k))??d}catch{return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch{}}};
 const circ=n=>'①②③④'[n-1];
 
-let level=store.get('nb_level',null);
-if(!DATA[level]) level=LEVELS.find(l=>DATA[l]?.length)||'N2';
+let level=null;
 let list=[],idx=0,q=null,slots=[],target=0,checked=false;
-let hist=store.get('nb_hist_'+level,{});
+let hist={};
 
-function renderTabs(){
-  $('#tabs').innerHTML='';
+function renderHome(){
+  level=null;q=null;
+  $('#home').hidden=false;$('#practice').hidden=$('#back').hidden=$('#foot').hidden=true;
+  $('#levels').innerHTML='';
   LEVELS.forEach(l=>{
-    const b=document.createElement('button');b.className='tab';b.textContent=l;
-    const has=DATA[l]?.length;b.disabled=!has;b.title=has?`${DATA[l].length} câu`:'Đang cập nhật dữ liệu';
-    b.setAttribute('aria-pressed',l===level);
-    b.onclick=()=>{level=l;store.set('nb_level',l);hist=store.get('nb_hist_'+l,{});renderTabs();buildExam();buildList(true)};
-    $('#tabs').appendChild(b);
+    const n=DATA[l]?.length||0,h=store.get('nb_hist_'+l,{}),done=n?DATA[l].filter(x=>h[x.id]).length:0;
+    const b=document.createElement('button');b.className='lv';b.disabled=!n;
+    b.innerHTML=`<span class="big">${l}</span><span class="sub">${n?n+' câu':'Đang cập nhật'}</span>${n?`<span class="prog">Đã làm ${done}/${n}</span>`:''}`;
+    b.onclick=()=>openLevel(l);
+    $('#levels').appendChild(b);
   });
+}
+function openLevel(l){
+  level=l;hist=store.get('nb_hist_'+l,{});
+  $('#home').hidden=true;$('#practice').hidden=$('#back').hidden=$('#foot').hidden=false;
+  $('#back').textContent='← '+l+' · Đổi cấp độ';
+  $('#mode').value='seq';buildExam();buildList(true);
 }
 function buildExam(){
   const ex=[...new Set(DATA[level].map(x=>x.exam))];
@@ -256,7 +278,7 @@ function check(){
 }
 
 document.addEventListener('keydown',e=>{
-  if(e.target.tagName==='SELECT'||!q)return;
+  if(e.target.tagName==='SELECT'||!q||!level)return;
   if(/^[1-4]$/.test(e.key)) tapChip(+e.key);
   else if(e.key==='Enter'&&!checked){e.preventDefault();check()}
   else if(e.key==='ArrowRight') next();
@@ -266,7 +288,8 @@ $('#exam').onchange=()=>buildList(true);
 $('#mode').onchange=()=>buildList(true);
 $('#reset').onclick=()=>{if(confirm('Xoá toàn bộ lịch sử làm bài '+level+'?')){hist={};store.set('nb_hist_'+level,hist);buildList(false)}};
 
-renderTabs();buildExam();buildList(true);
+$('#back').onclick=renderHome;
+renderHome();
 })();
 </script>
 </body>
