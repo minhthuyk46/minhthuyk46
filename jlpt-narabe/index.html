@@ -69,6 +69,15 @@ select,.btn{font:inherit;border:1px solid var(--line);background:var(--card);col
 .lv .big{display:block;font-size:34px;font-weight:700;color:var(--accent)}
 .lv .sub{display:block;color:var(--muted);font-size:14px;margin-top:4px}
 .lv .prog{display:block;font-size:13px;margin-top:8px}
+.guide{margin-top:26px;text-align:left;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 20px}
+.guide h3{margin:0 0 12px;font-size:17px}
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.steps li{display:flex;gap:12px;align-items:flex-start}
+.steps .n{flex:none;width:28px;height:28px;border-radius:50%;background:var(--accent);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:14px}
+.steps b{display:block}.steps span.d{color:var(--muted);font-size:14px}
+.tip{margin-top:14px;padding:10px 12px;border-radius:10px;background:var(--accent-soft);font-size:14px}
+.keys{margin-top:10px;color:var(--muted);font-size:13px}
+kbd{font:12px "Be Vietnam Pro",sans-serif;border:1px solid var(--line);border-bottom-width:2px;border-radius:5px;padding:0 5px;background:var(--slot);color:var(--ink)}
 [hidden]{display:none!important}
 @media (max-width:560px){.levels{grid-template-columns:1fr}}
 .empty{text-align:center;color:var(--muted);padding:40px 10px}
@@ -87,6 +96,18 @@ footer{color:var(--muted);font-size:12px;text-align:center;margin-top:18px}
     <h2>Chọn cấp độ</h2>
     <p>Luyện dạng sắp xếp câu (並べ替え) từ đề thi thật các kỳ</p>
     <div class="levels" id="levels"></div>
+    <div class="guide">
+      <h3>Cách làm bài</h3>
+      <ol class="steps">
+        <li><span class="n">1</span><div><b>Chọn cấp độ</b><span class="d">Bấm vào N3, N2 hoặc N1 ở trên. Trong màn luyện có thể lọc theo kỳ thi hoặc chọn ôn lại câu sai.</span></div></li>
+        <li><span class="n">2</span><div><b>Đọc câu và tìm ô ★</b><span class="d">Câu có 4 ô trống, ô cần trả lời có viền cam và dấu ★ phía trên.</span></div></li>
+        <li><span class="n">3</span><div><b>Kéo thẻ vào ô</b><span class="d">Kéo 1 trong 4 thẻ vào ô trống. Hoặc chạm thẻ: thẻ tự vào ô ★ trước. Muốn đặt vào ô khác thì chạm ô đó trước rồi mới chạm thẻ. Chạm lại thẻ đã đặt để gỡ ra.</span></div></li>
+        <li><span class="n">4</span><div><b>Bấm “Kiểm tra”</b><span class="d">Chỉ cần ô ★ có thẻ là kiểm tra được, không bắt buộc xếp đủ 4 ô.</span></div></li>
+        <li><span class="n">5</span><div><b>Xem giải thích, rồi bấm “Tiếp →”</b><span class="d">Trang hiện đáp án ★, thứ tự đúng, câu hoàn chỉnh, phân tích từng bước và dịch nghĩa.</span></div></li>
+      </ol>
+      <div class="tip">💡 <b>Mẹo:</b> Xếp ô đầu và ô cuối trước (dựa vào chữ đứng ngay trước và ngay sau dãy ô trống), sau đó mới suy ra thẻ ở ô ★. Các ô đã đặt thẻ cũng được chấm đúng/sai để bạn tự kiểm tra.</div>
+      <div class="keys">Trên máy tính: <kbd>1</kbd>–<kbd>4</kbd> đặt thẻ · <kbd>Enter</kbd> kiểm tra · <kbd>←</kbd> <kbd>→</kbd> chuyển câu</div>
+    </div>
   </section>
 
   <div id="practice" hidden>
