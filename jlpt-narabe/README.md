@@ -7,11 +7,16 @@ Trang tĩnh để luyện dạng ngữ pháp sắp xếp câu của JLPT (N3, N2
 - Online: bật GitHub Pages cho repo, rồi mở `/jlpt-narabe/`.
 
 ## Tính năng
-- Kéo thả bằng chuột hoặc cảm ứng; hoặc chạm thẻ rồi chạm ô; hoặc phím 1–4.
-- Chấm ô ★. Các ô khác nếu có đặt thẻ cũng được tô xanh (đúng) hoặc đỏ (sai).
-- Sau khi kiểm tra, trang hiện: thứ tự đúng, câu hoàn chỉnh (đánh dấu cụm ★), phân tích từng bước, dịch nghĩa.
-- Lọc theo kỳ thi. Có 4 chế độ: theo thứ tự / ngẫu nhiên / chỉ câu đã sai / chỉ câu chưa làm.
-- Lịch sử làm bài lưu trên trình duyệt của từng học viên (localStorage).
+- Luồng: Chọn cấp độ → Thiết lập phiên → Luyện → Kết quả phiên.
+- Thiết lập phiên: số câu (5/10/20/30/50/tất cả); nguồn câu (tất cả / theo kỳ / chưa làm / kho cần luyện lại); thứ tự (ngẫu nhiên / theo đề).
+- Mỗi câu:
+  - Kéo thả sắp xếp: không bắt buộc, chỉ để luyện.
+  - Chọn đáp án ★: bắt buộc, chọn xong mới kiểm tra được và xem giải thích.
+- Kho cần luyện lại:
+  - Câu làm sai tự vào kho; học viên có thể tick 🔖 để tự lưu thêm câu.
+  - Gỡ câu khỏi kho bằng nút ✕.
+- Lịch sử: số câu đã làm, tỉ lệ đúng theo lượt, danh sách các phiên (thời gian, nguồn, số câu, đúng, tỉ lệ).
+- Toàn bộ lịch sử lưu trên trình duyệt (localStorage) của từng máy.
 
 ## Thêm dữ liệu N3 / N1
 1. Soạn Google Doc đúng format như bản N2:
