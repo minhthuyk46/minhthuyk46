@@ -42,3 +42,9 @@ Trang tĩnh để luyện dạng ngữ pháp sắp xếp câu của JLPT (N3, N2
    python3 tools/parse_doc.py n1.txt N1 data
    ```
 4. Tab N1 tự bật khi có file `data/n1.js`.
+
+## Khung kênh cô Thuỳ và banner live
+Sửa trong `config.js`, không cần động vào code:
+- `social`: tên kênh, câu giới thiệu, link TikTok và Facebook. Hiện ở trang chọn cấp độ và cuối mỗi phiên luyện.
+- `live`: đổi `show: true` để bật banner; điền `title`, `time`, `desc`, `button`, `url`. Banner tự ẩn sau `endsAt`.
+- Link ra kênh tự gắn `utm_source=luyen-narabe` và `utm_medium` theo vị trí (`home`, `ket-qua`, `live-home`, `live-setup`).

@@ -152,6 +152,25 @@ footer{color:var(--muted);font-size:12px;text-align:center;margin-top:22px}
   .levels{grid-template-columns:1fr}.kpis{grid-template-columns:1fr 1fr}
   .answers{grid-template-columns:1fr}.stem{font-size:17px}.slot{min-width:60px}.snip{max-width:160px}
   .brand .pt{display:none}.home h2{font-size:24px}.card{padding:18px;border-radius:24px}}
+/* khung kênh cô Thuỳ + banner live */
+.social{display:flex;align-items:center;gap:16px;flex-wrap:wrap;text-align:left}
+.social .txt{flex:1;min-width:220px}
+.social .txt b{display:block;font-size:16px}.social .txt span{color:var(--muted);font-size:14px}
+.social .links{display:flex;gap:10px;flex-wrap:wrap}
+.sbtn{display:inline-flex;align-items:center;gap:8px;text-decoration:none}
+.sbtn svg{width:18px;height:18px;fill:currentColor;flex:none}
+.sbtn small{font-weight:500;color:var(--muted)}
+.social.slim{background:var(--peach);border-radius:24px;padding:12px 16px;margin-top:16px}
+.social.slim .txt b{font-size:15px}
+.live{display:flex;align-items:center;gap:16px;flex-wrap:wrap;text-align:left;background:var(--orange);color:#2B1D16;
+  border:2px solid #2B1D16;border-radius:28px;padding:16px 20px;margin-bottom:22px;box-shadow:6px 6px 0 var(--shadow)}
+.live .badge{display:inline-flex;align-items:center;gap:6px;background:#2B1D16;color:#FFF6EE;border-radius:999px;padding:2px 12px;font-size:12px;font-weight:700;letter-spacing:.08em}
+.live .badge i{width:8px;height:8px;border-radius:50%;background:#F3A41D;animation:blink 1.2s infinite}
+@keyframes blink{50%{opacity:.25}}
+.live .txt{flex:1;min-width:220px}
+.live .txt b{display:block;font-size:17px;margin-top:6px}.live .txt span{font-size:14px}
+.live .btn{background:#FFF6EE;color:#2B1D16;border-color:#2B1D16;text-decoration:none}
+@media (prefers-reduced-motion:reduce){.live .badge i{animation:none}}
 </style>
 </head>
 <body>
@@ -163,10 +182,12 @@ footer{color:var(--muted);font-size:12px;text-align:center;margin-top:22px}
 
   <!-- 1. CHỌN CẤP ĐỘ -->
   <section class="home" id="v-home">
+    <div id="live-home"></div>
     <p class="eyebrow">JLPT N3 · N2 · N1</p>
     <h2 class="display">Chọn cấp độ</h2>
     <p class="lead">Luyện dạng sắp xếp câu (並べ替え) từ đề thi thật các kỳ</p>
     <div class="levels" id="levels"></div>
+    <div class="card social" id="social-home" style="margin-top:30px"></div>
     <div class="card guide">
       <h3>Cách làm bài</h3>
       <ol class="steps">
@@ -184,6 +205,7 @@ footer{color:var(--muted);font-size:12px;text-align:center;margin-top:22px}
   <!-- 2. THIẾT LẬP PHIÊN -->
   <section id="v-setup" hidden>
     <div id="setup-cta"></div>
+    <div id="live-setup"></div>
     <div class="kpis" id="kpis"></div>
     <div class="card">
       <p class="eyebrow">Thiết lập</p><h2>Phiên luyện mới</h2>
@@ -310,6 +332,7 @@ function renderSetup(){
   };
   document.querySelectorAll('#v-setup input,#f-exam').forEach(i=>i.onchange=upd);upd();
   renderKho();renderSessions();
+  renderPromo();
   Sync.cta($('#setup-cta'),'Bạn đang luyện ở chế độ khách: tiến độ chỉ lưu trên máy này. Đăng nhập để lưu trên mọi thiết bị.');
 }
 function renderKho(){
@@ -477,6 +500,7 @@ function finish(){
         <td class="num"><input type="checkbox" data-kho="${x.id}"${db.kho[x.id]?' checked':''} aria-label="Lưu vào kho"></td></tr>`}).join('')}</tbody></table></div>`
     :'<div class="empty">Bạn chưa trả lời câu nào trong phiên này.</div>'}
     <div id="sum-cta" style="margin-top:16px"></div>
+    <div id="sum-social"></div>
     <div class="actions">
       ${wrong.length?`<button class="btn primary" id="redo">Luyện lại ${wrong.length} câu sai</button>`:''}
       <button class="btn" id="again">Phiên mới</button>
@@ -485,6 +509,7 @@ function finish(){
   $('#sum').querySelectorAll('[data-kho]').forEach(c=>c.onchange=()=>{const id=c.dataset.kho;if(c.checked)db.kho[id]=db.kho[id]||'tick';else delete db.kho[id];saveDB()});
   if(wrong.length)$('#redo').onclick=()=>startSession(wrong,'Làm lại câu sai');
   $('#again').onclick=renderSetup;$('#home2').onclick=renderHome;
+  renderPromo();
   Sync.cta($('#sum-cta'),'Đăng nhập để lưu kết quả này và kho câu sai, luyện tiếp trên điện thoại hay máy tính đều được.');
 }
 
@@ -494,6 +519,33 @@ document.addEventListener('keydown',e=>{
   else if(e.key==='Enter'){e.preventDefault();$('#go').disabled||$('#go').click()}
   else if(e.key==='s'||e.key==='S'){const b=$('#bm');b.checked=!b.checked;b.onchange({target:b})}
 });
+
+/* ---------- khung kênh cô Thuỳ + banner live (nội dung trong config.js) ---------- */
+const ICON={
+  tiktok:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.53.02C13.84 0 15.14.01 16.44 0c.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>',
+  facebook:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.07C24 5.41 18.63 0 12 0S0 5.41 0 12.07C0 18.1 4.39 23.09 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.69.23 2.69.23v2.97h-1.51c-1.49 0-1.96.93-1.96 1.89v2.26h3.33l-.53 3.49h-2.8V24C19.61 23.09 24 18.1 24 12.07z"/></svg>'};
+const CFG=window.NARABE_CONFIG||{};
+const utmLink=(u,place)=>{try{const x=new URL(u);x.searchParams.set('utm_source','luyen-narabe');x.searchParams.set('utm_medium',place);return x.href}catch{return u}};
+function socialHTML(place,slim){
+  const s=CFG.social;if(!s||!s.links?.length)return'';
+  const txt=slim?(sess&&sess.answers.every(a=>a.ok)?`<b>Làm tốt lắm! 🎉</b><span>Theo dõi cô Thuỳ để luyện tiếp các mẹo làm bài ★ và đề mới.</span>`:`<b>Muốn hiểu sâu hơn các câu vừa sai?</b><span>Xem cô Thuỳ giải thích mẹo làm bài ★ trên kênh của cô.</span>`)
+               :`<b>${esc(s.name)}</b><span>${esc(s.tagline||'')}</span>`;
+  return `<div class="txt">${txt}</div><div class="links">${s.links.map(l=>
+    `<a class="btn sbtn" href="${esc(utmLink(l.url,place))}" target="_blank" rel="noopener">${ICON[l.type]||''}${esc(l.label)}${slim?'':` <small>${esc(l.handle||'')}</small>`}</a>`).join('')}</div>`;
+}
+function liveHTML(place){
+  const v=CFG.live;if(!v||!v.show)return'';
+  if(v.endsAt&&Date.now()>Date.parse(v.endsAt))return'';
+  return `<div class="live"><div class="txt"><span class="badge"><i></i>LIVE · ${esc(v.time||'')}</span><b>${esc(v.title)}</b><span>${esc(v.desc||'')}</span></div>
+    <a class="btn" href="${esc(utmLink(v.url,'live-'+place))}" target="_blank" rel="noopener">${esc(v.button||'Xem live')}</a></div>`;
+}
+function renderPromo(){
+  const set=(id,h,cls)=>{const el=$(id);if(!el)return;el.innerHTML=h;if(cls!==undefined)el.className=h?cls:'';el.hidden=!h};
+  set('#live-home',liveHTML('home'));set('#live-setup',liveHTML('setup'));
+  set('#social-home',socialHTML('home'),'card social');
+  set('#sum-social',socialHTML('ket-qua',true),'social slim');
+}
+renderPromo();
 
 Sync.init(()=>{ // sau khi đồng bộ xong: tải lại dữ liệu và vẽ lại màn hiện tại
   if(level){db=loadDB(level);if(!$('#v-setup').hidden)renderSetup()}
