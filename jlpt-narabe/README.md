@@ -46,5 +46,6 @@ Trang tĩnh để luyện dạng ngữ pháp sắp xếp câu của JLPT (N3, N2
 ## Khung kênh cô Thuỳ và banner live
 Sửa trong `config.js`, không cần động vào code:
 - `social`: tên kênh, câu giới thiệu, link TikTok và Facebook. Hiện ở trang chọn cấp độ và cuối mỗi phiên luyện.
-- `live`: đổi `show: true` để bật banner; điền `title`, `time`, `desc`, `button`, `url`. Banner tự ẩn sau `endsAt`.
+- `social.avatar`: ảnh cô Thuỳ (`assets/thuy-sensei.png`, cắt tròn 320×320).
+- `live`: lịch live cố định theo tuần (`days`, `start`, `end`, giờ Việt Nam). Trong khung giờ live, nhãn đổi thành "ĐANG LIVE" và nút dẫn tới `url`; ngoài giờ, nút dẫn tới `urlOff`. Đặt `show: false` để tắt.
 - Link ra kênh tự gắn `utm_source=luyen-narabe` và `utm_medium` theo vị trí (`home`, `ket-qua`, `live-home`, `live-setup`).

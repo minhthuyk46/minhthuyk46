@@ -165,12 +165,17 @@ footer{color:var(--muted);font-size:12px;text-align:center;margin-top:22px}
 .live{display:flex;align-items:center;gap:16px;flex-wrap:wrap;text-align:left;background:var(--orange);color:#2B1D16;
   border:2px solid #2B1D16;border-radius:28px;padding:16px 20px;margin-bottom:22px;box-shadow:6px 6px 0 var(--shadow)}
 .live .badge{display:inline-flex;align-items:center;gap:6px;background:#2B1D16;color:#FFF6EE;border-radius:999px;padding:2px 12px;font-size:12px;font-weight:700;letter-spacing:.08em}
-.live .badge i{width:8px;height:8px;border-radius:50%;background:#F3A41D;animation:blink 1.2s infinite}
+.live .badge i{width:8px;height:8px;border-radius:50%;background:#F3A41D}
+/* ảnh cô Thuỳ: khung tròn, viền nâu mực, bóng đổ cứng */
+.av{flex:none;border-radius:50%;border:2.5px solid var(--edge);box-shadow:3px 3px 0 var(--shadow);background:var(--peach);object-fit:cover}
+.social .av{width:84px;height:84px}.social.slim .av{width:56px;height:56px}
+.live .av{width:64px;height:64px;border-color:#2B1D16;box-shadow:3px 3px 0 #2B1D16}
+.live.on .badge{background:#B3261E}.live.on .badge i{background:#FFF6EE;animation:blink 1.2s infinite}
 @keyframes blink{50%{opacity:.25}}
 .live .txt{flex:1;min-width:220px}
 .live .txt b{display:block;font-size:17px;margin-top:6px}.live .txt span{font-size:14px}
 .live .btn{background:#FFF6EE;color:#2B1D16;border-color:#2B1D16;text-decoration:none}
-@media (prefers-reduced-motion:reduce){.live .badge i{animation:none}}
+@media (prefers-reduced-motion:reduce){.live.on .badge i{animation:none}}
 </style>
 </head>
 <body>
@@ -530,14 +535,21 @@ function socialHTML(place,slim){
   const s=CFG.social;if(!s||!s.links?.length)return'';
   const txt=slim?(sess&&sess.answers.every(a=>a.ok)?`<b>Làm tốt lắm! 🎉</b><span>Theo dõi cô Thuỳ để luyện tiếp các mẹo làm bài ★ và đề mới.</span>`:`<b>Muốn hiểu sâu hơn các câu vừa sai?</b><span>Xem cô Thuỳ giải thích mẹo làm bài ★ trên kênh của cô.</span>`)
                :`<b>${esc(s.name)}</b><span>${esc(s.tagline||'')}</span>`;
-  return `<div class="txt">${txt}</div><div class="links">${s.links.map(l=>
+  const av=s.avatar?`<img class="av" src="${esc(s.avatar)}" alt="${esc(s.name)}" width="${slim?56:84}" height="${slim?56:84}">`:'';
+  return `${av}<div class="txt">${txt}</div><div class="links">${s.links.map(l=>
     `<a class="btn sbtn" href="${esc(utmLink(l.url,place))}" target="_blank" rel="noopener">${ICON[l.type]||''}${esc(l.label)}${slim?'':` <small>${esc(l.handle||'')}</small>`}</a>`).join('')}</div>`;
+}
+function liveNow(v){ // tính theo giờ Việt Nam (UTC+7) bất kể máy người xem ở múi giờ nào
+  const d=new Date(Date.now()+7*36e5),day=d.getUTCDay(),m=d.getUTCHours()*60+d.getUTCMinutes();
+  const mm=t=>{const [h,mi]=String(t).split(':');return +h*60+(+mi||0)};
+  return (v.days||[]).includes(day)&&m>=mm(v.start)&&m<mm(v.end);
 }
 function liveHTML(place){
   const v=CFG.live;if(!v||!v.show)return'';
-  if(v.endsAt&&Date.now()>Date.parse(v.endsAt))return'';
-  return `<div class="live"><div class="txt"><span class="badge"><i></i>LIVE · ${esc(v.time||'')}</span><b>${esc(v.title)}</b><span>${esc(v.desc||'')}</span></div>
-    <a class="btn" href="${esc(utmLink(v.url,'live-'+place))}" target="_blank" rel="noopener">${esc(v.button||'Xem live')}</a></div>`;
+  const on=liveNow(v),av=CFG.social?.avatar;
+  return `<div class="live${on?' on':''}">${av?`<img class="av" src="${esc(av)}" alt="Thuỳ Sensei" width="64" height="64">`:''}
+    <div class="txt"><span class="badge"><i></i>${on?'ĐANG LIVE':'LIVE'}</span><b>${esc(v.title)}</b><span>🕓 ${esc(v.scheduleText||'')}</span></div>
+    <a class="btn" href="${esc(utmLink(on?v.url:(v.urlOff||v.url),'live-'+place))}" target="_blank" rel="noopener">${esc(on?v.button:(v.buttonOff||v.button))}</a></div>`;
 }
 function renderPromo(){
   const set=(id,h,cls)=>{const el=$(id);if(!el)return;el.innerHTML=h;if(cls!==undefined)el.className=h?cls:'';el.hidden=!h};
