@@ -15,6 +15,9 @@ for line in L:
   if not cur or not s or st is None: continue
   m=re.match(r'^([1-4])\.\s*(.+)$',s)
   if st in('stem','opt') and m and len(cur['options'])<4: cur['options'].append(m[2]);st='opt';continue
+  # dạng 1 dòng: ① A　② B　③ C　④ D
+  if st=='stem' and s.startswith('①') and '④' in s:
+    cur['options']=[x.strip() for x in re.split(r'[①②③④]',s)[1:]];st='exp';continue
   if st=='stem': cur['stem'].append(s);continue
   m=re.match(r'^Đáp án ★:\s*([1-4])',s)
   if m: cur['star']=int(m[1]);st='exp';continue
@@ -24,8 +27,15 @@ for line in L:
   if st=='full': cur['full'].append(s);continue
   if st=='after': cur['note'].append(s);continue
   m=re.match(r'^Thứ tự:\s*(.+?)\.\s*Đáp án',s)
-  if m: cur['order']=[C.index(c)+1 for c in m[1] if c in C];continue
-  cur['explain'].append(s)
+  if m:
+    cur['order']=[C.index(c)+1 for c in m[1] if c in C]
+    m2=re.search(r'Đáp án ★:\s*([①②③④1-4])',s)
+    if m2 and cur['star'] is None: cur['star']=C.index(m2[1])+1 if m2[1] in C else int(m2[1])
+    continue
+  cur['explain'].append(re.sub(r'^[•・\-]\s*','',s))
+# tách hội thoại A「…」 B「…」 nằm chung 1 dòng thành nhiều dòng
+sp=lambda ls:[y for x in ls for y in re.split(r'(?<=」)\s+(?=[A-Z男女][「])',x)]
+for q in qs: q['stem']=sp(q['stem']);q['full']=sp(q['full'])
 bad=[]
 for q in qs:
   stem='\n'.join(q['stem'])

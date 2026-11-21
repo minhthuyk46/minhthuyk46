@@ -1,0 +1,4988 @@
+[
+ {
+  "id": "N3-202607-1",
+  "level": "N3",
+  "exam": "2026-07",
+  "no": 1,
+  "stem": [
+   "自分にとってはストレスになる ＿＿ ＿＿ ★ ＿＿ わからない｡"
+  ],
+  "options": [
+   "ことでも",
+   "同じように感じる",
+   "ほかの人が",
+   "かどうか"
+  ],
+  "star": 2,
+  "order": [
+   1,
+   3,
+   2,
+   4
+  ],
+  "full": [
+   "自分にとってはストレスになることでもほかの人が同じように感じるかどうかわからない｡"
+  ],
+  "trans": "Điều gây căng thẳng cho mình, tôi không biết người khác có cảm thấy như vậy hay không.",
+  "explain": [
+   "Vị trí 1: ストレスになる＋ことでも; でも nêu sự nhượng bộ.",
+   "Vị trí 4: かどうか＋わからない; mẫu nghi vấn gián tiếp「～かどうかわからない」.",
+   "Hai vị trí giữa: ほかの人が＋同じように感じる＋かどうか; かどうか nối với わからない."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-202607-2",
+  "level": "N3",
+  "exam": "2026-07",
+  "no": 2,
+  "stem": [
+   "今日行われる予定だったマラソン大会が、昨日 ＿＿ ＿＿ ★ ＿＿ 中止になってしまった｡"
+  ],
+  "options": [
+   "の",
+   "から",
+   "で",
+   "大雪"
+  ],
+  "star": 4,
+  "order": [
+   2,
+   1,
+   4,
+   3
+  ],
+  "full": [
+   "今日行われる予定だったマラソン大会が、昨日からの大雪で中止になってしまった｡"
+  ],
+  "trans": "Cuộc thi marathon dự kiến diễn ra hôm nay đã bị hủy vì trận tuyết lớn từ hôm qua.",
+  "explain": [
+   "Vị trí 1: 昨日＋から＋の＋大雪 → 昨日からの bổ nghĩa cho 大雪.",
+   "Vị trí 4: 大雪＋で＋中止になった; で chỉ nguyên nhân.",
+   "Hai vị trí giữa: の＋大雪; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-202607-3",
+  "level": "N3",
+  "exam": "2026-07",
+  "no": 3,
+  "stem": [
+   "兄は数学が大好きで、 ＿＿ ＿＿ ★ ＿＿ はないとよく言っている｡"
+  ],
+  "options": [
+   "ほど",
+   "もの",
+   "面白い",
+   "数学"
+  ],
+  "star": 3,
+  "order": [
+   4,
+   1,
+   3,
+   2
+  ],
+  "full": [
+   "兄は数学が大好きで、数学ほど面白いものはないとよく言っている｡"
+  ],
+  "trans": "Anh trai tôi rất thích toán và hay nói không có gì thú vị bằng toán.",
+  "explain": [
+   "Vị trí 1: 数学＋ほど＋面白い → mẫu AほどB: thú vị như toán.",
+   "Vị trí 4: 面白い＋もの＋はない → ～ほど…ものはない.",
+   "Hai vị trí giữa: ほど＋面白い; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-202607-4",
+  "level": "N3",
+  "exam": "2026-07",
+  "no": 4,
+  "stem": [
+   "息子の誕生日に、前から欲しいと言っていたゲームをプレゼントした｡包みを開けて、 ＿＿ ＿＿ ★ ＿＿ 見て、私もうれしくなった｡"
+  ],
+  "options": [
+   "息子を",
+   "している",
+   "うれしそうな",
+   "顔を"
+  ],
+  "star": 2,
+  "order": [
+   3,
+   4,
+   2,
+   1
+  ],
+  "full": [
+   "息子の誕生日に、前から欲しいと言っていたゲームをプレゼントした｡包みを開けて、うれしそうな顔をしている息子を見て、私もうれしくなった｡"
+  ],
+  "trans": "Tôi tặng con trai trò chơi mà cháu muốn nhân sinh nhật. Nhìn vẻ mặt vui mừng của cháu khi mở quà, tôi cũng vui theo.",
+  "explain": [
+   "Vị trí 1: うれしそうな＋顔を＋している → cụm 顔をしている.",
+   "Vị trí 4: している＋息子を＋見て.",
+   "Hai vị trí giữa: 顔を＋している; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-202607-5",
+  "level": "N3",
+  "exam": "2026-07",
+  "no": 5,
+  "stem": [
+   "私の実家は、電車の駅からもバス停からも遠い ＿＿ ＿＿ ★ ＿＿ のに不便だ｡"
+  ],
+  "options": [
+   "と",
+   "ので",
+   "生活する",
+   "車やバイクがない"
+  ],
+  "star": 1,
+  "order": [
+   2,
+   4,
+   1,
+   3
+  ],
+  "full": [
+   "私の実家は、電車の駅からもバス停からも遠いので車やバイクがないと生活するのに不便だ｡"
+  ],
+  "trans": "Nhà bố mẹ tôi xa cả ga tàu lẫn bến xe buýt, nên nếu không có ô tô hay xe máy thì sinh hoạt bất tiện.",
+  "explain": [
+   "Vị trí 1: 遠い＋ので＋車やバイクがない → ので nêu nguyên nhân.",
+   "Vị trí 4: 車やバイクがない＋と＋生活する＋のに不便だ.",
+   "Hai vị trí giữa: 車やバイクがない＋と; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-202512-6",
+  "level": "N3",
+  "exam": "2025-12",
+  "no": 6,
+  "stem": [
+   "昨日、本屋で小説2冊 ＿＿ ＿＿ ★ ＿＿ 本を1冊買った。"
+  ],
+  "options": [
+   "と",
+   "の",
+   "について",
+   "レポートの書き方"
+  ],
+  "star": 3,
+  "order": [
+   1,
+   4,
+   3,
+   2
+  ],
+  "full": [
+   "昨日、本屋で小説2冊とレポートの書き方についての本を1冊買った。"
+  ],
+  "trans": "Hôm qua ở hiệu sách, tôi mua hai tiểu thuyết và một cuốn sách về cách viết báo cáo.",
+  "explain": [
+   "Vị trí 1: 小説2冊＋と＋レポートの書き方＋について → chủ đề của cuốn sách còn lại.",
+   "Vị trí 4: について＋の＋本を1冊.",
+   "Hai vị trí giữa: レポートの書き方＋について; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-202512-7",
+  "level": "N3",
+  "exam": "2025-12",
+  "no": 7,
+  "stem": [
+   "（道で）A「あの喫茶店、＿＿ ＿＿ ★ ＿＿ があるよ。入ってみない？」",
+   "B「いいね。」"
+  ],
+  "options": [
+   "で",
+   "か何か",
+   "テレビ",
+   "見たこと"
+  ],
+  "star": 1,
+  "order": [
+   3,
+   2,
+   1,
+   4
+  ],
+  "full": [
+   "（道で）A「あの喫茶店、テレビか何かで見たことがあるよ。入ってみない？」",
+   "B「いいね。」"
+  ],
+  "trans": "A nói hình như từng thấy quán cà phê ấy trên tivi hay đâu đó và rủ B vào thử. B đồng ý.",
+  "explain": [
+   "Vị trí 1: テレビ＋か何か＋で → テレビか何かで: trên truyền hình hay ở đâu đó.",
+   "Vị trí 4: で＋見たこと＋がある.",
+   "Hai vị trí giữa: か何か＋で; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-202512-8",
+  "level": "N3",
+  "exam": "2025-12",
+  "no": 8,
+  "stem": [
+   "半年前にギターを習い始めてから、毎日練習している。弾けば ＿＿ ＿＿ ★ ＿＿ 自分でもわかり、とても楽しい。"
+  ],
+  "options": [
+   "上手に",
+   "弾くほど",
+   "なっていくのが",
+   "弾けるように"
+  ],
+  "star": 4,
+  "order": [
+   2,
+   1,
+   4,
+   3
+  ],
+  "full": [
+   "半年前にギターを習い始めてから、毎日練習している。弾けば弾くほど上手に弾けるようになっていくのが自分でもわかり、とても楽しい。"
+  ],
+  "trans": "Từ khi học guitar nửa năm trước, tôi luyện tập mỗi ngày. Càng chơi càng nhận ra mình dần chơi giỏi hơn, nên rất vui.",
+  "explain": [
+   "Vị trí 1: 弾けば＋弾くほど → mẫu ～ば～ほど.",
+   "Vị trí 4: 上手に＋弾けるように＋なっていくのが.",
+   "Hai vị trí giữa: 上手に＋弾けるように; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-202512-9",
+  "level": "N3",
+  "exam": "2025-12",
+  "no": 9,
+  "stem": [
+   "今の会社に就職したときに、北町で一人暮らしを始めた。会社から遠い ＿＿ ＿＿ ★ ＿＿ からだ。"
+  ],
+  "options": [
+   "北町を選んだ",
+   "のは",
+   "ずっと北町に住んでみたかった",
+   "のに"
+  ],
+  "star": 2,
+  "order": [
+   4,
+   1,
+   2,
+   3
+  ],
+  "full": [
+   "今の会社に就職したときに、北町で一人暮らしを始めた。会社から遠いのに北町を選んだのはずっと北町に住んでみたかったからだ。"
+  ],
+  "trans": "Khi vào công ty hiện tại tôi bắt đầu sống một mình ở Kitamachi. Dù xa công ty, tôi chọn nơi này vì từ lâu đã muốn thử sống ở đây.",
+  "explain": [
+   "Vị trí 1: 会社から遠い＋のに＋北町を選んだ → đối lập giữa xa công ty và lựa chọn.",
+   "Vị trí 4: 北町を選んだ＋のは＋ずっと北町に住んでみたかった＋からだ.",
+   "Hai vị trí giữa: 北町を選んだ＋のは; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-202512-10",
+  "level": "N3",
+  "exam": "2025-12",
+  "no": 10,
+  "stem": [
+   "お風呂は家の中でも特にかびが生えやすい場所だ。かびを防ぐ ＿＿ ＿＿ ★ ＿＿ 重要らしい。"
+  ],
+  "options": [
+   "ことが",
+   "使った後",
+   "ぬれたままにしない",
+   "ためには"
+  ],
+  "star": 3,
+  "order": [
+   4,
+   2,
+   3,
+   1
+  ],
+  "full": [
+   "お風呂は家の中でも特にかびが生えやすい場所だ。かびを防ぐためには使った後ぬれたままにしないことが重要らしい。"
+  ],
+  "trans": "Phòng tắm là nơi rất dễ có nấm mốc trong nhà. Để ngăn mốc, điều quan trọng là sau khi dùng không để nó ướt nguyên như vậy.",
+  "explain": [
+   "Vị trí 1: かびを防ぐ＋ためには → mẫu ～ためには.",
+   "Vị trí 4: 使った後＋ぬれたままにしない＋ことが＋重要.",
+   "Hai vị trí giữa: 使った後＋ぬれたままにしない; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-202507-11",
+  "level": "N3",
+  "exam": "2025-07",
+  "no": 11,
+  "stem": [
+   "今年の夏も暑いが、＿＿ ＿＿ ★ ＿＿ ずっと涼しく感じる。"
+  ],
+  "options": [
+   "異常な",
+   "比べると",
+   "暑さだった",
+   "去年の夏に"
+  ],
+  "star": 4,
+  "order": [
+   1,
+   3,
+   4,
+   2
+  ],
+  "full": [
+   "今年の夏も暑いが、異常な暑さだった去年の夏に比べるとずっと涼しく感じる。"
+  ],
+  "trans": "Mùa hè năm nay cũng nóng, nhưng so với mùa hè năm ngoái nóng bất thường thì tôi thấy mát hơn nhiều.",
+  "explain": [
+   "Vị trí 1: 異常な＋暑さだった＋去年の夏に → mệnh đề bổ nghĩa cho 去年の夏.",
+   "Vị trí 4: 去年の夏に＋比べると＋ずっと涼しく感じる.",
+   "Hai vị trí giữa: 暑さだった＋去年の夏に; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-202507-12",
+  "level": "N3",
+  "exam": "2025-07",
+  "no": 12,
+  "stem": [
+   "初めてアルバイトをして、お金を稼ぐ＿＿ ＿＿ ★ ＿＿ わかった。"
+  ],
+  "options": [
+   "ことか",
+   "大変な",
+   "ことが",
+   "どれだけ"
+  ],
+  "star": 2,
+  "order": [
+   3,
+   4,
+   2,
+   1
+  ],
+  "full": [
+   "初めてアルバイトをして、お金を稼ぐことがどれだけ大変なことかわかった。"
+  ],
+  "trans": "Lần đầu đi làm thêm, tôi hiểu kiếm tiền vất vả đến mức nào.",
+  "explain": [
+   "Vị trí 1: 稼ぐ＋ことが＋どれだけ → ことが danh từ hóa việc kiếm tiền.",
+   "Vị trí 4: どれだけ＋大変な＋ことか＋わかった → ～どれだけ…ことか.",
+   "Hai vị trí giữa: どれだけ＋大変な; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-202507-13",
+  "level": "N3",
+  "exam": "2025-07",
+  "no": 13,
+  "stem": [
+   "今日、昼食の後、図書館へ行って本を読んでいたら＿＿ ＿＿ ★ ＿＿ 。"
+  ],
+  "options": [
+   "ので",
+   "外が暗くなっていた",
+   "驚いた",
+   "いつのまにか"
+  ],
+  "star": 1,
+  "order": [
+   4,
+   2,
+   1,
+   3
+  ],
+  "full": [
+   "今日、昼食の後、図書館へ行って本を読んでいたらいつのまにか外が暗くなっていたので驚いた。"
+  ],
+  "trans": "Hôm nay sau bữa trưa, khi tôi đến thư viện đọc sách thì trời đã tối lúc nào không hay, khiến tôi ngạc nhiên.",
+  "explain": [
+   "Vị trí 1: 読んでいたら＋いつのまにか＋外が暗くなっていた.",
+   "Vị trí 4: 暗くなっていた＋ので＋驚いた.",
+   "Hai vị trí giữa: 外が暗くなっていた＋ので; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-202507-14",
+  "level": "N3",
+  "exam": "2025-07",
+  "no": 14,
+  "stem": [
+   "このチーズケーキの＿＿ ＿＿ ★ ＿＿、誰でも簡単に作れると思う。"
+  ],
+  "options": [
+   "だから",
+   "作り方は",
+   "だけ",
+   "材料を混ぜて冷やす"
+  ],
+  "star": 3,
+  "order": [
+   2,
+   4,
+   3,
+   1
+  ],
+  "full": [
+   "このチーズケーキの作り方は材料を混ぜて冷やすだけだから、誰でも簡単に作れると思う。"
+  ],
+  "trans": "Cách làm bánh phô mai này chỉ là trộn nguyên liệu rồi làm lạnh, nên tôi nghĩ ai cũng dễ làm.",
+  "explain": [
+   "Vị trí 1: ケーキの＋作り方は＋材料を混ぜて冷やす → nêu cách làm.",
+   "Vị trí 4: 混ぜて冷やす＋だけ＋だから.",
+   "Hai vị trí giữa: 材料を混ぜて冷やす＋だけ; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-202507-15",
+  "level": "N3",
+  "exam": "2025-07",
+  "no": 15,
+  "stem": [
+   "A「あさってのサッカーの試合、応援に行くね。天気予報では曇りと言っていたけど、雨だったら中止になる？」",
+   "B「ありがとう。もし＿＿ ＿＿ ★ ＿＿、応援には無理して来なくてもいいよ。」"
+  ],
+  "options": [
+   "雨が降ったら",
+   "試合は",
+   "雨が降ったとしても",
+   "中止にならないんだけど"
+  ],
+  "star": 4,
+  "order": [
+   3,
+   2,
+   4,
+   1
+  ],
+  "full": [
+   "A「あさってのサッカーの試合、応援に行くね。天気予報では曇りと言っていたけど、雨だったら中止になる？」",
+   "B「ありがとう。もし雨が降ったとしても試合は中止にならないんだけど雨が降ったら、応援には無理して来なくてもいいよ。」"
+  ],
+  "trans": "B cảm ơn vì A định đi cổ vũ. Dù trời mưa trận đấu không bị hủy, nhưng nếu mưa thì A không cần cố đến.",
+  "explain": [
+   "Vị trí 1: もし＋雨が降ったとしても＋試合は → ～としても nêu điều kiện nhượng bộ.",
+   "Vị trí 4: 試合は＋中止にならないんだけど＋雨が降ったら → lời nhắc người xem không cần cố đến.",
+   "Hai vị trí giữa: 試合は＋中止にならないんだけど; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-202412-16",
+  "level": "N3",
+  "exam": "2024-12",
+  "no": 16,
+  "stem": [
+   "山川大学では、＿＿ ＿＿ ★ ＿＿新入生にアンケート調査を行っている。"
+  ],
+  "options": [
+   "大学生活",
+   "持っている",
+   "に対して",
+   "イメージ"
+  ],
+  "star": 2,
+  "order": [
+   1,
+   3,
+   2,
+   4
+  ],
+  "full": [
+   "山川大学では、大学生活に対して持っているイメージ［について］新入生にアンケート調査を行っている。"
+  ],
+  "trans": "Đại học Yamakawa đang khảo sát tân sinh viên về hình dung của họ đối với đời sống đại học.",
+  "explain": [
+   "Vị trí 1: 大学生活＋に対して＋持っている → に対して chỉ đối tượng của ấn tượng.",
+   "Vị trí 4: 持っている＋イメージ; sau イメージ cần từ nối trước「新入生にアンケート調査」, nhưng đề nguồn thiếu.",
+   "Hai vị trí giữa: に対して＋持っている; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-202412-17",
+  "level": "N3",
+  "exam": "2024-12",
+  "no": 17,
+  "stem": [
+   "来週の夫の誕生日には、＿＿ ＿＿ ★ ＿＿つもりだ。"
+  ],
+  "options": [
+   "最近",
+   "プレゼントする",
+   "かばんを",
+   "欲しがっている"
+  ],
+  "star": 3,
+  "order": [
+   1,
+   4,
+   3,
+   2
+  ],
+  "full": [
+   "来週の夫の誕生日には、最近欲しがっているかばんをプレゼントするつもりだ。"
+  ],
+  "trans": "Vào sinh nhật chồng tuần tới, tôi định tặng anh ấy chiếc cặp mà gần đây anh ấy muốn có.",
+  "explain": [
+   "Vị trí 1: 最近＋欲しがっている＋かばんを → 欲しがっている bổ nghĩa cho かばん.",
+   "Vị trí 4: かばんを＋プレゼントする＋つもりだ.",
+   "Hai vị trí giữa: 欲しがっている＋かばんを; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-202412-18",
+  "level": "N3",
+  "exam": "2024-12",
+  "no": 18,
+  "stem": [
+   "私は、健康の＿＿ ＿＿ ★ ＿＿。"
+  ],
+  "options": [
+   "している",
+   "ために",
+   "毎日8時間以上寝る",
+   "ように"
+  ],
+  "star": 4,
+  "order": [
+   2,
+   3,
+   4,
+   1
+  ],
+  "full": [
+   "私は、健康のために毎日8時間以上寝るようにしている。"
+  ],
+  "trans": "Vì sức khỏe, tôi cố gắng ngủ ít nhất tám tiếng mỗi ngày.",
+  "explain": [
+   "Vị trí 1: 健康の＋ために＋毎日8時間以上寝る → vì sức khỏe.",
+   "Vị trí 4: 寝る＋ように＋している → ～ようにしている.",
+   "Hai vị trí giữa: 毎日8時間以上寝る＋ように; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-202412-19",
+  "level": "N3",
+  "exam": "2024-12",
+  "no": 19,
+  "stem": [
+   "部長が＿＿ ＿＿ ★ ＿＿クッキーがとてもおいしいので、私も東京に行くことがあったら、買おうと思う。"
+  ],
+  "options": [
+   "たびに",
+   "買ってきてくれる",
+   "お土産の",
+   "東京へ出張に行く"
+  ],
+  "star": 2,
+  "order": [
+   4,
+   1,
+   2,
+   3
+  ],
+  "full": [
+   "部長が東京へ出張に行くたびに買ってきてくれるお土産のクッキーがとてもおいしいので、私も東京に行くことがあったら、買おうと思う。"
+  ],
+  "trans": "Bánh quy trưởng phòng mua về làm quà mỗi lần đi công tác Tokyo rất ngon; nếu có dịp đến Tokyo tôi cũng muốn mua.",
+  "explain": [
+   "Vị trí 1: 東京へ出張に行く＋たびに＋買ってきてくれる → ～たびに.",
+   "Vị trí 4: 買ってきてくれる＋お土産の＋クッキー.",
+   "Hai vị trí giữa: たびに＋買ってきてくれる; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-202412-20",
+  "level": "N3",
+  "exam": "2024-12",
+  "no": 20,
+  "stem": [
+   "私はこの図書館が好きだ。広くて本の数が多い＿＿ ＿＿ ★ ＿＿いい。"
+  ],
+  "options": [
+   "景色を楽しみながら",
+   "大きな窓から海が見えて",
+   "だけでなく",
+   "読書ができるのも"
+  ],
+  "star": 1,
+  "order": [
+   3,
+   2,
+   1,
+   4
+  ],
+  "full": [
+   "私はこの図書館が好きだ。広くて本の数が多いだけでなく大きな窓から海が見えて景色を楽しみながら読書ができるのもいい。"
+  ],
+  "trans": "Tôi thích thư viện này. Nơi đây rộng, nhiều sách; lại có cửa sổ lớn nhìn ra biển nên được vừa ngắm cảnh vừa đọc sách.",
+  "explain": [
+   "Vị trí 1: 本の数が多い＋だけでなく＋大きな窓から海が見えて.",
+   "Vị trí 4: 景色を楽しみながら＋読書ができるのも＋いい.",
+   "Hai vị trí giữa: 大きな窓から海が見えて＋景色を楽しみながら; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-202407-21",
+  "level": "N3",
+  "exam": "2024-07",
+  "no": 21,
+  "stem": [
+   "朝、近所のパン屋の前を通ると、パン ＿＿ ＿＿ ★ ＿＿する。"
+  ],
+  "options": [
+   "が",
+   "焼ける",
+   "の",
+   "いいにおい"
+  ],
+  "star": 4,
+  "order": [
+   3,
+   2,
+   4,
+   1
+  ],
+  "full": [
+   "朝、近所のパン屋の前を通ると、パンの焼けるいいにおいがする。"
+  ],
+  "trans": "Buổi sáng đi ngang tiệm bánh gần nhà, tôi ngửi thấy mùi bánh nướng thơm.",
+  "explain": [
+   "Vị trí 1: パン＋の＋焼ける＋いいにおい → mùi thơm của bánh đang nướng.",
+   "Vị trí 4: いいにおい＋が＋する → ～においがする.",
+   "Hai vị trí giữa: 焼ける＋いいにおい; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-202407-22",
+  "level": "N3",
+  "exam": "2024-07",
+  "no": 22,
+  "stem": [
+   "平日はなかなか運動する時間がないので、日常生活の中で、エレベーターではなくて階段を ＿＿ ＿＿ ★ ＿＿ とかしている。"
+  ],
+  "options": [
+   "とか",
+   "歩く",
+   "使う",
+   "スピードを速くする"
+  ],
+  "star": 2,
+  "order": [
+   3,
+   1,
+   2,
+   4
+  ],
+  "full": [
+   "平日はなかなか運動する時間がないので、日常生活の中で、エレベーターではなくて階段を使うとか歩くスピードを速くするとかしている。"
+  ],
+  "trans": "Ngày thường tôi khó có thời gian tập thể dục, nên trong sinh hoạt hằng ngày tôi dùng cầu thang thay thang máy hoặc đi nhanh hơn.",
+  "explain": [
+   "Vị trí 1: 階段を＋使う＋とか → nêu một cách vận động.",
+   "Vị trí 4: 歩く＋スピードを速くする＋とかしている.",
+   "Hai vị trí giữa: とか＋歩く; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-202407-23",
+  "level": "N3",
+  "exam": "2024-07",
+  "no": 23,
+  "stem": [
+   "森田「西山さん、新しいアルバイトはどうですか。」 西山「始めた＿＿ ＿＿ ★ ＿＿ 大変ですが、楽しいです。」"
+  ],
+  "options": [
+   "多くて",
+   "覚えなければいけない",
+   "ことが",
+   "ばかりなので"
+  ],
+  "star": 3,
+  "order": [
+   4,
+   2,
+   3,
+   1
+  ],
+  "full": [
+   "森田「西山さん、新しいアルバイトはどうですか。」 西山「始めたばかりなので覚えなければいけないことが多くて大変ですが、楽しいです。」"
+  ],
+  "trans": "Nishiyama nói công việc làm thêm mới khá vất vả vì vừa bắt đầu, có nhiều thứ phải nhớ, nhưng cũng vui.",
+  "explain": [
+   "Vị trí 1: 始めた＋ばかりなので → ～たばかり: mới bắt đầu.",
+   "Vị trí 4: 覚えなければいけない＋ことが＋多くて＋大変.",
+   "Hai vị trí giữa: 覚えなければいけない＋ことが; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-202407-24",
+  "level": "N3",
+  "exam": "2024-07",
+  "no": 24,
+  "stem": [
+   "初めて登山をしたとき、山の上からの景色を見て、「 ＿＿ ＿＿ ★ ＿＿ 」と感動した。"
+  ],
+  "options": [
+   "きれいな",
+   "なんて",
+   "なんだろう",
+   "眺め"
+  ],
+  "star": 4,
+  "order": [
+   2,
+   1,
+   4,
+   3
+  ],
+  "full": [
+   "初めて登山をしたとき、山の上からの景色を見て、「なんてきれいな眺めなんだろう」と感動した。"
+  ],
+  "trans": "Lần đầu leo núi, nhìn cảnh từ trên đỉnh tôi xúc động thốt lên: Cảnh đẹp biết bao.",
+  "explain": [
+   "Vị trí 1: なんて＋きれいな＋眺め → cảm thán なんて.",
+   "Vị trí 4: 眺め＋なんだろう → ～なんだろう.",
+   "Hai vị trí giữa: きれいな＋眺め; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-202407-25",
+  "level": "N3",
+  "exam": "2024-07",
+  "no": 25,
+  "stem": [
+   "(会社で) 田中「ねえ、知ってる? 営業課の山下さん、来月 ＿＿ ＿＿ ★ ＿＿。」 石川 「え、そうなんだ。 知らなかった。」"
+  ],
+  "options": [
+   "結婚するんだ",
+   "って",
+   "と",
+   "受付の林さん"
+  ],
+  "star": 1,
+  "order": [
+   4,
+   3,
+   1,
+   2
+  ],
+  "full": [
+   "(会社で) 田中「ねえ、知ってる? 営業課の山下さん、来月受付の林さんと結婚するんだって。」 石川 「え、そうなんだ。 知らなかった。」"
+  ],
+  "trans": "Ở công ty, Tanaka nói với Ishikawa rằng tháng sau Yamashita ở bộ phận kinh doanh sẽ cưới Hayashi ở quầy lễ tân.",
+  "explain": [
+   "Vị trí 1: 受付の林さん＋と＋結婚するんだ → と chỉ người kết hôn cùng.",
+   "Vị trí 4: 結婚するんだ＋って → って thuật lại tin nghe được.",
+   "Hai vị trí giữa: と＋結婚するんだ; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-202312-26",
+  "level": "N3",
+  "exam": "2023-12",
+  "no": 26,
+  "stem": [
+   "私は歌手の石川あかりが大好きだ。彼女 ★ ＿＿ ＿＿ ＿＿ いないと思う。"
+  ],
+  "options": [
+   "声がきれいな",
+   "は",
+   "歌手",
+   "ほど"
+  ],
+  "star": 4,
+  "order": [
+   4,
+   1,
+   3,
+   2
+  ],
+  "full": [
+   "私は歌手の石川あかりが大好きだ。彼女ほど声がきれいな歌手はいないと思う。"
+  ],
+  "trans": "Tôi rất thích ca sĩ Ishikawa Akari. Tôi nghĩ chẳng có ca sĩ nào có giọng đẹp bằng cô ấy.",
+  "explain": [
+   "Vị trí 1: 彼女＋ほど＋声がきれいな → mẫu ～ほど…はない.",
+   "Vị trí 4: 声がきれいな＋歌手＋は＋いない.",
+   "Hai vị trí giữa: 声がきれいな＋歌手; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 0
+ },
+ {
+  "id": "N3-202312-27",
+  "level": "N3",
+  "exam": "2023-12",
+  "no": 27,
+  "stem": [
+   "最近は野菜や魚などの食料品も ＿＿ ＿＿ ★ ＿＿、ニュースで知った。"
+  ],
+  "options": [
+   "人が",
+   "増えてきている",
+   "インターネットで買う",
+   "ということを"
+  ],
+  "star": 2,
+  "order": [
+   3,
+   1,
+   2,
+   4
+  ],
+  "full": [
+   "最近は野菜や魚などの食料品もインターネットで買う人が増えてきているということを、ニュースで知った。"
+  ],
+  "trans": "Tôi biết qua tin tức rằng gần đây số người mua rau, cá và thực phẩm khác qua mạng đang tăng.",
+  "explain": [
+   "Vị trí 1: 食料品も＋インターネットで買う＋人が → mệnh đề bổ nghĩa cho 人.",
+   "Vị trí 4: 人が＋増えてきている＋ということを＋ニュースで知った.",
+   "Hai vị trí giữa: 人が＋増えてきている; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-202312-28",
+  "level": "N3",
+  "exam": "2023-12",
+  "no": 28,
+  "stem": [
+   "(大学で) 中山「林先輩、ゼミの発表で使う資料を作ったんですが、 ＿＿ ＿＿ ★ ＿＿でしょうか。」 林「いいですよ。」"
+  ],
+  "options": [
+   "もらえない",
+   "ところがあるので",
+   "一度チェックして",
+   "自信がない"
+  ],
+  "star": 3,
+  "order": [
+   4,
+   2,
+   3,
+   1
+  ],
+  "full": [
+   "(大学で) 中山「林先輩、ゼミの発表で使う資料を作ったんですが、自信がないところがあるので一度チェックしてもらえないでしょうか。」 林「いいですよ。」"
+  ],
+  "trans": "Nakayama nhờ anh/chị khóa trên Hayashi xem giúp một lần tài liệu dùng để thuyết trình vì có chỗ mình chưa tự tin.",
+  "explain": [
+   "Vị trí 1: 自信がない＋ところがあるので → có phần chưa tự tin.",
+   "Vị trí 4: 一度チェックして＋もらえない＋でしょうか → cách nhờ lịch sự.",
+   "Hai vị trí giữa: ところがあるので＋一度チェックして; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-202312-29",
+  "level": "N3",
+  "exam": "2023-12",
+  "no": 29,
+  "stem": [
+   "今朝は急いでいたから、＿＿ ＿＿ ★ ＿＿しまった。"
+  ],
+  "options": [
+   "玄関の電気を消すのを",
+   "きて",
+   "家を出て",
+   "忘れて"
+  ],
+  "star": 3,
+  "order": [
+   1,
+   4,
+   3,
+   2
+  ],
+  "full": [
+   "今朝は急いでいたから、玄関の電気を消すのを忘れて家を出てきてしまった。"
+  ],
+  "trans": "Sáng nay vì vội, tôi ra khỏi nhà mà quên tắt đèn ở lối vào.",
+  "explain": [
+   "Vị trí 1: 電気を消すのを＋忘れて＋家を出て → quên tắt đèn rồi rời nhà.",
+   "Vị trí 4: 家を出て＋きて＋しまった → ～てきてしまった.",
+   "Hai vị trí giữa: 忘れて＋家を出て; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-202312-30",
+  "level": "N3",
+  "exam": "2023-12",
+  "no": 30,
+  "stem": [
+   "読書が趣味の友人は、いつどんな本を読んだかを ＿＿ ＿＿ ★ ＿＿そうだ。"
+  ],
+  "options": [
+   "必ずノートに記録する",
+   "忘れない",
+   "ように",
+   "ことにしている"
+  ],
+  "star": 1,
+  "order": [
+   2,
+   3,
+   1,
+   4
+  ],
+  "full": [
+   "読書が趣味の友人は、いつどんな本を読んだかを忘れないように必ずノートに記録することにしているそうだ。"
+  ],
+  "trans": "Người bạn mê đọc sách của tôi nói rằng mình luôn ghi vào sổ đã đọc sách nào vào lúc nào để khỏi quên.",
+  "explain": [
+   "Vị trí 1: 忘れない＋ように＋必ずノートに記録する → ～ように chỉ mục đích.",
+   "Vị trí 4: 記録する＋ことにしている → duy trì quyết định.",
+   "Hai vị trí giữa: ように＋必ずノートに記録する; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-202307-31",
+  "level": "N3",
+  "exam": "2023-07",
+  "no": 31,
+  "stem": [
+   "パソコンや携帯電話の＿＿ ★ ＿＿ ＿＿ 原因で、頭が痛くなることもあるそうだ。"
+  ],
+  "options": [
+   "が",
+   "による",
+   "見すぎ",
+   "目の疲れ"
+  ],
+  "star": 2,
+  "order": [
+   3,
+   2,
+   4,
+   1
+  ],
+  "full": [
+   "パソコンや携帯電話の見すぎによる目の疲れが原因で、頭が痛くなることもあるそうだ。"
+  ],
+  "trans": "Nghe nói xem máy tính, điện thoại quá nhiều gây mỏi mắt, và vì vậy có khi đau đầu.",
+  "explain": [
+   "Vị trí 1: 見すぎ＋による＋目の疲れ; による bổ nghĩa cho danh từ ngay sau.",
+   "Vị trí 4: 目の疲れ＋が＋原因; が nêu chủ ngữ của 原因.",
+   "Hai vị trí giữa: による＋目の疲れ; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 1
+ },
+ {
+  "id": "N3-202307-32",
+  "level": "N3",
+  "exam": "2023-07",
+  "no": 32,
+  "stem": [
+   "私は子供の時、ピアノを習っていたが、３年でやめてしまった。何回＿＿ ＿＿ ★ ＿＿、いやになってしまったのだ。"
+  ],
+  "options": [
+   "上手に弾けない",
+   "練習しても",
+   "なかなか",
+   "曲があって"
+  ],
+  "star": 1,
+  "order": [
+   2,
+   3,
+   1,
+   4
+  ],
+  "full": [
+   "私は子供の時、ピアノを習っていたが、３年でやめてしまった。何回練習してもなかなか上手に弾けない曲があって、いやになってしまったのだ。"
+  ],
+  "trans": "Hồi nhỏ tôi học piano nhưng bỏ sau ba năm; có những bài dù tập bao lần vẫn không chơi giỏi được nên tôi nản.",
+  "explain": [
+   "Vị trí 1: 何回＋練習しても; ても nêu nhượng bộ “dù luyện bao nhiêu lần”.",
+   "Vị trí 4: 曲があって＋、いやになってしまったのだ。; nối trực tiếp với phần sau chỗ trống.",
+   "Hai vị trí giữa: なかなか＋上手に弾けない＋曲があって; なかなか đi với phủ định, 曲 là chủ ngữ của あって."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-202307-33",
+  "level": "N3",
+  "exam": "2023-07",
+  "no": 33,
+  "stem": [
+   "失敗をすることは誰にでもある。大切な ＿＿ ＿＿ ★ ＿＿ 考えて、同じ失敗を繰り返さないようにすることだ。"
+  ],
+  "options": [
+   "失敗をしてしまった",
+   "どうして",
+   "のか",
+   "のは"
+  ],
+  "star": 1,
+  "order": [
+   4,
+   2,
+   1,
+   3
+  ],
+  "full": [
+   "失敗をすることは誰にでもある。大切なのはどうして失敗をしてしまったのか考えて、同じ失敗を繰り返さないようにすることだ。"
+  ],
+  "trans": "Ai cũng có lúc thất bại. Điều quan trọng là nghĩ xem vì sao mình đã thất bại để không lặp lại lỗi ấy.",
+  "explain": [
+   "Vị trí 1: 大切な＋のは; mẫu 大切なのは〜ことだ.",
+   "Vị trí 4: のか＋考えて、同じ失敗を繰り返さないようにすることだ。; nối trực tiếp với phần sau chỗ trống.",
+   "Hai vị trí giữa: どうして＋失敗をしてしまった＋のか; cụm nghi vấn gián tiếp bổ nghĩa nội dung cần suy nghĩ."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-202307-34",
+  "level": "N3",
+  "exam": "2023-07",
+  "no": 34,
+  "stem": [
+   "（教室で） 南「西川さんの誕生日に、何かプレゼントをあげない？」 森「いいね。スポーツが好きだと言っていた ＿＿ ＿＿ ★ ＿＿？」"
+  ],
+  "options": [
+   "いいんじゃない",
+   "から",
+   "とか",
+   "タオル"
+  ],
+  "star": 3,
+  "order": [
+   2,
+   4,
+   3,
+   1
+  ],
+  "full": [
+   "（教室で） 南「西川さんの誕生日に、何かプレゼントをあげない？」 森「いいね。スポーツが好きだと言っていたからタオルとかいいんじゃない？」"
+  ],
+  "trans": "Vì Nishikawa nói thích thể thao, tặng khăn chẳng hạn có được không?",
+  "explain": [
+   "Vị trí 1: 言っていた＋から; から nêu lý do gợi ý quà.",
+   "Vị trí 4: タオル＋とか＋いいんじゃない; とか nêu ví dụ, いいんじゃない là lời gợi ý.",
+   "Hai vị trí giữa: タオル＋とか; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-202307-35",
+  "level": "N3",
+  "exam": "2023-07",
+  "no": 35,
+  "stem": [
+   "（講演会で） 司会者「本日は、鳥の＿＿ ＿＿ ★ ＿＿ 見ることができる様々な鳥について、お話をしていただきます。」"
+  ],
+  "options": [
+   "専門家で",
+   "都会で",
+   "いらっしゃる",
+   "山下花子先生に"
+  ],
+  "star": 4,
+  "order": [
+   1,
+   3,
+   4,
+   2
+  ],
+  "full": [
+   "（講演会で） 司会者「本日は、鳥の専門家でいらっしゃる山下花子先生に都会で見ることができる様々な鳥について、お話をしていただきます。」"
+  ],
+  "trans": "Hôm nay, chúng ta sẽ nghe cô Yamashita Hanako, chuyên gia về chim, nói về các loài chim có thể thấy ở đô thị.",
+  "explain": [
+   "Vị trí 1: 鳥の＋専門家で＋いらっしゃる; でいらっしゃる là cách nói kính ngữ của である.",
+   "Vị trí 4: 都会で＋見ることができる様々な鳥について、お話をしていた; nối trực tiếp với phần sau chỗ trống.",
+   "Hai vị trí giữa: 山下花子先生に＋都会で＋見ることができる; に đánh dấu người phát biểu, 都会で chỉ nơi quan sát."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-202212-36",
+  "level": "N3",
+  "exam": "2022-12",
+  "no": 36,
+  "stem": [
+   "留学している息子＿＿ ＿＿ ★ ＿＿ 毎日楽しく過ごしていると書かれていて安心した。"
+  ],
+  "options": [
+   "メール",
+   "から",
+   "に",
+   "の"
+  ],
+  "star": 1,
+  "order": [
+   2,
+   4,
+   1,
+   3
+  ],
+  "full": [
+   "留学している息子からのメールに毎日楽しく過ごしていると書かれていて安心した。"
+  ],
+  "trans": "Tôi yên tâm vì trong thư của con trai đang du học có viết rằng ngày nào cháu cũng vui.",
+  "explain": [
+   "Vị trí 1: 息子＋から＋の＋メール; からの bổ nghĩa danh từ メール.",
+   "Vị trí 4: メール＋に＋書かれていて; に chỉ nơi ghi nội dung.",
+   "Hai vị trí giữa: の＋メール; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-202212-37",
+  "level": "N3",
+  "exam": "2022-12",
+  "no": 37,
+  "stem": [
+   "来週から1か月間、出張で東京に行く。東京には ＿＿ ＿＿ ★ ＿＿ 一緒に食事でもしたいと思う。"
+  ],
+  "options": [
+   "いるので",
+   "いる間に",
+   "友達が",
+   "東京に"
+  ],
+  "star": 4,
+  "order": [
+   3,
+   1,
+   4,
+   2
+  ],
+  "full": [
+   "来週から1か月間、出張で東京に行く。東京には友達がいるので東京にいる間に一緒に食事でもしたいと思う。"
+  ],
+  "trans": "Từ tuần sau tôi đi Tokyo công tác một tháng. Vì ở đó có bạn nên tôi muốn cùng ăn bữa nào đó khi còn ở Tokyo.",
+  "explain": [
+   "Vị trí 1: 東京には＋友達が＋いるので; が nêu người đang ở Tokyo, ので nêu lý do.",
+   "Vị trí 4: 東京に＋いる間に; にいる間に chỉ khoảng thời gian ở Tokyo.",
+   "Hai vị trí giữa: いるので＋東京に; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-202212-38",
+  "level": "N3",
+  "exam": "2022-12",
+  "no": 38,
+  "stem": [
+   "バイオリンが ＿＿ ＿＿ ★ ＿＿ こんなに面白い楽器はないと感じる。"
+  ],
+  "options": [
+   "1年前に習い始めたのだが",
+   "弾くほど",
+   "弾けば",
+   "弾けるようになりたくて"
+  ],
+  "star": 3,
+  "order": [
+   4,
+   1,
+   3,
+   2
+  ],
+  "full": [
+   "バイオリンが弾けるようになりたくて1年前に習い始めたのだが弾けば弾くほどこんなに面白い楽器はないと感じる。"
+  ],
+  "trans": "Muốn chơi được violin nên tôi bắt đầu học một năm trước; càng chơi càng thấy không có nhạc cụ nào thú vị đến thế.",
+  "explain": [
+   "Vị trí 1: バイオリンが＋弾けるようになりたくて; が gắn với thể khả năng 弾ける.",
+   "Vị trí 4: 弾けば＋弾くほど; mẫu ～ば～ほど chỉ mức độ tăng dần.",
+   "Hai vị trí giữa: 1年前に習い始めたのだが＋弾けば; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-202212-39",
+  "level": "N3",
+  "exam": "2022-12",
+  "no": 39,
+  "stem": [
+   "A「お誕生日おめでとう。これ、プレゼントだよ。」",
+   "B「わあ、かばんだ。ちょうど ＿＿ ＿＿ ★ ＿＿ んだ。ありがとう。」"
+  ],
+  "options": [
+   "こういう色の",
+   "欲しい",
+   "と思っていた",
+   "かばんが"
+  ],
+  "star": 2,
+  "order": [
+   1,
+   4,
+   2,
+   3
+  ],
+  "full": [
+   "A「お誕生日おめでとう。これ、プレゼントだよ。」",
+   "B「わあ、かばんだ。ちょうどこういう色のかばんが欲しいと思っていたんだ。ありがとう。」"
+  ],
+  "trans": "Ồ, một cái túi! Tôi đang muốn có một chiếc túi màu như thế này. Cảm ơn nhé.",
+  "explain": [
+   "Vị trí 1: こういう色の＋かばんが＋欲しい; danh từ かばん là đối tượng của 欲しい.",
+   "Vị trí 4: 欲しい＋と思っていた＋んだ; と思っていた diễn tả ý muốn đã có từ trước.",
+   "Hai vị trí giữa: かばんが＋欲しい; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-202212-40",
+  "level": "N3",
+  "exam": "2022-12",
+  "no": 40,
+  "stem": [
+   "都会と田舎には違うところも多いが、どちらも、人が働き、＿＿ ＿＿ ★ ＿＿。"
+  ],
+  "options": [
+   "という点で",
+   "違いは",
+   "生活している",
+   "ない"
+  ],
+  "star": 2,
+  "order": [
+   3,
+   1,
+   2,
+   4
+  ],
+  "full": [
+   "都会と田舎には違うところも多いが、どちらも、人が働き、生活しているという点で違いはない。"
+  ],
+  "trans": "Đô thị và nông thôn khác nhau nhiều điểm, nhưng về việc con người làm việc và sinh sống thì không có gì khác.",
+  "explain": [
+   "Vị trí 1: 生活している＋という点で; という点で nêu khía cạnh so sánh.",
+   "Vị trí 4: 違いは＋ない; は nêu chủ đề đối chiếu với ない.",
+   "Hai vị trí giữa: という点で＋違いは; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-202207-41",
+  "level": "N3",
+  "exam": "2022-07",
+  "no": 41,
+  "stem": [
+   "私は、森先生の授業を受けてから数学が好きになった。＿＿ ★ ＿＿ ＿＿いないと思う。"
+  ],
+  "options": [
+   "先生は",
+   "先生ほど",
+   "あの",
+   "分かりやすく教えてくれる"
+  ],
+  "star": 2,
+  "order": [
+   3,
+   2,
+   4,
+   1
+  ],
+  "full": [
+   "私は、森先生の授業を受けてから数学が好きになった。あの先生ほど分かりやすく教えてくれる先生はいないと思う。"
+  ],
+  "trans": "Từ khi học thầy Mori, tôi thích toán. Tôi nghĩ không có thầy nào dạy dễ hiểu như thầy ấy.",
+  "explain": [
+   "Vị trí 1: あの＋先生ほど＋分かりやすく教えてくれる; mẫu Nほど〜人はいない.",
+   "Vị trí 4: 先生は＋いない; 先生は主題, いない là vị ngữ.",
+   "Hai vị trí giữa: 先生ほど＋分かりやすく教えてくれる; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 1
+ },
+ {
+  "id": "N3-202207-42",
+  "level": "N3",
+  "exam": "2022-07",
+  "no": 42,
+  "stem": [
+   "今日はコーラを使った鶏肉の煮物を紹介します。鶏肉は＿＿ ＿＿ ★ ＿＿ 知っていますか?"
+  ],
+  "options": [
+   "煮ることで、",
+   "柔らかく",
+   "コーラで",
+   "なるのを"
+  ],
+  "star": 2,
+  "order": [
+   3,
+   1,
+   2,
+   4
+  ],
+  "full": [
+   "今日はコーラを使った鶏肉の煮物を紹介します。鶏肉はコーラで煮ることで、柔らかくなるのを知っていますか?"
+  ],
+  "trans": "Hôm nay tôi giới thiệu món gà nấu bằng cola. Bạn có biết nấu gà bằng cola thì thịt sẽ mềm không?",
+  "explain": [
+   "Vị trí 1: 鶏肉は＋コーラで＋煮ることで; で chỉ thứ dùng để nấu, ことで chỉ cách thức.",
+   "Vị trí 4: 柔らかく＋なるのを＋知っていますか; tính từ い đổi sang く trước なる, のを danh từ hóa.",
+   "Hai vị trí giữa: 煮ることで、＋柔らかく; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-202207-43",
+  "level": "N3",
+  "exam": "2022-07",
+  "no": 43,
+  "stem": [
+   "山下:今度北森町に行くんだけど、北森町のレストランでどこかいいところ知っている? 南:私はあまり知らないんだけど、田中さん＿＿ ＿＿ ★ ＿＿ どう?"
+  ],
+  "options": [
+   "が",
+   "聞いてみたら",
+   "から",
+   "北森町に住んでいる"
+  ],
+  "star": 3,
+  "order": [
+   1,
+   4,
+   3,
+   2
+  ],
+  "full": [
+   "山下:今度北森町に行くんだけど、北森町のレストランでどこかいいところ知っている? 南:私はあまり知らないんだけど、田中さんが北森町に住んでいるから聞いてみたらどう?"
+  ],
+  "trans": "Tôi không biết rõ, nhưng anh Tanaka sống ở Kitamori, sao bạn không thử hỏi anh ấy?",
+  "explain": [
+   "Vị trí 1: 田中さん＋が＋北森町に住んでいる＋から; が đánh dấu chủ ngữ, から nêu lý do.",
+   "Vị trí 4: 聞いてみたら＋どう?; mẫu ～てみたらどう? để gợi ý.",
+   "Hai vị trí giữa: 北森町に住んでいる＋から; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-202207-44",
+  "level": "N3",
+  "exam": "2022-07",
+  "no": 44,
+  "stem": [
+   "林:タンさん、夏休みに国へ帰りますか? タン:いいえ、今年は帰りません。日本で＿＿ ＿＿ ★ ＿＿ なので楽しみです。"
+  ],
+  "options": [
+   "今年が",
+   "過ごすのは",
+   "初めて",
+   "夏休みを"
+  ],
+  "star": 1,
+  "order": [
+   4,
+   2,
+   1,
+   3
+  ],
+  "full": [
+   "林:タンさん、夏休みに国へ帰りますか? タン:いいえ、今年は帰りません。日本で夏休みを過ごすのは今年が初めてなので楽しみです。"
+  ],
+  "trans": "Năm nay tôi không về nước. Đây là lần đầu tiên tôi nghỉ hè ở Nhật nên rất háo hức.",
+  "explain": [
+   "Vị trí 1: 日本で＋夏休みを＋過ごすのは＋今年が; mẫu Vるのは…が初めて.",
+   "Vị trí 4: 初めて＋なので楽しみです; 初めて là vị ngữ danh từ trước なので.",
+   "Hai vị trí giữa: 過ごすのは＋今年が; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-202207-45",
+  "level": "N3",
+  "exam": "2022-07",
+  "no": 45,
+  "stem": [
+   "桜大学の周りにはレストランや喫茶店などの＿＿ ＿＿ ★ ＿＿ ある。"
+  ],
+  "options": [
+   "中心に",
+   "飲食店を",
+   "いろいろな店が",
+   "本屋や美容院など"
+  ],
+  "star": 4,
+  "order": [
+   2,
+   1,
+   4,
+   3
+  ],
+  "full": [
+   "桜大学の周りにはレストランや喫茶店などの飲食店を中心に本屋や美容院などいろいろな店がある。"
+  ],
+  "trans": "Quanh Đại học Sakura có nhiều cửa hàng, chủ yếu là quán ăn, quán cà phê, cùng với hiệu sách và tiệm làm tóc.",
+  "explain": [
+   "Vị trí 1: 飲食店を＋中心に＋本屋や美容院など; mẫu Nを中心に, など liệt kê ví dụ.",
+   "Vị trí 4: いろいろな店が＋ある; が đánh dấu chủ ngữ của ある.",
+   "Hai vị trí giữa: 中心に＋本屋や美容院など; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-202112-46",
+  "level": "N3",
+  "exam": "2021-12",
+  "no": 46,
+  "stem": [
+   "この小学生は ＿＿ ＿＿ ★ ＿＿ 問題を簡単に解いてしまう。"
+  ],
+  "options": [
+   "大人",
+   "ような",
+   "解けない",
+   "でも"
+  ],
+  "star": 3,
+  "order": [
+   1,
+   4,
+   3,
+   2
+  ],
+  "full": [
+   "この小学生は大人でも解けないような問題を簡単に解いてしまう。"
+  ],
+  "trans": "Em học sinh tiểu học này giải dễ dàng cả bài toán mà người lớn cũng không giải được.",
+  "explain": [
+   "Vị trí 1: 大人＋でも＋解けない; でも nêu “ngay cả người lớn”.",
+   "Vị trí 4: 解けない＋ような＋問題; mẫu mệnh đề bổ nghĩa danh từ qua ような.",
+   "Hai vị trí giữa: でも＋解けない; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-202112-47",
+  "level": "N3",
+  "exam": "2021-12",
+  "no": 47,
+  "stem": [
+   "去年、初めて一人で海外を旅行した。行く前は心配なこともあったが、＿＿ ＿＿ ★ ＿＿ だった。"
+  ],
+  "options": [
+   "楽しいこと",
+   "ばかり",
+   "旅行していた",
+   "2週間は"
+  ],
+  "star": 1,
+  "order": [
+   3,
+   4,
+   1,
+   2
+  ],
+  "full": [
+   "去年、初めて一人で海外を旅行した。行く前は心配なこともあったが、旅行していた2週間は楽しいことばかりだった。"
+  ],
+  "trans": "Trước chuyến du lịch nước ngoài đầu tiên một mình tôi cũng lo, nhưng hai tuần đi chơi toàn là những điều vui.",
+  "explain": [
+   "Vị trí 1: 旅行していた＋2週間は; mệnh đề thể ていた bổ nghĩa 2週間.",
+   "Vị trí 4: 楽しいこと＋ばかり＋だった; ばかりだ chỉ toàn là những điều ấy.",
+   "Hai vị trí giữa: 2週間は＋楽しいこと; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-202112-48",
+  "level": "N3",
+  "exam": "2021-12",
+  "no": 48,
+  "stem": [
+   "A「昨日は日曜日だったから、遊園地は人が多かったでしょう?」",
+   "B「いや、 ＿＿ ＿＿ ★ ＿＿ いませんでしたよ。」"
+  ],
+  "options": [
+   "いた",
+   "込んで",
+   "ほど",
+   "思って"
+  ],
+  "star": 3,
+  "order": [
+   4,
+   1,
+   3,
+   2
+  ],
+  "full": [
+   "A「昨日は日曜日だったから、遊園地は人が多かったでしょう?」",
+   "B「いや、思っていたほど込んでいませんでしたよ。」"
+  ],
+  "trans": "Không, công viên không đông như tôi đã nghĩ.",
+  "explain": [
+   "Vị trí 1: 思って＋いた＋ほど; mẫu 思っていたほど〜ない.",
+   "Vị trí 4: 込んで＋いませんでした; phủ định quá khứ của 込んでいる.",
+   "Hai vị trí giữa: いた＋ほど; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-202112-49",
+  "level": "N3",
+  "exam": "2021-12",
+  "no": 49,
+  "stem": [
+   "一人暮らしを始めて、両親が毎日仕事を＿＿ ＿＿ ★ ＿＿ 大変なことだったか、よくわかった。"
+  ],
+  "options": [
+   "どれだけ",
+   "しながら",
+   "食事の準備や洗濯を",
+   "してくれていたことが"
+  ],
+  "star": 4,
+  "order": [
+   2,
+   3,
+   4,
+   1
+  ],
+  "full": [
+   "一人暮らしを始めて、両親が毎日仕事をしながら食事の準備や洗濯をしてくれていたことがどれだけ大変なことだったか、よくわかった。"
+  ],
+  "trans": "Sống một mình rồi tôi mới hiểu việc bố mẹ vừa làm việc vừa chuẩn bị bữa ăn, giặt giũ cho mình vất vả đến mức nào.",
+  "explain": [
+   "Vị trí 1: 仕事を＋しながら＋食事の準備や洗濯を＋してくれていたことが; ながら nối hai việc đồng thời.",
+   "Vị trí 4: どれだけ＋大変なことだったか; どれだけ đi với tính từ mức độ 大変.",
+   "Hai vị trí giữa: 食事の準備や洗濯を＋してくれていたことが; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-202112-50",
+  "level": "N3",
+  "exam": "2021-12",
+  "no": 50,
+  "stem": [
+   "患者「先生、おふろには入ってもいいんでしょうか。」 医者「 ＿＿ ＿＿ ★ ＿＿ いいですよ」"
+  ],
+  "options": [
+   "なって",
+   "いたら",
+   "熱が下がって",
+   "あしたに"
+  ],
+  "star": 3,
+  "order": [
+   4,
+   1,
+   3,
+   2
+  ],
+  "full": [
+   "患者「先生、おふろには入ってもいいんでしょうか。」 医者「あしたになって熱が下がっていたらいいですよ」"
+  ],
+  "trans": "Nếu đến ngày mai mà đã hạ sốt thì tắm được.",
+  "explain": [
+   "Vị trí 1: あしたに＋なって; ～になる chỉ thời điểm chuyển sang ngày mai.",
+   "Vị trí 4: 熱が下がって＋いたら＋いいですよ; mẫu ～ていたら nêu điều kiện.",
+   "Hai vị trí giữa: なって＋熱が下がって; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-202107-51",
+  "level": "N3",
+  "exam": "2021-07",
+  "no": 51,
+  "stem": [
+   "先生「みなさんは、一度 ＿＿ ★ ＿＿ ＿＿ と思う人はいますか。」"
+  ],
+  "options": [
+   "会ってみたい",
+   "いい",
+   "で",
+   "から"
+  ],
+  "star": 2,
+  "order": [
+   3,
+   2,
+   4,
+   1
+  ],
+  "full": [
+   "先生「みなさんは、一度でいいから会ってみたいと思う人はいますか。」"
+  ],
+  "trans": "Các em có ai muốn thử gặp người nào đó, dù chỉ một lần, không?",
+  "explain": [
+   "Vị trí 1: 一度＋で＋いい＋から; mẫu 一度でいいから “chỉ một lần cũng được”.",
+   "Vị trí 4: 会ってみたい＋と思う人; ～たいと思う nối với 人 mà giáo viên hỏi.",
+   "Hai vị trí giữa: いい＋から; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 1
+ },
+ {
+  "id": "N3-202107-52",
+  "level": "N3",
+  "exam": "2021-07",
+  "no": 52,
+  "stem": [
+   "A「パーティーの料理はどうでしたか。」",
+   "B「おいしかったです。＿＿ ＿＿ ★ ＿＿ わかりませんが、お刺身がおいしかったです。」"
+  ],
+  "options": [
+   "という",
+   "何",
+   "か",
+   "魚"
+  ],
+  "star": 4,
+  "order": [
+   2,
+   1,
+   4,
+   3
+  ],
+  "full": [
+   "A「パーティーの料理はどうでしたか。」",
+   "B「おいしかったです。何という魚かわかりませんが、お刺身がおいしかったです。」"
+  ],
+  "trans": "Món ăn ngon lắm. Tôi không biết đó là cá gì, nhưng sashimi rất ngon.",
+  "explain": [
+   "Vị trí 1: 何＋という＋魚; 何というN hỏi tên gọi.",
+   "Vị trí 4: 魚＋か＋わかりません; か đánh dấu câu hỏi gián tiếp.",
+   "Hai vị trí giữa: という＋魚; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-202107-53",
+  "level": "N3",
+  "exam": "2021-07",
+  "no": 53,
+  "stem": [
+   "A「京都旅行の写真を早く送って」",
+   "B「送る＿＿ ＿＿ ★ ＿＿ から、もう少し待って。」"
+  ],
+  "options": [
+   "選んでいる",
+   "写真を",
+   "今",
+   "ところだ"
+  ],
+  "star": 1,
+  "order": [
+   2,
+   3,
+   1,
+   4
+  ],
+  "full": [
+   "A「京都旅行の写真を早く送って」",
+   "B「送る写真を今選んでいるところだから、もう少し待って。」"
+  ],
+  "trans": "Tôi đang chọn ảnh để gửi, chờ thêm chút nhé.",
+  "explain": [
+   "Vị trí 1: 送る＋写真を; 写真 là tân ngữ của 選ぶ.",
+   "Vị trí 4: 選んでいる＋ところだ＋から; ～ているところだ nêu việc đang làm.",
+   "Hai vị trí giữa: 今＋選んでいる; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-202107-54",
+  "level": "N3",
+  "exam": "2021-07",
+  "no": 54,
+  "stem": [
+   "私は料理が＿＿ ＿＿ ★ ＿＿ ほとんどない。"
+  ],
+  "options": [
+   "苦手で",
+   "料理は",
+   "作れる",
+   "レシピを見ずに"
+  ],
+  "star": 3,
+  "order": [
+   1,
+   4,
+   3,
+   2
+  ],
+  "full": [
+   "私は料理が苦手でレシピを見ずに作れる料理はほとんどない。"
+  ],
+  "trans": "Tôi nấu ăn kém, hầu như không có món nào có thể làm mà không xem công thức.",
+  "explain": [
+   "Vị trí 1: 料理が＋苦手で; が đánh dấu đối tượng của 苦手.",
+   "Vị trí 4: 作れる＋料理は＋ほとんどない; 料理 là danh từ được bổ nghĩa bởi 作れる.",
+   "Hai vị trí giữa: レシピを見ずに＋作れる; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-202107-55",
+  "level": "N3",
+  "exam": "2021-07",
+  "no": 55,
+  "stem": [
+   "この島は、空から ＿＿ ＿＿ ★ ＿＿ 「耳島」と呼ばれています。"
+  ],
+  "options": [
+   "形に",
+   "見えることから",
+   "人の耳のような",
+   "見ると"
+  ],
+  "star": 1,
+  "order": [
+   4,
+   3,
+   1,
+   2
+  ],
+  "full": [
+   "この島は、空から見ると人の耳のような形に見えることから「耳島」と呼ばれています。"
+  ],
+  "trans": "Từ trên không nhìn xuống, đảo có hình giống tai người nên được gọi là “đảo Tai”.",
+  "explain": [
+   "Vị trí 1: 空から＋見ると＋人の耳のような＋形に; ような bổ nghĩa 形.",
+   "Vị trí 4: 見えることから＋「耳島」と呼ばれています; ～ことから nêu nguồn gốc tên gọi.",
+   "Hai vị trí giữa: 人の耳のような＋形に; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-202012-56",
+  "level": "N3",
+  "exam": "2020-12",
+  "no": 56,
+  "stem": [
+   "この喫茶店はコーヒー＿＿ ＿＿ ★ ＿＿ おいしい。"
+  ],
+  "options": [
+   "などの",
+   "スパゲティ",
+   "料理も",
+   "だけでなく"
+  ],
+  "star": 1,
+  "order": [
+   4,
+   2,
+   1,
+   3
+  ],
+  "full": [
+   "この喫茶店はコーヒーだけでなくスパゲティなどの料理もおいしい。"
+  ],
+  "trans": "Quán cà phê này không chỉ có cà phê; các món như spaghetti cũng ngon.",
+  "explain": [
+   "Vị trí 1: コーヒー＋だけでなく; mẫu Nだけでなく “không chỉ N”.",
+   "Vị trí 4: 料理も＋おいしい。; nối trực tiếp với phần sau chỗ trống.",
+   "Hai vị trí giữa: スパゲティ＋などの＋料理も＋おいしい; などの bổ nghĩa 料理, も bổ sung."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-202012-57",
+  "level": "N3",
+  "exam": "2020-12",
+  "no": 57,
+  "stem": [
+   "(映画館で) 妻:「私、ちょっとジュース買いに行ってくるね。」 夫:「うん。あ、でも、映画が＿＿ ＿＿ ★ ＿＿よ。急いでね。」"
+  ],
+  "options": [
+   "しかない",
+   "始まる",
+   "あと3分",
+   "まで"
+  ],
+  "star": 3,
+  "order": [
+   2,
+   4,
+   3,
+   1
+  ],
+  "full": [
+   "(映画館で) 妻:「私、ちょっとジュース買いに行ってくるね。」 夫:「うん。あ、でも、映画が始まるまであと3分しかないよ。急いでね。」"
+  ],
+  "trans": "Chỉ còn ba phút nữa là phim bắt đầu đấy. Nhanh lên nhé.",
+  "explain": [
+   "Vị trí 1: 映画が＋始まる＋まで; まで xác định mốc bắt đầu phim.",
+   "Vị trí 4: あと3分＋しかない＋よ; しか đi với phủ định ない.",
+   "Hai vị trí giữa: まで＋あと3分; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-202012-58",
+  "level": "N3",
+  "exam": "2020-12",
+  "no": 58,
+  "stem": [
+   "今度の日曜日に友人の結婚式がある。＿＿ ＿＿ ★ ＿＿だが。"
+  ],
+  "options": [
+   "の",
+   "いい",
+   "晴れる",
+   "と"
+  ],
+  "star": 2,
+  "order": [
+   3,
+   4,
+   2,
+   1
+  ],
+  "full": [
+   "今度の日曜日に友人の結婚式がある。晴れるといいのだが。"
+  ],
+  "trans": "Chủ nhật tới là đám cưới bạn tôi. Mong trời nắng.",
+  "explain": [
+   "Vị trí 1: 晴れる＋と＋いい; mẫu ～といい “mong là”.",
+   "Vị trí 4: いい＋の＋だが; のだが diễn tả mong đợi và băn khoăn.",
+   "Hai vị trí giữa: と＋いい; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-202012-59",
+  "level": "N3",
+  "exam": "2020-12",
+  "no": 59,
+  "stem": [
+   "息子は、サッカークラブの練習がきついと＿＿ ＿＿ ★ ＿＿ 好きだからだと思う。"
+  ],
+  "options": [
+   "よく言っているが",
+   "やっぱりサッカーが",
+   "続けているのは",
+   "それでもやめずに"
+  ],
+  "star": 3,
+  "order": [
+   1,
+   4,
+   3,
+   2
+  ],
+  "full": [
+   "息子は、サッカークラブの練習がきついとよく言っているがそれでもやめずに続けているのはやっぱりサッカーが好きだからだと思う。"
+  ],
+  "trans": "Con trai tôi thường nói tập ở câu lạc bộ bóng đá rất vất vả, nhưng vẫn tiếp tục vì rốt cuộc cháu thích bóng đá.",
+  "explain": [
+   "Vị trí 1: きついと＋よく言っているが; が nối ý trái chiều.",
+   "Vị trí 4: やっぱりサッカーが＋好きだからだと思う。; nối trực tiếp với phần sau chỗ trống.",
+   "Hai vị trí giữa: それでもやめずに＋続けているのは＋やっぱりサッカーが＋好きだから; mẫu ～のは…からだ."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-202012-60",
+  "level": "N3",
+  "exam": "2020-12",
+  "no": 60,
+  "stem": [
+   "うちから学校まで自転車で40分かかる。電車なら20分だが、朝の ＿＿ ＿＿ ★ ＿＿ 自転車で通っている。"
+  ],
+  "options": [
+   "こんでいる電車は",
+   "よい運動になるから",
+   "嫌いだし",
+   "自転車で行けば"
+  ],
+  "star": 4,
+  "order": [
+   1,
+   3,
+   4,
+   2
+  ],
+  "full": [
+   "うちから学校まで自転車で40分かかる。電車なら20分だが、朝のこんでいる電車は嫌いだし自転車で行けばよい運動になるから自転車で通っている。"
+  ],
+  "trans": "Từ nhà đến trường đạp xe mất 40 phút, đi tàu thì 20 phút; nhưng tôi không thích tàu đông buổi sáng, và đạp xe cũng là vận động tốt nên tôi đi xe đạp.",
+  "explain": [
+   "Vị trí 1: 朝の＋こんでいる電車は＋嫌いだし; danh từ 電車 được bổ nghĩa, し liệt kê lý do.",
+   "Vị trí 4: 自転車で行けば＋よい運動になるから＋自転車で通っている; ～ば nối hệ quả, から nêu lý do.",
+   "Hai vị trí giữa: 嫌いだし＋自転車で行けば; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-201912-61",
+  "level": "N3",
+  "exam": "2019-12",
+  "no": 61,
+  "stem": [
+   "昨日父に、来週友達と旅行に行く ＿＿ ＿＿ ★ ＿＿ 頼んだが、断られてしまった。"
+  ],
+  "options": [
+   "と",
+   "車を",
+   "ので",
+   "使わせてほしい"
+  ],
+  "star": 4,
+  "order": [
+   3,
+   2,
+   4,
+   1
+  ],
+  "full": [
+   "昨日父に、来週友達と旅行に行くので車を使わせてほしいと頼んだが、断られてしまった。"
+  ],
+  "trans": "Hôm qua tôi xin bố cho dùng xe vì tuần sau đi du lịch với bạn, nhưng bị từ chối.",
+  "explain": [
+   "Vị trí 1: 行く＋ので; ので nêu lý do xin phép.",
+   "Vị trí 4: 使わせてほしい＋と＋頼んだ; と dẫn nội dung lời nhờ.",
+   "Hai vị trí giữa: 車を＋使わせてほしい; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-201912-62",
+  "level": "N3",
+  "exam": "2019-12",
+  "no": 62,
+  "stem": [
+   "桜大学は学生 ＿＿ ＿＿ ★ ＿＿ についてアンケート調査を行った。"
+  ],
+  "options": [
+   "に対する",
+   "の",
+   "考え方",
+   "働くこと"
+  ],
+  "star": 1,
+  "order": [
+   2,
+   4,
+   1,
+   3
+  ],
+  "full": [
+   "桜大学は学生の働くことに対する考え方についてアンケート調査を行った。"
+  ],
+  "trans": "Đại học Sakura đã khảo sát suy nghĩ của sinh viên về việc đi làm.",
+  "explain": [
+   "Vị trí 1: 学生＋の＋働くこと; の nối sở hữu/chủ đề.",
+   "Vị trí 4: 考え方＋についてアンケート調査を行った。; nối trực tiếp với phần sau chỗ trống.",
+   "Hai vị trí giữa: 働くこと＋に対する＋考え方; に対する bổ nghĩa danh từ 考え方."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-201912-63",
+  "level": "N3",
+  "exam": "2019-12",
+  "no": 63,
+  "stem": [
+   "食事の ＿＿ ＿＿ ★ ＿＿ を汚してしまった。"
+  ],
+  "options": [
+   "ときに",
+   "ばかりの",
+   "白いＴシャツ",
+   "買った"
+  ],
+  "star": 2,
+  "order": [
+   1,
+   4,
+   2,
+   3
+  ],
+  "full": [
+   "食事のときに買ったばかりの白いＴシャツを汚してしまった。"
+  ],
+  "trans": "Tôi làm bẩn chiếc áo phông trắng vừa mua trong lúc ăn.",
+  "explain": [
+   "Vị trí 1: 食事の＋ときに; の nối danh từ với とき.",
+   "Vị trí 4: 白いＴシャツ＋を汚してしまった。; nối trực tiếp với phần sau chỗ trống.",
+   "Hai vị trí giữa: 買った＋ばかりの＋白いＴシャツ; mẫu VたばかりのN."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-201912-64",
+  "level": "N3",
+  "exam": "2019-12",
+  "no": 64,
+  "stem": [
+   "昨日初めて花川駅に行った。花川駅まで ＿＿ ＿＿ ★ ＿＿ 電車に乗る前に駅員に聞いた。"
+  ],
+  "options": [
+   "わからなくて",
+   "どの電車で",
+   "一番早く着くのか",
+   "行けば"
+  ],
+  "star": 3,
+  "order": [
+   2,
+   4,
+   3,
+   1
+  ],
+  "full": [
+   "昨日初めて花川駅に行った。花川駅までどの電車で行けば一番早く着くのかわからなくて電車に乗る前に駅員に聞いた。"
+  ],
+  "trans": "Lần đầu đến ga Hanakawa, tôi không biết đi tàu nào tới nhanh nhất nên đã hỏi nhân viên trước khi lên tàu.",
+  "explain": [
+   "Vị trí 1: どの電車で＋行けば; ば lập câu hỏi về cách đi.",
+   "Vị trí 4: 一番早く着くのか＋わからなくて; のか là câu hỏi gián tiếp.",
+   "Hai vị trí giữa: 行けば＋一番早く着くのか; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-201912-65",
+  "level": "N3",
+  "exam": "2019-12",
+  "no": 65,
+  "stem": [
+   "A「ねえ、明日のパーティーに行く？会場のレストランが駅から遠くてちょっと不便だから行こうか迷っているんだけど」",
+   "B「私、車で ＿＿ ＿＿ ★ ＿＿ あげるよ。」"
+  ],
+  "options": [
+   "もし",
+   "乗せていって",
+   "行くんだったら",
+   "行くつもりだから"
+  ],
+  "star": 3,
+  "order": [
+   4,
+   1,
+   3,
+   2
+  ],
+  "full": [
+   "A「ねえ、明日のパーティーに行く？会場のレストランが駅から遠くてちょっと不便だから行こうか迷っているんだけど」",
+   "B「私、車で行くつもりだからもし行くんだったら乗せていってあげるよ。」"
+  ],
+  "trans": "Tôi định đi ô tô, nên nếu cậu cũng đi thì tôi cho đi cùng.",
+  "explain": [
+   "Vị trí 1: 車で＋行くつもりだから; だから nêu lý do có thể giúp.",
+   "Vị trí 4: 乗せていって＋あげるよ。」; nối trực tiếp với phần sau chỗ trống.",
+   "Hai vị trí giữa: もし＋行くんだったら＋乗せていって; もし đi với điều kiện だったら."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-201907-66",
+  "level": "N3",
+  "exam": "2019-07",
+  "no": 66,
+  "stem": [
+   "X学校とY学校のバスケットボールの試合は10時開始の予定だったが、大雨 ＿＿ ＿＿ ★ ＿＿ になった。"
+  ],
+  "options": [
+   "のため",
+   "による",
+   "11時開始",
+   "電車の遅れ"
+  ],
+  "star": 1,
+  "order": [
+   2,
+   4,
+   1,
+   3
+  ],
+  "full": [
+   "X学校とY学校のバスケットボールの試合は10時開始の予定だったが、大雨による電車の遅れのため11時開始になった。"
+  ],
+  "trans": "Trận bóng rổ dự kiến bắt đầu lúc 10 giờ đã dời sang 11 giờ vì tàu chậm do mưa lớn.",
+  "explain": [
+   "Vị trí 1: 大雨＋による＋電車の遅れ; による bổ nghĩa danh từ 遅れ.",
+   "Vị trí 4: のため＋11時開始＋になった; ため nêu nguyên nhân, 開始になる kết quả.",
+   "Hai vị trí giữa: 電車の遅れ＋のため; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-201907-67",
+  "level": "N3",
+  "exam": "2019-07",
+  "no": 67,
+  "stem": [
+   "昨日行ったさくら動物園には、500種類以上の動物がいた。あんなにいろいろな ＿＿ ＿＿ ★ ＿＿ ないだろう。"
+  ],
+  "options": [
+   "動物が",
+   "なかなか",
+   "動物園は",
+   "見られる"
+  ],
+  "star": 3,
+  "order": [
+   1,
+   4,
+   3,
+   2
+  ],
+  "full": [
+   "昨日行ったさくら動物園には、500種類以上の動物がいた。あんなにいろいろな動物が見られる動物園はなかなかないだろう。"
+  ],
+  "trans": "Hôm qua ở sở thú Sakura có hơn 500 loài; hiếm có sở thú nào xem được nhiều loài đến vậy.",
+  "explain": [
+   "Vị trí 1: いろいろな＋動物が＋見られる; が là chủ ngữ của thể khả năng.",
+   "Vị trí 4: 動物園は＋なかなか＋ない; なかなか đi với phủ định.",
+   "Hai vị trí giữa: 見られる＋動物園は; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-201907-68",
+  "level": "N3",
+  "exam": "2019-07",
+  "no": 68,
+  "stem": [
+   "母は姉が ＿＿ ＿＿ ★ ＿＿ 泣きそうな顔をしていた。"
+  ],
+  "options": [
+   "今にも",
+   "大学に合格したという",
+   "知らせを聞いて",
+   "一番行きたがっていた"
+  ],
+  "star": 3,
+  "order": [
+   4,
+   2,
+   3,
+   1
+  ],
+  "full": [
+   "母は姉が一番行きたがっていた大学に合格したという知らせを聞いて今にも泣きそうな顔をしていた。"
+  ],
+  "trans": "Nghe tin chị đỗ trường đại học chị mong vào nhất, mẹ có vẻ sắp khóc.",
+  "explain": [
+   "Vị trí 1: 姉が＋一番行きたがっていた＋大学; mệnh đề bổ nghĩa 大学.",
+   "Vị trí 4: 知らせを聞いて＋今にも＋泣きそう; 今にも đi với ～そう.",
+   "Hai vị trí giữa: 大学に合格したという＋知らせを聞いて; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-201907-69",
+  "level": "N3",
+  "exam": "2019-07",
+  "no": 69,
+  "stem": [
+   "20階建ての大きいマンションが ＿＿ ＿＿ ★ ＿＿ 昼でも部屋の中が暗い。"
+  ],
+  "options": [
+   "隣に",
+   "私の家に",
+   "建ったことで",
+   "日が当たらなくなって"
+  ],
+  "star": 2,
+  "order": [
+   1,
+   3,
+   2,
+   4
+  ],
+  "full": [
+   "20階建ての大きいマンションが隣に建ったことで私の家に日が当たらなくなって昼でも部屋の中が暗い。"
+  ],
+  "trans": "Vì một chung cư lớn 20 tầng mọc lên bên cạnh nên nhà tôi không còn nắng chiếu vào, giữa trưa phòng cũng tối.",
+  "explain": [
+   "Vị trí 1: マンションが＋隣に＋建ったことで; ことで nêu nguyên nhân.",
+   "Vị trí 4: 私の家に＋日が当たらなくなって; に chỉ nơi ánh nắng chiếu tới.",
+   "Hai vị trí giữa: 建ったことで＋私の家に; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-201907-70",
+  "level": "N3",
+  "exam": "2019-07",
+  "no": 70,
+  "stem": [
+   "田中「山下さんって、パソコンにすごく詳しいですね。」 木村「うん、大学生の ＿＿ ＿＿ ★ ＿＿ よ。」"
+  ],
+  "options": [
+   "とき",
+   "アルバイトしていた",
+   "みたいだ",
+   "コンピューター会社で"
+  ],
+  "star": 2,
+  "order": [
+   1,
+   4,
+   2,
+   3
+  ],
+  "full": [
+   "田中「山下さんって、パソコンにすごく詳しいですね。」 木村「うん、大学生のときコンピューター会社でアルバイトしていたみたいだよ。」"
+  ],
+  "trans": "Có vẻ hồi sinh viên anh ấy từng làm thêm ở công ty máy tính.",
+  "explain": [
+   "Vị trí 1: 大学生の＋とき＋コンピューター会社で; のとき nêu thời gian.",
+   "Vị trí 4: アルバイトしていた＋みたいだ; ～みたいだ nêu suy đoán.",
+   "Hai vị trí giữa: コンピューター会社で＋アルバイトしていた; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-201812-71",
+  "level": "N3",
+  "exam": "2018-12",
+  "no": 71,
+  "stem": [
+   "なかなか英語の単語が覚えられないので、英語の得意な友達が ＿＿ ★ ＿＿ ＿＿した。"
+  ],
+  "options": [
+   "ことに",
+   "やっていた",
+   "ように",
+   "何度も書いてみる"
+  ],
+  "star": 3,
+  "order": [
+   2,
+   3,
+   4,
+   1
+  ],
+  "full": [
+   "なかなか英語の単語が覚えられないので、英語の得意な友達がやっていたように何度も書いてみることにした。"
+  ],
+  "trans": "Vì khó nhớ từ tiếng Anh, tôi quyết định thử viết đi viết lại như bạn giỏi tiếng Anh đã làm.",
+  "explain": [
+   "Vị trí 1: 友達が＋やっていた＋ように; ～ように nêu cách làm theo bạn.",
+   "Vị trí 4: 何度も書いてみる＋ことに＋した; mẫu Vることにする.",
+   "Hai vị trí giữa: ように＋何度も書いてみる; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 1
+ },
+ {
+  "id": "N3-201812-72",
+  "level": "N3",
+  "exam": "2018-12",
+  "no": 72,
+  "stem": [
+   "半年前から＿＿ ＿＿ ★ ＿＿終わってしまった。"
+  ],
+  "options": [
+   "とうとう",
+   "見ていた",
+   "毎週",
+   "大好きなドラマが"
+  ],
+  "star": 4,
+  "order": [
+   3,
+   2,
+   4,
+   1
+  ],
+  "full": [
+   "半年前から毎週見ていた大好きなドラマがとうとう終わってしまった。"
+  ],
+  "trans": "Bộ phim tôi thích, xem mỗi tuần từ nửa năm trước, cuối cùng đã hết.",
+  "explain": [
+   "Vị trí 1: 半年前から＋毎週＋見ていた; từ mốc thời gian nối tần suất.",
+   "Vị trí 4: 大好きなドラマが＋とうとう＋終わってしまった; とうとう nêu kết cục.",
+   "Hai vị trí giữa: 見ていた＋大好きなドラマが; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-201812-73",
+  "level": "N3",
+  "exam": "2018-12",
+  "no": 73,
+  "stem": [
+   "大川橋は ＿＿ ＿＿ ★ ＿＿ 「めがね橋」とも呼ばれている。"
+  ],
+  "options": [
+   "している",
+   "形を",
+   "ことから",
+   "めがねのような"
+  ],
+  "star": 1,
+  "order": [
+   4,
+   2,
+   1,
+   3
+  ],
+  "full": [
+   "大川橋はめがねのような形をしていることから「めがね橋」とも呼ばれている。"
+  ],
+  "trans": "Cầu Ōkawa có hình như cặp kính nên cũng được gọi là “cầu kính”.",
+  "explain": [
+   "Vị trí 1: めがねのような＋形を; ような bổ nghĩa danh từ.",
+   "Vị trí 4: している＋ことから＋呼ばれている; ～ことから nêu nguồn gốc tên gọi.",
+   "Hai vị trí giữa: 形を＋している; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-201812-74",
+  "level": "N3",
+  "exam": "2018-12",
+  "no": 74,
+  "stem": [
+   "田中:「木村さん、仕事はどうですか。」 木村:「会社に入ってまだ少ししか ＿＿ ＿＿ ★ ＿＿ ですが、毎日楽しいです。」"
+  ],
+  "options": [
+   "ので",
+   "たっていない",
+   "ばかり",
+   "わからないこと"
+  ],
+  "star": 4,
+  "order": [
+   2,
+   1,
+   4,
+   3
+  ],
+  "full": [
+   "田中:「木村さん、仕事はどうですか。」 木村:「会社に入ってまだ少ししかたっていないのでわからないことばかりですが、毎日楽しいです。」"
+  ],
+  "trans": "Tôi mới vào công ty chưa lâu nên còn nhiều điều chưa rõ, nhưng ngày nào cũng vui.",
+  "explain": [
+   "Vị trí 1: 少ししか＋たっていない＋ので; しか đi với phủ định, ので nêu lý do.",
+   "Vị trí 4: わからないこと＋ばかり＋ですが; ばかり chỉ hầu hết là điều chưa biết.",
+   "Hai vị trí giữa: ので＋わからないこと; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-201812-75",
+  "level": "N3",
+  "exam": "2018-12",
+  "no": 75,
+  "stem": [
+   "(会社で) 西川:「林さん、来週のセミナーのポスター、知りませんか。さっき ＿＿ ＿＿ ★ ＿＿ 入ってたんですけど、気づいたら箱がなくなってて。」 林:「ああ、山下さんがどこかに持っていきましたよ。」"
+  ],
+  "options": [
+   "まで",
+   "あった",
+   "あそこに",
+   "白い段ボール箱に"
+  ],
+  "star": 2,
+  "order": [
+   1,
+   3,
+   2,
+   4
+  ],
+  "full": [
+   "(会社で) 西川:「林さん、来週のセミナーのポスター、知りませんか。さっきまであそこにあった白い段ボール箱に入ってたんですけど、気づいたら箱がなくなってて。」 林:「ああ、山下さんがどこかに持っていきましたよ。」"
+  ],
+  "trans": "Nó ở trong chiếc thùng giấy trắng vừa rồi vẫn ở đằng kia, nhưng tôi quay ra thì thùng biến mất.",
+  "explain": [
+   "Vị trí 1: さっき＋まで＋あそこに; まで chỉ mốc “đến lúc nãy”.",
+   "Vị trí 4: 白い段ボール箱に＋入ってたんですけど、気づいたら箱がなくなってて。; nối trực tiếp với phần sau chỗ trống.",
+   "Hai vị trí giữa: あそこに＋あった＋白い段ボール箱に; あった bổ nghĩa cho 箱."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-201807-76",
+  "level": "N3",
+  "exam": "2018-07",
+  "no": 76,
+  "stem": [
+   "私 ＿＿ ＿＿ ★ ＿＿ なのは、家族の幸せだ。"
+  ],
+  "options": [
+   "で",
+   "人生",
+   "にとって",
+   "いちばん大切"
+  ],
+  "star": 1,
+  "order": [
+   3,
+   2,
+   1,
+   4
+  ],
+  "full": [
+   "私にとって人生でいちばん大切なのは、家族の幸せだ。"
+  ],
+  "trans": "Với tôi, điều quan trọng nhất trong đời là hạnh phúc của gia đình.",
+  "explain": [
+   "Vị trí 1: 私＋にとって; mẫu Nにとって.",
+   "Vị trí 4: いちばん大切＋なのは; な-tính từ nối のは.",
+   "Hai vị trí giữa: 人生＋で; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-201807-77",
+  "level": "N3",
+  "exam": "2018-07",
+  "no": 77,
+  "stem": [
+   "この映画は昔から大好きで今まで ＿＿ ＿＿ ★ ＿＿ 感動して泣いてしまう。"
+  ],
+  "options": [
+   "見ても",
+   "何度も",
+   "見たけれど",
+   "何度"
+  ],
+  "star": 4,
+  "order": [
+   2,
+   3,
+   4,
+   1
+  ],
+  "full": [
+   "この映画は昔から大好きで今まで何度も見たけれど何度見ても感動して泣いてしまう。"
+  ],
+  "trans": "Tôi thích bộ phim này từ lâu và đã xem nhiều lần, nhưng lần nào xem cũng cảm động đến khóc.",
+  "explain": [
+   "Vị trí 1: 今まで＋何度も＋見たけれど; けれど nối ý tương phản.",
+   "Vị trí 4: 見ても＋感動して泣いてしまう。; nối trực tiếp với phần sau chỗ trống.",
+   "Hai vị trí giữa: 何度＋見ても＋感動する; mẫu 何度〜ても."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-201807-78",
+  "level": "N3",
+  "exam": "2018-07",
+  "no": 78,
+  "stem": [
+   "新しい家は、駅に近くて便利なのだが、窓が ＿＿ ＿＿ ★ ＿＿ 聞こえてきて、うるさいと感じることがある。"
+  ],
+  "options": [
+   "ある",
+   "大通り側に",
+   "せいで",
+   "車の音が"
+  ],
+  "star": 3,
+  "order": [
+   2,
+   1,
+   3,
+   4
+  ],
+  "full": [
+   "新しい家は、駅に近くて便利なのだが、窓が大通り側にあるせいで車の音が聞こえてきて、うるさいと感じることがある。"
+  ],
+  "trans": "Nhà mới gần ga rất tiện, nhưng vì cửa sổ hướng ra đường lớn nên đôi khi nghe tiếng xe và thấy ồn.",
+  "explain": [
+   "Vị trí 1: 窓が＋大通り側に＋ある; に chỉ vị trí cửa sổ.",
+   "Vị trí 4: 車の音が＋聞こえてきて、うるさいと感じることがある。; nối trực tiếp với phần sau chỗ trống.",
+   "Hai vị trí giữa: ある＋せいで＋車の音が; せいで nêu nguyên nhân bất lợi."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-201807-79",
+  "level": "N3",
+  "exam": "2018-07",
+  "no": 79,
+  "stem": [
+   "林さんの奥さんは料理がとても上手で、ハンバーグが特においしいらしい。林さんは奥さんの ＿＿ ＿＿ ★ ＿＿ ものはないとよく言っている。"
+  ],
+  "options": [
+   "作る",
+   "ほど",
+   "ハンバーグ",
+   "おいしい"
+  ],
+  "star": 2,
+  "order": [
+   1,
+   3,
+   2,
+   4
+  ],
+  "full": [
+   "林さんの奥さんは料理がとても上手で、ハンバーグが特においしいらしい。林さんは奥さんの作るハンバーグほどおいしいものはないとよく言っている。"
+  ],
+  "trans": "Anh Hayashi thường nói không có gì ngon bằng hamburger vợ mình làm.",
+  "explain": [
+   "Vị trí 1: 奥さんの＋作る＋ハンバーグ; mệnh đề 作る bổ nghĩa danh từ.",
+   "Vị trí 4: ハンバーグ＋ほど＋おいしい＋ものはない; mẫu Nほど〜ものはない.",
+   "Hai vị trí giữa: ハンバーグ＋ほど; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-201807-80",
+  "level": "N3",
+  "exam": "2018-07",
+  "no": 80,
+  "stem": [
+   "＿＿ ＿＿ ★ ＿＿ のことを思い出す。"
+  ],
+  "options": [
+   "食事をするたび",
+   "妻との初めてのデートで",
+   "来たとき",
+   "このレストランで"
+  ],
+  "star": 2,
+  "order": [
+   4,
+   1,
+   2,
+   3
+  ],
+  "full": [
+   "このレストランで食事をするたび妻との初めてのデートで来たときのことを思い出す。"
+  ],
+  "trans": "Mỗi lần ăn ở nhà hàng này tôi lại nhớ lần đến đây trong buổi hẹn đầu với vợ.",
+  "explain": [
+   "Vị trí 1: このレストランで＋食事をするたび; mẫu Vるたび.",
+   "Vị trí 4: 妻との初めてのデートで＋来たとき＋のこと; ときのこと là “chuyện lúc đó”.",
+   "Hai vị trí giữa: 食事をするたび＋妻との初めてのデートで; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-201712-81",
+  "level": "N3",
+  "exam": "2017-12",
+  "no": 81,
+  "stem": [
+   "課長:「山田さん、資料の整理をやってもらえますか。来週の金曜 ＿＿ ＿＿ ★ ＿＿ 、できるときにお願いします。」"
+  ],
+  "options": [
+   "ですから",
+   "で",
+   "いい",
+   "まで"
+  ],
+  "star": 3,
+  "order": [
+   4,
+   2,
+   3,
+   1
+  ],
+  "full": [
+   "課長:「山田さん、資料の整理をやってもらえますか。来週の金曜まででいいですから、できるときにお願いします。」"
+  ],
+  "trans": "Thứ Sáu tuần sau là được, nên khi nào làm được thì nhờ anh sắp xếp tài liệu.",
+  "explain": [
+   "Vị trí 1: 来週の金曜＋まで＋で; までで chỉ hạn là đủ.",
+   "Vị trí 4: いい＋ですから; いいですから nêu lý do không cần vội.",
+   "Hai vị trí giữa: で＋いい; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-201712-82",
+  "level": "N3",
+  "exam": "2017-12",
+  "no": 82,
+  "stem": [
+   "私は、もし自分が ＿＿ ＿＿ ★ ＿＿看護師の仕事をしています。"
+  ],
+  "options": [
+   "考えながら",
+   "ということを",
+   "患者だったら",
+   "どうしてほしいか"
+  ],
+  "star": 2,
+  "order": [
+   3,
+   4,
+   2,
+   1
+  ],
+  "full": [
+   "私は、もし自分が患者だったらどうしてほしいかということを考えながら看護師の仕事をしています。"
+  ],
+  "trans": "Tôi làm công việc điều dưỡng và luôn nghĩ nếu mình là bệnh nhân thì muốn được đối xử thế nào.",
+  "explain": [
+   "Vị trí 1: 自分が＋患者だったら＋どうしてほしいか; たら lập giả định.",
+   "Vị trí 4: ということを＋考えながら＋仕事をしています; ながら chỉ vừa suy nghĩ vừa làm.",
+   "Hai vị trí giữa: どうしてほしいか＋ということを; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-201712-83",
+  "level": "N3",
+  "exam": "2017-12",
+  "no": 83,
+  "stem": [
+   "私はエアコンの風が好きではないので、夏の夜、暑くて ＿＿ ＿＿ ★ ＿＿ 自分の部屋ではエアコンを使いません。"
+  ],
+  "options": [
+   "どうしても",
+   "とき",
+   "寝られない",
+   "以外は"
+  ],
+  "star": 2,
+  "order": [
+   1,
+   3,
+   2,
+   4
+  ],
+  "full": [
+   "私はエアコンの風が好きではないので、夏の夜、暑くてどうしても寝られないとき以外は自分の部屋ではエアコンを使いません。"
+  ],
+  "trans": "Tôi không thích gió điều hòa, nên đêm hè trừ khi nóng đến mức không tài nào ngủ được, tôi không dùng điều hòa trong phòng.",
+  "explain": [
+   "Vị trí 1: 暑くて＋どうしても＋寝られない; どうしても đi với phủ định khả năng.",
+   "Vị trí 4: とき＋以外は＋使いません; 以外は chỉ ngoại lệ.",
+   "Hai vị trí giữa: 寝られない＋とき; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-201712-84",
+  "level": "N3",
+  "exam": "2017-12",
+  "no": 84,
+  "stem": [
+   "最近、田中さんは元気がない。心配だが、何が＿＿ ＿＿ ★ ＿＿ してあげられない。"
+  ],
+  "options": [
+   "聞いても",
+   "あったのか",
+   "何も",
+   "答えてくれないので"
+  ],
+  "star": 4,
+  "order": [
+   2,
+   1,
+   4,
+   3
+  ],
+  "full": [
+   "最近、田中さんは元気がない。心配だが、何があったのか聞いても答えてくれないので何もしてあげられない。"
+  ],
+  "trans": "Tanaka gần đây thiếu sức sống; tôi lo nhưng hỏi có chuyện gì anh ấy cũng không trả lời, nên chẳng giúp được gì.",
+  "explain": [
+   "Vị trí 1: 何が＋あったのか＋聞いても; のか là câu hỏi gián tiếp.",
+   "Vị trí 4: 答えてくれないので＋何も＋してあげられない; 何も đi với phủ định.",
+   "Hai vị trí giữa: 聞いても＋答えてくれないので; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-201712-85",
+  "level": "N3",
+  "exam": "2017-12",
+  "no": 85,
+  "stem": [
+   "この辺りは自然が多く、いつかこういうところに住んでみたいと思うが、近くに買い物できる場所がないので、 ＿＿ ＿＿ ★ ＿＿ のは大変そうだ。"
+  ],
+  "options": [
+   "私には",
+   "できない",
+   "生活する",
+   "車の運転が"
+  ],
+  "star": 1,
+  "order": [
+   4,
+   2,
+   1,
+   3
+  ],
+  "full": [
+   "この辺りは自然が多く、いつかこういうところに住んでみたいと思うが、近くに買い物できる場所がないので、車の運転ができない私には生活するのは大変そうだ。"
+  ],
+  "trans": "Nơi này nhiều thiên nhiên, tôi muốn ở thử, nhưng không có chỗ mua đồ gần đó nên với người không lái xe được như tôi, sống ở đây có vẻ vất vả.",
+  "explain": [
+   "Vị trí 1: 車の運転が＋できない; が đánh dấu đối tượng của できない.",
+   "Vị trí 4: 私には＋生活する＋のは大変; には nêu người gặp khó khăn.",
+   "Hai vị trí giữa: できない＋私には; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-201707-86",
+  "level": "N3",
+  "exam": "2017-07",
+  "no": 86,
+  "stem": [
+   "レストランAは、＿＿ ＿＿ ★ ＿＿ なかなか予約がとれない人気店になった。"
+  ],
+  "options": [
+   "雑誌か",
+   "で",
+   "何か",
+   "紹介されてから"
+  ],
+  "star": 2,
+  "order": [
+   1,
+   3,
+   2,
+   4
+  ],
+  "full": [
+   "レストランAは、雑誌か何かで紹介されてからなかなか予約がとれない人気店になった。"
+  ],
+  "trans": "Từ khi được giới thiệu trên một tạp chí nào đó, nhà hàng A trở nên nổi tiếng đến mức khó đặt chỗ.",
+  "explain": [
+   "Vị trí 1: 雑誌か＋何か; mẫu Nか何か “tạp chí hay gì đó”.",
+   "Vị trí 4: で＋紹介されてから; で chỉ nơi đăng giới thiệu.",
+   "Hai vị trí giữa: 何か＋で; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-201707-87",
+  "level": "N3",
+  "exam": "2017-07",
+  "no": 87,
+  "stem": [
+   "(海岸で) A:「わあ、夕日がきれいですね。」 B:「本当にすばらしいですね。＿＿ ＿＿ ★ ＿＿ ありません。」"
+  ],
+  "options": [
+   "夕日は",
+   "見たことが",
+   "きれいな",
+   "こんなに"
+  ],
+  "star": 1,
+  "order": [
+   4,
+   3,
+   1,
+   2
+  ],
+  "full": [
+   "(海岸で) A:「わあ、夕日がきれいですね。」 B:「本当にすばらしいですね。こんなにきれいな夕日は見たことがありません。」"
+  ],
+  "trans": "Tôi chưa từng thấy cảnh hoàng hôn đẹp đến thế này.",
+  "explain": [
+   "Vị trí 1: こんなに＋きれいな＋夕日; trạng từ mức độ bổ nghĩa tính từ.",
+   "Vị trí 4: 夕日は＋見たことが＋ありません; mẫu Vたことがない.",
+   "Hai vị trí giữa: きれいな＋夕日は; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-201707-88",
+  "level": "N3",
+  "exam": "2017-07",
+  "no": 88,
+  "stem": [
+   "昨日、テレビでテニスの試合を見た。＿＿ ＿＿ ★ ＿＿ 最後まで本当にどきどきした。"
+  ],
+  "options": [
+   "試合で",
+   "どちらが",
+   "おかしくない",
+   "勝っても"
+  ],
+  "star": 3,
+  "order": [
+   2,
+   4,
+   3,
+   1
+  ],
+  "full": [
+   "昨日、テレビでテニスの試合を見た。どちらが勝ってもおかしくない試合で最後まで本当にどきどきした。"
+  ],
+  "trans": "Trận tennis hôm qua cân sức đến mức bên nào thắng cũng không lạ, khiến tôi hồi hộp tới cuối.",
+  "explain": [
+   "Vị trí 1: どちらが＋勝っても; ても nêu bất kể bên nào.",
+   "Vị trí 4: おかしくない＋試合で; mệnh đề bổ nghĩa 試合.",
+   "Hai vị trí giữa: 勝っても＋おかしくない; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-201707-89",
+  "level": "N3",
+  "exam": "2017-07",
+  "no": 89,
+  "stem": [
+   "子供には、親の ＿＿ ＿＿ ★ ＿＿ 習わせたほうがいいと思う。"
+  ],
+  "options": [
+   "習わせるのではなくて",
+   "子供の",
+   "興味があるものを",
+   "習わせたいものを"
+  ],
+  "star": 2,
+  "order": [
+   4,
+   1,
+   2,
+   3
+  ],
+  "full": [
+   "子供には、親の習わせたいものを習わせるのではなくて子供の興味があるものを習わせたほうがいいと思う。"
+  ],
+  "trans": "Tôi nghĩ nên cho con học thứ con thích, chứ không phải thứ bố mẹ muốn con học.",
+  "explain": [
+   "Vị trí 1: 親の＋習わせたいものを＋習わせるのではなくて; mẫu ～のではなくて đối lập.",
+   "Vị trí 4: 子供の＋興味があるものを＋習わせたほうがいい; が nối với 興味がある.",
+   "Hai vị trí giữa: 習わせるのではなくて＋子供の; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-201707-90",
+  "level": "N3",
+  "exam": "2017-07",
+  "no": 90,
+  "stem": [
+   "来月、大学のスピーチ大会に出る。全部覚える＿＿ ＿＿ ★ ＿＿ つもりだ。"
+  ],
+  "options": [
+   "ようにする",
+   "たくさん練習して",
+   "まで",
+   "メモを見ないで話せる"
+  ],
+  "star": 4,
+  "order": [
+   3,
+   2,
+   4,
+   1
+  ],
+  "full": [
+   "来月、大学のスピーチ大会に出る。全部覚えるまでたくさん練習してメモを見ないで話せるようにするつもりだ。"
+  ],
+  "trans": "Tháng sau tôi dự thi hùng biện; tôi định tập nhiều cho đến khi thuộc hết và có thể nói mà không nhìn ghi chú.",
+  "explain": [
+   "Vị trí 1: 覚える＋まで＋たくさん練習して; まで chỉ mức cần đạt.",
+   "Vị trí 4: メモを見ないで話せる＋ようにする＋つもりだ; mẫu V可能ようにする.",
+   "Hai vị trí giữa: たくさん練習して＋メモを見ないで話せる; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-201612-91",
+  "level": "N3",
+  "exam": "2016-12",
+  "no": 91,
+  "stem": [
+   "この写真の鳥はとても珍しくて、この鳥の ＿＿ ★ ＿＿ ＿＿ そうだ。"
+  ],
+  "options": [
+   "見る機会がない",
+   "専門家でも",
+   "なかなか",
+   "研究をしている"
+  ],
+  "star": 2,
+  "order": [
+   4,
+   2,
+   3,
+   1
+  ],
+  "full": [
+   "この写真の鳥はとても珍しくて、この鳥の研究をしている専門家でもなかなか見る機会がないそうだ。"
+  ],
+  "trans": "Con chim trong ảnh rất hiếm, nghe nói ngay cả chuyên gia nghiên cứu loài chim ấy cũng hiếm có dịp nhìn thấy.",
+  "explain": [
+   "Vị trí 1: 鳥の＋研究をしている＋専門家; mệnh đề bổ nghĩa 専門家.",
+   "Vị trí 4: なかなか＋見る機会がない; なかなか đi với phủ định.",
+   "Hai vị trí giữa: 専門家でも＋なかなか; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 1
+ },
+ {
+  "id": "N3-201612-92",
+  "level": "N3",
+  "exam": "2016-12",
+  "no": 92,
+  "stem": [
+   "春から大学生になる娘には、 ＿＿ ＿＿ ★ ＿＿できない経験をいろいろしてほしい。"
+  ],
+  "options": [
+   "にも",
+   "にしか",
+   "勉強以外",
+   "大学時代"
+  ],
+  "star": 4,
+  "order": [
+   3,
+   1,
+   4,
+   2
+  ],
+  "full": [
+   "春から大学生になる娘には、勉強以外にも大学時代にしかできない経験をいろいろしてほしい。"
+  ],
+  "trans": "Tôi mong con gái sắp vào đại học có nhiều trải nghiệm chỉ thời đại học mới có, cả ngoài chuyện học.",
+  "explain": [
+   "Vị trí 1: 勉強以外＋にも; にも nêu “cả ngoài việc học”.",
+   "Vị trí 4: 大学時代＋にしか＋できない経験; しか đi với phủ định できない.",
+   "Hai vị trí giữa: にも＋大学時代; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-201612-93",
+  "level": "N3",
+  "exam": "2016-12",
+  "no": 93,
+  "stem": [
+   "土曜日は買い物をしたり友人と食事をしたりし、日曜日は ＿＿ ＿＿ ★ ＿＿私の好きな週末の過ごし方だ。"
+  ],
+  "options": [
+   "のが",
+   "という",
+   "家で過ごす",
+   "どこにも出かけずに"
+  ],
+  "star": 2,
+  "order": [
+   4,
+   3,
+   2,
+   1
+  ],
+  "full": [
+   "土曜日は買い物をしたり友人と食事をしたりし、日曜日はどこにも出かけずに家で過ごすというのが私の好きな週末の過ごし方だ。"
+  ],
+  "trans": "Thứ Bảy tôi mua sắm, ăn với bạn; Chủ nhật không đi đâu mà ở nhà. Đó là cách nghỉ cuối tuần tôi thích.",
+  "explain": [
+   "Vị trí 1: どこにも出かけずに＋家で過ごす; ～ずに chỉ không đi đâu.",
+   "Vị trí 4: という＋のが＋私の好きな過ごし方だ; というのが nêu cách thức làm chủ ngữ.",
+   "Hai vị trí giữa: 家で過ごす＋という; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-201612-94",
+  "level": "N3",
+  "exam": "2016-12",
+  "no": 94,
+  "stem": [
+   "(レストランで) 客:「すみません。15分ぐらい前に案内をお願いして、しばらくここで待てって＿＿ ＿＿ ★ ＿＿ 。まだですか。」 店員:「大変申し訳ありません。」"
+  ],
+  "options": [
+   "待っているんです",
+   "言われた",
+   "から",
+   "けど"
+  ],
+  "star": 1,
+  "order": [
+   2,
+   3,
+   1,
+   4
+  ],
+  "full": [
+   "(レストランで) 客:「すみません。15分ぐらい前に案内をお願いして、しばらくここで待てって言われたから待っているんですけど。まだですか。」 店員:「大変申し訳ありません。」"
+  ],
+  "trans": "Tôi được bảo chờ nên vẫn đang chờ đây, nhưng còn lâu nữa không?",
+  "explain": [
+   "Vị trí 1: 言われた＋から; から nêu lý do chờ.",
+   "Vị trí 4: 待っているんです＋けど; けど mở lời hỏi tiếp “vẫn chưa đến lượt sao?”.",
+   "Hai vị trí giữa: から＋待っているんです; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-201612-95",
+  "level": "N3",
+  "exam": "2016-12",
+  "no": 95,
+  "stem": [
+   "歴史を＿＿ ＿＿ ★ ＿＿進学を決めた。"
+  ],
+  "options": [
+   "勉強すればするほど",
+   "歴史学科への",
+   "と思うようになって",
+   "もっと学びたい"
+  ],
+  "star": 3,
+  "order": [
+   1,
+   4,
+   3,
+   2
+  ],
+  "full": [
+   "歴史を勉強すればするほどもっと学びたいと思うようになって歴史学科への進学を決めた。"
+  ],
+  "trans": "Càng học lịch sử tôi càng muốn học sâu hơn, nên quyết định vào khoa lịch sử.",
+  "explain": [
+   "Vị trí 1: 歴史を＋勉強すればするほど; mẫu ～ば～ほど.",
+   "Vị trí 4: 思うようになって＋歴史学科への＋進学; への bổ nghĩa 進学.",
+   "Hai vị trí giữa: もっと学びたい＋と思うようになって; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-201607-96",
+  "level": "N3",
+  "exam": "2016-07",
+  "no": 96,
+  "stem": [
+   "今日は、久しぶりに家族＿＿ ★ ＿＿ ＿＿過ごした。"
+  ],
+  "options": [
+   "で",
+   "を",
+   "5人",
+   "楽しい休日"
+  ],
+  "star": 1,
+  "order": [
+   3,
+   1,
+   4,
+   2
+  ],
+  "full": [
+   "今日は、久しぶりに家族5人で楽しい休日を過ごした。"
+  ],
+  "trans": "Hôm nay, lâu lắm rồi cả nhà năm người mới cùng trải qua một ngày nghỉ vui vẻ.",
+  "explain": [
+   "Vị trí 1: 家族＋5人＋で; 5人で chỉ cả năm người.",
+   "Vị trí 4: 楽しい休日＋を＋過ごした; を là tân ngữ của 過ごす.",
+   "Hai vị trí giữa: で＋楽しい休日; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 1
+ },
+ {
+  "id": "N3-201607-97",
+  "level": "N3",
+  "exam": "2016-07",
+  "no": 97,
+  "stem": [
+   "駅前の店のラーメンは、濃い＿＿ ★ ＿＿ ＿＿私はちょっと苦手だ。"
+  ],
+  "options": [
+   "味が",
+   "いい",
+   "好きな人には",
+   "かもしれないが"
+  ],
+  "star": 3,
+  "order": [
+   1,
+   3,
+   2,
+   4
+  ],
+  "full": [
+   "駅前の店のラーメンは、濃い味が好きな人にはいいかもしれないが私はちょっと苦手だ。"
+  ],
+  "trans": "Ramen ở quán trước ga có lẽ hợp người thích vị đậm, nhưng tôi hơi khó ăn.",
+  "explain": [
+   "Vị trí 1: 濃い＋味が＋好きな人には; 味 là đối tượng của 好き.",
+   "Vị trí 4: いい＋かもしれないが; が nêu ý trái chiều.",
+   "Hai vị trí giữa: 好きな人には＋いい; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 1
+ },
+ {
+  "id": "N3-201607-98",
+  "level": "N3",
+  "exam": "2016-07",
+  "no": 98,
+  "stem": [
+   "久しぶりにふるさとに帰ったが、昔は何もなかった＿＿ ＿＿ ★ ＿＿見て驚いた。"
+  ],
+  "options": [
+   "のを",
+   "すっかり",
+   "駅の周りが",
+   "変わっている"
+  ],
+  "star": 4,
+  "order": [
+   3,
+   2,
+   4,
+   1
+  ],
+  "full": [
+   "久しぶりにふるさとに帰ったが、昔は何もなかった駅の周りがすっかり変わっているのを見て驚いた。"
+  ],
+  "trans": "Về quê sau lâu ngày, tôi ngạc nhiên thấy khu quanh ga trước kia chẳng có gì nay đã thay đổi hẳn.",
+  "explain": [
+   "Vị trí 1: 何もなかった＋駅の周りが; mệnh đề bổ nghĩa khu vực quanh ga.",
+   "Vị trí 4: 変わっている＋のを＋見て; のを danh từ hóa tân ngữ.",
+   "Hai vị trí giữa: すっかり＋変わっている; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-201607-99",
+  "level": "N3",
+  "exam": "2016-07",
+  "no": 99,
+  "stem": [
+   "これまでの人生の中で＿＿ ＿＿ ★ ＿＿日はない。"
+  ],
+  "options": [
+   "日ほど",
+   "自分の子供が",
+   "うれしかった",
+   "生まれた"
+  ],
+  "star": 1,
+  "order": [
+   2,
+   4,
+   1,
+   3
+  ],
+  "full": [
+   "これまでの人生の中で自分の子供が生まれた日ほどうれしかった日はない。"
+  ],
+  "trans": "Trong đời tôi, không ngày nào vui bằng ngày con mình chào đời.",
+  "explain": [
+   "Vị trí 1: 自分の子供が＋生まれた＋日; động từ quá khứ bổ nghĩa 日.",
+   "Vị trí 4: 日ほど＋うれしかった＋日はない; mẫu Nほど〜Nはない.",
+   "Hai vị trí giữa: 生まれた＋日ほど; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-201607-100",
+  "level": "N3",
+  "exam": "2016-07",
+  "no": 100,
+  "stem": [
+   "今回の彼の新曲は、友情がテーマになっている＿＿ ＿＿ ★ ＿＿大きく違う。"
+  ],
+  "options": [
+   "彼の曲と",
+   "発表されてきた",
+   "という点で",
+   "これまでに"
+  ],
+  "star": 2,
+  "order": [
+   3,
+   4,
+   2,
+   1
+  ],
+  "full": [
+   "今回の彼の新曲は、友情がテーマになっているという点でこれまでに発表されてきた彼の曲と大きく違う。"
+  ],
+  "trans": "Ca khúc mới của anh ấy khác hẳn những bài trước ở chỗ lấy tình bạn làm chủ đề.",
+  "explain": [
+   "Vị trí 1: テーマになっている＋という点で; という点で nêu khía cạnh khác biệt.",
+   "Vị trí 4: 発表されてきた＋彼の曲と＋大きく違う; mệnh đề bổ nghĩa 曲.",
+   "Hai vị trí giữa: これまでに＋発表されてきた; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-201512-101",
+  "level": "N3",
+  "exam": "2015-12",
+  "no": 101,
+  "stem": [
+   "実家にある冷蔵庫は30年も ＿＿ ★ ＿＿ ＿＿、親は「まだ買い替えない」と言っている。"
+  ],
+  "options": [
+   "いつ壊れてもおかしくない",
+   "古いもので",
+   "のに",
+   "使っている"
+  ],
+  "star": 2,
+  "order": [
+   4,
+   2,
+   1,
+   3
+  ],
+  "full": [
+   "実家にある冷蔵庫は30年も使っている古いものでいつ壊れてもおかしくないのに、親は「まだ買い替えない」と言っている。"
+  ],
+  "trans": "Tủ lạnh ở nhà bố mẹ đã dùng 30 năm, cũ đến mức hỏng lúc nào cũng chẳng lạ, vậy mà bố mẹ nói chưa thay.",
+  "explain": [
+   "Vị trí 1: 30年も＋使っている＋古いもので; もの nối mô tả đồ vật.",
+   "Vị trí 4: いつ壊れてもおかしくない＋のに; のに nêu tương phản.",
+   "Hai vị trí giữa: 古いもので＋いつ壊れてもおかしくない; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 1
+ },
+ {
+  "id": "N3-201512-102",
+  "level": "N3",
+  "exam": "2015-12",
+  "no": 102,
+  "stem": [
+   "＿＿ ＿＿ ★ ＿＿ の建設工事が遅れているそうだ。"
+  ],
+  "options": [
+   "駅ビル",
+   "予定だった",
+   "あと半年で",
+   "終わる"
+  ],
+  "star": 2,
+  "order": [
+   3,
+   4,
+   2,
+   1
+  ],
+  "full": [
+   "あと半年で終わる予定だった駅ビルの建設工事が遅れているそうだ。"
+  ],
+  "trans": "Nghe nói công trình xây tòa nhà ga dự kiến hoàn thành sau nửa năm nữa đang bị chậm.",
+  "explain": [
+   "Vị trí 1: あと半年で＋終わる; で chỉ mốc hoàn thành.",
+   "Vị trí 4: 予定だった＋駅ビル＋の建設工事; 予定だった bổ nghĩa 駅ビル.",
+   "Hai vị trí giữa: 終わる＋予定だった; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-201512-103",
+  "level": "N3",
+  "exam": "2015-12",
+  "no": 103,
+  "stem": [
+   "プレゼントをするときは、贈る相手の ＿＿ ＿＿ ★ ＿＿ 時間も楽しい。"
+  ],
+  "options": [
+   "選ぶ",
+   "ことを",
+   "どれにするか",
+   "考えながら"
+  ],
+  "star": 3,
+  "order": [
+   2,
+   4,
+   3,
+   1
+  ],
+  "full": [
+   "プレゼントをするときは、贈る相手のことを考えながらどれにするか選ぶ時間も楽しい。"
+  ],
+  "trans": "Khi tặng quà, khoảng thời gian nghĩ về người nhận và chọn món nào cũng vui.",
+  "explain": [
+   "Vị trí 1: 贈る相手の＋ことを＋考えながら; ながら nêu việc cân nhắc người nhận.",
+   "Vị trí 4: どれにするか＋選ぶ＋時間; câu hỏi gián tiếp là đối tượng của 選ぶ.",
+   "Hai vị trí giữa: 考えながら＋どれにするか; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-201512-104",
+  "level": "N3",
+  "exam": "2015-12",
+  "no": 104,
+  "stem": [
+   "このパソコン教室にはさまざまなコースがあります。基礎コースは、パソコンの＿＿ ＿＿ ★ ＿＿ぴったりです。"
+  ],
+  "options": [
+   "コースなので",
+   "初めて習う方に",
+   "慣れるための",
+   "基本的な使い方に"
+  ],
+  "star": 1,
+  "order": [
+   4,
+   3,
+   1,
+   2
+  ],
+  "full": [
+   "このパソコン教室にはさまざまなコースがあります。基礎コースは、パソコンの基本的な使い方に慣れるためのコースなので初めて習う方にぴったりです。"
+  ],
+  "trans": "Khóa cơ bản giúp làm quen cách dùng máy tính, nên rất hợp người lần đầu học.",
+  "explain": [
+   "Vị trí 1: パソコンの＋基本的な使い方に＋慣れるための; に đánh dấu điều cần làm quen.",
+   "Vị trí 4: コースなので＋初めて習う方に＋ぴったり; に đánh dấu người phù hợp.",
+   "Hai vị trí giữa: 慣れるための＋コースなので; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-201512-105",
+  "level": "N3",
+  "exam": "2015-12",
+  "no": 105,
+  "stem": [
+   "エアコンから ＿＿ ＿＿ ★ ＿＿ かというと、冷たい空気は暖かい空気より重いからだ。"
+  ],
+  "options": [
+   "冷たい空気が",
+   "出た",
+   "どうして",
+   "部屋の下の方に行くのは"
+  ],
+  "star": 3,
+  "order": [
+   2,
+   1,
+   3,
+   4
+  ],
+  "full": [
+   "エアコンから出た冷たい空気がどうして部屋の下の方に行くのかというと、冷たい空気は暖かい空気より重いからだ。"
+  ],
+  "trans": "Vì sao luồng khí lạnh từ điều hòa đi xuống phía dưới phòng? Bởi khí lạnh nặng hơn khí ấm.",
+  "explain": [
+   "Vị trí 1: エアコンから＋出た＋冷たい空気が; 出た bổ nghĩa 空気.",
+   "Vị trí 4: ④ kết thúc bằng「のは」, nhưng phần sau bắt đầu「かというと」; hai phần không nối được về ngữ pháp. Đây là lỗi của đề nguồn.",
+   "Hai vị trí giữa: どうして＋部屋の下の方に行くのは; どうして mở câu hỏi về nguyên nhân; bản đề có “のはかというと” không tự nhiên."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-201507-106",
+  "level": "N3",
+  "exam": "2015-07",
+  "no": 106,
+  "stem": [
+   "この家に引っ越してきて、もう★ ＿＿ ＿＿ ＿＿だけです。"
+  ],
+  "options": [
+   "まだ",
+   "のに",
+   "半年になる",
+   "住所を覚えていない"
+  ],
+  "star": 3,
+  "order": [
+   3,
+   2,
+   1,
+   4
+  ],
+  "full": [
+   "この家に引っ越してきて、もう半年になるのにまだ住所を覚えていないだけです。"
+  ],
+  "trans": "Chuyển đến nhà này đã nửa năm rồi mà tôi vẫn chưa nhớ địa chỉ.",
+  "explain": [
+   "Vị trí 1: もう＋半年になる; もう gắn với thời gian đã trôi.",
+   "Vị trí 4: まだ＋住所を覚えていない＋だけ; まだ đi với phủ định.",
+   "Hai vị trí giữa: のに＋まだ; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 0
+ },
+ {
+  "id": "N3-201507-107",
+  "level": "N3",
+  "exam": "2015-07",
+  "no": 107,
+  "stem": [
+   "毎年、X社には多くの新入社員が入るが、仕事が＿＿ ＿＿ ★ ＿＿多いそうだ。"
+  ],
+  "options": [
+   "あまりに忙しくて",
+   "やめてしまう",
+   "社員が",
+   "3年以内に"
+  ],
+  "star": 2,
+  "order": [
+   1,
+   4,
+   2,
+   3
+  ],
+  "full": [
+   "毎年、X社には多くの新入社員が入るが、仕事があまりに忙しくて3年以内にやめてしまう社員が多いそうだ。"
+  ],
+  "trans": "Nghe nói mỗi năm công ty X có nhiều nhân viên mới, nhưng cũng nhiều người bỏ việc trong ba năm vì công việc quá bận.",
+  "explain": [
+   "Vị trí 1: 仕事が＋あまりに忙しくて; あまりに nêu mức độ quá lớn.",
+   "Vị trí 4: やめてしまう＋社員が＋多い; mệnh đề bổ nghĩa 社員.",
+   "Hai vị trí giữa: 3年以内に＋やめてしまう; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-201507-108",
+  "level": "N3",
+  "exam": "2015-07",
+  "no": 108,
+  "stem": [
+   "この島は、空から＿＿ ＿＿ ★ ＿＿「耳島」と呼ばれています。"
+  ],
+  "options": [
+   "形に",
+   "見えることから",
+   "人の耳のような",
+   "見ると"
+  ],
+  "star": 1,
+  "order": [
+   4,
+   3,
+   1,
+   2
+  ],
+  "full": [
+   "この島は、空から見ると人の耳のような形に見えることから「耳島」と呼ばれています。"
+  ],
+  "trans": "Từ trên không nhìn xuống, đảo có hình như tai người nên được gọi là “đảo Tai”.",
+  "explain": [
+   "Vị trí 1: 空から＋見ると＋人の耳のような＋形に; ような bổ nghĩa 形.",
+   "Vị trí 4: 見えることから＋「耳島」と呼ばれる; ～ことから nêu nguồn gốc tên.",
+   "Hai vị trí giữa: 人の耳のような＋形に; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-201507-109",
+  "level": "N3",
+  "exam": "2015-07",
+  "no": 109,
+  "stem": [
+   "一人暮らしを始めて3か月が過ぎたが、家に＿＿ ＿＿ ★ ＿＿といつも思う。"
+  ],
+  "options": [
+   "誰もいない",
+   "話し相手が",
+   "寂しい",
+   "のは"
+  ],
+  "star": 4,
+  "order": [
+   2,
+   1,
+   4,
+   3
+  ],
+  "full": [
+   "一人暮らしを始めて3か月が過ぎたが、家に話し相手が誰もいないのは寂しいといつも思う。"
+  ],
+  "trans": "Tôi sống một mình đã ba tháng và luôn thấy buồn vì ở nhà không có ai trò chuyện.",
+  "explain": [
+   "Vị trí 1: 家に＋話し相手が＋誰もいない; 誰も đi với phủ định.",
+   "Vị trí 4: のは＋寂しい＋といつも思う; のは danh từ hóa mệnh đề.",
+   "Hai vị trí giữa: 誰もいない＋のは; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-201507-110",
+  "level": "N3",
+  "exam": "2015-07",
+  "no": 110,
+  "stem": [
+   "30日以上＿＿ ＿＿ ★ ＿＿が、すぐ気にならなくなった。"
+  ],
+  "options": [
+   "日が",
+   "降らない",
+   "続いている",
+   "雨の"
+  ],
+  "star": 1,
+  "order": [
+   4,
+   2,
+   1,
+   3
+  ],
+  "full": [
+   "30日以上雨の降らない日が続いているが、すぐ気にならなくなった。"
+  ],
+  "trans": "Đã hơn 30 ngày không mưa, nhưng tôi sớm không còn để ý nữa.",
+  "explain": [
+   "Vị trí 1: 30日以上＋雨の＋降らない; 雨の降らない bổ nghĩa 日.",
+   "Vị trí 4: 日が＋続いている; が đánh dấu chủ ngữ.",
+   "Hai vị trí giữa: 降らない＋日が; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-201412-111",
+  "level": "N3",
+  "exam": "2014-12",
+  "no": 111,
+  "stem": [
+   "僕の家族は、両親と弟三人の六人家族です。家族 ＿＿ ＿＿ ★ ＿＿だけです。"
+  ],
+  "options": [
+   "は",
+   "女",
+   "母",
+   "で"
+  ],
+  "star": 1,
+  "order": [
+   4,
+   2,
+   1,
+   3
+  ],
+  "full": [
+   "僕の家族は、両親と弟三人の六人家族です。家族で女は母だけです。"
+  ],
+  "trans": "Gia đình tôi có sáu người gồm bố mẹ và ba em trai; phụ nữ trong nhà chỉ có mẹ.",
+  "explain": [
+   "Vị trí 1: 家族＋で＋女; で chỉ trong phạm vi gia đình.",
+   "Vị trí 4: 女＋は＋母＋だけ; は nêu chủ đề, だけ giới hạn.",
+   "Hai vị trí giữa: 女＋は; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-201412-112",
+  "level": "N3",
+  "exam": "2014-12",
+  "no": 112,
+  "stem": [
+   "必ず ＿＿ ＿＿ ★ ＿＿ すっかり忘れていた。"
+  ],
+  "options": [
+   "ことを",
+   "会議の資料の",
+   "今日中に",
+   "作らなくてはいけない"
+  ],
+  "star": 2,
+  "order": [
+   3,
+   4,
+   2,
+   1
+  ],
+  "full": [
+   "必ず今日中に作らなくてはいけない会議の資料のことをすっかり忘れていた。"
+  ],
+  "trans": "Tôi quên bẵng việc phải làm tài liệu cuộc họp trong hôm nay.",
+  "explain": [
+   "Vị trí 1: 必ず＋今日中に＋作らなくてはいけない; phải làm trong hôm nay.",
+   "Vị trí 4: 会議の資料の＋ことを＋すっかり忘れていた; ～のことを là đối tượng của 忘れる.",
+   "Hai vị trí giữa: 作らなくてはいけない＋会議の資料の; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-201412-113",
+  "level": "N3",
+  "exam": "2014-12",
+  "no": 113,
+  "stem": [
+   "先生「調べた結果を説明するとき、 ＿＿ ＿＿ ★ ＿＿なります。」"
+  ],
+  "options": [
+   "わかりやすく",
+   "示しながら",
+   "表やグラフを",
+   "説明すると"
+  ],
+  "star": 4,
+  "order": [
+   3,
+   2,
+   4,
+   1
+  ],
+  "full": [
+   "先生「調べた結果を説明するとき、表やグラフを示しながら説明するとわかりやすくなります。」"
+  ],
+  "trans": "Khi giải thích kết quả khảo sát, vừa đưa bảng và biểu đồ vừa giải thích sẽ dễ hiểu hơn.",
+  "explain": [
+   "Vị trí 1: 表やグラフを＋示しながら; ながら chỉ vừa trình bày vừa giải thích.",
+   "Vị trí 4: 説明すると＋わかりやすく＋なります; くなる là dạng biến đổi của い-tính từ.",
+   "Hai vị trí giữa: 示しながら＋説明すると; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-201412-114",
+  "level": "N3",
+  "exam": "2014-12",
+  "no": 114,
+  "stem": [
+   "昨日の夜、高校時代に、＿＿ ＿＿ ★ ＿＿たっていて、驚いた。"
+  ],
+  "options": [
+   "いつのまにか3時間も",
+   "クラスだった",
+   "友人と電話で話していたら",
+   "ずっと同じ"
+  ],
+  "star": 3,
+  "order": [
+   4,
+   2,
+   3,
+   1
+  ],
+  "full": [
+   "昨日の夜、高校時代に、ずっと同じクラスだった友人と電話で話していたらいつのまにか3時間もたっていて、驚いた。"
+  ],
+  "trans": "Tối qua nói chuyện điện thoại với người bạn cùng lớp suốt thời phổ thông, tôi ngạc nhiên vì đã ba tiếng trôi qua lúc nào không hay.",
+  "explain": [
+   "Vị trí 1: ずっと同じ＋クラスだった＋友人; mệnh đề bổ nghĩa 友人.",
+   "Vị trí 4: 話していたら＋いつのまにか3時間も＋たっていた; たら nêu kết quả bất ngờ.",
+   "Hai vị trí giữa: クラスだった＋友人と電話で話していたら; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-201412-115",
+  "level": "N3",
+  "exam": "2014-12",
+  "no": 115,
+  "stem": [
+   "私が今住んでいるアパートは線路の近くにある。住み始めたころは、電車の通る ＿＿ ＿＿ ★ ＿＿ が、すぐ気にならなくなった。"
+  ],
+  "options": [
+   "うるさいと",
+   "こともあった",
+   "音がして",
+   "思う"
+  ],
+  "star": 4,
+  "order": [
+   3,
+   1,
+   4,
+   2
+  ],
+  "full": [
+   "私が今住んでいるアパートは線路の近くにある。住み始めたころは、電車の通る音がしてうるさいと思うこともあったが、すぐ気にならなくなった。"
+  ],
+  "trans": "Hồi mới đến ở, có lúc tôi thấy tiếng tàu chạy ồn, nhưng chẳng mấy chốc không còn để ý nữa.",
+  "explain": [
+   "Vị trí 1: 電車の通る＋音がして; が đánh dấu âm thanh phát ra.",
+   "Vị trí 4: うるさいと＋思う＋こともあった; と dẫn nội dung suy nghĩ.",
+   "Hai vị trí giữa: うるさいと＋思う; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-201407-116",
+  "level": "N3",
+  "exam": "2014-07",
+  "no": 116,
+  "stem": [
+   "娘が歌手になることには反対でしたが、娘も一生けんめい＿＿ ＿＿ ★ ＿＿と思っています。"
+  ],
+  "options": [
+   "がんばろうとして",
+   "応援して",
+   "やろうか",
+   "いるので"
+  ],
+  "star": 2,
+  "order": [
+   1,
+   4,
+   2,
+   3
+  ],
+  "full": [
+   "娘が歌手になることには反対でしたが、娘も一生けんめいがんばろうとしているので応援してやろうかと思っています。"
+  ],
+  "trans": "Tôi từng phản đối con gái làm ca sĩ, nhưng vì con đang cố gắng hết sức nên giờ nghĩ có lẽ sẽ ủng hộ.",
+  "explain": [
+   "Vị trí 1: 一生けんめい＋がんばろうとして＋いるので; ～ようとしている chỉ đang cố gắng.",
+   "Vị trí 4: 応援して＋やろうか＋と思う; ～ようかと思う chỉ ý định.",
+   "Hai vị trí giữa: いるので＋応援して; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-201407-117",
+  "level": "N3",
+  "exam": "2014-07",
+  "no": 117,
+  "stem": [
+   "ここにある家具は＿＿ ＿＿ ★ ＿＿使うかもしれないと思うと、捨てられない。"
+  ],
+  "options": [
+   "けれども",
+   "いつかまた",
+   "使っていない",
+   "今はどれも"
+  ],
+  "star": 1,
+  "order": [
+   4,
+   3,
+   1,
+   2
+  ],
+  "full": [
+   "ここにある家具は今はどれも使っていないけれどもいつかまた使うかもしれないと思うと、捨てられない。"
+  ],
+  "trans": "Đồ đạc ở đây hiện chẳng dùng món nào, nhưng nghĩ có khi sau này lại dùng thì tôi không nỡ vứt.",
+  "explain": [
+   "Vị trí 1: 家具は＋今はどれも＋使っていない; どれも nêu tất cả.",
+   "Vị trí 4: けれども＋いつかまた＋使うかもしれない; けれども nối ý trái chiều.",
+   "Hai vị trí giữa: 使っていない＋けれども; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-201407-118",
+  "level": "N3",
+  "exam": "2014-07",
+  "no": 118,
+  "stem": [
+   "書いた＿＿ ＿＿ ★ ＿＿手紙が引き出しにあった。"
+  ],
+  "options": [
+   "まま",
+   "忘れていた",
+   "出すのを",
+   "友人への"
+  ],
+  "star": 2,
+  "order": [
+   1,
+   3,
+   2,
+   4
+  ],
+  "full": [
+   "書いたまま出すのを忘れていた友人への手紙が引き出しにあった。"
+  ],
+  "trans": "Trong ngăn kéo có lá thư gửi bạn tôi viết xong rồi để đó, quên gửi.",
+  "explain": [
+   "Vị trí 1: 書いた＋まま＋出すのを; ～たまま chỉ để nguyên trạng thái.",
+   "Vị trí 4: 忘れていた＋友人への＋手紙; mệnh đề bổ nghĩa 手紙.",
+   "Hai vị trí giữa: 出すのを＋忘れていた; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-201407-119",
+  "level": "N3",
+  "exam": "2014-07",
+  "no": 119,
+  "stem": [
+   "A「空が暗いですね。」",
+   "B「そうですね。雨が＿＿ ＿＿ ★ ＿＿ですね。」"
+  ],
+  "options": [
+   "ない",
+   "いつ",
+   "おかしく",
+   "降っても"
+  ],
+  "star": 3,
+  "order": [
+   2,
+   4,
+   3,
+   1
+  ],
+  "full": [
+   "A「空が暗いですね。」",
+   "B「そうですね。雨がいつ降ってもおかしくないですね。」"
+  ],
+  "trans": "Trời tối thật; có mưa bất cứ lúc nào cũng không lạ.",
+  "explain": [
+   "Vị trí 1: 雨が＋いつ＋降っても; mẫu いつ〜ても.",
+   "Vị trí 4: おかしく＋ない＋ですね; ～てもおかしくない chỉ rất có thể xảy ra.",
+   "Hai vị trí giữa: 降っても＋おかしく; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-201407-120",
+  "level": "N3",
+  "exam": "2014-07",
+  "no": 120,
+  "stem": [
+   "(電話で) A「もしもし、ちょっと話したいことがあるんだけど、今、時間ある?」",
+   "B「ごめん。ちょうど出かける＿＿ ＿＿ ★ ＿＿私から電話するね。」"
+  ],
+  "options": [
+   "ゆっくり話す",
+   "あとで",
+   "ところで",
+   "時間がないから"
+  ],
+  "star": 4,
+  "order": [
+   3,
+   1,
+   4,
+   2
+  ],
+  "full": [
+   "(電話で) A「もしもし、ちょっと話したいことがあるんだけど、今、時間ある?」",
+   "B「ごめん。ちょうど出かけるところでゆっくり話す時間がないからあとで私から電話するね。」"
+  ],
+  "trans": "Xin lỗi, tôi vừa định ra ngoài nên không có thời gian nói chuyện thong thả; lát nữa tôi gọi lại.",
+  "explain": [
+   "Vị trí 1: 出かける＋ところで; ～ところ chỉ lúc sắp ra ngoài.",
+   "Vị trí 4: 時間がないから＋あとで＋私から電話する; から nêu lý do.",
+   "Hai vị trí giữa: ゆっくり話す＋時間がないから; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-201312-121",
+  "level": "N3",
+  "exam": "2013-12",
+  "no": 121,
+  "stem": [
+   "私は、息子が＿＿ ＿＿ ★ ＿＿見て、「どうしたの?」と声をかけた。"
+  ],
+  "options": [
+   "顔を",
+   "何か",
+   "言いたそうな",
+   "しているのを"
+  ],
+  "star": 1,
+  "order": [
+   2,
+   3,
+   1,
+   4
+  ],
+  "full": [
+   "私は、息子が何か言いたそうな顔をしているのを見て、「どうしたの?」と声をかけた。"
+  ],
+  "trans": "Thấy con trai có vẻ muốn nói điều gì, tôi hỏi: “Có chuyện gì thế?”.",
+  "explain": [
+   "Vị trí 1: 息子が＋何か＋言いたそうな; ～たそうな diễn tả vẻ muốn nói.",
+   "Vị trí 4: 顔を＋しているのを＋見て; のを danh từ hóa đối tượng nhìn thấy.",
+   "Hai vị trí giữa: 言いたそうな＋顔を; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-201312-122",
+  "level": "N3",
+  "exam": "2013-12",
+  "no": 122,
+  "stem": [
+   "この公園は、いろいろな花が咲きはじめる＿＿ ＿＿ ★ ＿＿と聞いた。"
+  ],
+  "options": [
+   "最も",
+   "時期が",
+   "美しい",
+   "この"
+  ],
+  "star": 1,
+  "order": [
+   4,
+   2,
+   1,
+   3
+  ],
+  "full": [
+   "この公園は、いろいろな花が咲きはじめるこの時期が最も美しいと聞いた。"
+  ],
+  "trans": "Tôi nghe nói công viên này đẹp nhất vào thời điểm nhiều loài hoa bắt đầu nở.",
+  "explain": [
+   "Vị trí 1: 花が咲きはじめる＋この＋時期が; mệnh đề bổ nghĩa 時期.",
+   "Vị trí 4: 最も＋美しい＋と聞いた; 最も đi với tính từ.",
+   "Hai vị trí giữa: 時期が＋最も; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-201312-123",
+  "level": "N3",
+  "exam": "2013-12",
+  "no": 123,
+  "stem": [
+   "友達がけがで入院したと聞き、あわてて＿＿ ＿＿ ★ ＿＿元気で安心した。"
+  ],
+  "options": [
+   "病院に行って",
+   "思って",
+   "みると",
+   "いたよりも"
+  ],
+  "star": 2,
+  "order": [
+   1,
+   3,
+   2,
+   4
+  ],
+  "full": [
+   "友達がけがで入院したと聞き、あわてて病院に行ってみると思っていたよりも元気で安心した。"
+  ],
+  "trans": "Nghe tin bạn nhập viện vì bị thương, tôi vội đến bệnh viện và yên tâm vì bạn khỏe hơn tôi tưởng.",
+  "explain": [
+   "Vị trí 1: あわてて＋病院に行って＋みると; ～てみると nêu kết quả khi thử đến.",
+   "Vị trí 4: 思って＋いたよりも＋元気; mẫu 思っていたよりも.",
+   "Hai vị trí giữa: みると＋思って; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-201312-124",
+  "level": "N3",
+  "exam": "2013-12",
+  "no": 124,
+  "stem": [
+   "庭に植えたスイカは、これまでなかなか ＿＿ ＿＿ ★ ＿＿今年になっておいしいのができた。"
+  ],
+  "options": [
+   "あきらめないで",
+   "ようやく",
+   "うまく育たなかったが",
+   "毎年チャレンジしていたら"
+  ],
+  "star": 4,
+  "order": [
+   3,
+   1,
+   4,
+   2
+  ],
+  "full": [
+   "庭に植えたスイカは、これまでなかなかうまく育たなかったがあきらめないで毎年チャレンジしていたらようやく今年になっておいしいのができた。"
+  ],
+  "trans": "Dưa hấu trồng trong vườn mãi không lớn tốt, nhưng tôi không bỏ cuộc, thử mỗi năm và năm nay cuối cùng có quả ngon.",
+  "explain": [
+   "Vị trí 1: なかなか＋うまく育たなかったが; なかなか đi với phủ định.",
+   "Vị trí 4: 毎年チャレンジしていたら＋ようやく＋できた; たら nêu kết quả sau cố gắng.",
+   "Hai vị trí giữa: あきらめないで＋毎年チャレンジしていたら; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-201312-125",
+  "level": "N3",
+  "exam": "2013-12",
+  "no": 125,
+  "stem": [
+   "子供のころに祖母が作ってくれたワンピースを、＿＿ ＿＿ ★ ＿＿いる。"
+  ],
+  "options": [
+   "着られなくなった",
+   "大切に持って",
+   "今でも",
+   "体が大きくなって"
+  ],
+  "star": 3,
+  "order": [
+   4,
+   1,
+   3,
+   2
+  ],
+  "full": [
+   "子供のころに祖母が作ってくれたワンピースを、体が大きくなって着られなくなった今でも大切に持っている。"
+  ],
+  "trans": "Tôi vẫn giữ cẩn thận chiếc váy bà may từ nhỏ, dù lớn lên không mặc vừa nữa.",
+  "explain": [
+   "Vị trí 1: 体が大きくなって＋着られなくなった; ～なくなった chỉ không còn mặc vừa.",
+   "Vị trí 4: 今でも＋大切に持って＋いる; 今でも chỉ đến hiện tại vẫn vậy.",
+   "Hai vị trí giữa: 着られなくなった＋今でも; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-201307-126",
+  "level": "N3",
+  "exam": "2013-07",
+  "no": 126,
+  "stem": [
+   "(病院で) 村山「すみません。予約をした村山ですが。」 受付「はい、村山さんですね。では、そちらの＿＿ ＿＿ ★ ＿＿ ください。」"
+  ],
+  "options": [
+   "お待ち",
+   "おかけ",
+   "いすに",
+   "になって"
+  ],
+  "star": 4,
+  "order": [
+   3,
+   2,
+   4,
+   1
+  ],
+  "full": [
+   "(病院で) 村山「すみません。予約をした村山ですが。」 受付「はい、村山さんですね。では、そちらのいすにおかけになってお待ちください。」"
+  ],
+  "trans": "Vâng, anh Murayama. Xin ngồi ghế bên kia và chờ.",
+  "explain": [
+   "Vị trí 1: そちらの＋いすに＋おかけ; に chỉ vị trí ngồi.",
+   "Vị trí 4: おかけ＋になって＋お待ちください; mẫu kính ngữ おVになります và おVください.",
+   "Hai vị trí giữa: おかけ＋になって; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-201307-127",
+  "level": "N3",
+  "exam": "2013-07",
+  "no": 127,
+  "stem": [
+   "料理をする＿＿ ＿＿ ★ ＿＿ おいしく作れる。"
+  ],
+  "options": [
+   "私でも",
+   "ハンバーグだけは",
+   "それほど得意ではない",
+   "のが"
+  ],
+  "star": 1,
+  "order": [
+   4,
+   3,
+   1,
+   2
+  ],
+  "full": [
+   "料理をするのがそれほど得意ではない私でもハンバーグだけはおいしく作れる。"
+  ],
+  "trans": "Dù nấu ăn không giỏi lắm, riêng món hamburger thì ngay cả tôi cũng làm ngon được.",
+  "explain": [
+   "Vị trí 1: 料理をする＋のが＋それほど得意ではない; のが danh từ hóa đối tượng của 得意.",
+   "Vị trí 4: 私でも＋ハンバーグだけは＋おいしく作れる; でも nêu ngay cả tôi.",
+   "Hai vị trí giữa: それほど得意ではない＋私でも; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-201307-128",
+  "level": "N3",
+  "exam": "2013-07",
+  "no": 128,
+  "stem": [
+   "高木「山村さんは、いつもポケットにメモ帳を入れているんですか。」 山村「はい。思いついた＿＿ ＿＿ ★ ＿＿ しているんです。」"
+  ],
+  "options": [
+   "忘れて",
+   "しまわないように",
+   "必ず持ち歩くように",
+   "アイデアを"
+  ],
+  "star": 2,
+  "order": [
+   4,
+   1,
+   2,
+   3
+  ],
+  "full": [
+   "高木「山村さんは、いつもポケットにメモ帳を入れているんですか。」 山村「はい。思いついたアイデアを忘れてしまわないように必ず持ち歩くようにしているんです。」"
+  ],
+  "trans": "Tôi luôn mang sổ tay để không quên ý tưởng vừa nghĩ ra.",
+  "explain": [
+   "Vị trí 1: 思いついた＋アイデアを＋忘れて; アイデア là tân ngữ của 忘れる.",
+   "Vị trí 4: 必ず持ち歩くように＋しているんです。」; nối trực tiếp với phần sau chỗ trống.",
+   "Hai vị trí giữa: 忘れて＋しまわないように＋必ず持ち歩くように; ～ないように chỉ mục đích."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-201307-129",
+  "level": "N3",
+  "exam": "2013-07",
+  "no": 129,
+  "stem": [
+   "昨日の夜、誰も＿＿ ＿＿ ★ ＿＿ 気がした。"
+  ],
+  "options": [
+   "いない",
+   "聞こえた",
+   "何か音が",
+   "部屋から"
+  ],
+  "star": 3,
+  "order": [
+   1,
+   4,
+   3,
+   2
+  ],
+  "full": [
+   "昨日の夜、誰もいない部屋から何か音が聞こえた気がした。"
+  ],
+  "trans": "Tối qua tôi có cảm giác nghe thấy tiếng gì đó từ căn phòng không có ai.",
+  "explain": [
+   "Vị trí 1: 誰も＋いない＋部屋から; 誰も đi với phủ định.",
+   "Vị trí 4: 何か音が＋聞こえた＋気がした; nghe như có tiếng động.",
+   "Hai vị trí giữa: 部屋から＋何か音が; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-201307-130",
+  "level": "N3",
+  "exam": "2013-07",
+  "no": 130,
+  "stem": [
+   "現在、市民運動公園の中に、大小＿＿ ＿＿ ★ ＿＿ 検討されている。"
+  ],
+  "options": [
+   "体育館を",
+   "建設する",
+   "二つの",
+   "という案が"
+  ],
+  "star": 2,
+  "order": [
+   3,
+   1,
+   2,
+   4
+  ],
+  "full": [
+   "現在、市民運動公園の中に、大小二つの体育館を建設するという案が検討されている。"
+  ],
+  "trans": "Hiện đề án xây hai nhà thi đấu lớn nhỏ trong công viên thể thao thành phố đang được xem xét.",
+  "explain": [
+   "Vị trí 1: 大小＋二つの＋体育館を; hai nhà thi đấu lớn nhỏ.",
+   "Vị trí 4: 建設する＋という案が＋検討されている; という案 nêu đề án.",
+   "Hai vị trí giữa: 体育館を＋建設する; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-201212-131",
+  "level": "N3",
+  "exam": "2012-12",
+  "no": 131,
+  "stem": [
+   "A「片づけはあしたにしますか。」",
+   "B「あしたは朝から＿＿ ＿＿ ★ ＿＿ましょう。」"
+  ],
+  "options": [
+   "忙しくなり",
+   "今日中に",
+   "そうですし",
+   "やってしまい"
+  ],
+  "star": 2,
+  "order": [
+   1,
+   3,
+   2,
+   4
+  ],
+  "full": [
+   "A「片づけはあしたにしますか。」",
+   "B「あしたは朝から忙しくなりそうですし今日中にやってしまいましょう。」"
+  ],
+  "trans": "Ngày mai có vẻ bận từ sáng, nên hôm nay làm xong việc dọn dẹp nhé.",
+  "explain": [
+   "Vị trí 1: 朝から＋忙しくなり＋そうですし; ～そう nêu dự đoán, し liệt kê lý do.",
+   "Vị trí 4: 今日中に＋やってしまい＋ましょう; ～てしまう chỉ làm xong.",
+   "Hai vị trí giữa: そうですし＋今日中に; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-201212-132",
+  "level": "N3",
+  "exam": "2012-12",
+  "no": 132,
+  "stem": [
+   "仕事から帰って、娘に笑顔で＿＿ ＿＿ ★ ＿＿幸せだといつも思う。"
+  ],
+  "options": [
+   "私は本当に",
+   "「おかえり。」と言われると",
+   "娘がいる",
+   "こんなかわいい"
+  ],
+  "star": 3,
+  "order": [
+   2,
+   4,
+   3,
+   1
+  ],
+  "full": [
+   "仕事から帰って、娘に笑顔で「おかえり。」と言われるとこんなかわいい娘がいる私は本当に幸せだといつも思う。"
+  ],
+  "trans": "Đi làm về được con gái mỉm cười nói “Mừng bố về”, tôi luôn thấy mình thật hạnh phúc khi có cô con gái đáng yêu thế này.",
+  "explain": [
+   "Vị trí 1: 笑顔で＋「おかえり。」と言われると; と nêu điều kiện khi được chào.",
+   "Vị trí 4: 娘がいる＋私は本当に＋幸せ; mệnh đề bổ nghĩa 私.",
+   "Hai vị trí giữa: こんなかわいい＋娘がいる; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-201212-133",
+  "level": "N3",
+  "exam": "2012-12",
+  "no": 133,
+  "stem": [
+   "川名寺は桜が＿＿ ＿＿ ★ ＿＿ 秋の景色もすばらしいです。"
+  ],
+  "options": [
+   "桜だけでなく",
+   "ことで",
+   "有名ですが",
+   "きれいな"
+  ],
+  "star": 3,
+  "order": [
+   4,
+   2,
+   3,
+   1
+  ],
+  "full": [
+   "川名寺は桜がきれいなことで有名ですが桜だけでなく秋の景色もすばらしいです。"
+  ],
+  "trans": "Chùa Kawana nổi tiếng vì hoa anh đào đẹp, nhưng cả cảnh mùa thu cũng tuyệt vời.",
+  "explain": [
+   "Vị trí 1: 桜が＋きれいな＋ことで; な bổ nghĩa こと.",
+   "Vị trí 4: 有名ですが＋桜だけでなく＋秋の景色も; だけでなく…も.",
+   "Hai vị trí giữa: ことで＋有名ですが; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-201212-134",
+  "level": "N3",
+  "exam": "2012-12",
+  "no": 134,
+  "stem": [
+   "父はいつも、「何も＿＿ ＿＿ ★ ＿＿ ほうがいい。」と言っている。"
+  ],
+  "options": [
+   "チャレンジして",
+   "失敗する",
+   "しないで",
+   "いるより"
+  ],
+  "star": 1,
+  "order": [
+   3,
+   4,
+   1,
+   2
+  ],
+  "full": [
+   "父はいつも、「何もしないでいるよりチャレンジして失敗するほうがいい。」と言っている。"
+  ],
+  "trans": "Bố tôi luôn nói thà thử rồi thất bại còn hơn không làm gì.",
+  "explain": [
+   "Vị trí 1: 何も＋しないで＋いるより; mẫu ～ないでいるより.",
+   "Vị trí 4: チャレンジして＋失敗する＋ほうがいい; ～ほうがいい nêu lựa chọn.",
+   "Hai vị trí giữa: いるより＋チャレンジして; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-201212-135",
+  "level": "N3",
+  "exam": "2012-12",
+  "no": 135,
+  "stem": [
+   "A「ねえ、今度の日曜日、北町の美術館に行かない?」",
+   "B「いいね。あ、私、そこの割引券を持ってるよ。その＿＿ ＿＿ ★ ＿＿ になるんだ。」"
+  ],
+  "options": [
+   "三人",
+   "割引券一枚で",
+   "二割引",
+   "まで"
+  ],
+  "star": 4,
+  "order": [
+   2,
+   1,
+   4,
+   3
+  ],
+  "full": [
+   "A「ねえ、今度の日曜日、北町の美術館に行かない?」",
+   "B「いいね。あ、私、そこの割引券を持ってるよ。その割引券一枚で三人まで二割引になるんだ。」"
+  ],
+  "trans": "Một phiếu giảm giá ấy dùng được cho tối đa ba người, giảm 20%.",
+  "explain": [
+   "Vị trí 1: その＋割引券一枚で＋三人; で chỉ bằng một vé.",
+   "Vị trí 4: 三人＋まで＋二割引＋になる; まで chỉ tối đa.",
+   "Hai vị trí giữa: 三人＋まで; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-201207-136",
+  "level": "N3",
+  "exam": "2012-07",
+  "no": 136,
+  "stem": [
+   "(電話で) 配達員「お荷物の配達時間ですが、明日の夜8時ごろでいかがですか。」 客「その ＿＿ ★ ＿＿ ＿＿ので大丈夫です。お願いします。」"
+  ],
+  "options": [
+   "と思う",
+   "多分",
+   "時間は",
+   "家にいる"
+  ],
+  "star": 2,
+  "order": [
+   3,
+   2,
+   4,
+   1
+  ],
+  "full": [
+   "(電話で) 配達員「お荷物の配達時間ですが、明日の夜8時ごろでいかがですか。」 客「その時間は多分家にいると思うので大丈夫です。お願いします。」"
+  ],
+  "trans": "Giờ đó chắc tôi ở nhà nên được. Nhờ anh giao nhé.",
+  "explain": [
+   "Vị trí 1: その＋時間は＋多分; は nêu thời gian đang bàn.",
+   "Vị trí 4: 家にいる＋と思う＋ので; と思う nêu dự tính.",
+   "Hai vị trí giữa: 多分＋家にいる; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 1
+ },
+ {
+  "id": "N3-201207-137",
+  "level": "N3",
+  "exam": "2012-07",
+  "no": 137,
+  "stem": [
+   "山下「田中さん、ABC大学のリュウ先生を知っていますか。」 田中「＿＿ ＿＿ ★ ＿＿ ありません。」"
+  ],
+  "options": [
+   "ありますが",
+   "会ったことは",
+   "聞いたことが",
+   "お名前は"
+  ],
+  "star": 1,
+  "order": [
+   4,
+   3,
+   1,
+   2
+  ],
+  "full": [
+   "山下「田中さん、ABC大学のリュウ先生を知っていますか。」 田中「お名前は聞いたことがありますが会ったことはありません。」"
+  ],
+  "trans": "Tôi đã nghe tên thầy Liu nhưng chưa gặp.",
+  "explain": [
+   "Vị trí 1: お名前は＋聞いたことが＋ありますが; mẫu Vたことがある.",
+   "Vị trí 4: 会ったことは＋ありません; は nêu đối chiếu với đã nghe tên.",
+   "Hai vị trí giữa: 聞いたことが＋ありますが; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-201207-138",
+  "level": "N3",
+  "exam": "2012-07",
+  "no": 138,
+  "stem": [
+   "わたしが＿＿ ＿＿ ★ ＿＿ 京都の高山寺がある。"
+  ],
+  "options": [
+   "行ってみたい",
+   "ひとつに",
+   "もっとも",
+   "寺の"
+  ],
+  "star": 4,
+  "order": [
+   3,
+   1,
+   4,
+   2
+  ],
+  "full": [
+   "わたしがもっとも行ってみたい寺のひとつに京都の高山寺がある。"
+  ],
+  "trans": "Trong những ngôi chùa tôi muốn tới nhất có chùa Kōzan ở Kyoto.",
+  "explain": [
+   "Vị trí 1: わたしが＋もっとも＋行ってみたい; 最も nêu mức cao nhất.",
+   "Vị trí 4: 寺の＋ひとつに＋京都の高山寺がある; mẫu Nの一つに〜がある.",
+   "Hai vị trí giữa: 行ってみたい＋寺の; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-201207-139",
+  "level": "N3",
+  "exam": "2012-07",
+  "no": 139,
+  "stem": [
+   "「プレゼント」という映画を見て、この映画＿＿ ＿＿ ★ ＿＿映画はないと思った。"
+  ],
+  "options": [
+   "ほど",
+   "について",
+   "人生",
+   "考えさせられる"
+  ],
+  "star": 2,
+  "order": [
+   1,
+   3,
+   2,
+   4
+  ],
+  "full": [
+   "「プレゼント」という映画を見て、この映画ほど人生について考えさせられる映画はないと思った。"
+  ],
+  "trans": "Xem phim “Món quà”, tôi nghĩ không có phim nào khiến mình suy nghĩ về cuộc đời nhiều như phim này.",
+  "explain": [
+   "Vị trí 1: この映画＋ほど＋人生について; mẫu Nほど〜Nはない.",
+   "Vị trí 4: 考えさせられる＋映画はない; bị khiến suy ngẫm.",
+   "Hai vị trí giữa: 人生＋について; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-201207-140",
+  "level": "N3",
+  "exam": "2012-07",
+  "no": 140,
+  "stem": [
+   "友だちからの＿＿ ＿＿ ★ ＿＿"
+  ],
+  "options": [
+   "すっかり忘れていた",
+   "メールが来るまで",
+   "ということを",
+   "今日がレポートのしめ切り日だった"
+  ],
+  "star": 3,
+  "order": [
+   2,
+   4,
+   3,
+   1
+  ],
+  "full": [
+   "友だちからのメールが来るまで今日がレポートのしめ切り日だったということをすっかり忘れていた"
+  ],
+  "trans": "Cho đến khi có email của bạn, tôi đã quên bẵng rằng hôm nay là hạn nộp báo cáo.",
+  "explain": [
+   "Vị trí 1: 友だちからの＋メールが来るまで; まで nêu mốc nhận thư.",
+   "Vị trí 4: ということを＋すっかり忘れていた; ということを là nội dung bị quên.",
+   "Hai vị trí giữa: 今日がレポートのしめ切り日だった＋ということを; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-201112-141",
+  "level": "N3",
+  "exam": "2011-12",
+  "no": 141,
+  "stem": [
+   "中山「上田さんは、本当にこの仕事が好きなんですね。」 上田「はい、わたしは、＿＿ ＿＿ ★ ＿＿ないと思っているんです。」"
+  ],
+  "options": [
+   "ほど",
+   "仕事は",
+   "これ",
+   "おもしろい"
+  ],
+  "star": 4,
+  "order": [
+   3,
+   1,
+   4,
+   2
+  ],
+  "full": [
+   "中山「上田さんは、本当にこの仕事が好きなんですね。」 上田「はい、わたしは、これほどおもしろい仕事はないと思っているんです。」"
+  ],
+  "trans": "Tôi nghĩ không có công việc nào thú vị đến mức này.",
+  "explain": [
+   "Vị trí 1: これ＋ほど＋おもしろい; これほど nêu mức độ.",
+   "Vị trí 4: おもしろい＋仕事は＋ない; mẫu これほど〜Nはない.",
+   "Hai vị trí giữa: ほど＋おもしろい; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-201112-142",
+  "level": "N3",
+  "exam": "2011-12",
+  "no": 142,
+  "stem": [
+   "この美術館には、19世紀の＿＿ ＿＿ ★ ＿＿たくさんあります。"
+  ],
+  "options": [
+   "よって",
+   "画家たちに",
+   "絵が",
+   "描かれた"
+  ],
+  "star": 4,
+  "order": [
+   2,
+   1,
+   4,
+   3
+  ],
+  "full": [
+   "この美術館には、19世紀の画家たちによって描かれた絵がたくさんあります。"
+  ],
+  "trans": "Bảo tàng này có nhiều tranh được các họa sĩ thế kỷ 19 vẽ.",
+  "explain": [
+   "Vị trí 1: 19世紀の＋画家たちに＋よって; mẫu Nによって trong câu bị động.",
+   "Vị trí 4: 描かれた＋絵が＋たくさんあります; mệnh đề bị động bổ nghĩa 絵.",
+   "Hai vị trí giữa: よって＋描かれた; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-201112-143",
+  "level": "N3",
+  "exam": "2011-12",
+  "no": 143,
+  "stem": [
+   "昨日のパーティーは、友だちと話していたら、ほとんど＿＿ ＿＿ ★ ＿＿、あとでおなかがすいてしまった。"
+  ],
+  "options": [
+   "終わってしまって",
+   "何も",
+   "うちに",
+   "食べない"
+  ],
+  "star": 3,
+  "order": [
+   2,
+   4,
+   3,
+   1
+  ],
+  "full": [
+   "昨日のパーティーは、友だちと話していたら、ほとんど何も食べないうちに終わってしまって、あとでおなかがすいてしまった。"
+  ],
+  "trans": "Ở tiệc hôm qua, tôi mải nói chuyện với bạn nên tiệc kết thúc trước khi tôi kịp ăn gì, về sau thấy đói.",
+  "explain": [
+   "Vị trí 1: ほとんど＋何も＋食べない; 何も đi với phủ định.",
+   "Vị trí 4: うちに＋終わってしまって; ～ないうちに chỉ trước khi kịp làm.",
+   "Hai vị trí giữa: 食べない＋うちに; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-201112-144",
+  "level": "N3",
+  "exam": "2011-12",
+  "no": 144,
+  "stem": [
+   "夏休みに行われた会社での実習は、わたしにとって、企業で＿＿ ＿＿ ★ ＿＿いい機会になった。"
+  ],
+  "options": [
+   "考える",
+   "というのが",
+   "働く",
+   "どういうことか"
+  ],
+  "star": 4,
+  "order": [
+   3,
+   2,
+   4,
+   1
+  ],
+  "full": [
+   "夏休みに行われた会社での実習は、わたしにとって、企業で働くというのがどういうことか考えるいい機会になった。"
+  ],
+  "trans": "Đợt thực tập ở công ty mùa hè là dịp tốt để tôi nghĩ xem làm việc trong doanh nghiệp là thế nào.",
+  "explain": [
+   "Vị trí 1: 企業で＋働く＋というのが; というのが nêu nội dung cần tìm hiểu.",
+   "Vị trí 4: どういうことか＋考える＋いい機会; câu hỏi gián tiếp là đối tượng suy ngẫm.",
+   "Hai vị trí giữa: というのが＋どういうことか; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-201112-145",
+  "level": "N3",
+  "exam": "2011-12",
+  "no": 145,
+  "stem": [
+   "母は「風邪をひかないのは、＿＿ ＿＿ ★ ＿＿。」とよく言っている。"
+  ],
+  "options": [
+   "ジョギングの",
+   "している",
+   "おかげだ",
+   "毎朝"
+  ],
+  "star": 1,
+  "order": [
+   4,
+   2,
+   1,
+   3
+  ],
+  "full": [
+   "母は「風邪をひかないのは、毎朝しているジョギングのおかげだ。」とよく言っている。"
+  ],
+  "trans": "Mẹ thường nói mình không bị cảm là nhờ chạy bộ mỗi sáng.",
+  "explain": [
+   "Vị trí 1: 毎朝＋している＋ジョギング; ～ている bổ nghĩa danh từ.",
+   "Vị trí 4: ジョギングの＋おかげだ; mẫu Nのおかげだ.",
+   "Hai vị trí giữa: している＋ジョギングの; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-201107-146",
+  "level": "N3",
+  "exam": "2011-07",
+  "no": 146,
+  "stem": [
+   "A「来週、試合＿＿ ＿＿ ★ ＿＿んですか。」",
+   "B「すみません。」"
+  ],
+  "options": [
+   "何をやっていた",
+   "練習に来ないで",
+   "なのに",
+   "ちっとも"
+  ],
+  "star": 2,
+  "order": [
+   3,
+   4,
+   2,
+   1
+  ],
+  "full": [
+   "A「来週、試合なのにちっとも練習に来ないで何をやっていたんですか。」",
+   "B「すみません。」"
+  ],
+  "trans": "Tuần sau thi đấu rồi, sao bạn chẳng đến tập buổi nào mà làm gì thế?",
+  "explain": [
+   "Vị trí 1: 試合＋なのに＋ちっとも; なのに nêu sự trái kỳ vọng.",
+   "Vị trí 4: 練習に来ないで＋何をやっていた＋んですか; ちっとも đi với phủ định.",
+   "Hai vị trí giữa: ちっとも＋練習に来ないで; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-201107-147",
+  "level": "N3",
+  "exam": "2011-07",
+  "no": 147,
+  "stem": [
+   "あの美術館は曜日＿＿ ＿＿ ★ ＿＿窓口で確認したほうがいいよ。"
+  ],
+  "options": [
+   "閉まる時間",
+   "違うから",
+   "によって",
+   "が"
+  ],
+  "star": 4,
+  "order": [
+   3,
+   1,
+   4,
+   2
+  ],
+  "full": [
+   "あの美術館は曜日によって閉まる時間が違うから窓口で確認したほうがいいよ。"
+  ],
+  "trans": "Bảo tàng ấy có giờ đóng cửa khác nhau tùy ngày, nên hỏi quầy vé thì hơn.",
+  "explain": [
+   "Vị trí 1: 曜日＋によって＋閉まる時間; ～によって chỉ khác nhau theo ngày.",
+   "Vị trí 4: 時間＋が＋違うから; が đánh dấu chủ ngữ.",
+   "Hai vị trí giữa: 閉まる時間＋が; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-201107-148",
+  "level": "N3",
+  "exam": "2011-07",
+  "no": 148,
+  "stem": [
+   "自分で野菜を作ってみて、おいしい野菜を育てる＿＿ ＿＿ ★ ＿＿わかりました。"
+  ],
+  "options": [
+   "ことが",
+   "大変な",
+   "ことか",
+   "どんなに"
+  ],
+  "star": 2,
+  "order": [
+   1,
+   4,
+   2,
+   3
+  ],
+  "full": [
+   "自分で野菜を作ってみて、おいしい野菜を育てることがどんなに大変なことかわかりました。"
+  ],
+  "trans": "Tự trồng rau rồi tôi mới biết nuôi được rau ngon vất vả đến thế nào.",
+  "explain": [
+   "Vị trí 1: 育てる＋ことが＋どんなに; ことが danh từ hóa chủ ngữ.",
+   "Vị trí 4: 大変な＋ことか＋わかりました; mẫu どんなに〜ことか.",
+   "Hai vị trí giữa: どんなに＋大変な; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-201107-149",
+  "level": "N3",
+  "exam": "2011-07",
+  "no": 149,
+  "stem": [
+   "A「今度のさよならパーティーで、みんなで歌う歌は、これでいいですか」 B 「すみません。この歌は好きなんですが、少しむずかしいです＿＿ ＿＿ ★ ＿＿してほしいです。」"
+  ],
+  "options": [
+   "の",
+   "ほか",
+   "に",
+   "から"
+  ],
+  "star": 1,
+  "order": [
+   4,
+   2,
+   1,
+   3
+  ],
+  "full": [
+   "A「今度のさよならパーティーで、みんなで歌う歌は、これでいいですか」 B 「すみません。この歌は好きなんですが、少しむずかしいですからほかのにしてほしいです。」"
+  ],
+  "trans": "Tôi thích bài này nhưng hơi khó, nên muốn đổi sang bài khác.",
+  "explain": [
+   "Vị trí 1: むずかしいです＋から＋ほか; から nêu lý do đổi bài.",
+   "Vị trí 4: ほか＋の＋に＋してほしい; mẫu Nにする.",
+   "Hai vị trí giữa: ほか＋の; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-201107-150",
+  "level": "N3",
+  "exam": "2011-07",
+  "no": 150,
+  "stem": [
+   "最近、子どもがピアノを習いたいと言いだした。わたしは、子どもが＿＿ ＿＿ ★ ＿＿と思っている。"
+  ],
+  "options": [
+   "したい",
+   "やりたい",
+   "やらせて",
+   "と思うことは"
+  ],
+  "star": 3,
+  "order": [
+   1,
+   4,
+   3,
+   2
+  ],
+  "full": [
+   "最近、子どもがピアノを習いたいと言いだした。わたしは、子どもがしたいと思うことはやらせてやりたいと思っている。"
+  ],
+  "trans": "Con tôi mới nói muốn học piano; tôi nghĩ việc gì con muốn làm thì mình muốn cho con thử.",
+  "explain": [
+   "Vị trí 1: 子どもが＋したい＋と思うことは; mệnh đề bổ nghĩa こと.",
+   "Vị trí 4: やらせて＋やりたい＋と思っている; thể sai khiến + てやりたい.",
+   "Hai vị trí giữa: と思うことは＋やらせて; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-201007-151",
+  "level": "N3",
+  "exam": "2010-07",
+  "no": 151,
+  "stem": [
+   "A「じゃあ、あしたはコンサート会場の入り口に5時に集まりませんか。」",
+   "B「コンサートは7時からですから、そんなに ＿＿ ＿＿ ★ ＿＿ と思いますよ。」"
+  ],
+  "options": [
+   "早く",
+   "開いていない",
+   "まだ",
+   "行っても"
+  ],
+  "star": 3,
+  "order": [
+   1,
+   4,
+   3,
+   2
+  ],
+  "full": [
+   "A「じゃあ、あしたはコンサート会場の入り口に5時に集まりませんか。」",
+   "B「コンサートは7時からですから、そんなに早く行ってもまだ開いていないと思いますよ。」"
+  ],
+  "trans": "Buổi diễn 7 giờ mới bắt đầu, nên tôi nghĩ đến sớm thế thì cửa vẫn chưa mở.",
+  "explain": [
+   "Vị trí 1: そんなに＋早く＋行っても; ても nhượng bộ.",
+   "Vị trí 4: まだ＋開いていない＋と思う; まだ đi với phủ định.",
+   "Hai vị trí giữa: 行っても＋まだ; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-201007-152",
+  "level": "N3",
+  "exam": "2010-07",
+  "no": 152,
+  "stem": [
+   "(田中先生の研究室で) 学生: 「田中先生はいらっしゃいますか。」 秘書: 「今、ほかの学生と話して ＿＿ ＿＿ ★ ＿＿ ください。」"
+  ],
+  "options": [
+   "すこし",
+   "から",
+   "待って",
+   "いらっしゃいます"
+  ],
+  "star": 1,
+  "order": [
+   4,
+   2,
+   1,
+   3
+  ],
+  "full": [
+   "(田中先生の研究室で) 学生: 「田中先生はいらっしゃいますか。」 秘書: 「今、ほかの学生と話していらっしゃいますからすこし待ってください。」"
+  ],
+  "trans": "Thầy đang nói chuyện với sinh viên khác, xin chờ một chút.",
+  "explain": [
+   "Vị trí 1: 話して＋いらっしゃいます＋から; いらっしゃる là kính ngữ của いる.",
+   "Vị trí 4: すこし＋待って＋ください; ～てください nêu yêu cầu.",
+   "Hai vị trí giữa: から＋すこし; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-201007-153",
+  "level": "N3",
+  "exam": "2010-07",
+  "no": 153,
+  "stem": [
+   "父も私も、今日はかさがなくても ＿＿ ＿＿ ★ ＿＿ が、雨に降られてしまった。"
+  ],
+  "options": [
+   "だろう",
+   "と思って",
+   "大丈夫",
+   "出かけた"
+  ],
+  "star": 2,
+  "order": [
+   3,
+   1,
+   2,
+   4
+  ],
+  "full": [
+   "父も私も、今日はかさがなくても大丈夫だろうと思って出かけたが、雨に降られてしまった。"
+  ],
+  "trans": "Bố tôi và tôi đều nghĩ hôm nay không mang ô cũng được, nhưng rồi gặp mưa.",
+  "explain": [
+   "Vị trí 1: 大丈夫＋だろう＋と思って; だろう phỏng đoán.",
+   "Vị trí 4: 思って＋出かけた＋が; nghĩ vậy rồi ra ngoài.",
+   "Hai vị trí giữa: だろう＋と思って; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-201007-154",
+  "level": "N3",
+  "exam": "2010-07",
+  "no": 154,
+  "stem": [
+   "昨日動物園に行ったら、先月 ＿＿ ＿＿ ★ ＿＿ 見ることができました。"
+  ],
+  "options": [
+   "生まれた",
+   "ライオンの",
+   "ばかりの",
+   "赤ちゃんを"
+  ],
+  "star": 2,
+  "order": [
+   1,
+   3,
+   2,
+   4
+  ],
+  "full": [
+   "昨日動物園に行ったら、先月生まれたばかりのライオンの赤ちゃんを見ることができました。"
+  ],
+  "trans": "Hôm qua đến sở thú, tôi được thấy sư tử con mới sinh tháng trước.",
+  "explain": [
+   "Vị trí 1: 先月＋生まれた＋ばかりの; mẫu VたばかりのN.",
+   "Vị trí 4: ライオンの＋赤ちゃんを＋見る; の chỉ con của sư tử.",
+   "Hai vị trí giữa: ばかりの＋ライオンの; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 2
+ },
+ {
+  "id": "N3-201007-155",
+  "level": "N3",
+  "exam": "2010-07",
+  "no": 155,
+  "stem": [
+   "ジョン:「この『りかい』という言葉はどういう意味ですか。」 アリ:「ああ、確か『わかる』＿＿ ★ ＿＿ ＿＿ んですけど。」"
+  ],
+  "options": [
+   "意味だった",
+   "という",
+   "と思う",
+   "ような"
+  ],
+  "star": 4,
+  "order": [
+   2,
+   4,
+   1,
+   3
+  ],
+  "full": [
+   "ジョン:「この『りかい』という言葉はどういう意味ですか。」 アリ:「ああ、確か『わかる』というような意味だったと思うんですけど。」"
+  ],
+  "trans": "À, hình như từ “理解” có nghĩa kiểu như “hiểu”, nhưng tôi không chắc lắm.",
+  "explain": [
+   "Vị trí 1: 「わかる」＋という＋ような; という dẫn cách diễn đạt gần nghĩa.",
+   "Vị trí 4: 意味だった＋と思う＋んですけど; と思う nêu điều nhớ chưa chắc chắn.",
+   "Hai vị trí giữa: ような＋意味だった; hai mảnh còn lại ghép theo thứ tự này."
+  ],
+  "starPos": 1
+ }
+]
