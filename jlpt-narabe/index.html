@@ -4,74 +4,97 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Luyện 並べ替え JLPT</title>
+<link rel="icon" href="assets/logo-ngang.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Be+Vietnam+Pro:wght@400;500;600;700&family=Unbounded:wght@700&display=swap" rel="stylesheet">
 <style>
+/* Mankai Academy Brand Guideline v1.0 — register "Uy tín": nền kem, cam + vàng làm điểm nhấn,
+   nhãn viên thuốc, bo góc lớn, bóng đổ cứng nâu mực. Unbounded cho 1 dòng nhấn / con số lớn,
+   Be Vietnam Pro cho mọi nội dung, Noto Sans JP cho chữ Nhật. */
 :root{
-  --bg:#f6f4ef;--card:#fff;--ink:#1d1f24;--muted:#6b6f78;--line:#e3dfd6;
-  --accent:#c2410c;--accent-soft:#fdeee5;--slot:#faf8f3;
-  --ok:#15803d;--ok-soft:#e5f5ea;--bad:#b91c1c;--bad-soft:#fde8e8;--focus:#2563eb;
+  --bg:#FFF6EE;--card:#FFFFFF;--peach:#FDE3D3;--slot:#FFF6EE;
+  --ink:#2B1D16;--muted:#6E5A4E;--line:#EAD7C8;--edge:#2B1D16;
+  --orange:#F37142;--orange-ink:#C2461F;--sun:#F3A41D;--on-accent:#2B1D16;
+  --ok:#1F7A3D;--ok-soft:#E3F3E7;--bad:#B3261E;--bad-soft:#FCE4E1;--focus:#2B1D16;
+  --shadow:#2B1D16;--logo:url(assets/logo-ngang.png);
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --bg:#15171b;--card:#1e2127;--ink:#eceae5;--muted:#9aa0aa;--line:#33373f;
-  --accent:#fb8c4a;--accent-soft:#3a2518;--slot:#252931;
-  --ok:#4ade80;--ok-soft:#183324;--bad:#f87171;--bad-soft:#3a1b1b;--focus:#60a5fa;}}
+  --bg:#2B1D16;--card:#3A2A21;--peach:#4A3226;--slot:#33241C;
+  --ink:#FFF6EE;--muted:#D9C3B4;--line:#55402F;--edge:#FFF6EE;
+  --orange:#F37142;--orange-ink:#F7A27F;--sun:#F3A41D;--on-accent:#2B1D16;
+  --ok:#6FD08F;--ok-soft:#1F3A28;--bad:#FF8A80;--bad-soft:#4A221D;--focus:#F3A41D;
+  --shadow:#000;--logo:url(assets/logo-ngang-trang.png);}}
 :root[data-theme="dark"]{
-  --bg:#15171b;--card:#1e2127;--ink:#eceae5;--muted:#9aa0aa;--line:#33373f;
-  --accent:#fb8c4a;--accent-soft:#3a2518;--slot:#252931;
-  --ok:#4ade80;--ok-soft:#183324;--bad:#f87171;--bad-soft:#3a1b1b;--focus:#60a5fa;}
+  --bg:#2B1D16;--card:#3A2A21;--peach:#4A3226;--slot:#33241C;
+  --ink:#FFF6EE;--muted:#D9C3B4;--line:#55402F;--edge:#FFF6EE;
+  --orange:#F37142;--orange-ink:#F7A27F;--sun:#F3A41D;--on-accent:#2B1D16;
+  --ok:#6FD08F;--ok-soft:#1F3A28;--bad:#FF8A80;--bad-soft:#4A221D;--focus:#F3A41D;
+  --shadow:#000;--logo:url(assets/logo-ngang-trang.png);}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 "Be Vietnam Pro",system-ui,sans-serif}
 .jp{font-family:"Noto Sans JP","Hiragino Sans",sans-serif}
-.wrap{max-width:860px;margin:0 auto;padding:16px}
-header{display:flex;flex-wrap:wrap;align-items:center;gap:12px;justify-content:space-between;margin-bottom:14px}
-h1{font-size:20px;margin:0}h1 small{color:var(--muted);font-weight:500;font-size:13px;margin-left:6px}
-h2{font-size:20px;margin:0 0 12px}h3{font-size:17px;margin:0 0 10px}
-select,.btn{font:inherit;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:10px;padding:7px 12px}
-.btn{cursor:pointer;font-weight:600}
-.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
-.btn.sm{padding:3px 9px;font-size:13px}
+.display{font-family:"Unbounded","Be Vietnam Pro",sans-serif;font-weight:700;letter-spacing:-.01em}
+.wrap{max-width:880px;margin:0 auto;padding:16px}
+header{display:flex;flex-wrap:wrap;align-items:center;gap:12px;justify-content:space-between;margin-bottom:18px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}
+.logo{display:block;width:160px;height:45px;background:var(--logo) left center/contain no-repeat;margin:4px 0} /* cỡ tối thiểu logo ngang 160px */
+.brand .pt{font-weight:600;font-size:14px;color:var(--muted);border-left:2px solid var(--line);padding-left:12px;line-height:1.3}
+.eyebrow{font-weight:700;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--orange-ink);margin:0 0 4px}
+h2{font-size:22px;margin:0 0 14px}h3{font-size:17px;margin:0 0 10px;font-weight:700}
+select{font:inherit;border:2px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:7px 14px}
+.btn{font:inherit;font-weight:600;cursor:pointer;border:2px solid var(--edge);background:var(--card);color:var(--ink);border-radius:999px;padding:7px 18px;
+  box-shadow:3px 3px 0 var(--shadow);transition:transform .08s,box-shadow .08s}
+.btn:hover:not(:disabled){transform:translate(-1px,-1px);box-shadow:4px 4px 0 var(--shadow)}
+.btn:active:not(:disabled){transform:translate(2px,2px);box-shadow:1px 1px 0 var(--shadow)}
+.btn.primary{background:var(--orange);color:var(--on-accent);font-weight:700}
+.btn.sm{padding:2px 10px;font-size:13px;box-shadow:2px 2px 0 var(--shadow)}
 .btn:disabled{opacity:.45;cursor:not-allowed}
-.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;margin-bottom:14px}
+.card{background:var(--card);border:2px solid var(--edge);border-radius:28px;padding:24px;margin-bottom:18px;box-shadow:6px 6px 0 var(--shadow)}
 .muted{color:var(--muted)}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
 [hidden]{display:none!important}
 
+/* nhãn viên thuốc */
+.pill{display:inline-block;font-size:12px;font-weight:600;border-radius:999px;padding:1px 10px;margin-left:6px;vertical-align:2px;border:1.5px solid var(--edge);color:var(--ink);background:var(--card)}
+.pill.sun{background:var(--sun);color:#2B1D16;border-color:#2B1D16}
+
 /* home */
-.home{text-align:center;padding:24px 0 0}
-.home p.lead{color:var(--muted);margin:0 0 22px}
-.levels{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.lv{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px 10px;cursor:pointer;font:inherit;color:var(--ink);transition:transform .12s,border-color .12s}
-.lv:hover:not(:disabled){transform:translateY(-2px);border-color:var(--accent)}
-.lv:disabled{opacity:.5;cursor:not-allowed}
-.lv .big{display:block;font-size:34px;font-weight:700;color:var(--accent)}
-.lv .sub{display:block;color:var(--muted);font-size:14px;margin-top:4px}
-.lv .prog{display:block;font-size:13px;margin-top:8px}
-.guide{margin-top:26px;text-align:left}
-.steps{list-style:none;margin:0;padding:0;display:grid;gap:12px}
-.steps li{display:flex;gap:12px;align-items:flex-start}
-.steps .n{flex:none;width:28px;height:28px;border-radius:50%;background:var(--accent);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:14px}
-.steps b{display:block}.steps span.d{color:var(--muted);font-size:14px}
-.tag{display:inline-block;font-size:11px;font-weight:600;border-radius:6px;padding:0 6px;margin-left:6px;vertical-align:2px}
-.tag.req{background:var(--accent);color:#fff}.tag.opt{border:1px solid var(--line);color:var(--muted)}
-.tip{margin-top:14px;padding:10px 12px;border-radius:10px;background:var(--accent-soft);font-size:14px}
-.keys{margin-top:10px;color:var(--muted);font-size:13px}
-kbd{font:12px "Be Vietnam Pro",sans-serif;border:1px solid var(--line);border-bottom-width:2px;border-radius:5px;padding:0 5px;background:var(--slot);color:var(--ink)}
+.home{text-align:center;padding:18px 0 0}
+.home h2{font-size:30px;margin-bottom:6px}
+.home p.lead{color:var(--muted);margin:0 0 26px}
+.levels{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.lv{background:var(--card);border:2px solid var(--edge);border-radius:28px;padding:24px 10px;cursor:pointer;font:inherit;color:var(--ink);
+  box-shadow:6px 6px 0 var(--shadow);transition:transform .1s,box-shadow .1s}
+.lv:hover:not(:disabled){transform:translate(-2px,-2px);box-shadow:8px 8px 0 var(--shadow)}
+.lv:disabled{opacity:.5;cursor:not-allowed;box-shadow:none;border-style:dashed}
+.lv .big{display:block;font:700 40px/1.1 "Unbounded",sans-serif;color:var(--orange)}
+.lv .sub{display:block;color:var(--muted);font-size:14px;margin-top:8px}
+.lv .prog{display:inline-block;font-size:13px;font-weight:600;margin-top:10px;background:var(--peach);border-radius:999px;padding:1px 12px}
+.guide{margin-top:30px;text-align:left}
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+.steps li{display:flex;gap:14px;align-items:flex-start}
+.steps .n{flex:none;width:32px;height:32px;border-radius:50%;background:var(--orange);color:var(--on-accent);border:2px solid var(--edge);font-weight:700;display:flex;align-items:center;justify-content:center;font-size:14px}
+.steps b{display:inline}.steps span.d{display:block;color:var(--muted);font-size:14px}
+.tip{margin-top:16px;padding:12px 16px;border-radius:20px;background:var(--peach);font-size:14px}
+.keys{margin-top:12px;color:var(--muted);font-size:13px}
+kbd{font:12px "Be Vietnam Pro",sans-serif;border:1.5px solid var(--edge);border-bottom-width:3px;border-radius:6px;padding:0 6px;background:var(--card);color:var(--ink)}
 
 /* setup */
-.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:14px}
-.kpi{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 14px}
-.kpi .v{font-size:24px;font-weight:700}.kpi .l{font-size:13px;color:var(--muted)}
-.form{display:grid;gap:14px}
-.field>label.t{display:block;font-weight:600;font-size:14px;margin-bottom:6px}
-.seg{display:flex;flex-wrap:wrap;gap:6px}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:18px}
+.kpi{background:var(--peach);border-radius:24px;padding:14px 18px}
+.kpi .v{font:700 26px/1.3 "Unbounded",sans-serif}.kpi .v small{font-size:14px;color:var(--muted)}
+.kpi .l{font-size:13px;color:var(--muted);font-weight:500}
+.form{display:grid;gap:16px}
+.field>label.t{display:block;font-weight:600;font-size:14px;margin-bottom:8px}
+.seg{display:flex;flex-wrap:wrap;gap:8px}
 .seg input{position:absolute;opacity:0;pointer-events:none}
-.seg label{border:1px solid var(--line);border-radius:10px;padding:6px 12px;cursor:pointer;background:var(--card);font-size:15px}
-.seg input:checked+label{background:var(--accent);border-color:var(--accent);color:#fff}
+.seg label{border:1.5px solid var(--edge);border-radius:999px;padding:5px 16px;cursor:pointer;background:var(--card);font-size:15px;font-weight:500}
+.seg input:checked+label{background:var(--orange);color:var(--on-accent);font-weight:700;box-shadow:2px 2px 0 var(--shadow)}
 .seg input:disabled+label{opacity:.4;cursor:not-allowed}
-.seg input:focus-visible+label{outline:2px solid var(--focus)}
-.start{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.seg input:focus-visible+label{outline:3px solid var(--focus);outline-offset:2px}
+.start{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:4px}
 table{width:100%;border-collapse:collapse;font-size:14px}
-th,td{text-align:left;padding:7px 6px;border-bottom:1px solid var(--line);vertical-align:top}
+th,td{text-align:left;padding:8px 6px;border-bottom:1.5px solid var(--line);vertical-align:top}
 th{color:var(--muted);font-weight:600;font-size:13px}
 td.num,th.num{text-align:right;white-space:nowrap}
 .scroll{overflow-x:auto}
@@ -79,65 +102,69 @@ td.num,th.num{text-align:right;white-space:nowrap}
 .snip{max-width:420px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 
 /* quiz */
-.qtop{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:10px;color:var(--muted);font-size:14px}
-.progress{height:6px;background:var(--slot);border-radius:99px;overflow:hidden;margin-bottom:14px;border:1px solid var(--line)}
-.progress i{display:block;height:100%;background:var(--accent)}
+.qtop{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:10px;color:var(--muted);font-size:14px;font-weight:500}
+.progress{height:10px;background:var(--peach);border-radius:99px;overflow:hidden;margin-bottom:16px}
+.progress i{display:block;height:100%;background:var(--orange);border-radius:99px}
 .stem{font-size:19px;line-height:2.6}
 .stem p{margin:0}
 .slot{display:inline-flex;align-items:center;justify-content:center;min-width:76px;min-height:40px;vertical-align:middle;margin:0 3px;padding:2px 6px;
-  border:2px dashed var(--line);border-radius:10px;background:var(--slot);position:relative;cursor:pointer;line-height:1.3}
-.slot.star{border-color:var(--accent);background:var(--accent-soft)}
-.slot.star::before{content:"★";position:absolute;top:-14px;left:50%;transform:translateX(-50%);color:var(--accent);font-size:14px;line-height:1}
-.slot.target{outline:2px solid var(--focus);outline-offset:2px}
-.slot.over{border-style:solid;border-color:var(--focus)}
+  border:2px dashed var(--muted);border-radius:14px;background:var(--slot);position:relative;cursor:pointer;line-height:1.3}
+.slot.star{border-color:var(--orange);background:var(--peach)}
+.slot.star::before{content:"★";position:absolute;top:-15px;left:50%;transform:translateX(-50%);color:var(--orange);font-size:15px;line-height:1}
+.slot.target{outline:3px solid var(--sun);outline-offset:2px}
+.slot.over{border-style:solid;border-color:var(--edge)}
 .slot.ok{border-style:solid;border-color:var(--ok);background:var(--ok-soft)}
 .slot.bad{border-style:solid;border-color:var(--bad);background:var(--bad-soft)}
-.sec-label{font-size:13px;font-weight:600;color:var(--muted);margin:16px 0 6px}
-.pool{display:flex;flex-wrap:wrap;gap:10px;min-height:52px;padding:10px;border-radius:12px;background:var(--slot);border:1px dashed var(--line)}
-.chip{display:inline-flex;align-items:center;gap:6px;padding:7px 12px;border-radius:10px;border:1px solid var(--line);background:var(--card);
-  font-size:17px;cursor:grab;user-select:none;touch-action:none;box-shadow:0 1px 2px rgba(0,0,0,.06)}
-.chip b,.ans b{font-family:"Be Vietnam Pro",sans-serif;font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:6px;padding:0 5px}
+.sec-label{font-size:14px;font-weight:600;margin:18px 0 8px}
+.pool{display:flex;flex-wrap:wrap;gap:10px;min-height:56px;padding:12px;border-radius:24px;background:var(--slot);border:2px dashed var(--line)}
+.chip{display:inline-flex;align-items:center;gap:6px;padding:7px 14px;border-radius:999px;border:1.5px solid var(--edge);background:var(--card);
+  font-size:17px;cursor:grab;user-select:none;touch-action:none;box-shadow:2px 2px 0 var(--shadow)}
+.chip b,.ans b{font-family:"Be Vietnam Pro",sans-serif;font-size:12px;color:var(--ink);background:var(--peach);border-radius:999px;padding:0 7px}
 .slot .chip{box-shadow:none;border:0;background:transparent;padding:2px 4px}
-.ghost{position:fixed;pointer-events:none;z-index:50;opacity:.9;transform:translate(-50%,-50%);box-shadow:0 6px 18px rgba(0,0,0,.2)}
-.answers{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.ans{display:flex;align-items:center;gap:8px;text-align:left;font:inherit;font-size:17px;padding:10px 12px;border-radius:12px;border:2px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
-.ans.sel{border-color:var(--accent);background:var(--accent-soft)}
+.ghost{position:fixed;pointer-events:none;z-index:50;opacity:.95;transform:translate(-50%,-50%) rotate(-2deg);box-shadow:4px 4px 0 var(--shadow)}
+.answers{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.ans{display:flex;align-items:center;gap:10px;text-align:left;font:inherit;font-size:17px;padding:10px 16px;border-radius:20px;border:2px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
+.ans:hover:not(:disabled){border-color:var(--edge)}
+.ans.sel{border-color:var(--edge);background:var(--peach);box-shadow:3px 3px 0 var(--shadow)}
+.ans.sel b{background:var(--orange)}
 .ans.right{border-color:var(--ok);background:var(--ok-soft)}
 .ans.wrong{border-color:var(--bad);background:var(--bad-soft)}
 .ans:disabled{cursor:default}
-.actions{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:16px}
+.actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:18px}
 .actions .sp{flex:1}
-.bm{display:inline-flex;align-items:center;gap:6px;font-size:14px;cursor:pointer;user-select:none}
-.bm input{width:17px;height:17px;accent-color:var(--accent)}
-.result{margin-top:18px;border-top:1px solid var(--line);padding-top:14px}
-.verdict{font-weight:700;font-size:17px;margin-bottom:8px}
+.bm{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:500;cursor:pointer;user-select:none}
+.bm input{width:18px;height:18px;accent-color:var(--orange)}
+.result{margin-top:20px;border-top:2px dashed var(--line);padding-top:16px}
+.verdict{font-weight:700;font-size:18px;margin-bottom:8px}
 .verdict.ok{color:var(--ok)}.verdict.bad{color:var(--bad)}
 .order{font-size:15px;margin:4px 0 10px}
-.full{background:var(--slot);border-radius:10px;padding:10px 12px;font-size:17px;margin:8px 0}
-.full mark{background:var(--accent-soft);color:inherit;border-radius:4px;padding:0 2px}
+.full{background:var(--peach);border-radius:20px;padding:12px 16px;font-size:17px;margin:8px 0}
+.full mark{background:var(--sun);color:#2B1D16;border-radius:6px;padding:0 3px}
 .explain{margin:8px 0;padding-left:20px}.explain li{margin:3px 0}
 .trans{color:var(--muted);font-style:italic}
 
 /* summary */
-.score{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-bottom:12px}
-.score .big{font-size:42px;font-weight:700;color:var(--accent);line-height:1}
+.score{display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin-bottom:14px}
+.score .big{font:700 48px/1 "Unbounded",sans-serif;color:var(--orange)}
 .empty{text-align:center;color:var(--muted);padding:20px 10px}
-footer{color:var(--muted);font-size:12px;text-align:center;margin-top:18px}
+footer{color:var(--muted);font-size:12px;text-align:center;margin-top:22px}
 @media (max-width:560px){
   .levels{grid-template-columns:1fr}.kpis{grid-template-columns:1fr 1fr}
-  .answers{grid-template-columns:1fr}.stem{font-size:17px}.slot{min-width:60px}.snip{max-width:160px}}
+  .answers{grid-template-columns:1fr}.stem{font-size:17px}.slot{min-width:60px}.snip{max-width:160px}
+  .brand .pt{display:none}.home h2{font-size:24px}.card{padding:18px;border-radius:24px}}
 </style>
 </head>
 <body>
 <div class="wrap">
   <header>
-    <h1>Luyện 並べ替え（★）<small>JLPT đề thật</small></h1>
+    <div class="brand"><span class="logo" role="img" aria-label="Mankai Academy"></span><span class="pt">Luyện 並べ替え（★）<br>JLPT đề thật</span></div>
     <button class="btn" id="back" hidden></button>
   </header>
 
   <!-- 1. CHỌN CẤP ĐỘ -->
   <section class="home" id="v-home">
-    <h2>Chọn cấp độ</h2>
+    <p class="eyebrow">JLPT N3 · N2 · N1</p>
+    <h2 class="display">Chọn cấp độ</h2>
     <p class="lead">Luyện dạng sắp xếp câu (並べ替え) từ đề thi thật các kỳ</p>
     <div class="levels" id="levels"></div>
     <div class="card guide">
@@ -145,8 +172,8 @@ footer{color:var(--muted);font-size:12px;text-align:center;margin-top:18px}
       <ol class="steps">
         <li><span class="n">1</span><div><b>Chọn cấp độ và thiết lập phiên luyện</b><span class="d">Chọn số câu (5 / 10 / 20 / 30 / 50 / tất cả), nguồn câu (tất cả, theo kỳ thi, chưa làm, kho cần luyện lại) và thứ tự câu.</span></div></li>
         <li><span class="n">2</span><div><b>Đọc câu và tìm ô ★</b><span class="d">Câu có 4 ô trống. Ô cần trả lời có viền cam và dấu ★ phía trên.</span></div></li>
-        <li><span class="n">3</span><div><b>Kéo thẻ để sắp xếp</b><span class="tag opt">Không bắt buộc</span><span class="d">Kéo thẻ vào ô trống, hoặc chạm thẻ rồi chạm ô, để tự xếp câu nháp. Phần này chỉ để luyện, không tính điểm.</span></div></li>
-        <li><span class="n">4</span><div><b>Chọn đáp án cho ô ★ → bấm “Kiểm tra”</b><span class="tag req">Bắt buộc</span><span class="d">Chọn 1 trong 4 đáp án thì mới xem được kết quả và giải thích. Nếu đã kéo thẻ vào ô ★, đáp án đó được chọn sẵn.</span></div></li>
+        <li><span class="n">3</span><div><b>Kéo thẻ để sắp xếp</b><span class="pill">Không bắt buộc</span><span class="d">Kéo thẻ vào ô trống, hoặc chạm thẻ rồi chạm ô, để tự xếp câu nháp. Phần này chỉ để luyện, không tính điểm.</span></div></li>
+        <li><span class="n">4</span><div><b>Chọn đáp án cho ô ★ → bấm “Kiểm tra”</b><span class="pill sun">Bắt buộc</span><span class="d">Chọn 1 trong 4 đáp án thì mới xem được kết quả và giải thích. Nếu đã kéo thẻ vào ô ★, đáp án đó được chọn sẵn.</span></div></li>
         <li><span class="n">5</span><div><b>Xem giải thích, lưu câu cần ôn</b><span class="d">Tick 🔖 để lưu câu vào kho cần luyện lại. Câu làm sai tự động vào kho. Hết phiên sẽ có bảng kết quả.</span></div></li>
       </ol>
       <div class="tip">💡 <b>Mẹo:</b> Xếp ô đầu và ô cuối trước (dựa vào chữ đứng ngay trước và ngay sau dãy ô trống), sau đó mới suy ra thẻ ở ô ★.</div>
@@ -158,7 +185,7 @@ footer{color:var(--muted);font-size:12px;text-align:center;margin-top:18px}
   <section id="v-setup" hidden>
     <div class="kpis" id="kpis"></div>
     <div class="card">
-      <h2>Phiên luyện mới</h2>
+      <p class="eyebrow">Thiết lập</p><h2>Phiên luyện mới</h2>
       <div class="form">
         <div class="field"><label class="t">Nguồn câu</label><div class="seg" id="f-src"></div>
           <div id="f-exam-wrap" style="margin-top:8px" hidden><select id="f-exam" aria-label="Kỳ thi"></select></div></div>
@@ -259,7 +286,7 @@ function renderSetup(){
   const tot=done.reduce((a,x)=>a+h[x.id].n,0),ok=done.reduce((a,x)=>a+h[x.id].ok,0);
   const khoN=all.filter(x=>db.kho[x.id]).length;
   $('#kpis').innerHTML=[
-    [`${done.length}<span class="muted" style="font-size:15px">/${all.length}</span>`,'Câu đã làm'],
+    [`${done.length}<small>/${all.length}</small>`,'Câu đã làm'],
     [pct(ok,tot),`Tỉ lệ đúng (${ok}/${tot} lượt)`],
     [db.sessions.length,'Phiên đã luyện'],
     [khoN,'Câu trong kho ôn']].map(([v,l])=>`<div class="kpi"><div class="v">${v}</div><div class="l">${l}</div></div>`).join('');
@@ -320,9 +347,9 @@ function loadQ(){
     <div class="qtop"><span>Câu ${sess.i+1}/${n} · Đề ${fmtExam(q.exam)} · Câu ${q.no}</span><span>Đúng ${ok}/${sess.answers.length}</span></div>
     <div class="progress"><i style="width:${sess.i*100/n}%"></i></div>
     <div class="stem jp">${stem}</div>
-    <div class="sec-label">Kéo thẻ để sắp xếp <span class="tag opt">Không bắt buộc</span> <button class="btn sm" id="clear" style="margin-left:6px">Xếp lại</button></div>
+    <div class="sec-label">Kéo thẻ để sắp xếp <span class="pill">Không bắt buộc</span> <button class="btn sm" id="clear" style="margin-left:6px">Xếp lại</button></div>
     <div class="pool jp" id="pool"></div>
-    <div class="sec-label">Chọn đáp án cho ô ★ <span class="tag req">Bắt buộc</span></div>
+    <div class="sec-label">Chọn đáp án cho ô ★ <span class="pill sun">Bắt buộc</span></div>
     <div class="answers jp" id="answers">${q.options.map((o,i)=>`<button class="ans" data-a="${i+1}"><b>${i+1}</b>${esc(o)}</button>`).join('')}</div>
     <div class="actions">
       <label class="bm"><input type="checkbox" id="bm"${db.kho[q.id]?' checked':''}> 🔖 Lưu vào kho luyện lại</label>
@@ -388,14 +415,14 @@ function bindChip(el){
     if(drag.ghost){
       drag.ghost.style.left=e.clientX+'px';drag.ghost.style.top=e.clientY+'px';
       document.querySelectorAll('.slot.over').forEach(s=>s.classList.remove('over'));
-      slotAt(e)?.classList.add('over');
+      drag.over=slotAt(e)||null;drag.over?.classList.add('over');
     }
   });
   el.addEventListener('pointerup',e=>{
     if(!drag)return;const d=drag;drag=null;
     if(d.ghost){
       d.ghost.remove();d.el.style.opacity='';
-      const s=slotAt(e);document.querySelectorAll('.slot.over').forEach(x=>x.classList.remove('over'));
+      const s=d.over;document.querySelectorAll('.slot.over').forEach(x=>x.classList.remove('over'));
       if(s)place(d.n,+s.dataset.slot);
       else if(overPool(e)&&slots.includes(d.n)){slots[slots.indexOf(d.n)]=null;paint()}
       setTimeout(()=>dragMoved=false,0);
@@ -437,7 +464,7 @@ function finish(){
   show('sum');
   const wrong=a.filter(x=>!x.ok).map(x=>byId[x.id]);
   $('#sum').innerHTML=`
-    <h2>Kết quả phiên luyện</h2>
+    <p class="eyebrow">Hoàn thành</p><h2>Kết quả phiên luyện</h2>
     ${a.length?`<div class="score"><span class="big">${ok}/${a.length}</span><div><b>${pct(ok,a.length)} đúng</b><br><span class="muted">${level} · ${esc(sess.src)}${a.length<sess.qs.length?` · dừng ở câu ${a.length}/${sess.qs.length}`:''}</span></div></div>
     <div class="scroll"><table><thead><tr><th>#</th><th>Câu</th><th>Bạn chọn</th><th>Đáp án</th><th></th><th class="num">🔖 Kho</th></tr></thead><tbody>${
       a.map((x,i)=>{const qq=byId[x.id];return `<tr><td>${i+1}</td><td>Đề ${fmtExam(qq.exam)} · Câu ${qq.no}</td>
