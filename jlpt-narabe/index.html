@@ -2,7 +2,8 @@
 <html lang="vi">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
 <title>Luyện 並べ替え JLPT</title>
 <link rel="icon" href="assets/logo-ngang.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,18 +24,18 @@
   --ink:#FFF6EE;--muted:#D9C3B4;--line:#55402F;--edge:#FFF6EE;
   --orange:#F37142;--orange-ink:#F7A27F;--sun:#F3A41D;--on-accent:#2B1D16;
   --ok:#6FD08F;--ok-soft:#1F3A28;--bad:#FF8A80;--bad-soft:#4A221D;--focus:#F3A41D;
-  --shadow:#000;--logo:url(assets/logo-ngang-trang.png);}}
+  --shadow:#000;--logo:url(assets/logo-ngang-trang.png);color-scheme:dark}}
 :root[data-theme="dark"]{
   --bg:#2B1D16;--card:#3A2A21;--peach:#4A3226;--slot:#33241C;
   --ink:#FFF6EE;--muted:#D9C3B4;--line:#55402F;--edge:#FFF6EE;
   --orange:#F37142;--orange-ink:#F7A27F;--sun:#F3A41D;--on-accent:#2B1D16;
   --ok:#6FD08F;--ok-soft:#1F3A28;--bad:#FF8A80;--bad-soft:#4A221D;--focus:#F3A41D;
-  --shadow:#000;--logo:url(assets/logo-ngang-trang.png);}
+  --shadow:#000;--logo:url(assets/logo-ngang-trang.png);color-scheme:dark}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 "Be Vietnam Pro",system-ui,sans-serif}
 .jp{font-family:"Noto Sans JP","Hiragino Sans",sans-serif}
 .display{font-family:"Unbounded","Be Vietnam Pro",sans-serif;font-weight:700;letter-spacing:-.01em}
-.wrap{max-width:880px;margin:0 auto;padding:16px}
+.wrap{max-width:880px;margin:0 auto;padding-block:16px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
 header{display:flex;flex-wrap:wrap;align-items:center;gap:12px;justify-content:space-between;margin-bottom:18px}
 .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}
 .logo{display:block;width:160px;height:45px;background:var(--logo) left center/contain no-repeat;margin:4px 0} /* cỡ tối thiểu logo ngang 160px */
@@ -176,6 +177,12 @@ footer{color:var(--muted);font-size:12px;text-align:center;margin-top:22px}
 .live .txt b{display:block;font-size:17px;margin-top:6px}.live .txt span{font-size:14px}
 .live .btn{background:#FFF6EE;color:#2B1D16;border-color:#2B1D16;text-decoration:none}
 @media (prefers-reduced-motion:reduce){.live.on .badge i{animation:none}}
+/* hộp xác nhận trong trang (thay cho confirm() của trình duyệt) */
+.ask-bg{position:fixed;inset:0;background:rgba(43,29,22,.55);display:flex;align-items:center;justify-content:center;z-index:120;
+  padding:16px max(16px,env(safe-area-inset-right,0px)) 16px max(16px,env(safe-area-inset-left,0px))}
+.ask{width:100%;max-width:380px;background:var(--card);color:var(--ink);border:2px solid var(--edge);border-radius:28px;box-shadow:6px 6px 0 var(--shadow);padding:22px}
+.ask p{margin:0 0 16px;font-weight:600}
+.ask .row{display:flex;gap:10px;justify-content:flex-end;flex-wrap:wrap}
 </style>
 </head>
 <body>
@@ -260,6 +267,17 @@ const $=s=>document.querySelector(s);
 const circ=n=>'①②③④'[n-1];
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const fmtExam=e=>{const [y,m]=e.split('-');return `${m}/${y}`};
+function ask(msg,ok='Đồng ý',cancel='Huỷ'){
+  return new Promise(res=>{
+    const bg=document.createElement('div');bg.className='ask-bg';
+    bg.innerHTML=`<div class="ask" role="alertdialog" aria-modal="true"><p>${esc(msg)}</p><div class="row"><button class="btn" data-v="0">${esc(cancel)}</button><button class="btn primary" data-v="1">${esc(ok)}</button></div></div>`;
+    const done=v=>{bg.remove();document.removeEventListener('keydown',key);res(v)};
+    const key=e=>{if(e.key==='Escape')done(false)};
+    bg.addEventListener('click',e=>{if(e.target===bg)done(false);const v=e.target.closest('[data-v]');if(v)done(v.dataset.v==='1')});
+    document.addEventListener('keydown',key);document.body.appendChild(bg);bg.querySelector('.primary').focus();
+  });
+}
+window.askConfirm=(m,o,c)=>ask(m,o,c);
 const pct=(a,b)=>b?Math.round(a*100/b)+'%':'–';
 
 /* ---------- lưu trữ ---------- */
@@ -281,7 +299,7 @@ function show(v){
   ['home','setup','quiz','sum'].forEach(x=>$('#v-'+x).hidden=x!==v);
   const b=$('#back');b.hidden=v==='home';
   b.textContent=v==='setup'?'← Đổi cấp độ':v==='quiz'?'Kết thúc phiên':'← '+level+' · Thiết lập';
-  b.onclick=v==='setup'?renderHome:v==='quiz'?()=>{if(confirm('Kết thúc phiên luyện và xem kết quả?'))finish()}:renderSetup;
+  b.onclick=v==='setup'?renderHome:v==='quiz'?async()=>{if(await ask('Kết thúc phiên luyện và xem kết quả?','Kết thúc','Luyện tiếp'))finish()}:renderSetup;
   window.scrollTo(0,0);
 }
 
@@ -357,7 +375,7 @@ function renderSessions(){
     s.map(x=>`<tr><td>${new Date(x.t).toLocaleString('vi-VN',{dateStyle:'short',timeStyle:'short'})}</td><td>${esc(x.src)}</td>
       <td class="num">${x.total}</td><td class="num">${x.ok}</td><td class="num ${x.ok/x.total>=.7?'ok-t':'bad-t'}">${pct(x.ok,x.total)}</td></tr>`).join('')}</tbody></table>`;
 }
-$('#reset').onclick=()=>{if(confirm('Xoá toàn bộ lịch sử, kho ôn và tỉ lệ đúng sai của '+level+'?')){db={hist:{},kho:{},sessions:[]};saveDB();try{localStorage.removeItem('nb_hist_'+level)}catch{};renderSetup()}};
+$('#reset').onclick=async()=>{if(await ask('Xoá toàn bộ lịch sử, kho ôn và tỉ lệ đúng sai của '+level+'?','Xoá','Huỷ')){db={hist:{},kho:{},sessions:[]};saveDB();try{localStorage.removeItem('nb_hist_'+level)}catch{};renderSetup()}};
 $('#start').onclick=()=>{
   let qs=pool().slice();
   if(pref.ord==='rand')qs=qs.map(v=>[Math.random(),v]).sort((a,b)=>a[0]-b[0]).map(v=>v[1]);
@@ -519,7 +537,7 @@ function finish(){
 }
 
 document.addEventListener('keydown',e=>{
-  if($('#v-quiz').hidden||!q||e.target.tagName==='SELECT')return;
+  if($('#v-quiz').hidden||!q||e.target.tagName==='SELECT'||document.querySelector('.ask-bg'))return;
   if(/^[1-4]$/.test(e.key))pick(+e.key);
   else if(e.key==='Enter'){e.preventDefault();$('#go').disabled||$('#go').click()}
   else if(e.key==='s'||e.key==='S'){const b=$('#bm');b.checked=!b.checked;b.onchange({target:b})}

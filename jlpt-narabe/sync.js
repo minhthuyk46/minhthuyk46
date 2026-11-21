@@ -98,7 +98,7 @@ function renderAcct() {
   const t = { ok: 'Đã đồng bộ', sync: 'Đang đồng bộ…', err: 'Chưa đồng bộ: ' + statusMsg }[statusState];
   el.innerHTML = `<span class="acct" title="${esc(t)}"><span class="dot ${statusState}"></span><span class="who">${esc(auth.name || auth.email)}</span>
     <button class="btn sm" id="acct-out">Đăng xuất</button></span>`;
-  el.querySelector('#acct-out').onclick = () => { if (confirm('Đăng xuất? Tiến độ vẫn còn trên máy này và trên tài khoản của bạn.')) logout() };
+  el.querySelector('#acct-out').onclick = async () => { if (await window.askConfirm('Đăng xuất? Tiến độ vẫn còn trên máy này và trên tài khoản của bạn.', 'Đăng xuất', 'Huỷ')) logout() };
 }
 function logout(silent) { auth = null; ls('nb_auth', null); ls('nb_pending', null); renderAcct(); if (!silent) onMerged() }
 
